@@ -16,5 +16,6 @@ let result = sum(a,b)
 print("Результат сложения - \(result)")
 
 //123543
+// new commit
 
 

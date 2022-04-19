@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hWy-Dw-rJF">
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="R3x-w7-2ZZ">
+            <objects>
+                <viewController id="hWy-Dw-rJF" customClass="MainViewController" customModule="Right_on_target" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3bm-8d-fDO">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите вариант игры" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Fc-EJ-LqS">
+                                <rect key="frame" x="280" y="133" width="336" height="148"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="168" id="CTH-9K-f7N"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d03-WI-H0m">
+                                <rect key="frame" x="632" y="192" width="82" height="37"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Числа">
+                                            <attributes>
+                                                <font key="NSFont" size="20" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="D9f-Jq-Azb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="co0-T8-lVg">
+                                <rect key="frame" x="185" y="192" width="82" height="37"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Цвета">
+                                            <attributes>
+                                                <font key="NSFont" size="20" name="Helvetica"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="gab-VD-jLi" kind="show" id="lgv-rK-ELx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="e3M-1J-GTZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5Fc-EJ-LqS" firstAttribute="centerY" secondItem="3bm-8d-fDO" secondAttribute="centerY" id="QzD-2G-fiN"/>
+                            <constraint firstItem="co0-T8-lVg" firstAttribute="leading" secondItem="e3M-1J-GTZ" secondAttribute="leading" constant="141" id="Sy4-AN-CDw"/>
+                            <constraint firstItem="d03-WI-H0m" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5Fc-EJ-LqS" secondAttribute="trailing" constant="8" symbolic="YES" id="Uab-Bd-G8H"/>
+                            <constraint firstItem="e3M-1J-GTZ" firstAttribute="trailing" secondItem="d03-WI-H0m" secondAttribute="trailing" constant="138" id="Xw3-Wc-t0n"/>
+                            <constraint firstItem="5Fc-EJ-LqS" firstAttribute="top" secondItem="e3M-1J-GTZ" secondAttribute="top" constant="133" id="ckv-1U-hzR"/>
+                            <constraint firstItem="co0-T8-lVg" firstAttribute="baseline" secondItem="d03-WI-H0m" secondAttribute="baseline" id="jO6-2J-aWd"/>
+                            <constraint firstItem="5Fc-EJ-LqS" firstAttribute="centerX" secondItem="3bm-8d-fDO" secondAttribute="centerX" id="oYR-Md-9jq"/>
+                            <constraint firstItem="5Fc-EJ-LqS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="co0-T8-lVg" secondAttribute="trailing" constant="8" symbolic="YES" id="vFV-gC-lit"/>
+                            <constraint firstItem="co0-T8-lVg" firstAttribute="top" secondItem="e3M-1J-GTZ" secondAttribute="top" constant="192" id="vuB-vD-IXq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="oEp-Qk-hIo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="COb-KS-yEo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-70.3125" y="-404.34782608695656"/>
+        </scene>
+        <!--Color View Controller-->
+        <scene sceneID="Vaw-6l-Jsz">
+            <objects>
+                <viewController id="gab-VD-jLi" customClass="ColorViewController" customModule="Right_on_target" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="76c-qY-ENf">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тут будет показан HEX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAi-gp-bba">
+                                <rect key="frame" x="319" y="93" width="259" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Xa-zB-Nc2">
+                                <rect key="frame" x="167" y="190" width="106" height="34"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Вариант 1">
+                                            <attributes>
+                                                <font key="NSFont" size="17" name="Helvetica"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="compareValueWithSender:" destination="gab-VD-jLi" eventType="touchUpInside" id="9AF-Aa-pQl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0up-Nh-ZTV">
+                                <rect key="frame" x="319" y="190" width="106" height="34"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Вариант 2">
+                                            <attributes>
+                                                <font key="NSFont" size="17" name="Helvetica"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="compareValueWithSender:" destination="gab-VD-jLi" eventType="touchUpInside" id="xeI-c4-mxh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VfM-dW-R51">
+                                <rect key="frame" x="472" y="190" width="106" height="34"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Вариант 3">
+                                            <attributes>
+                                                <font key="NSFont" size="17" name="Helvetica"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="compareValueWithSender:" destination="gab-VD-jLi" eventType="touchUpInside" id="rOk-fB-7ge"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elf-gt-Wkj">
+                                <rect key="frame" x="76" y="41" width="77" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Назад">
+                                            <attributes>
+                                                <font key="NSFont" size="18" name="Helvetica"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="hWy-Dw-rJF" kind="show" id="4ee-VT-SKn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZG-UG-qF2">
+                                <rect key="frame" x="616" y="190" width="106" height="34"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Вариант 4">
+                                            <attributes>
+                                                <font key="NSFont" size="17" name="Helvetica"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="compareValueWithSender:" destination="gab-VD-jLi" eventType="touchUpInside" id="KKy-ea-tO1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nD1-Ww-ZyL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BZG-UG-qF2" firstAttribute="baseline" secondItem="0up-Nh-ZTV" secondAttribute="baseline" id="1s1-zB-bDm"/>
+                            <constraint firstItem="0up-Nh-ZTV" firstAttribute="top" secondItem="EAi-gp-bba" secondAttribute="bottom" constant="67" id="25t-Nw-hVG"/>
+                            <constraint firstItem="elf-gt-Wkj" firstAttribute="leading" secondItem="nD1-Ww-ZyL" secondAttribute="leading" constant="32" id="7mR-bz-BAp"/>
+                            <constraint firstItem="elf-gt-Wkj" firstAttribute="top" secondItem="nD1-Ww-ZyL" secondAttribute="top" constant="41" id="Abi-Z9-bBU"/>
+                            <constraint firstItem="1Xa-zB-Nc2" firstAttribute="leading" secondItem="nD1-Ww-ZyL" secondAttribute="leading" constant="123" id="IYy-BC-MW6"/>
+                            <constraint firstItem="VfM-dW-R51" firstAttribute="leading" secondItem="0up-Nh-ZTV" secondAttribute="trailing" constant="47" id="LTi-ST-e7s"/>
+                            <constraint firstItem="0up-Nh-ZTV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1Xa-zB-Nc2" secondAttribute="trailing" constant="8" symbolic="YES" id="SV7-2V-VPG"/>
+                            <constraint firstItem="BZG-UG-qF2" firstAttribute="leading" secondItem="VfM-dW-R51" secondAttribute="trailing" constant="38" id="UbL-Vp-0C6"/>
+                            <constraint firstItem="BZG-UG-qF2" firstAttribute="baseline" secondItem="1Xa-zB-Nc2" secondAttribute="baseline" id="Wpk-XT-3hJ"/>
+                            <constraint firstItem="nD1-Ww-ZyL" firstAttribute="trailing" secondItem="BZG-UG-qF2" secondAttribute="trailing" constant="130" id="X1o-Gu-hk4"/>
+                            <constraint firstItem="nD1-Ww-ZyL" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="elf-gt-Wkj" secondAttribute="trailing" symbolic="YES" id="YdI-hc-8PE"/>
+                            <constraint firstItem="BZG-UG-qF2" firstAttribute="baseline" secondItem="VfM-dW-R51" secondAttribute="baseline" id="eTt-Fo-r7X"/>
+                            <constraint firstItem="0up-Nh-ZTV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="EAi-gp-bba" secondAttribute="leading" id="l6P-bD-fCb"/>
+                            <constraint firstItem="nD1-Ww-ZyL" firstAttribute="trailing" secondItem="EAi-gp-bba" secondAttribute="trailing" constant="274" id="uQt-GZ-FlI"/>
+                            <constraint firstItem="BZG-UG-qF2" firstAttribute="centerY" secondItem="76c-qY-ENf" secondAttribute="centerY" id="w5q-tu-h0p"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Enz-gc-Jhj"/>
+                    <connections>
+                        <outlet property="buttonColor1" destination="1Xa-zB-Nc2" id="9v3-dP-ZPZ"/>
+                        <outlet property="buttonColor2" destination="0up-Nh-ZTV" id="Up7-Ta-P47"/>
+                        <outlet property="buttonColor3" destination="VfM-dW-R51" id="gXg-7p-GhK"/>
+                        <outlet property="buttonColor4" destination="BZG-UG-qF2" id="3uN-GD-KsD"/>
+                        <outlet property="hexLabel" destination="EAi-gp-bba" id="fVT-xH-ACe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3iJ-ln-v4G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="603" y="-1238"/>
+        </scene>
+        <!--Number View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="NumberViewController" customModule="Right_on_target" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="1" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="Hmt-cF-OkT">
+                                <rect key="frame" x="62" y="192" width="772" height="31"/>
+                                <imageReference key="minimumValueImage" image="01.square.fill" catalog="system" symbolScale="default" renderingMode="hierarchical-single">
+                                    <hierarchicalColors>
+                                        <color systemColor="systemPurpleColor"/>
+                                        <color systemColor="secondaryLabelColor"/>
+                                        <color systemColor="tertiaryLabelColor"/>
+                                    </hierarchicalColors>
+                                </imageReference>
+                                <imageReference key="maximumValueImage" image="50.square.fill" catalog="system" renderingMode="hierarchical-single">
+                                    <hierarchicalColors>
+                                        <color systemColor="systemPurpleColor"/>
+                                        <color systemColor="secondaryLabelColor"/>
+                                        <color systemColor="tertiaryLabelColor"/>
+                                    </hierarchicalColors>
+                                </imageReference>
+                                <color key="minimumTrackTintColor" systemColor="systemPinkColor"/>
+                                <color key="thumbTintColor" systemColor="systemPinkColor"/>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Gi-tg-vpk">
+                                <rect key="frame" x="382" y="252" width="132" height="37"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Проверить">
+                                            <attributes>
+                                                <color key="NSColor" systemColor="systemIndigoColor"/>
+                                                <font key="NSFont" size="20" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="checkNumber" destination="BYZ-38-t0r" eventType="touchUpInside" id="NgL-9M-vmN"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trX-AB-2yL">
+                                <rect key="frame" x="443" y="319" width="10.5" height="21"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="0">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JyD-3T-Clh">
+                                <rect key="frame" x="63" y="31" width="74" height="34"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Назад">
+                                            <attributes>
+                                                <font key="NSFont" size="17" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="hWy-Dw-rJF" kind="show" id="86g-Yf-0AB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstItem="trX-AB-2yL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Of-47-FXv"/>
+                            <constraint firstItem="0Gi-tg-vpk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8HZ-T8-Pf2"/>
+                            <constraint firstItem="trX-AB-2yL" firstAttribute="top" secondItem="0Gi-tg-vpk" secondAttribute="bottom" constant="30" id="HfC-1T-UCQ"/>
+                            <constraint firstItem="0Gi-tg-vpk" firstAttribute="top" secondItem="Hmt-cF-OkT" secondAttribute="bottom" constant="30" id="TUV-lH-f6v"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hmt-cF-OkT" secondAttribute="trailing" constant="20" id="V6u-uA-kut"/>
+                            <constraint firstItem="Hmt-cF-OkT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Yq8-94-ENj"/>
+                            <constraint firstItem="JyD-3T-Clh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="19" id="cjX-xb-jDM"/>
+                            <constraint firstItem="JyD-3T-Clh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="31" id="e1n-cT-EYZ"/>
+                            <constraint firstItem="Hmt-cF-OkT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="pHf-mp-iFC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JyD-3T-Clh" secondAttribute="trailing" symbolic="YES" id="uNT-LG-l9H"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="tIh-br-3Li"/>
+                    <connections>
+                        <outlet property="secretValueLabel" destination="trX-AB-2yL" id="99w-TZ-F96"/>
+                        <outlet property="slider" destination="Hmt-cF-OkT" id="okE-H8-st4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="619" y="346"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="4ee-VT-SKn"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="01.square.fill" catalog="system" width="128" height="114"/>
+        <image name="50.square.fill" catalog="system" width="128" height="114"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

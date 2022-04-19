@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hWy-Dw-rJF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vRb-sm-1b6">
     <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите вариант игры" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Fc-EJ-LqS">
-                                <rect key="frame" x="280" y="133" width="336" height="148"/>
+                                <rect key="frame" x="280" y="177" width="336" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="168" id="CTH-9K-f7N"/>
                                 </constraints>
@@ -27,7 +27,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d03-WI-H0m">
-                                <rect key="frame" x="632" y="192" width="82" height="37"/>
+                                <rect key="frame" x="632" y="236" width="82" height="37"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <attributedString key="attributedTitle">
@@ -44,7 +44,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="co0-T8-lVg">
-                                <rect key="frame" x="185" y="192" width="82" height="37"/>
+                                <rect key="frame" x="185" y="236" width="82" height="37"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <attributedString key="attributedTitle">
@@ -78,7 +78,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="COb-KS-yEo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-70.3125" y="-404.34782608695656"/>
+            <point key="canvasLocation" x="346" y="-404"/>
         </scene>
         <!--Color View Controller-->
         <scene sceneID="Vaw-6l-Jsz">
@@ -142,22 +142,6 @@
                                     <action selector="compareValueWithSender:" destination="gab-VD-jLi" eventType="touchUpInside" id="rOk-fB-7ge"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elf-gt-Wkj">
-                                <rect key="frame" x="76" y="41" width="77" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Назад">
-                                            <attributes>
-                                                <font key="NSFont" size="18" name="Helvetica"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="hWy-Dw-rJF" kind="show" id="4ee-VT-SKn"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZG-UG-qF2">
                                 <rect key="frame" x="616" y="190" width="106" height="34"/>
                                 <state key="normal" title="Button"/>
@@ -180,15 +164,12 @@
                         <constraints>
                             <constraint firstItem="BZG-UG-qF2" firstAttribute="baseline" secondItem="0up-Nh-ZTV" secondAttribute="baseline" id="1s1-zB-bDm"/>
                             <constraint firstItem="0up-Nh-ZTV" firstAttribute="top" secondItem="EAi-gp-bba" secondAttribute="bottom" constant="67" id="25t-Nw-hVG"/>
-                            <constraint firstItem="elf-gt-Wkj" firstAttribute="leading" secondItem="nD1-Ww-ZyL" secondAttribute="leading" constant="32" id="7mR-bz-BAp"/>
-                            <constraint firstItem="elf-gt-Wkj" firstAttribute="top" secondItem="nD1-Ww-ZyL" secondAttribute="top" constant="41" id="Abi-Z9-bBU"/>
                             <constraint firstItem="1Xa-zB-Nc2" firstAttribute="leading" secondItem="nD1-Ww-ZyL" secondAttribute="leading" constant="123" id="IYy-BC-MW6"/>
                             <constraint firstItem="VfM-dW-R51" firstAttribute="leading" secondItem="0up-Nh-ZTV" secondAttribute="trailing" constant="47" id="LTi-ST-e7s"/>
                             <constraint firstItem="0up-Nh-ZTV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1Xa-zB-Nc2" secondAttribute="trailing" constant="8" symbolic="YES" id="SV7-2V-VPG"/>
                             <constraint firstItem="BZG-UG-qF2" firstAttribute="leading" secondItem="VfM-dW-R51" secondAttribute="trailing" constant="38" id="UbL-Vp-0C6"/>
                             <constraint firstItem="BZG-UG-qF2" firstAttribute="baseline" secondItem="1Xa-zB-Nc2" secondAttribute="baseline" id="Wpk-XT-3hJ"/>
                             <constraint firstItem="nD1-Ww-ZyL" firstAttribute="trailing" secondItem="BZG-UG-qF2" secondAttribute="trailing" constant="130" id="X1o-Gu-hk4"/>
-                            <constraint firstItem="nD1-Ww-ZyL" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="elf-gt-Wkj" secondAttribute="trailing" symbolic="YES" id="YdI-hc-8PE"/>
                             <constraint firstItem="BZG-UG-qF2" firstAttribute="baseline" secondItem="VfM-dW-R51" secondAttribute="baseline" id="eTt-Fo-r7X"/>
                             <constraint firstItem="0up-Nh-ZTV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="EAi-gp-bba" secondAttribute="leading" id="l6P-bD-fCb"/>
                             <constraint firstItem="nD1-Ww-ZyL" firstAttribute="trailing" secondItem="EAi-gp-bba" secondAttribute="trailing" constant="274" id="uQt-GZ-FlI"/>
@@ -206,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3iJ-ln-v4G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="603" y="-1238"/>
+            <point key="canvasLocation" x="601" y="-1436"/>
         </scene>
         <!--Number View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -265,23 +246,6 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JyD-3T-Clh">
-                                <rect key="frame" x="63" y="31" width="74" height="34"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Назад">
-                                            <attributes>
-                                                <font key="NSFont" size="17" name="Helvetica"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="hWy-Dw-rJF" kind="show" id="86g-Yf-0AB"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
@@ -292,10 +256,7 @@
                             <constraint firstItem="0Gi-tg-vpk" firstAttribute="top" secondItem="Hmt-cF-OkT" secondAttribute="bottom" constant="30" id="TUV-lH-f6v"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hmt-cF-OkT" secondAttribute="trailing" constant="20" id="V6u-uA-kut"/>
                             <constraint firstItem="Hmt-cF-OkT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Yq8-94-ENj"/>
-                            <constraint firstItem="JyD-3T-Clh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="19" id="cjX-xb-jDM"/>
-                            <constraint firstItem="JyD-3T-Clh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="31" id="e1n-cT-EYZ"/>
                             <constraint firstItem="Hmt-cF-OkT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="pHf-mp-iFC"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JyD-3T-Clh" secondAttribute="trailing" symbolic="YES" id="uNT-LG-l9H"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tIh-br-3Li"/>
@@ -306,12 +267,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="619" y="346"/>
+            <point key="canvasLocation" x="644" y="652"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FDj-Df-kgX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vRb-sm-1b6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="nVf-99-JEq"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mCL-Vh-dRh">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hWy-Dw-rJF" kind="relationship" relationship="rootViewController" id="sg7-CP-Nvd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cdL-ND-yQr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-355" y="-404"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="4ee-VT-SKn"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="01.square.fill" catalog="system" width="128" height="114"/>
         <image name="50.square.fill" catalog="system" width="128" height="114"/>

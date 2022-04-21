@@ -12,7 +12,7 @@
         <!--Main View Controller-->
         <scene sceneID="R3x-w7-2ZZ">
             <objects>
-                <viewController id="hWy-Dw-rJF" customClass="MainViewController" customModule="Right_on_target" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="hWy-Dw-rJF" customClass="MainViewController" customModule="Right_on_target" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3bm-8d-fDO">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -187,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3iJ-ln-v4G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="601" y="-1436"/>
+            <point key="canvasLocation" x="346" y="-1307"/>
         </scene>
         <!--Number View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -267,7 +267,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="644" y="652"/>
+            <point key="canvasLocation" x="346" y="488"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FDj-Df-kgX">

@@ -2,6 +2,7 @@
 import UIKit
 
 class ColorViewController: UIViewController {
+
     
     // Экземпляр игры с цветами
     var game: Game<SecretColorValue>!
@@ -27,6 +28,7 @@ class ColorViewController: UIViewController {
         buttonsCollection = [buttonColor1, buttonColor2, buttonColor3, buttonColor4]
         // Обновляем View
         updateScene()
+
     }
     
     private func updateScene() {

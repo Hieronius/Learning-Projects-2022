@@ -16,18 +16,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ByF-uc-egW">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JEN-nw-wxa">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ZCW-6A-fyx"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ByF-uc-egW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2wr-cD-O0E"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ByF-uc-egW" secondAttribute="trailing" id="IGd-G6-aMs"/>
-                            <constraint firstItem="ByF-uc-egW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cXa-Lr-9IV"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ByF-uc-egW" secondAttribute="bottom" id="wDc-fX-LqQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JEN-nw-wxa" secondAttribute="trailing" id="HjV-4p-rtw"/>
+                            <constraint firstItem="JEN-nw-wxa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="N3s-mg-CUf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JEN-nw-wxa" secondAttribute="bottom" id="bsa-eh-VAh"/>
+                            <constraint firstItem="JEN-nw-wxa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jev-Rn-N8G"/>
                         </constraints>
                     </view>
                 </viewController>

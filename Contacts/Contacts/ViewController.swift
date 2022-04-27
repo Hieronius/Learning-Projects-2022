@@ -9,6 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // Свойство для доступа к пользовательским настройкам
+    var userDefaults = UserDefaults.standard
+    
     @IBOutlet var tableView: UITableView!
     
     @IBAction func showNewContactAlert() {
@@ -72,6 +75,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadContacts()
+        userDefaults.set("Some random text", forKey: "Some key")
         // Do any additional setup after loading the view.
     }
 

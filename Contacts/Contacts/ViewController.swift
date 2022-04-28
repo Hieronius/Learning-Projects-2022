@@ -9,8 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    // Свойство для доступа к пользовательским настройкам
-    var userDefaults = UserDefaults.standard
+    var storage: ContactStorageProtocol!
     
     @IBOutlet var tableView: UITableView!
     
@@ -55,27 +54,25 @@ class ViewController: UIViewController {
     }
     
     
-    private var contacts: [ContactProtocol] = [] {
+    var contacts: [ContactProtocol] = [] {
         didSet {
             contacts.sort { $0.title < $1.title }
+            // сохранение контактов в хранилище
+            storage.save(contacts: contacts)
         }
     }
     // Свойство contacts - это массив контактов, элементы которого будут выведены в табличном представлении. При загрузке сцены данное свойство будет наполняться данными, а в последствии использоваться для наполнения ячеек таблицы данными.
     
     private func loadContacts() {
-        contacts.append(
-        Contact(title: "Саня Техосмотр", phone: "+799912312323"))
-        contacts.append(
-        Contact(title: "Владимир Анатольевич", phone: "+781213342321"))
-        contacts.append(
-        Contact(title: "Сильвестр", phone: "+7000911112"))
+        contacts = storage.load()
         
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        storage = ContactStorage()
         loadContacts()
-        userDefaults.set("Some random text", forKey: "Some key")
+        
         // Do any additional setup after loading the view.
     }
 

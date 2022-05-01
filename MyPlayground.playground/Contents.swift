@@ -86,3 +86,18 @@ struct Ammunition {
 }
 
 
+struct Point: Equatable {
+    var x: Int
+}
+
+struct X {
+    var point: Point {
+        didSet { point.x = 0}
+    }
+}
+
+let y = Point(x: 5)
+let p = X(point: y)
+
+let result = p.point.x == y.x
+print(result)

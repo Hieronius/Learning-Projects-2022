@@ -36,3 +36,49 @@ for barrel in arrayOfBarrel {
         print("color of your barrel is \(barrel.color)")
     }
 }
+
+typealias BarrelsAndRabbitsTest = (Barrel,Rabbit)
+var newBarrelAndRabbitsTest = [
+     (Barrel(color: "Red", number: 1), Rabbit(color: "Red")),
+     (Barrel(color: "Black", number: 2), Rabbit(color: "Black")),
+     (Barrel(color: "Purple", number: 3), Rabbit(color: "Purple")),
+     (Barrel(color: "White", number: 4), Rabbit(color: "White")),
+     (Barrel(color: "Brown", number: 5), Rabbit(color: "Brown")),
+     (Barrel(color: "Yellow", number: 6), Rabbit(color: "Yellow")),
+     (Barrel(color: "Green", number: 7), Rabbit(color: "Green")),
+     (Barrel(color: "Blue", number: 8), Rabbit(color: "Blue")),
+     (Barrel(color: "Orange", number: 9), Rabbit(color: "Orange"))]
+
+struct BarrelsAndRabbits {
+    var barrelColor: String
+    var rabbitColor: String
+    var barrelNumber: Int
+}
+
+var arrayOfBarrelWithRabbits = [
+BarrelsAndRabbits(barrelColor: "Red", rabbitColor: "Purple", barrelNumber: 1),
+BarrelsAndRabbits(barrelColor: "White", rabbitColor: "Black", barrelNumber: 2),
+BarrelsAndRabbits(barrelColor: "Brown", rabbitColor: "White", barrelNumber: 3),
+BarrelsAndRabbits(barrelColor: "Yellow", rabbitColor: "Red", barrelNumber: 4),
+BarrelsAndRabbits(barrelColor: "Green", rabbitColor: "Brown", barrelNumber: 5),
+BarrelsAndRabbits(barrelColor: "Black", rabbitColor: "Yellow", barrelNumber: 6),
+BarrelsAndRabbits(barrelColor: "Purple", rabbitColor: "Blue", barrelNumber: 7),
+BarrelsAndRabbits(barrelColor: "Blue", rabbitColor: "Orange", barrelNumber: 8),
+BarrelsAndRabbits(barrelColor: "Orange", rabbitColor: "Green", barrelNumber: 9)]
+
+var arrayOfnewRabbits: [Rabbit] = []
+
+print("Choose your barrel")
+var b = readLine()
+print("Choose your second barrel")
+var c = readLine()
+
+for barrel in newBarrelAndRabbitsTest {
+    if barrel.0.number == Int(b!)! || barrel.0.number == Int(c!)! {
+        arrayOfnewRabbits.append(barrel.1)
+        print("\(barrel.1.color) rabbit jumps out of the \(barrel.0.color) barrel")
+    }
+}
+print(arrayOfnewRabbits)
+
+// I should implement switch to "var a = readline" so i can have only 1 string of if else instead of 9

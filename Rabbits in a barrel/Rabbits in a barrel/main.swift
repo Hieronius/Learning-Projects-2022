@@ -11,6 +11,7 @@ struct Barrel {
 }
 
 typealias BarrelsAndRabbitsTest = (Barrel,Rabbit)
+
 var newBarrelAndRabbitsTest = [
      (Barrel(color: "Red", number: 1), Rabbit(color: "Red")),
      (Barrel(color: "Black", number: 2), Rabbit(color: "Black")),
@@ -22,7 +23,7 @@ var newBarrelAndRabbitsTest = [
      (Barrel(color: "Blue", number: 8), Rabbit(color: "Blue")),
      (Barrel(color: "Orange", number: 9), Rabbit(color: "Orange"))]
 
-var arrayOfnewRabbits: [Rabbit] = []
+/* var arrayOfnewRabbits: [Rabbit] = []
 
 var counter = 0
 
@@ -36,7 +37,7 @@ while counter < 9 {
     for barrel in newBarrelAndRabbitsTest {
         if barrel.0.number == Int(b!)! {
             arrayOfnewRabbits.append(barrel.1)
-            print("\(barrel.1.color) rabbit jumps out of the \(barrel.0.color) barrel")
+            print("\(barrel.1.color) rabbit jumps out of the \(barrel.0.color) barrel № \(barrel.0.number)")
         }
     }
     counter += 1
@@ -46,4 +47,33 @@ print(arrayOfnewRabbits[0...8])
 
 // First part of the work done. You can choose all barrels and take all of possible rabbits.
 
+*/
 
+func getAndPutRabbit(firstBarrel: String?, secondBarrel: String?) {
+    for barrel in newBarrelAndRabbitsTest {
+        if barrel.0.number == Int(firstBarrel!)! {
+            print("\(barrel.1.color) rabbit jumps out of the \(barrel.0.color) barrel № \(barrel.0.number) to barrel - \(barrel.0.number = Int(secondBarrel!)!)")
+        }
+    }
+    
+    
+}
+print("Choose first barrel")
+var a = readLine()
+    
+print("Choose second barrel")
+var b = readLine()
+    
+    
+
+
+var counter = 0
+
+while counter < 9 {
+    
+    getAndPutRabbit(firstBarrel: a, secondBarrel: b)
+    counter += 1
+}
+
+
+// I should think about func and tuples to change old barrel of rabbit to the new one

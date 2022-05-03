@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD37F1C728210FB4005A9097 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD37F1C628210FB4005A9097 /* Test.swift */; };
 		DDC4CC70281BE7D200E46A7C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC4CC6F281BE7D200E46A7C /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DD37F1C628210FB4005A9097 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		DDC4CC6C281BE7D200E46A7C /* Rabbits in a barrel */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Rabbits in a barrel"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDC4CC6F281BE7D200E46A7C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -41,6 +43,7 @@
 		DDC4CC63281BE7D200E46A7C = {
 			isa = PBXGroup;
 			children = (
+				DD37F1C628210FB4005A9097 /* Test.swift */,
 				DDC4CC6E281BE7D200E46A7C /* Rabbits in a barrel */,
 				DDC4CC6D281BE7D200E46A7C /* Products */,
 			);
@@ -121,6 +124,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDC4CC70281BE7D200E46A7C /* main.swift in Sources */,
+				DD37F1C728210FB4005A9097 /* Test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

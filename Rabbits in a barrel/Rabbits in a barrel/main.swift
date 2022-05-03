@@ -1,6 +1,7 @@
 
 import Foundation
 
+
 struct Rabbit {
     var color: String
 }
@@ -23,57 +24,51 @@ var newBarrelAndRabbitsTest = [
      (Barrel(color: "Blue", number: 8), Rabbit(color: "Blue")),
      (Barrel(color: "Orange", number: 9), Rabbit(color: "Orange"))]
 
-/* var arrayOfnewRabbits: [Rabbit] = []
-
-var counter = 0
-
-while counter < 9 {
-    
-    print("Choose your barrel")
-    var b = readLine()
-
-
-
-    for barrel in newBarrelAndRabbitsTest {
-        if barrel.0.number == Int(b!)! {
-            arrayOfnewRabbits.append(barrel.1)
-            print("\(barrel.1.color) rabbit jumps out of the \(barrel.0.color) barrel № \(barrel.0.number)")
-        }
-    }
-    counter += 1
-}
-
-print(arrayOfnewRabbits[0...8])
+// var arrayOfnewRabbits: [Rabbit] = []
+//
+//var counter = 0
+//
+//while counter < 9 {
+//
+//    print("Choose your barrel")
+//    var b = readLine()
+//
+//
+//
+//    for barrel in newBarrelAndRabbitsTest {
+//        if barrel.0.number == Int(b!)! {
+//            arrayOfnewRabbits.append(barrel.1)
+//            print("\(barrel.1.color) rabbit jumps out of the \(barrel.0.color) barrel № \(barrel.0.number)")
+//        }
+//    }
+//    counter += 1
+//}
+//
+//print(arrayOfnewRabbits[0...8])
 
 // First part of the work done. You can choose all barrels and take all of possible rabbits.
 
-*/
-
-func getAndPutRabbit(firstBarrel: String?, secondBarrel: String?) {
+ func getAndPutRabbit(firstBarrel: String?) {
     for barrel in newBarrelAndRabbitsTest {
         if barrel.0.number == Int(firstBarrel!)! {
-            print("\(barrel.1.color) rabbit jumps out of the \(barrel.0.color) barrel № \(barrel.0.number) to barrel - \(barrel.0.number = Int(secondBarrel!)!)")
+            var newBarrel = barrel
+            print("\(barrel.1.color) rabbit jumps out of the \(barrel.0.color) barrel № \(barrel.0.number)")
+            newBarrel = newBarrelAndRabbitsTest[Int.random(in: 0...8)]
+            print("and gets to \(newBarrel.0.color) barrel № \(newBarrel.0.number)")
         }
     }
     
     
 }
-print("Choose first barrel")
-var a = readLine()
-    
-print("Choose second barrel")
-var b = readLine()
-    
     
 
+var counter1 = 0
 
-var counter = 0
-
-while counter < 9 {
+while counter1 < 9 {
     
-    getAndPutRabbit(firstBarrel: a, secondBarrel: b)
-    counter += 1
+    print("Choose first barrel")
+    var a = readLine()
+    
+    getAndPutRabbit(firstBarrel: a)
+    counter1 += 1
 }
-
-
-// I should think about func and tuples to change old barrel of rabbit to the new one

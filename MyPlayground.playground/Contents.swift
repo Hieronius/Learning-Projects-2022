@@ -1,9 +1,13 @@
 // List of purchases
 
 
+
+
+
+
 struct ListOfPurchases {
     
-    let bread = "White"
+    let bread = "White bread"
     let meat = "Chicken breast"
     let vegetables = "Cabage"
     let chocolate = "Alpen Gold"
@@ -13,16 +17,18 @@ struct ListOfPurchases {
 }
 
 let list = ListOfPurchases()
-var ourPackage = [ListOfPurchases]()
+var ourPackage = [String]()
 
 
-func purchaseFromTheList(position: ListOfPurchases) {
+func purchaseFromTheList(position: String) {
     ourPackage.append(position)
     print("\(position) is bought")
     
 }
 
-purchaseFromTheList(position: list)
+purchaseFromTheList(position: list.bread)
+purchaseFromTheList(position: list.cereal)
+purchaseFromTheList(position: list.chocolate)
 ourPackage
 
 // Trying to make programm that will add new product to our bag and print "product is bought"

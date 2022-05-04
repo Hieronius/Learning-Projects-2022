@@ -1,34 +1,80 @@
-// List of purchases
+// practice with classes and methods
 
+// class 1
 
-
-
-
-
-struct ListOfPurchases {
+class Human {
     
-    let bread = "White bread"
-    let meat = "Chicken breast"
-    let vegetables = "Cabage"
-    let chocolate = "Alpen Gold"
-    let spicy = "Pepper"
-    let iceCream = "48 coins"
-    let cereal = "Pasta"
+    var firstName: String // stored property
+    var lastName: String
+    
+    var strenght: Int
+    var agility: Int
+    var vitality: Int
+    
+    var currentLevel = 0
+    
+    var defence: Int { // computed property
+        agility / 10
+    }
+    
+    var stamina: Int {
+        vitality * 5
+    }
+    
+    var attackPower: Int {
+        strenght * 2
+    }
+    
+    lazy var name: String = self.generateWholeName() // lazy property
+    
+    func generateWholeName() -> String { // method for lazy property
+        return firstName + " " + lastName
+    }
+    
+    func newLevel() {  // method of class
+        self.strenght = strenght + 5
+        self.agility = agility + 5
+        self.vitality = vitality + 5
+        currentLevel += 1
+    }
+    
+    
+    init(
+        firstName: String,
+        lastName: String,
+        strenght: Int,
+        agility: Int,
+        vitality: Int) {
+            
+            self.firstName = firstName
+            self.lastName = lastName
+            self.strenght = strenght
+            self.agility = agility
+            self.vitality = vitality
+            
+        }
 }
 
-let list = ListOfPurchases()
-var ourPackage = [String]()
+var myHero = Human(firstName: "Jim", lastName: "Reinor", strenght: 15, agility: 20, vitality: 20)
+myHero.vitality
+myHero.agility
+myHero.strenght
+myHero.attackPower
+myHero.defence
+myHero.stamina
+
+myHero.generateWholeName()
+
+myHero.defence
+
+myHero.newLevel()
+myHero.strenght
+myHero.agility
+myHero.vitality
 
 
-func purchaseFromTheList(position: String) {
-    ourPackage.append(position)
-    print("\(position) is bought")
-    
-}
-
-purchaseFromTheList(position: list.bread)
-purchaseFromTheList(position: list.cereal)
-purchaseFromTheList(position: list.chocolate)
-ourPackage
-
-// Trying to make programm that will add new product to our bag and print "product is bought"
+myHero.newLevel()
+myHero.strenght
+myHero.agility
+myHero.vitality
+myHero.currentLevel

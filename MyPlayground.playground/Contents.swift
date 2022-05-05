@@ -2,6 +2,60 @@
 
 // class 1
 
+class Account {
+    
+    var capital: Double = 0 // сумма вклада
+    var rate: Double = 0.01 // Процентная ставка
+    
+    var profit: Double {
+        
+        get {
+            return capital + capital * rate
+        }
+        
+        set(newProfit) {
+            self.capital = newProfit / (1 + rate)
+        }
+    }
+    
+    init(capital: Double, rate: Double) {
+        
+        self.capital = capital
+        self.rate = rate
+    }
+    
+    
+}
+
+var myAcc = Account(capital: 1000, rate: 0.1)
+print(myAcc.profit)
+
+// Ожидаемая прибыль
+myAcc.profit = 1210
+print(myAcc.capital) // 1100 - необходимая сумма вклада для получения этой прибыли
+
+myAcc.profit = 1500
+print(myAcc.capital)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// class 2.
+
 class Human {
     
     var firstName: String // stored property
@@ -12,8 +66,9 @@ class Human {
     var vitality: Int
     
     var currentLevel = 0
+    var spiriteLevel = 0
     
-    var defence: Int { // computed property
+    var defence: Int { // computed property "read only"
         agility / 10
     }
     
@@ -23,6 +78,17 @@ class Human {
     
     var attackPower: Int {
         strenght * 2
+    }
+    
+    var totalPower: Int {
+        get {
+            strenght + agility + vitality
+        }
+        set(newValue) {
+            self.spiriteLevel = newValue / 3
+            
+        }
+        
     }
     
     lazy var name: String = self.generateWholeName() // lazy property
@@ -56,25 +122,17 @@ class Human {
 }
 
 var myHero = Human(firstName: "Jim", lastName: "Reinor", strenght: 15, agility: 20, vitality: 20)
-myHero.vitality
-myHero.agility
-myHero.strenght
-myHero.attackPower
-myHero.defence
-myHero.stamina
+myHero.totalPower
+myHero.totalPower = 110
+myHero.spiriteLevel
+myHero.totalPower = 220
+myHero.spiriteLevel
 
-myHero.generateWholeName()
-
-myHero.defence
-
-myHero.newLevel()
-myHero.strenght
-myHero.agility
-myHero.vitality
+// Founded how to make get/set with stored property.
+// In this case get will give us value of totalPower
+// set will give us value of spiritLevel that depend of totalPower
+// Tomorrow i should make more examples on this area or make more classes with a very few properties
 
 
-myHero.newLevel()
-myHero.strenght
-myHero.agility
-myHero.vitality
-myHero.currentLevel
+
+

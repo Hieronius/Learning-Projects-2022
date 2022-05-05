@@ -29,7 +29,7 @@
         <!--View Controller-->
         <scene sceneID="Sl3-Wj-dc6">
             <objects>
-                <viewController id="vyA-Fz-UxD" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="redViewController" id="vyA-Fz-UxD" customClass="ViewController" customModule="NavigationApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="imR-Q2-oRF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,7 +47,7 @@
                                     </attributedString>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="SfD-mT-NRn" kind="show" id="aym-6W-hQR"/>
+                                    <action selector="toGreenScene:" destination="vyA-Fz-UxD" eventType="touchUpInside" id="ElO-RS-h61"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -69,13 +69,13 @@
         <!--View Controller-->
         <scene sceneID="AqV-cK-xKP">
             <objects>
-                <viewController id="SfD-mT-NRn" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="greenViewController" id="SfD-mT-NRn" customClass="ViewController" customModule="NavigationApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WG7-w2-XIZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eco-wP-K1X">
-                                <rect key="frame" x="50" y="138" width="314" height="674"/>
+                                <rect key="frame" x="50" y="94" width="314" height="718"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <attributedString key="attributedTitle">
@@ -88,7 +88,7 @@
                                     </attributedString>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="9VI-4Q-Jct" kind="show" id="ohe-Cd-Nn3"/>
+                                    <action selector="toYellowScene:" destination="SfD-mT-NRn" eventType="touchUpInside" id="10n-s9-P0i"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -110,12 +110,37 @@
         <!--View Controller-->
         <scene sceneID="A0Q-7i-8Ir">
             <objects>
-                <viewController id="9VI-4Q-Jct" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="yellowViewController" id="9VI-4Q-Jct" customClass="ViewController" customModule="NavigationApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mw4-B1-EuA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMF-g9-I6o">
+                                <rect key="frame" x="50" y="94" width="314" height="718"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Переход к корневой сцене">
+                                            <attributes>
+                                                <font key="NSFont" size="22" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="toRootScene:" destination="9VI-4Q-Jct" eventType="touchUpInside" id="vuE-tr-9LK"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6CU-6e-g6j"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstItem="6CU-6e-g6j" firstAttribute="bottom" secondItem="xMF-g9-I6o" secondAttribute="bottom" constant="50" id="WKS-rM-nqQ"/>
+                            <constraint firstItem="6CU-6e-g6j" firstAttribute="trailing" secondItem="xMF-g9-I6o" secondAttribute="trailing" constant="50" id="c70-nF-lZ4"/>
+                            <constraint firstItem="xMF-g9-I6o" firstAttribute="leading" secondItem="6CU-6e-g6j" secondAttribute="leading" constant="50" id="s4o-Wb-XuO"/>
+                            <constraint firstItem="xMF-g9-I6o" firstAttribute="top" secondItem="6CU-6e-g6j" secondAttribute="top" constant="50" id="zyB-xv-EZe"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="f2r-Ea-FH4"/>
                 </viewController>

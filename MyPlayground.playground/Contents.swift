@@ -4,7 +4,14 @@
 
 class Account {
     
-    var capital: Double = 0 // сумма вклада
+    var capital: Double {
+        willSet (newCapital) {
+            print("Старая сумма вклада \(self.capital) новая сумма \(newCapital)")
+        }
+        didSet (oldCapital) {
+            print("Сумма вклада увеличена на \(self.capital - oldCapital)")
+        }
+    }// сумма вклада
     var rate: Double = 0.01 // Процентная ставка
     
     var profit: Double {
@@ -30,13 +37,11 @@ class Account {
 var myAcc = Account(capital: 1000, rate: 0.1)
 print(myAcc.profit)
 
+myAcc.capital = 1200
+
 // Ожидаемая прибыль
 myAcc.profit = 1210
 print(myAcc.capital) // 1100 - необходимая сумма вклада для получения этой прибыли
-
-myAcc.profit = 1500
-print(myAcc.capital)
-
 
 
 
@@ -80,7 +85,7 @@ class Human {
         strenght * 2
     }
     
-    var totalPower: Int {
+    var totalPower: Int { // computed property "read and write"
         get {
             strenght + agility + vitality
         }
@@ -134,5 +139,71 @@ myHero.spiriteLevel
 // Tomorrow i should make more examples on this area or make more classes with a very few properties
 
 
+
+// class 3
+class Dwarf {
+    
+    var name: String // stored property
+    var stamina: Int
+    
+    lazy var luck: Int = Int.random(in: 1...50)
+    
+    lazy var strongestHit: Int = { () -> Int in
+        stamina * health
+    }()
+   
+    
+    var health: Int {
+        get {
+            stamina * 10
+        }
+        
+        set(newValue) {
+            stamina = newValue / 10
+            
+        }
+        
+        
+    }
+    
+    var currentLevel: Int {
+        willSet(newLevel) {
+            print("Old level is \(currentLevel). New current level is \(newLevel)")
+        }
+        didSet(oldLevel) {
+            print("hero got \(currentLevel - oldLevel) levels")
+        }
+    }
+    
+    
+    func probabilityToCatchTrap() {
+        if luck > 25 {
+            print("Trap avoided successfully")
+        } else {
+            print("Hero being traped")
+        }
+    }
+    
+    init(name: String, stamina: Int, currentLevel: Int) {
+        self.name = name
+        self.stamina = stamina
+        self.currentLevel = currentLevel
+    }
+    
+    
+}
+
+var myDwarfHero = Dwarf(name: "Jabra", stamina: 10, currentLevel: 1)
+myDwarfHero.currentLevel = 5
+myDwarfHero.health
+myDwarfHero.stamina
+myDwarfHero.luck
+myDwarfHero.probabilityToCatchTrap()
+myDwarfHero.probabilityToCatchTrap()
+myDwarfHero.strongestHit
+myDwarfHero.stamina = 20
+myDwarfHero.strongestHit
+
+// Done with computed, stored and observers with lazy properties. Let's do elf, orc, giant and lisard classes with the same system.
 
 

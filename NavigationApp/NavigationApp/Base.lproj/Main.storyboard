@@ -84,7 +84,7 @@
             </objects>
             <point key="canvasLocation" x="1155" y="745"/>
         </scene>
-        <!--View Controller-->
+        <!--Зеленая сцена-->
         <scene sceneID="AqV-cK-xKP">
             <objects>
                 <viewController storyboardIdentifier="greenViewController" id="SfD-mT-NRn" customClass="ViewController" customModule="NavigationApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -137,7 +137,9 @@
                             <constraint firstItem="eco-wP-K1X" firstAttribute="leading" secondItem="Rrw-pn-x1q" secondAttribute="leading" constant="50" id="zVC-ik-Ole"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="U2f-sR-guX"/>
+                    <navigationItem key="navigationItem" title="Зеленая сцена" prompt="Дополнительная информация" id="U2f-sR-guX">
+                        <barButtonItem key="backBarButtonItem" title="К зеленой сцене" id="can-ym-cPX"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wN5-Hw-ZgS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

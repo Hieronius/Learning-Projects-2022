@@ -41,6 +41,12 @@ class ViewController: UIViewController {
 
     }
     
+    // Перейти к предыдущему экрану
+    @IBAction func toPreviousScene(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+        // С помощью метода toPreviousScene будет осуществляться переход к предыдущему элементу навигационного стека. Это программный аналог кнопки возврата к предыдущей сцене, автоматически размещенный на навигационной панели.
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

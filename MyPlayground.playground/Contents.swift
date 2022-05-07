@@ -207,3 +207,74 @@ myDwarfHero.strongestHit
 // Done with computed, stored and observers with lazy properties. Let's do elf, orc, giant and lisard classes with the same system.
 
 
+// class 4
+class Elf {
+    var firstName: String
+    var secondName: String
+    
+    var experienceForNewLevel: Int
+    
+    var intelligence: Int
+    
+    var maximumLevel = 80
+    var currentLevel = 1
+    
+    var charisma: Int {
+        get {
+            intelligence / 5
+        }
+        set(newCharisma) {
+            self.intelligence = charisma * 5
+        }
+    }
+    
+    var coins: Int {
+        willSet(newCoins) {
+            print("Elf had \(coins) and now he has \(newCoins) coins")
+        }
+        didSet(oldCoins) {
+            print("The elf has earned \(coins - oldCoins)")
+        }
+    }
+    
+    lazy var elfName = { () -> String in
+        self.firstName + " " + self.secondName
+    }
+    
+    lazy var gameCheck = self.levelComplete()
+    
+    func gainExperience(experience: Int) -> Int {
+        self.currentLevel = currentLevel + (experience / experienceForNewLevel)
+        return currentLevel
+    }
+    
+    func levelComplete() {
+        if currentLevel < 10 {
+            print("Game is on action")
+        } else {
+            print("Game is done")
+        }
+        
+    }
+    
+    init(firstName: String, secondName: String, experiencePerLevel: Int, intelligence: Int, coins: Int) {
+        self.firstName = firstName
+        self.secondName = secondName
+        self.experienceForNewLevel = experiencePerLevel
+        self.intelligence = intelligence
+        self.coins = coins
+    }
+    
+}
+
+var myElfHero = Elf(firstName: "Sylphy", secondName: "Grayrat", experiencePerLevel: 50, intelligence: 20, coins: 10)
+
+myElfHero.charisma
+myElfHero.gainExperience(experience: 150)
+myElfHero.currentLevel
+myElfHero.coins = 20
+myElfHero.levelComplete()
+myElfHero.levelComplete()
+myElfHero.gameCheck
+myElfHero.gainExperience(experience: 500)
+myElfHero.gameCheck

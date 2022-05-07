@@ -3,6 +3,12 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
+    @IBAction func saveDataWithProperty(_ sender: UIButton) {
+        self.navigationController?.viewControllers.forEach { viewController in
+            (viewController as? ViewController)?.updatedData = dataTextField.text ?? ""
+        }
+    }
+    
     // ...
     @IBOutlet var dataTextField: UITextField!
     

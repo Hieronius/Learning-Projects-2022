@@ -23,9 +23,8 @@
                                 <color key="textColor" systemColor="systemBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEJ-5H-bvi">
-                                <rect key="frame" x="52" y="558" width="317" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEJ-5H-bvi">
+                                <rect key="frame" x="49.5" y="739" width="317" height="37"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                 <state key="normal" title="Button"/>
@@ -49,7 +48,9 @@
                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
                         <constraints>
                             <constraint firstItem="jcf-SX-f6S" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="6IY-Gw-jEt"/>
+                            <constraint firstItem="SEJ-5H-bvi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="1" id="CpA-jK-Gug"/>
                             <constraint firstItem="jcf-SX-f6S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="O3X-0X-RD1"/>
+                            <constraint firstItem="jcf-SX-f6S" firstAttribute="baseline" secondItem="SEJ-5H-bvi" secondAttribute="firstBaseline" constant="40" symbolType="layoutAnchor" id="P7T-WQ-rbf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jcf-SX-f6S" secondAttribute="trailing" constant="100" id="tTs-1e-jLa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jcf-SX-f6S" secondAttribute="bottom" constant="50" id="tsl-XK-sSS"/>
                         </constraints>
@@ -72,18 +73,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rQX-96-cin">
-                                <rect key="frame" x="30" y="144" width="354" height="618"/>
+                                <rect key="frame" x="30" y="394" width="354" height="118"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aoc-ft-B16">
+                                <rect key="frame" x="45" y="542" width="326" height="37"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Сохранить с помощью свойства">
+                                            <attributes>
+                                                <font key="NSFont" size="20" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveDataWithProperty:" destination="so4-ie-rYR" eventType="touchUpInside" id="T2a-a4-p2X"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="T8H-oc-mpg"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
                             <constraint firstItem="T8H-oc-mpg" firstAttribute="trailing" secondItem="rQX-96-cin" secondAttribute="trailing" constant="30" id="MQx-UK-Ons"/>
                             <constraint firstItem="rQX-96-cin" firstAttribute="leading" secondItem="T8H-oc-mpg" secondAttribute="leading" constant="30" id="SdY-Ta-5rd"/>
-                            <constraint firstItem="T8H-oc-mpg" firstAttribute="bottom" secondItem="rQX-96-cin" secondAttribute="bottom" constant="100" id="Wn4-Sr-LZV"/>
-                            <constraint firstItem="rQX-96-cin" firstAttribute="top" secondItem="T8H-oc-mpg" secondAttribute="top" constant="100" id="m30-TF-sQo"/>
+                            <constraint firstItem="Aoc-ft-B16" firstAttribute="centerX" secondItem="IZv-PV-G22" secondAttribute="centerX" constant="1" id="SyZ-0j-04m"/>
+                            <constraint firstItem="T8H-oc-mpg" firstAttribute="bottom" secondItem="rQX-96-cin" secondAttribute="bottom" constant="350" id="Wn4-Sr-LZV"/>
+                            <constraint firstItem="Aoc-ft-B16" firstAttribute="top" secondItem="rQX-96-cin" secondAttribute="bottom" constant="30" id="bgp-KL-JXV"/>
+                            <constraint firstItem="rQX-96-cin" firstAttribute="top" secondItem="T8H-oc-mpg" secondAttribute="top" constant="350" id="m30-TF-sQo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Сцена Б" id="RSY-Cn-973"/>
@@ -120,6 +142,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

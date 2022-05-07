@@ -43,14 +43,36 @@
                                     <action selector="editDataWithProperty:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Clm-aG-ofb"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbP-Pr-szy">
+                                <rect key="frame" x="30" y="559.5" width="354" height="37"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Изменить с помощью segue">
+                                            <attributes>
+                                                <font key="NSFont" size="20" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="so4-ie-rYR" kind="show" identifier="toEditScreen" id="voy-YW-ZxP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
                         <constraints>
+                            <constraint firstItem="vbP-Pr-szy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="6K4-SU-Fhj"/>
                             <constraint firstItem="FGC-8P-wMX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="1" id="6zt-bT-3vs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SEJ-5H-bvi" secondAttribute="trailing" constant="30" id="FSu-8o-vgz"/>
+                            <constraint firstItem="vbP-Pr-szy" firstAttribute="top" secondItem="SEJ-5H-bvi" secondAttribute="bottom" constant="30" id="QZd-jf-KYl"/>
                             <constraint firstItem="SEJ-5H-bvi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="nCD-4l-Zni"/>
                             <constraint firstItem="FGC-8P-wMX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="1" id="r8x-f2-9ae"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vbP-Pr-szy" secondAttribute="trailing" constant="30" id="vL3-pH-i1O"/>
                             <constraint firstItem="SEJ-5H-bvi" firstAttribute="top" secondItem="FGC-8P-wMX" secondAttribute="bottom" constant="30" id="vbV-Eh-NHW"/>
                         </constraints>
                     </view>

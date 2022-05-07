@@ -9,6 +9,26 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // определяем идентификатор segue
+        switch segue.identifier {
+        case "toEditScreen":
+            // Обработка перехода
+            prepareEditScreen(segue)
+        default:
+            break
+        }
+    }
+    
+    // Подготовка к переходу на экран редактирования
+    private func prepareEditScreen(_ segue: UIStoryboardSegue) {
+        // Безопасно извлекаем опциональное значение
+        guard let destinationController = segue.destination as? SecondViewController else {
+            return
+        }
+        destinationController.updatingData = dataLabel.text ?? ""
+    }
+    
     var updatedData: String = "Test data"
     
     override func viewWillAppear(_ animated: Bool) {

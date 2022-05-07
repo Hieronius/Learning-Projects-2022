@@ -1,5 +1,7 @@
 // practice with classes and methods
 
+import Darwin
+
 // class 1
 
 class Account {
@@ -278,3 +280,60 @@ myElfHero.levelComplete()
 myElfHero.gameCheck
 myElfHero.gainExperience(experience: 500)
 myElfHero.gameCheck
+
+class Orc {
+    
+    var firstName: String
+    var secondName: String
+    
+    var strength: Int
+    var agility: Int
+    var vitality: Int
+    var intelligence: Int
+    
+    var charisma: Int {
+        get {
+            self.charisma = intelligence / 2
+        }
+        
+        set(newCharisma) {
+            self.intelligence = newCharisma * 2
+    }
+        
+}
+    var money: Int {
+        willSet(newMoney) {
+            print("The orc had \(money) coins and now he has \(newMoney) coins")
+        }
+        didSet(oldMoney) {
+            print("The orc had been earned \(money - oldMoney) coins")
+        }
+    }
+    
+    lazy var talant: String = { () -> String in
+        if strength + agility > intelligence * vitality {
+            print("This orc has power in rough strenght")
+            return "Rough strenght"
+        } else {
+            print("Amazing but this orc can be a magicial")
+            return "Magic eye"
+        }
+            
+    }()
+    
+    func attack() -> Int {
+        var damage = 0
+        print("The Orc dealt \(damage) damage")
+        damage = strength / 10
+        return damage
+              
+    }
+    
+    func block() -> Int {
+        var block = 0
+        print("The orc blocked \(block) damage")
+        block = vitality / 10
+        return block
+    }
+    
+}

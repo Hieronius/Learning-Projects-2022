@@ -3,6 +3,8 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
+    var updatingData: String = " "  
+    
     @IBAction func saveDataWithProperty(_ sender: UIButton) {
         self.navigationController?.viewControllers.forEach { viewController in
             (viewController as? ViewController)?.updatedData = dataTextField.text ?? ""
@@ -12,7 +14,7 @@ class SecondViewController: UIViewController {
     // ...
     @IBOutlet var dataTextField: UITextField!
     
-    var updatingData: String = " "
+   
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

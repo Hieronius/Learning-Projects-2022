@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBAction func unwindToFirstScreen(_ segue: UIStoryboardSegue) {}
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // определяем идентификатор segue
         switch segue.identifier {

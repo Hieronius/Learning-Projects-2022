@@ -117,11 +117,32 @@
                                     <action selector="saveDataWithProperty:" destination="so4-ie-rYR" eventType="touchUpInside" id="T2a-a4-p2X"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zop-aG-Cdw">
+                                <rect key="frame" x="30" y="563" width="354" height="37"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Сохранить с помощью unwind">
+                                            <attributes>
+                                                <font key="NSFont" size="20" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="RvE-qD-dcb" kind="unwind" unwindAction="unwindToFirstScreen:" id="XOG-Zr-VLg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="T8H-oc-mpg"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
+                            <constraint firstItem="T8H-oc-mpg" firstAttribute="trailing" secondItem="zop-aG-Cdw" secondAttribute="trailing" constant="30" id="2B8-5g-eiQ"/>
                             <constraint firstItem="T8H-oc-mpg" firstAttribute="trailing" secondItem="rQX-96-cin" secondAttribute="trailing" constant="30" id="MQx-UK-Ons"/>
+                            <constraint firstItem="zop-aG-Cdw" firstAttribute="leading" secondItem="T8H-oc-mpg" secondAttribute="leading" constant="30" id="N9q-cj-3x2"/>
                             <constraint firstItem="rQX-96-cin" firstAttribute="leading" secondItem="T8H-oc-mpg" secondAttribute="leading" constant="30" id="SdY-Ta-5rd"/>
                             <constraint firstItem="Aoc-ft-B16" firstAttribute="centerX" secondItem="IZv-PV-G22" secondAttribute="centerX" constant="1" id="SyZ-0j-04m"/>
                             <constraint firstItem="Aoc-ft-B16" firstAttribute="top" secondItem="rQX-96-cin" secondAttribute="bottom" constant="30" id="bAb-md-xix"/>
@@ -129,6 +150,7 @@
                             <constraint firstItem="rQX-96-cin" firstAttribute="centerX" secondItem="IZv-PV-G22" secondAttribute="centerX" constant="1" id="enA-Ly-gf9"/>
                             <constraint firstItem="rQX-96-cin" firstAttribute="centerY" secondItem="IZv-PV-G22" secondAttribute="centerY" constant="1" id="qWr-jF-UYN"/>
                             <constraint firstItem="T8H-oc-mpg" firstAttribute="trailing" secondItem="Aoc-ft-B16" secondAttribute="trailing" constant="30" id="vXa-J2-mFk"/>
+                            <constraint firstItem="zop-aG-Cdw" firstAttribute="top" secondItem="Aoc-ft-B16" secondAttribute="bottom" constant="30" id="zum-m6-Fgg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Сцена Б" largeTitleDisplayMode="always" id="RSY-Cn-973"/>
@@ -137,6 +159,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sbx-u2-D9h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="RvE-qD-dcb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1826" y="80"/>
         </scene>

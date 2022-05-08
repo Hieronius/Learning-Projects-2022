@@ -3,6 +3,26 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // определяем идентификатор segue
+        switch segue.identifier {
+        case "toFirstScreen":
+            // обрабатываем переход
+            prepareFirstScreen(segue)
+        default:
+            break
+        }
+    }
+    
+    // Подготовка к переходу на первый экран
+    private func prepareFirstScreen(_ segue: UIStoryboardSegue) {
+        // безопасно извлекаем опциональное значение
+        guard let destinationController = segue.destination as? ViewController else {
+            return
+        }
+        destinationController.updatedData = dataTextField.text ?? ""
+    }
+    
     var updatingData: String = " "  
     
     @IBAction func saveDataWithProperty(_ sender: UIButton) {

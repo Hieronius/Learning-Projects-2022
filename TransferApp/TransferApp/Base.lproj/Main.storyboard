@@ -133,7 +133,7 @@
                                     </attributedString>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="RvE-qD-dcb" kind="unwind" unwindAction="unwindToFirstScreen:" id="XOG-Zr-VLg"/>
+                                    <segue destination="RvE-qD-dcb" kind="unwind" identifier="toFirstScreen" unwindAction="unwindToFirstScreen:" id="XOG-Zr-VLg"/>
                                 </connections>
                             </button>
                         </subviews>

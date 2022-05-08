@@ -1,13 +1,31 @@
-//
-//  ViewController.swift
-//  TransferApp
-//
-//  Created by Арсентий Халимовский on 06.05.2022.
-//
+
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, DataUpdateProtocol {
+    
+    // Переход от А до Б
+    // Передача данных с помощью свойства и установка делегата
+    @IBAction func editDataWithDelegate(_ sender: UIButton) {
+        // получаем вью контроллер
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let editScreen = storyboard.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
+        
+        // передаем данные
+        editScreen.updatingData = dataLabel.text ?? ""
+        
+        // устанавливаем текущий класс в качестве делегата
+        editScreen.handleUpdatedDataDelegate = self
+        
+        // открываем следующий экран
+        self.navigationController?.pushViewController(editScreen, animated: true)
+    }
+    
+    
+    func onDataUpdate(data: String) {
+        updatedData = data
+        updateLabel(withText: data)
+    }
     
     @IBAction func unwindToFirstScreen(_ segue: UIStoryboardSegue) {}
     

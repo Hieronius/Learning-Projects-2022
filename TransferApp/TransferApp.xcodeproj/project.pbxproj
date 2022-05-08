@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD53E41728274F250087CE68 /* DataUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53E41628274F250087CE68 /* DataUpdate.swift */; };
 		DDB101672824C47500D307AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB101662824C47500D307AD /* AppDelegate.swift */; };
 		DDB101692824C47500D307AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB101682824C47500D307AD /* SceneDelegate.swift */; };
 		DDB1016B2824C47500D307AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB1016A2824C47500D307AD /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD53E41628274F250087CE68 /* DataUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUpdate.swift; sourceTree = "<group>"; };
 		DDB101632824C47500D307AD /* TransferApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransferApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB101662824C47500D307AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDB101682824C47500D307AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				DDB101682824C47500D307AD /* SceneDelegate.swift */,
 				DDB1016A2824C47500D307AD /* ViewController.swift */,
 				DDB1017A2824C92F00D307AD /* SecondViewController.swift */,
+				DD53E41628274F250087CE68 /* DataUpdate.swift */,
 				DDB1016C2824C47500D307AD /* Main.storyboard */,
 				DDB1016F2824C47800D307AD /* Assets.xcassets */,
 				DDB101712824C47800D307AD /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 			files = (
 				DDB1017B2824C93000D307AD /* SecondViewController.swift in Sources */,
 				DDB1016B2824C47500D307AD /* ViewController.swift in Sources */,
+				DD53E41728274F250087CE68 /* DataUpdate.swift in Sources */,
 				DDB101672824C47500D307AD /* AppDelegate.swift in Sources */,
 				DDB101692824C47500D307AD /* SceneDelegate.swift in Sources */,
 			);

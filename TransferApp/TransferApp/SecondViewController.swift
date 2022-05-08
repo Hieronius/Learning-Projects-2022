@@ -3,6 +3,19 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
+    var handleUpdatedDataDelegate: DataUpdateProtocol?
+    
+    // Переход от Б к А
+    // Передача данных с помощью делегата
+    @IBAction func saveDataWithDelegate (_ sender: UIButton) {
+        // получаем обновленные данные
+        let updateData = dataTextField.text ?? ""
+        // вызываем метод делегата
+        handleUpdatedDataDelegate?.onDataUpdate(data: updateData)
+        // возвращаемся на предыдущий экран
+        navigationController?.popViewController(animated: true)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // определяем идентификатор segue
         switch segue.identifier {

@@ -81,10 +81,30 @@
                                     <action selector="editDataWithDelegate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p1m-ar-X5X"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYm-3v-dDL">
+                                <rect key="frame" x="30" y="693.5" width="354" height="37"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Изменить с помощью замыкания">
+                                            <attributes>
+                                                <font key="NSFont" size="20" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="editDataWithClosure:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dbB-Zj-Eh1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
                         <constraints>
+                            <constraint firstItem="lYm-3v-dDL" firstAttribute="top" secondItem="WLg-Kh-UmB" secondAttribute="bottom" constant="30" id="37c-Mi-7Ke"/>
                             <constraint firstItem="vbP-Pr-szy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="6K4-SU-Fhj"/>
                             <constraint firstItem="FGC-8P-wMX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="1" id="6zt-bT-3vs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SEJ-5H-bvi" secondAttribute="trailing" constant="30" id="FSu-8o-vgz"/>
@@ -93,7 +113,9 @@
                             <constraint firstItem="WLg-Kh-UmB" firstAttribute="top" secondItem="vbP-Pr-szy" secondAttribute="bottom" constant="30" id="VUq-0J-SCJ"/>
                             <constraint firstItem="WLg-Kh-UmB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="jJ4-rJ-aPw"/>
                             <constraint firstItem="SEJ-5H-bvi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="nCD-4l-Zni"/>
+                            <constraint firstItem="lYm-3v-dDL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="pB3-cP-3Di"/>
                             <constraint firstItem="FGC-8P-wMX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="1" id="r8x-f2-9ae"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lYm-3v-dDL" secondAttribute="trailing" constant="30" id="svV-cT-4dt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vbP-Pr-szy" secondAttribute="trailing" constant="30" id="vL3-pH-i1O"/>
                             <constraint firstItem="SEJ-5H-bvi" firstAttribute="top" secondItem="FGC-8P-wMX" secondAttribute="bottom" constant="30" id="vbV-Eh-NHW"/>
                         </constraints>
@@ -177,12 +199,32 @@
                                     <action selector="saveDataWithDelegate:" destination="so4-ie-rYR" eventType="touchUpInside" id="MnE-Vj-cod"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnl-jh-6CP">
+                                <rect key="frame" x="30" y="697" width="354" height="37"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Сохранить с помощью замыкания">
+                                            <attributes>
+                                                <font key="NSFont" size="20" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveDataWithClosure:" destination="so4-ie-rYR" eventType="touchUpInside" id="kBh-hL-EAX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="T8H-oc-mpg"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
                             <constraint firstItem="T8H-oc-mpg" firstAttribute="trailing" secondItem="zop-aG-Cdw" secondAttribute="trailing" constant="30" id="2B8-5g-eiQ"/>
                             <constraint firstItem="lOR-6r-Cd4" firstAttribute="top" secondItem="zop-aG-Cdw" secondAttribute="bottom" constant="30" id="6AZ-8l-VRo"/>
+                            <constraint firstItem="xnl-jh-6CP" firstAttribute="leading" secondItem="T8H-oc-mpg" secondAttribute="leading" constant="30" id="Eqv-ee-8CT"/>
                             <constraint firstItem="T8H-oc-mpg" firstAttribute="trailing" secondItem="rQX-96-cin" secondAttribute="trailing" constant="30" id="MQx-UK-Ons"/>
                             <constraint firstItem="zop-aG-Cdw" firstAttribute="leading" secondItem="T8H-oc-mpg" secondAttribute="leading" constant="30" id="N9q-cj-3x2"/>
                             <constraint firstItem="rQX-96-cin" firstAttribute="leading" secondItem="T8H-oc-mpg" secondAttribute="leading" constant="30" id="SdY-Ta-5rd"/>
@@ -191,8 +233,10 @@
                             <constraint firstItem="Aoc-ft-B16" firstAttribute="top" secondItem="rQX-96-cin" secondAttribute="bottom" constant="30" id="bAb-md-xix"/>
                             <constraint firstItem="Aoc-ft-B16" firstAttribute="leading" secondItem="T8H-oc-mpg" secondAttribute="leading" constant="30" id="c78-gn-CwR"/>
                             <constraint firstItem="rQX-96-cin" firstAttribute="centerX" secondItem="IZv-PV-G22" secondAttribute="centerX" constant="1" id="enA-Ly-gf9"/>
+                            <constraint firstItem="T8H-oc-mpg" firstAttribute="trailing" secondItem="xnl-jh-6CP" secondAttribute="trailing" constant="30" id="gMa-OF-mQh"/>
                             <constraint firstItem="lOR-6r-Cd4" firstAttribute="leading" secondItem="T8H-oc-mpg" secondAttribute="leading" constant="30" id="nBA-gV-JRH"/>
                             <constraint firstItem="rQX-96-cin" firstAttribute="centerY" secondItem="IZv-PV-G22" secondAttribute="centerY" constant="1" id="qWr-jF-UYN"/>
+                            <constraint firstItem="xnl-jh-6CP" firstAttribute="top" secondItem="lOR-6r-Cd4" secondAttribute="bottom" constant="30" id="uUO-Zc-ufq"/>
                             <constraint firstItem="T8H-oc-mpg" firstAttribute="trailing" secondItem="Aoc-ft-B16" secondAttribute="trailing" constant="30" id="vXa-J2-mFk"/>
                             <constraint firstItem="zop-aG-Cdw" firstAttribute="top" secondItem="Aoc-ft-B16" secondAttribute="bottom" constant="30" id="zum-m6-Fgg"/>
                         </constraints>

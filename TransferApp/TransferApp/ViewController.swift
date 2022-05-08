@@ -4,6 +4,27 @@ import UIKit
 
 class ViewController: UIViewController, DataUpdateProtocol {
     
+    
+    // Переход от А к Б
+    // Передача данных с помощью свойства и инициализация замыкания
+    @IBAction func editDataWithClosure(_ sender: UIButton) {
+        // получаем вьюконтроллер
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let editScreen = storyboard.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
+        
+        // передаем данные
+        editScreen.updatingData = dataLabel.text ?? ""
+        
+        // передаем необходимое замыкание
+        editScreen.completionHandler = { [unowned self] updatedValue in
+            updatedData = updatedValue
+            updateLabel(withText: updatedValue)
+        }
+        
+        // открываем следующий экран
+        self.navigationController?.pushViewController(editScreen, animated: true)
+    }
+    
     // Переход от А до Б
     // Передача данных с помощью свойства и установка делегата
     @IBAction func editDataWithDelegate(_ sender: UIButton) {

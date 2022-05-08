@@ -293,7 +293,7 @@ class Orc {
     
     var charisma: Int {
         get {
-            self.charisma = intelligence / 2
+          intelligence / 2
         }
         
         set(newCharisma) {
@@ -311,29 +311,96 @@ class Orc {
     }
     
     lazy var talant: String = { () -> String in
-        if strength + agility > intelligence * vitality {
+        if strength + agility > intelligence + vitality {
             print("This orc has power in rough strenght")
             return "Rough strenght"
         } else {
-            print("Amazing but this orc can be a magicial")
+            print("Amazing but this orc can be a magician")
             return "Magic eye"
         }
             
     }()
     
+    lazy var name: String = { () -> String in
+        firstName + " " + secondName
+    }()
+    
     func attack() -> Int {
         var damage = 0
+        damage = damage + strength / 10
         print("The Orc dealt \(damage) damage")
-        damage = strength / 10
         return damage
               
     }
     
     func block() -> Int {
         var block = 0
+        block = block + vitality / 10
         print("The orc blocked \(block) damage")
-        block = vitality / 10
         return block
     }
     
+    init(firstName: String, secondName: String, strength: Int, agility: Int, vitality: Int, intelligence: Int, money: Int) {
+        self.firstName = firstName
+        self.secondName = secondName
+        self.strength = strength
+        self.agility = agility
+        self.vitality = vitality
+        self.intelligence = intelligence
+        self.money = money
+    }
+    
 }
+var orc = Orc(firstName: "Lock", secondName: "Tumar", strength: 25, agility: 15, vitality: 20, intelligence: 10, money: 100)
+orc.name
+orc.money = 200
+orc.talant
+orc.attack()
+orc.block()
+
+class orcSlash: Orc {
+    
+    var weaponType: String
+    var weaponDamage: Int
+    var armor: Int
+    
+    var criticalHit: Int {
+        if strength + agility > Int.random(in: 1...50) {
+            print("Orc Slash caused double damage!")
+            return strength / 5
+        } else {
+            print("There is a normal damage")
+            return strength / 10
+        }
+    }
+    
+    var specialTalant: String {
+        if weaponDamage + strength + agility > 30 {
+            print("Orc Slash has gigantic power")
+            return "Gigantic power"
+        } else {
+            print("Orc slash has strong hands")
+            return("Strong hands")
+        }
+    }
+    
+    init(weaponType: String, weaponDamage: Int, armor: Int, firstName: String, secondName: String, strength: Int, agility: Int, vitality: Int, intelligence: Int, money: Int) {
+        self.weaponType = weaponType
+        self.weaponDamage = weaponDamage
+        self.armor = armor
+        super.init(firstName: firstName, secondName: secondName, strength: strength, agility: agility, vitality: vitality, intelligence: intelligence, money: money)
+        
+        
+    }
+    
+}
+
+var newOrcSlash = orcSlash(weaponType: "Axe", weaponDamage: 10, armor: 5, firstName: "Rougka", secondName: "Drook", strength: 25, agility: 20, vitality: 25, intelligence: 15, money: 250)
+
+newOrcSlash.attack()
+newOrcSlash.block()
+newOrcSlash.name
+newOrcSlash.criticalHit
+newOrcSlash.charisma
+newOrcSlash.talant
+newOrcSlash.specialTalant

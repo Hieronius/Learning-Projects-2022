@@ -46,12 +46,23 @@ toDoList.saveApp(app: <#T##AppStoreProtocol#>)
 struct App {
     var appName: String
     var appCategory: String
+    var feedBack: [String]?
     
 }
+
+
 
 struct AppStore {
     
     var appMarket = [App]()
+    
+    var appsFeedback = [String]()
+    
+    mutating func  addFeedback(app: App, feedback: String) -> [String] {
+        print("New feedback for \(app.appName) - \(feedback)")
+        appsFeedback.append(feedback)
+        return appsFeedback
+    }
     
     mutating func save(app: App) -> [App] {
         appMarket.append(app)
@@ -67,11 +78,16 @@ struct AppStore {
 
 var toDoList = App(appName: "ToDoList", appCategory: "Self-Development")
 var maps = App(appName: "Apple Maps", appCategory: "Location")
+var game = App(appName: "Star Craft", appCategory: "Games", feedBack: ["Game is so cool!"])
 
 var appStore = AppStore()
 appStore.save(app: toDoList)
 appStore.save(app: maps)
 appStore.appMarket
 appStore.load(app: toDoList)
+
+appStore.appMarket[]
+
+// May be a good idea to make sabscript for AppStore array so i can take access to specific app and change properties.
 
 

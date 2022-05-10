@@ -35,6 +35,17 @@ class TaskListController: UITableViewController {
     }
 
     // MARK: - Table view data source
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        var title: String?
+        let tasksType = sectionsTypePosition[section]
+        if tasksType == .important {
+            title = "Важные"
+        } else if tasksType == .normal {
+            title = "Текущие"
+        }
+        return title
+    }
 
     // количество секций в таблице
     override func numberOfSections(in tableView: UITableView) -> Int {

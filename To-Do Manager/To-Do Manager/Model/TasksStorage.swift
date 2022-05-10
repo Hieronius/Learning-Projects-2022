@@ -6,6 +6,7 @@ protocol TasksStorageProtocol {
 
 // Сущность "Хранилище задач"
 class TasksStorage: TasksStorageProtocol {
+    
     func loadTasks() -> [TaskProtocol] {
         // временная реализация, возвращающая тестовую коллекцию задач
         let testTasks: [TaskProtocol] = [

@@ -1,13 +1,10 @@
-//
-//  TaskCell.swift
-//  To-Do Manager
-//
-//  Created by Арсентий Халимовский on 09.05.2022.
-//
 
 import UIKit
 
 class TaskCell: UITableViewController {
+    
+    @IBOutlet var symbol: UILabel!
+    @IBOutlet var tittle: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()

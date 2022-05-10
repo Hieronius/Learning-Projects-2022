@@ -30,7 +30,12 @@ class TaskListController: UITableViewController {
             tasks[task.type]?.append(task)
         }
         
-
+        // Сортировка списка задач
+        for (tasksGroupPriority, tasksGroup) in tasks {
+            tasks[tasksGroupPriority] = tasksGroup.sorted { task1, task2 in
+                task1.status.rawValue < task2.status.rawValue
+            }
+        }
        
     }
 

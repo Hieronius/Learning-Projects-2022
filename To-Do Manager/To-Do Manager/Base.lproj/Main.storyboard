@@ -48,7 +48,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskCellStack" id="3ar-V1-R4A" customClass="TaskCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskCellStack" id="3ar-V1-R4A" customClass="TaskCell" customModule="To_Do_Manager" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="87.5" width="414" height="21"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3ar-V1-R4A" id="2jG-O0-Qhh">
@@ -81,8 +81,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="symbol" destination="HdB-Dt-Lfr" id="vp2-SN-64u"/>
-                                    <outlet property="tittle" destination="frb-R7-tK4" id="8EY-fK-X3r"/>
+                                    <outlet property="symbol" destination="HdB-Dt-Lfr" id="mFq-yr-RQB"/>
+                                    <outlet property="tittle" destination="frb-R7-tK4" id="Pty-SR-W7h"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

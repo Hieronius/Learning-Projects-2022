@@ -1,9 +1,4 @@
-//
-//  AppDelegate.swift
-//  To-Do Manager
-//
-//  Created by Арсентий Халимовский on 08.05.2022.
-//
+
 
 import UIKit
 

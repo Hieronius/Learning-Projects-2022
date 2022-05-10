@@ -58,7 +58,7 @@ class TaskListController: UITableViewController {
     // ячейка на основе ограничений
     private func getConfiguredTaskCell_constraints(for indexPath: IndexPath) -> UITableViewCell {
         // загружаем прототип ячейки по идентификатору
-        let cell = tableView.dequeueReusableCell(withIdentifier: "taskCellStack", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "taskCellConstraints", for: indexPath)
         // получаем данные о задаче, которую необходимо вывести в ячейке
         let taskType = sectionsTypePosition[indexPath.section]
         guard let currentTask = tasks[taskType]?[indexPath.row] else {

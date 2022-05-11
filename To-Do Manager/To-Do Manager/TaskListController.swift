@@ -60,7 +60,18 @@ class TaskListController: UITableViewController {
         // хранилище задач
         var tasksStorage: TasksStorageProtocol = TasksStorage() // May be can be useful in my AppStore app
         // коллекция задач
-        var tasks: [TaskPriority: [TaskProtocol]] = [:] // can be useful too
+    var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
+        didSet {
+            // Сортировка списка задач
+            for (tasksGroupPriority, tasksGroup) in tasks {
+                tasks[tasksGroupPriority] = tasksGroup.sorted { task1, task2 in
+                    let task1position = tasksStatusPosition.firstIndex(of: task1.status) ?? 0
+                    let task2position = tasksStatusPosition.firstIndex(of: task2.status) ?? 0
+                    return task1position < task2position
+                }
+            }
+        }
+    }
         
         // порядок отображения секций по типам
         // индекс в массиве соответствует индексу секции в таблице
@@ -83,14 +94,7 @@ class TaskListController: UITableViewController {
             tasks[task.type]?.append(task)
         }
         
-        // Сортировка списка задач
-        for (tasksGroupPriority, tasksGroup) in tasks {
-            tasks[tasksGroupPriority] = tasksGroup.sorted { task1, task2 in
-                let task1position = tasksStatusPosition.firstIndex(of: task1.status) ?? 0
-                let task2position = tasksStatusPosition.firstIndex(of: task2.status) ?? 0
-                return task1position < task2position
-            }
-        }
+        
        
     }
 

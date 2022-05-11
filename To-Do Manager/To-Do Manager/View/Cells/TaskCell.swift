@@ -4,7 +4,7 @@ import UIKit
 class TaskCell: UITableViewCell {
     
     @IBOutlet var symbol: UILabel!
-    @IBOutlet var tittle: UILabel!
+    @IBOutlet var title: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

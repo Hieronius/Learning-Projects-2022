@@ -82,7 +82,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="symbol" destination="HdB-Dt-Lfr" id="mFq-yr-RQB"/>
-                                    <outlet property="tittle" destination="frb-R7-tK4" id="Pty-SR-W7h"/>
+                                    <outlet property="title" destination="frb-R7-tK4" id="4tA-y7-6kg"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

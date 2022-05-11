@@ -3,6 +3,9 @@
 import UIKit
 
 class TaskListController: UITableViewController {
+    
+        // порядок отображения задач по их статусу
+        var tasksStatusPosition: [TaskStatus] = [.planned, .completed]
         
         // хранилище задач
         var tasksStorage: TasksStorageProtocol = TasksStorage() // May be can be useful in my AppStore app
@@ -33,7 +36,9 @@ class TaskListController: UITableViewController {
         // Сортировка списка задач
         for (tasksGroupPriority, tasksGroup) in tasks {
             tasks[tasksGroupPriority] = tasksGroup.sorted { task1, task2 in
-                task1.status.rawValue < task2.status.rawValue
+                let task1position = tasksStatusPosition.firstIndex(of: task1.status) ?? 0
+                let task2position = tasksStatusPosition.firstIndex(of: task2.status) ?? 0
+                return task1position < task2position
             }
         }
        

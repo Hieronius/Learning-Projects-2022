@@ -4,6 +4,27 @@ import UIKit
 
 class TaskListController: UITableViewController {
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // 1. Проверяем существование задачи
+        let taskType = sectionsTypePosition[indexPath.section]
+        guard let _ = tasks[taskType]?[indexPath.row] else {
+            return
+        }
+        
+        // 2. Убеждаемся, что задача не является выполненной
+        guard tasks[taskType]![indexPath.row].status == .planned else {
+            // снимаем выделение со строки
+            tableView.deselectRow(at: indexPath, animated: true)
+            return
+        }
+        
+        // 3. Отмечаем задачу как выполненную
+        tasks[taskType]![indexPath.row].status = .completed
+        
+        // 4. Перезагружаем секцию таблицы
+        tableView.reloadSections(IndexSet(arrayLiteral: indexPath.section), with: .automatic)
+    }
+    
     
         // ячейка на основе стека
         private func getConfiguredTaskCell_stack(for indexPath: IndexPath) -> UITableViewCell {

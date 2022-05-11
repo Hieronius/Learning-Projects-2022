@@ -86,8 +86,6 @@ appStore.save(app: maps)
 appStore.appMarket
 appStore.load(app: toDoList)
 
-appStore.appMarket[]
-
 // May be a good idea to make sabscript for AppStore array so i can take access to specific app and change properties.
 
 

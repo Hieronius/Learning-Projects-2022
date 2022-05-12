@@ -5,6 +5,16 @@ import UIKit
 class TaskListController: UITableViewController {
     
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        let taskType = sectionsTypePosition[indexPath.section]
+        // удаляем задачу
+        tasks[taskType]?.remove(at: indexPath.row)
+        // удаляем строку, соответствующую задаче
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
+    
+    
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         // Получаем данные о задаче, которую необходимо перевести в статус "запланирована"
         let taskType = sectionsTypePosition[indexPath.section]

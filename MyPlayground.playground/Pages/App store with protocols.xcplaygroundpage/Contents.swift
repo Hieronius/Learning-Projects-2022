@@ -6,29 +6,6 @@ var greeting = "Hello, playground"
 
 //: [Next](@next)
 
-protocol AppProtocol {
-    
-    var appName: String { get set }
-    var appCategory: [String]? { get set }
-    
-    var feedBack: [String]? { get set }
-    var score: [Int]? { get set }
-}
-
-struct App: AppProtocol {
-    
-    var appName: String
-    var appCategory: [String]?
-    
-    var feedBack: [String]?
-    var score: [Int]?
-    
-}
-
-
-var myToDoList = App(appName: "ToDo list", appCategory: ["Self-development"], feedBack: ["It's a very nice app", "Very convenient app"], score: [5, 5, 4, 5])
-var myMaps = App(appName: "Apple Maps", appCategory: ["Maps"])
-myMaps.feedBack = ["Very convenient maps"]
 
 /*
  extension AppProtocol {
@@ -41,7 +18,7 @@ myToDoList.printFeedBack()
 
 protocol AppStoreProtocol {
     
-    var appStorage: [App]? { get set }
+    var appStorage: [String]? { get set }
     
     func save()
         
@@ -54,3 +31,40 @@ protocol AppStoreProtocol {
     func leftScore()
     
 }
+
+struct AppStore : AppStoreProtocol {
+    
+    var appStorage: [String]?
+    
+    mutating func save(app: String?) -> [String]? {
+        appStorage!.append(app!)
+        return appStorage
+    }
+    
+    func load(app: String?) {
+        print("\(app) was loaded")
+    }
+    
+    mutating func delete(app: String?) -> [String]? {
+        var appIndex = -1
+        for appName in appStorage! {
+            appIndex += 1
+            if appName == app! {
+                break
+            }
+        }
+        appStorage?.remove(at: appIndex)
+        return appStorage
+    }
+    
+    func leftFeedback(app: String?) {
+        <#code#>
+    }
+}
+
+var toDoListApp = "To-Do list"
+var appleMapsApp = "Apple maps"
+var counterStrikeApp = "Counter Strike"
+var plannerApp = "Planer"
+
+

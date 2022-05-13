@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD1EC222282DF3B300CBD13B /* TaskEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1EC221282DF3B300CBD13B /* TaskEditController.swift */; };
 		DD53E4252827634E0087CE68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53E4242827634E0087CE68 /* AppDelegate.swift */; };
 		DD53E4272827634E0087CE68 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53E4262827634E0087CE68 /* SceneDelegate.swift */; };
 		DD53E42C2827634E0087CE68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD53E42A2827634E0087CE68 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD1EC221282DF3B300CBD13B /* TaskEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditController.swift; sourceTree = "<group>"; };
 		DD53E4212827634E0087CE68 /* To-Do Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "To-Do Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD53E4242827634E0087CE68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD53E4262827634E0087CE68 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				DD53E42D282763510087CE68 /* Assets.xcassets */,
 				DD53E42F282763510087CE68 /* LaunchScreen.storyboard */,
 				DD53E432282763510087CE68 /* Info.plist */,
+				DD1EC221282DF3B300CBD13B /* TaskEditController.swift */,
 			);
 			path = "To-Do Manager";
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				DD53E4272827634E0087CE68 /* SceneDelegate.swift in Sources */,
 				DD5B15CE2828C7B200145847 /* TaskCell.swift in Sources */,
 				DD53E439282765380087CE68 /* TaskListController.swift in Sources */,
+				DD1EC222282DF3B300CBD13B /* TaskEditController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

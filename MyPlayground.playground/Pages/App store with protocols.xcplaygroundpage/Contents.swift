@@ -1,10 +1,9 @@
-//: [Previous](@previous)
 
 import Foundation
 
 var greeting = "Hello, playground"
 
-//: [Next](@next)
+
 
 
 /*
@@ -20,6 +19,8 @@ protocol AppStoreProtocol {
     
     var appStorage: [String]? { get set }
     
+    // var appStorageByCategory
+    
     func save()
         
     func load()
@@ -31,6 +32,8 @@ protocol AppStoreProtocol {
     func leftScore()
     
 }
+
+typealias App = (name: String, category: String, feedback: String?, score: String?)
 
 struct AppStore : AppStoreProtocol {
     
@@ -57,7 +60,7 @@ struct AppStore : AppStoreProtocol {
         return appStorage
     }
     
-    func leftFeedback(app: String?) {
+    func leftFeedback(app: String?, feedback: String) {
         <#code#>
     }
 }

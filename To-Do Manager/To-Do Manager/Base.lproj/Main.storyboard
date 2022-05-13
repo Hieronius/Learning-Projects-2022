@@ -174,6 +174,9 @@
                                                 <constraint firstItem="gMk-6l-BH9" firstAttribute="leading" secondItem="xN8-52-oMc" secondAttribute="leadingMargin" id="nxX-WJ-FqM"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Fvo-zG-YG2" kind="show" id="k4b-QG-NAF"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="DIu-3g-bCN">
                                         <rect key="frame" x="0.0" y="137" width="414" height="43.5"/>
@@ -200,6 +203,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lb8-th-DmR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1277" y="98"/>
+        </scene>
+        <!--Task Type Controller-->
+        <scene sceneID="uzM-Ry-5iz">
+            <objects>
+                <tableViewController id="Fvo-zG-YG2" customClass="TaskTypeController" customModule="To_Do_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="FFP-tB-wKX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="sectionIndexBackgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="Fvo-zG-YG2" id="Mpy-kQ-tL5"/>
+                            <outlet property="delegate" destination="Fvo-zG-YG2" id="Rku-9Y-0tG"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="geI-hz-FKr"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EgC-kr-AZF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2058" y="98"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="z5i-Kv-iRX">

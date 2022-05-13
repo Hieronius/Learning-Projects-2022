@@ -5,6 +5,33 @@ import UIKit
 class TaskListController: UITableViewController {
     
     
+    // ручная сортировка списка задач
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        // секция, из которой происходит перемещение
+        let taskTypeFrom = sectionsTypePosition[sourceIndexPath.section]
+        // секция, в которую происходит перемещение
+        let taskTypeTo = sectionsTypePosition[destinationIndexPath.section]
+        
+        // безопасно извлекаем задачу, тем самым копируем ее
+        guard let movedTask = tasks[taskTypeFrom]?[sourceIndexPath.row] else {
+            return
+            
+        }
+        
+        // Удаляем задачу с места, откуда она перенесена
+        tasks[taskTypeFrom]!.remove(at: sourceIndexPath.row)
+        // Вставляем задачу на новую позицию
+        tasks[taskTypeTo]!.insert(movedTask, at: destinationIndexPath.row)
+        // если секция изменилась, изменяем тип задачи в соответствии с новой позицией
+        if taskTypeFrom != taskTypeTo {
+            tasks[taskTypeTo]![destinationIndexPath.row].type = taskTypeTo
+        }
+        
+        // обновляем данные
+        tableView.reloadData()
+    }
+    
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         let taskType = sectionsTypePosition[indexPath.section]

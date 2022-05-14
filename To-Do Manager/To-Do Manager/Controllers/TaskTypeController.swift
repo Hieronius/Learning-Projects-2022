@@ -7,7 +7,7 @@ class TaskTypeController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 1. Получение переиспользуемой кастомной ячейки по ее идентификатору
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TaskTypeCell", for: indexPath) as! TaskTypeCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TaskTypeCellTableViewCell", for: indexPath) as! TaskTypeCellTableViewCell
         
         // 2. Получаем текущий элемент, информация о котором должна быть выведена в строке
         let typeDescription = taskTypesInformation[indexPath.row]
@@ -43,10 +43,10 @@ class TaskTypeController: UITableViewController {
         super.viewDidLoad()
         
         // 1. Получение значения типа UINib, соответствующего xib-файлу кастомной ячейки
-        let cellTypeNib = UINib(nibName: "TaskTypeCell", bundle: nil)
+        let cellTypeNib = UINib(nibName: "TaskTypeCellTableViewCell", bundle: nil)
         
         // 2. Регистрация кастомной ячейки в табличном представлении
-        tableView.register(cellTypeNib, forCellReuseIdentifier: "TaskTypeCell")
+        tableView.register(cellTypeNib, forCellReuseIdentifier: "TaskTypeCellTableViewCell")
 
         
     }

@@ -11,10 +11,10 @@ class TaskEditController: UITableViewController {
     
     @IBOutlet var taskTitle: UITextField!
     
-    var doAfterEdit: ((String, TaskPriority, TaskStatus) -> Void?)
+    var doAfterEdit: ((String, TaskPriority, TaskStatus) -> Void)?
     
     // Параметры задачи
-    var taskText = " "
+    var taskText = ""
     var taskType: TaskPriority = .normal
     var taskStatus: TaskStatus = .planned
     
@@ -23,6 +23,7 @@ class TaskEditController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
 }
 
     override func viewDidLoad() {

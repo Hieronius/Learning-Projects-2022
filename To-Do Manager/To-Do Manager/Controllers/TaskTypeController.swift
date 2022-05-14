@@ -19,6 +19,12 @@ class TaskTypeController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 1. Получение значения типа UINib, соответствующего xib-файлу кастомной ячейки
+        let cellTypeNib = UINib(nibName: "TaskTypeCell", bundle: nil)
+        
+        // 2. Регистрация кастомной ячейки в табличном представлении
+        tableView.register(cellTypeNib, forCellReuseIdentifier: "TaskTypeCell")
 
         
     }

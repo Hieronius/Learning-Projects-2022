@@ -5,6 +5,28 @@ import UIKit
 class TaskTypeController: UITableViewController {
     
     
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // 1. Получение переиспользуемой кастомной ячейки по ее идентификатору
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TaskTypeCell", for: indexPath) as! TaskTypeCell
+        
+        // 2. Получаем текущий элемент, информация о котором должна быть выведена в строке
+        let typeDescription = taskTypesInformation[indexPath.row]
+        
+        // 3. Заполняем ячейку данными
+        cell.typeTitle.text = typeDescription.title
+        cell.typeDescription.text = typeDescription.description
+        
+        // 4. Если тип является выбранным, то отмечаем галочкой
+        if selectedType == typeDescription.type {
+            cell.accessoryType = .checkmark
+            // в ином случае снимаем отметку
+        } else {
+            cell.accessoryType = .none
+        }
+        return cell
+    }
+    
+    
     // 1. Кортеж, описывающий тип задачи
     typealias TypeCellDescription = (type: TaskPriority, title: String, description: String)
     

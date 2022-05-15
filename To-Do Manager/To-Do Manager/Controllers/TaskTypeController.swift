@@ -4,6 +4,19 @@ import UIKit
 
 class TaskTypeController: UITableViewController {
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // получаем выбранный тип
+        let selectedType = taskTypesInformation[indexPath.row].type
+        // вызор обработчика
+        doAfterTypeSelected?(selectedType)
+        // переход к предыдущему экрану
+        navigationController?.popViewController(animated: true)
+    }
+    
+    
+    // обработчик выбора типа
+    var doAfterTypeSelected: ((TaskPriority) -> Void)?
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 1. Получение переиспользуемой кастомной ячейки по ее идентификатору

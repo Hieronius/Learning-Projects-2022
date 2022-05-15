@@ -2,6 +2,17 @@ import UIKit
 
 class TaskEditController: UITableViewController {
     
+    @IBAction func saveTask(_ sender: UIBarButtonItem) {
+        // получаем актуальные значения
+        let tittle = taskTitle?.text ?? ""
+        let type = taskType
+        let status: TaskStatus = taskStatusSwitch.isOn ? .completed: .planned
+        // вызываем обработчик
+        doAfterEdit?(tittle, type, status)
+        // возвращаемся к предыдущему экрану
+        navigationController?.popViewController(animated: true)
+    }
+    
     // переключатель статуса
     @IBOutlet var taskStatusSwitch: UISwitch!
     

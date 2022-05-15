@@ -12,6 +12,15 @@ protocol AppProtocol {
     var scores: [Int]? { get set }
 }
 
+struct App: AppProtocol {
+    
+    var appName: String
+    var appCategory: String
+    
+    var feedback: [String]?
+    var scores: [Int]?
+}
+
 
 
 
@@ -37,9 +46,9 @@ struct AppStore: AppStoreProtocol {
    var appStorage: [AppProtocol]?
     
     mutating func save(app: AppProtocol) -> [AppProtocol]? {
-        appStorage?.append(app)
+        self.appStorage?.append(app)
         print("\(app.appName) was uploaded to the AppStore")
-        return appStorage
+        return self.appStorage
     }
     
     func load(app: AppProtocol) {
@@ -77,4 +86,51 @@ struct AppStore: AppStoreProtocol {
 }
     
 }
-// May be i should make struct App and just use App like type in appStorage
+
+var myAppStore = AppStore()
+
+var myTodoList = App(appName: "ToDo list", appCategory: "Self-development")
+var myMaps = App(appName: "Apple maps", appCategory: "Other")
+var snakeGame = App(appName: "Snake", appCategory: "Games")
+var myPlanner = App(appName: "Planner", appCategory: "Self-development")
+var messager = App(appName: "Facelook", appCategory: "Social media")
+var instaGigaGram = App(appName: "InstaGigaGram", appCategory: "Social media")
+
+myAppStore.save(app: myTodoList)
+
+myAppStore.save(app: myMaps)
+myAppStore.save(app: snakeGame)
+myAppStore.save(app: myPlanner)
+myAppStore.save(app: messager)
+myAppStore.save(app: messager)
+
+myAppStore.appStorage?.append(myMaps)
+
+
+// Seems like i should use struct for AppProtocol because i can't make an instance of AppProtocol without type
+///
+////
+///
+///
+///
+
+struct MyAppStore {
+    
+   var appStorage: [App]?
+    
+    mutating func save(app: App) -> [App]? {
+        if (appStorage?.append(app)) == nil { // this is kind of if else that really work
+            appStorage = [app]
+        }
+        print("\(app.appName) was uploaded to the AppStore")
+        return appStorage
+    }
+}
+
+var newAppStore = MyAppStore()
+newAppStore.save(app: snakeGame)
+newAppStore.save(app: messager)
+newAppStore.appStorage = [myMaps, myPlanner]
+newAppStore.save(app: myTodoList)
+
+// if storage is empty this won't add new app, but if in storage will be something it's working well.

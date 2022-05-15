@@ -2,6 +2,9 @@ import UIKit
 
 class TaskEditController: UITableViewController {
     
+    // переключатель статуса
+    @IBOutlet var taskStatusSwitch: UISwitch!
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toTaskTypeScreen" {
             // ссылка на контроллер назначения
@@ -48,5 +51,10 @@ class TaskEditController: UITableViewController {
         
         // Обновление метки в соответствии с текущим типом
         taskTypeLabel?.text = taskTitles[taskType]
+        
+        // Обновляем статус задачи
+        if taskStatus == .completed {
+            taskStatusSwitch.isOn = true
+        }
     }
 }

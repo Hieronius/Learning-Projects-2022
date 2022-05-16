@@ -34,7 +34,7 @@ protocol AppStoreProtocol {
     
     mutating func delete(app: AppProtocol) -> [AppProtocol]?
     
-    mutating func addFeedback(app: inout AppProtocol, feedback: String) -> AppProtocol
+    mutating func addFeedback(app: AppProtocol, appFeedback: String) -> [AppProtocol]?
     
     mutating func addScore(app: inout AppProtocol, score: Int) -> AppProtocol
 }
@@ -46,9 +46,11 @@ struct AppStore: AppStoreProtocol {
    var appStorage: [AppProtocol]?
     
     mutating func save(app: AppProtocol) -> [AppProtocol]? {
-        self.appStorage?.append(app)
+        if (appStorage?.append(app)) == nil { // this is kind of if else that really work
+            appStorage = [app]
+        }
         print("\(app.appName) was uploaded to the AppStore")
-        return self.appStorage
+        return appStorage
     }
     
     func load(app: AppProtocol) {
@@ -68,10 +70,20 @@ struct AppStore: AppStoreProtocol {
         return appStorage
     }
     
-    mutating func addFeedback(app: inout AppProtocol, feedback: String) -> AppProtocol {
-        app.feedback?.append(feedback)
-        print("feedback for \(app.appName) was added")
-        return app
+    mutating func addFeedback(app: AppProtocol, appFeedback: String) -> [AppProtocol]? {
+        
+        var counter = -1
+        for App in appStorage! {
+            counter += 1
+            if App.appName == app.appName {
+                break
+                
+                
+            }
+        }
+        if (appStorage?[counter].feedback?.append(appFeedback)) == nil { // this is kind of if else that really work
+            appStorage?[counter].feedback? = [appFeedback]
+        return appStorage
     }
     
     func addScore(app: inout AppProtocol, score: Int) -> AppProtocol {
@@ -90,7 +102,7 @@ struct AppStore: AppStoreProtocol {
 var myAppStore = AppStore()
 
 var myTodoList = App(appName: "ToDo list", appCategory: "Self-development")
-var myMaps = App(appName: "Apple maps", appCategory: "Other")
+var myMaps: AppProtocol = App(appName: "Apple maps", appCategory: "Other")
 var snakeGame = App(appName: "Snake", appCategory: "Games")
 var myPlanner = App(appName: "Planner", appCategory: "Self-development")
 var messager = App(appName: "Facelook", appCategory: "Social media")
@@ -102,9 +114,17 @@ myAppStore.save(app: myMaps)
 myAppStore.save(app: snakeGame)
 myAppStore.save(app: myPlanner)
 myAppStore.save(app: messager)
-myAppStore.save(app: messager)
+myAppStore.save(app: instaGigaGram)
 
-myAppStore.appStorage?.append(myMaps)
+myAppStore.load(app: myMaps)
+
+myAppStore.delete(app: myPlanner)
+myAppStore.delete(app: messager)
+
+myAppStore.addFeedback(app: &myMaps, feedback: "This is awesome")
+myAppStore.addFeedback(app: &myMaps, feedback: "Incredible app!")
+myAppStore.appStorage
+myMaps.feedback
 
 
 // Seems like i should use struct for AppProtocol because i can't make an instance of AppProtocol without type
@@ -114,23 +134,37 @@ myAppStore.appStorage?.append(myMaps)
 ///
 ///
 
-struct MyAppStore {
-    
-   var appStorage: [App]?
-    
-    mutating func save(app: App) -> [App]? {
-        if (appStorage?.append(app)) == nil { // this is kind of if else that really work
-            appStorage = [app]
-        }
-        print("\(app.appName) was uploaded to the AppStore")
-        return appStorage
-    }
-}
-
-var newAppStore = MyAppStore()
-newAppStore.save(app: snakeGame)
-newAppStore.save(app: messager)
-newAppStore.appStorage = [myMaps, myPlanner]
-newAppStore.save(app: myTodoList)
+//struct MyAppStore {
+//
+//   var appStorage: [App]?
+//
+//    mutating func save(app: App) -> [App]? {
+//        if (appStorage?.append(app)) == nil { // this is kind of if else that really work
+//            appStorage = [app]
+//        }
+//        print("\(app.appName) was uploaded to the AppStore")
+//        return appStorage
+//    }
+//}
+//
+//var newAppStore = MyAppStore()
+//newAppStore.save(app: snakeGame)
+//newAppStore.save(app: messager)
+//newAppStore.appStorage = [myMaps, myPlanner]
+//newAppStore.save(app: myTodoList)
 
 // if storage is empty this won't add new app, but if in storage will be something it's working well.
+
+
+//mutating func addFeedback(app: inout AppProtocol, feedback: String) -> AppProtocol {
+//    for project in appStorage! {
+//        if project.appName == app.appName {
+//            if (app.feedback?.append(feedback)) == nil { // this is kind of if else that really work
+//                app.feedback = [feedback]
+//            }
+//            print("feedback for \(app.appName) was added")
+//        }
+//    return app
+//}
+
+// func to add feedback to app

@@ -155,9 +155,11 @@ class TaskListController: UITableViewController {
         
         // хранилище задач
         var tasksStorage: TasksStorageProtocol = TasksStorage() // May be can be useful in my AppStore app
+    
         // коллекция задач
     var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
         didSet {
+            
             // Сортировка списка задач
             for (tasksGroupPriority, tasksGroup) in tasks {
                 tasks[tasksGroupPriority] = tasksGroup.sorted { task1, task2 in
@@ -166,6 +168,13 @@ class TaskListController: UITableViewController {
                     return task1position < task2position
                 }
             }
+            
+            // Сохранение задач
+            var savingArray: [TaskProtocol] = []
+            tasks.forEach { _, value in
+                savingArray += value
+            }
+            tasksStorage.saveTasks(savingArray)
         }
     }
         

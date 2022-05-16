@@ -33,13 +33,14 @@ class TasksStorage: TasksStorageProtocol {
                       continue
                   }
             
-            let type: TaskPriority = typeRaw == "important" ? .important : .normal
-            let status: TaskStatus = statusRaw == "planned" ? .planned : .completed
+            let type: TaskPriority = (typeRaw == "important") ? .important : .normal
+            let status: TaskStatus = (statusRaw == "planned") ? .planned : .completed
             
             resultTasks.append(Task(title: title, type: type, status: status))
         }
         return resultTasks
-        }
+        
+    }
     
     func saveTasks(_ tasks: [TaskProtocol]) {
         var arrayForStorage: [[String: String]] = []

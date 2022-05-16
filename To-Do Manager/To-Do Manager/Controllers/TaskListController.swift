@@ -4,6 +4,19 @@ import UIKit
 
 class TaskListController: UITableViewController {
     
+    // Получение списка задач, их разбор и установка в свойство tasks
+    func setTasks(_ tasksCollection: [TaskProtocol]) {
+        // подготовка коллекции с задачами
+        // будем использовать только те задачи, для которых определена секция
+        sectionsTypePosition.forEach { taskType in // sectionsTypesPosition - у автора
+            tasks[taskType] = []
+        }
+        // загрузка и разбор задач из хранилища
+        tasksCollection.forEach { task in
+            tasks[task.type]?.append(task)
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toCreateScreen" {
             let destination = segue.destination as! TaskEditController
@@ -184,8 +197,6 @@ class TaskListController: UITableViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        // загрузка задач
-        loadTasks()
         // кнопка активации режима редактирования
         navigationItem.leftBarButtonItem = editButtonItem
     }

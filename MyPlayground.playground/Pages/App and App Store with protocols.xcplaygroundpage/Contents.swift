@@ -82,49 +82,54 @@ struct AppStore: AppStoreProtocol {
             }
         }
         if (appStorage?[counter].feedback?.append(appFeedback)) == nil { // this is kind of if else that really work
-            appStorage?[counter].feedback? = [appFeedback]
+            appStorage?[counter].feedback = [appFeedback]
+        }
+        print("Feedback was added to \(app.appName)")
         return appStorage
     }
-    
-    func addScore(app: inout AppProtocol, score: Int) -> AppProtocol {
-        switch score {
-        case 1...5:
-            app.scores?.append(score)
-            print("Score for \(app.appName) was added")
-        default:
-        print("Wrong score")
+        
+        
+        func addScore(app: inout AppProtocol, score: Int) -> AppProtocol {
+            switch score {
+            case 1...5:
+                app.scores?.append(score)
+                print("Score for \(app.appName) was added")
+            default:
+            print("Wrong score")
+        }
+        return app
     }
-    return app
-}
+    
     
 }
 
-var myAppStore = AppStore()
+    var myAppStore = AppStore()
 
-var myTodoList = App(appName: "ToDo list", appCategory: "Self-development")
-var myMaps: AppProtocol = App(appName: "Apple maps", appCategory: "Other")
-var snakeGame = App(appName: "Snake", appCategory: "Games")
-var myPlanner = App(appName: "Planner", appCategory: "Self-development")
-var messager = App(appName: "Facelook", appCategory: "Social media")
-var instaGigaGram = App(appName: "InstaGigaGram", appCategory: "Social media")
+    var myTodoList = App(appName: "ToDo list", appCategory: "Self-development")
+    var myMaps = App(appName: "Apple maps", appCategory: "Other")
+    var snakeGame = App(appName: "Snake", appCategory: "Games")
+    var myPlanner = App(appName: "Planner", appCategory: "Self-development")
+    var messager = App(appName: "Facelook", appCategory: "Social media")
+    var instaGigaGram = App(appName: "InstaGigaGram", appCategory: "Social media")
 
-myAppStore.save(app: myTodoList)
+        myAppStore.save(app: myTodoList)
 
-myAppStore.save(app: myMaps)
-myAppStore.save(app: snakeGame)
-myAppStore.save(app: myPlanner)
-myAppStore.save(app: messager)
-myAppStore.save(app: instaGigaGram)
+        myAppStore.save(app: myMaps)
+        myAppStore.save(app: snakeGame)
+        myAppStore.save(app: myPlanner)
+        myAppStore.save(app: messager)
+        myAppStore.save(app: instaGigaGram)
 
-myAppStore.load(app: myMaps)
+        myAppStore.load(app: myMaps)
 
-myAppStore.delete(app: myPlanner)
-myAppStore.delete(app: messager)
+        myAppStore.delete(app: myPlanner)
+        myAppStore.delete(app: messager)
 
-myAppStore.addFeedback(app: &myMaps, feedback: "This is awesome")
-myAppStore.addFeedback(app: &myMaps, feedback: "Incredible app!")
+
+myAppStore.addFeedback(app: myTodoList, appFeedback: "It's great") // it's works because feedback array not emprty
+myAppStore.addFeedback(app: myPlanner, appFeedback: "Best app i even seen") // it's won't work because feedback array is empty
 myAppStore.appStorage
-myMaps.feedback
+myTodoList.feedback
 
 
 // Seems like i should use struct for AppProtocol because i can't make an instance of AppProtocol without type

@@ -4,13 +4,38 @@ class TaskEditController: UITableViewController {
     
     @IBAction func saveTask(_ sender: UIBarButtonItem) {
         // получаем актуальные значения
-        let tittle = taskTitle?.text ?? ""
+        
+        let tittle = checkTitle()
+        
+        
+//        let tittle: String
+//        if taskTitle.text != nil && taskTitle.text != "" {
+//            print("there is a mistake")
+//        } else {
+//            tittle = taskTitle.text!  Trying to add if else checo for title.text
+//        }
+        
+        // let tittle =taskTitle?.text ?? "" - standart tittle accepting
+
         let type = taskType
         let status: TaskStatus = taskStatusSwitch.isOn ? .completed: .planned
         // вызываем обработчик
         doAfterEdit?(tittle, type, status)
+        
+        if taskTitle.text == nil && taskTitle.text != "" {
+            print("There is a mistake")
+        }
         // возвращаемся к предыдущему экрану
         navigationController?.popViewController(animated: true)
+    }
+    
+    func checkTitle() -> String {
+        if taskTitle?.text != nil && taskTitle.text != "" {
+                    return taskTitle.text!
+                } else {
+                    
+                  return "There is a mistake"
+                }
     }
     
     // переключатель статуса

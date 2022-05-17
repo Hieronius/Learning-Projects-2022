@@ -54,3 +54,4 @@ class TasksStorage: TasksStorageProtocol {
         storage.set(arrayForStorage, forKey: storageKey)
     }
 }
+

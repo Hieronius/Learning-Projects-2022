@@ -20,23 +20,20 @@ class TaskEditController: UITableViewController {
         let type = taskType
         let status: TaskStatus = taskStatusSwitch.isOn ? .completed: .planned
         // вызываем обработчик
-        doAfterEdit?(tittle, type, status)
+        doAfterEdit?(tittle!, type, status)  // should remove "!" is i want my code back
         
-        if taskTitle.text == nil && taskTitle.text != "" {
-            print("There is a mistake")
-        }
         // возвращаемся к предыдущему экрану
         navigationController?.popViewController(animated: true)
     }
     
-    func checkTitle() -> String {
-        if taskTitle?.text != nil && taskTitle.text != "" {
+    func checkTitle() -> String? {
+        if taskTitle?.text != nil && taskTitle.text != " " && taskTitle.text != "" {
                     return taskTitle.text!
                 } else {
-                    
-                  return "There is a mistake"
+                    print("There is a mistake")
+                  return nil
                 }
-    }
+    } // func really working. If there is only backspace or no value it's return a task with name "There is a mistake" or different title if it was writed correctly. But how to change this side effect with "there is mistake" title?
     
     // переключатель статуса
     @IBOutlet var taskStatusSwitch: UISwitch!

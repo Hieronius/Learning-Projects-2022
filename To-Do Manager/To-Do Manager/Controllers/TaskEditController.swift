@@ -8,7 +8,7 @@ class TaskEditController: UITableViewController {
 //        let tittle = checkTitle()
         
         func checkTittle()  {
-            if tittle == " " || tittle == "" {
+            if taskTitle?.text == " " || taskTitle?.text == "" || taskTitle?.text == nil {
                 let alert = UIAlertController(
                 title: "Ошибка",
                 message: "Отсутствие имя задачи",
@@ -29,8 +29,6 @@ class TaskEditController: UITableViewController {
         // вызываем обработчик
         doAfterEdit?(tittle, type, status)  // should remove "!" is i want my code back
         
-    
-        checkTittle()
         
         // возвращаемся к предыдущему экрану
         navigationController?.popViewController(animated: true)

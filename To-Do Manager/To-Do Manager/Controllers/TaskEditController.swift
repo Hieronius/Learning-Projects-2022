@@ -5,10 +5,12 @@ class TaskEditController: UITableViewController {
     @IBAction func saveTask(_ sender: UIBarButtonItem) {
         // получаем актуальные значения
         
-//        let tittle = checkTitle()
+        var newFlag = true
         
         func checkTittle()  {
             if taskTitle?.text == " " || taskTitle?.text == "" || taskTitle?.text == nil {
+                
+                
                 let alert = UIAlertController(
                 title: "Ошибка",
                 message: "Отсутствие имя задачи",
@@ -17,6 +19,9 @@ class TaskEditController: UITableViewController {
                 alert.addAction(UIAlertAction(title: "Попробовать еще раз", style: .default, handler: nil))
                 
                 self.present(alert, animated: true, completion: nil)
+                
+                newFlag = false
+                taskTitle?.text = "Новая задача"
             }
         }
         
@@ -27,8 +32,11 @@ class TaskEditController: UITableViewController {
         let type = taskType
         let status: TaskStatus = taskStatusSwitch.isOn ? .completed: .planned
         // вызываем обработчик
-        doAfterEdit?(tittle, type, status)  // should remove "!" is i want my code back
+        if newFlag == true {
+            doAfterEdit?(tittle, type, status)
         
+        }
+       
         
         // возвращаемся к предыдущему экрану
         navigationController?.popViewController(animated: true)

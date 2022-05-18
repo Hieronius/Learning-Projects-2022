@@ -5,35 +5,47 @@ class TaskEditController: UITableViewController {
     @IBAction func saveTask(_ sender: UIBarButtonItem) {
         // получаем актуальные значения
         
-        let tittle = checkTitle()
+//        let tittle = checkTitle()
         
+        func checkTittle()  {
+            if tittle == " " || tittle == "" {
+                let alert = UIAlertController(
+                title: "Ошибка",
+                message: "Отсутствие имя задачи",
+                preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Попробовать еще раз", style: .default, handler: nil))
+                
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
         
-//        let tittle: String
-//        if taskTitle.text != nil && taskTitle.text != "" {
-//            print("there is a mistake")
-//        } else {
-//            tittle = taskTitle.text!  Trying to add if else checo for title.text
-//        }
-        
-        // let tittle =taskTitle?.text ?? "" - standart tittle accepting
+        let tittle = taskTitle?.text ?? "" // - standart tittle accepting
 
+        checkTittle()
+        
         let type = taskType
         let status: TaskStatus = taskStatusSwitch.isOn ? .completed: .planned
         // вызываем обработчик
-        doAfterEdit?(tittle!, type, status)  // should remove "!" is i want my code back
+        doAfterEdit?(tittle, type, status)  // should remove "!" is i want my code back
+        
+    
+        checkTittle()
         
         // возвращаемся к предыдущему экрану
         navigationController?.popViewController(animated: true)
     }
     
-    func checkTitle() -> String? {
-        if taskTitle?.text != nil && taskTitle.text != " " && taskTitle.text != "" {
-                    return taskTitle.text!
-                } else {
-                    print("There is a mistake")
-                  return nil
-                }
-    } // func really working. If there is only backspace or no value it's return a task with name "There is a mistake" or different title if it was writed correctly. But how to change this side effect with "there is mistake" title?
+    
+    
+//    func checkTitle() -> String? {
+//        if taskTitle?.text != nil && taskTitle.text != " " && taskTitle.text != "" { // right now it's check for empty and backspace value
+//                    return taskTitle.text!
+//                } else {
+//                    print("There is a mistake")
+//                  return nil
+//                }
+    // func really working. If there is only backspace or no value it's return a task with name "There is a mistake" or different title if it was writed correctly. But how to change this side effect with "there is mistake" title?
     
     // переключатель статуса
     @IBOutlet var taskStatusSwitch: UISwitch!

@@ -153,3 +153,22 @@ myTodoList.scores
 
 
 // Let's make a subscript for appStorage to get access (may be as function "Load")
+var array = ["alla", "boy"]
+array.firstIndex(of: "alla")
+
+
+var objects = [myTodoList, myMaps, myPlanner]
+
+func appIndicator(app: AppProtocol) -> Int {
+    
+    var counter = -1
+    for App in objects {
+        counter += 1
+        if App.appName == app.appName {
+            break
+        }
+    }
+    return counter
+}
+
+var appPosition = appIndicator(app: myPlanner)

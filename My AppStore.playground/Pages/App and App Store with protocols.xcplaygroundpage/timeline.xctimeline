@@ -3,8 +3,29 @@
    version = "3.0">
    <TimelineItems>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "file:///Users/arsentijhalimovskij/Documents/GitHub/Learning-Projects/My%20AppStore.playground/Pages/App%20and%20App%20Store%20with%20protocols.xcplaygroundpage#CharacterRangeLen=1195&amp;CharacterRangeLoc=3863&amp;EndingColumnNumber=0&amp;EndingLineNumber=184&amp;StartingColumnNumber=0&amp;StartingLineNumber=147&amp;Timestamp=674643828.341411"
+         documentLocation = "file:///Users/arsentijhalimovskij/Documents/GitHub/Learning-Projects/My%20AppStore.playground/Pages/App%20and%20App%20Store%20with%20protocols.xcplaygroundpage#CharacterRangeLen=463&amp;CharacterRangeLoc=4472&amp;EndingColumnNumber=0&amp;EndingLineNumber=176&amp;StartingColumnNumber=0&amp;StartingLineNumber=166&amp;Timestamp=674644756.07909"
          lockedSize = "{589, 128}"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/arsentijhalimovskij/Documents/GitHub/Learning-Projects/My%20AppStore.playground/Pages/App%20and%20App%20Store%20with%20protocols.xcplaygroundpage#CharacterRangeLen=1&amp;CharacterRangeLoc=4934&amp;EndingColumnNumber=0&amp;EndingLineNumber=176&amp;StartingColumnNumber=0&amp;StartingLineNumber=175&amp;Timestamp=674644756.0792789"
+         lockedSize = "{389, 128}"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/arsentijhalimovskij/Documents/GitHub/Learning-Projects/My%20AppStore.playground/Pages/App%20and%20App%20Store%20with%20protocols.xcplaygroundpage#CharacterRangeLen=1&amp;CharacterRangeLoc=4934&amp;EndingColumnNumber=0&amp;EndingLineNumber=176&amp;StartingColumnNumber=0&amp;StartingLineNumber=175&amp;Timestamp=674644756.07945"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/arsentijhalimovskij/Documents/GitHub/Learning-Projects/My%20AppStore.playground/Pages/App%20and%20App%20Store%20with%20protocols.xcplaygroundpage#CharacterRangeLen=0&amp;CharacterRangeLoc=4934&amp;EndingColumnNumber=0&amp;EndingLineNumber=175&amp;StartingColumnNumber=0&amp;StartingLineNumber=175&amp;Timestamp=674644756.0795799"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/arsentijhalimovskij/Documents/GitHub/Learning-Projects/My%20AppStore.playground/Pages/App%20and%20App%20Store%20with%20protocols.xcplaygroundpage#CharacterRangeLen=1&amp;CharacterRangeLoc=4934&amp;EndingColumnNumber=0&amp;EndingLineNumber=176&amp;StartingColumnNumber=0&amp;StartingLineNumber=175&amp;Timestamp=674644756.0797009"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>

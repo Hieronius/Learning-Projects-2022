@@ -1,6 +1,20 @@
 
 import Foundation
 
+
+/// Colclusion
+///
+/// Made a protocol for "app" entity
+/// Made a protocol for "appStore" entity
+/// Made a class for "app" entity and 5 instances
+/// Made a class for "appStore" entity and instance for it
+/// After made a couple of apps and i can use save/load/addFeedback/addScore/appSelector/subscript functions
+/// Every time when i wll change the app in storage it will affect the app without a storage
+/// Like vice versa if we change a property of app in the appStorage that will affect the original app.
+
+
+
+
 var greeting = "Hello, playground"
 
 protocol AppProtocol {
@@ -12,13 +26,18 @@ protocol AppProtocol {
     var scores: [Int]? { get set }
 }
 
-struct App: AppProtocol {
+class App: AppProtocol {
     
     var appName: String
     var appCategory: String
     
     var feedback: [String]?
     var scores: [Int]?
+    
+    init(appName:String, appCategory: String) {
+        self.appName = appName
+        self.appCategory = appCategory
+    }
 }
 
 
@@ -45,11 +64,11 @@ protocol AppStoreProtocol {
 
 
 
-struct AppStore: AppStoreProtocol {
+class AppStore: AppStoreProtocol {
     
    var appStorage: [AppProtocol]?
     
-    mutating func save(app: AppProtocol) -> [AppProtocol]? {
+    func save(app: AppProtocol) -> [AppProtocol]? {
         if (appStorage?.append(app)) == nil { // this is kind of if else that really work
             appStorage = [app]
         }
@@ -61,7 +80,7 @@ struct AppStore: AppStoreProtocol {
         print("\(app.appName) was opened")
     }
     
-    mutating func delete(app: AppProtocol) -> [AppProtocol]? {
+    func delete(app: AppProtocol) -> [AppProtocol]? {
         var counter = -1
         for App in appStorage! {
             counter += 1
@@ -74,7 +93,7 @@ struct AppStore: AppStoreProtocol {
         return appStorage
     }
     
-    mutating func addFeedback(app: AppProtocol, appFeedback: String) -> [AppProtocol]? {
+    func addFeedback(app: AppProtocol, appFeedback: String) -> [AppProtocol]? {
         
         var counter = -1
         for App in appStorage! {
@@ -93,7 +112,7 @@ struct AppStore: AppStoreProtocol {
     }
         
         
-        mutating func addScore(app: AppProtocol, score: Int) -> [AppProtocol]? { // let's change it like func addFeedback
+        func addScore(app: AppProtocol, score: Int) -> [AppProtocol]? { // let's change it like func addFeedback
             
             
             var counter = -1
@@ -154,67 +173,4 @@ var myPlanner = App(appName: "Planner", appCategory: "Self-development")
 var messager = App(appName: "Facelook", appCategory: "Social media")
 var instaGigaGram = App(appName: "InstaGigaGram", appCategory: "Social media")
 
-myAppStore.save(app: myTodoList)
-
-myAppStore.save(app: myMaps)
-myAppStore.save(app: snakeGame)
-myAppStore.save(app: myPlanner)
-myAppStore.save(app: messager)
-myAppStore.save(app: instaGigaGram)
-
-myAppStore.load(app: myMaps)
-
-myAppStore.delete(app: myPlanner)
-myAppStore.delete(app: messager)
-
-
-myAppStore.addFeedback(app: myTodoList, appFeedback: "It's great") // it's works because feedback array not emprty
-myAppStore.addFeedback(app: myPlanner, appFeedback: "Best app i even seen") // it's won't work because feedback array is empty
-myAppStore.appStorage
-myTodoList.feedback
-
-
-myAppStore.addScore(app: myTodoList, score: 5)
-myAppStore.appStorage
-myTodoList.scores
-
-myAppStore[myTodoList]
-myAppStore.appSelector(app: myTodoList)
-
-
-
-// Let's make a subscript for appStorage to get access (may be as function "Load")
-var array = ["alla", "boy"]
-array.firstIndex(of: "alla")
-
-
-var objects = [myTodoList, myMaps, myPlanner]
-
-//func appIndicator(app: AppProtocol) -> AppProtocol {
-//
-//    var counter = -1
-//    for App in objects {
-//        counter += 1
-//        if App.appName == app.appName {
-//            break
-//        }
-//    }
-//    return objects[counter]
-//} // it's a correct way to make func "load" as subscript
-
-//subscript(app: AppProtocol) -> AppProtocol {
-//
-//    var counter = -1
-//    for App in appStorage! {
-//        counter += 1
-//        if App.appName == app.appName {
-//            break
-//        }
-//    }
-//    print("\(appStorage![counter].appName) was selected")
-//    return appStorage![counter]
-//} change subscritp to the func and it's done
-
-//var appPosition = appIndicator(app: myTodoList)
-// ok, that's will return a fresh app without changes. Let's study and read about subscripts tomorrow.
 

@@ -244,17 +244,22 @@ class TaskListController: UITableViewController {
 
     // количество секций в таблице
     override func numberOfSections(in tableView: UITableView) -> Int {
-        
-        var numOfSections: Int = 0
-        
+            
+        if tasks.count < 3 {
+            
             let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
                 noDataLabel.text = "Задачи отсутствуют"
             noDataLabel.textColor = UIColor.black
             noDataLabel.textAlignment = .center
             tableView.backgroundView = noDataLabel
             tableView.separatorStyle = .none
+            
+        }
+            
         return tasks.count
-    }
+    } // this block of code "Задачи отсутствуют" is working and print message in the middle of the screen. How to check my data for emptiness?
+    
+    
     // количество строк в определенной секции
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // определяем приоритет задач, соответствующий текущей секции

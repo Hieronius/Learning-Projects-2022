@@ -37,6 +37,8 @@ protocol AppStoreProtocol {
     mutating func addFeedback(app: AppProtocol, appFeedback: String) -> [AppProtocol]?
     
     mutating func addScore(app: AppProtocol, score: Int) -> [AppProtocol]?
+    
+    func appIndicator(app: AppProtocol) -> AppProtocol
 }
 
 
@@ -113,6 +115,19 @@ struct AppStore: AppStoreProtocol {
             return appStorage
     
 }
+    
+    func appIndicator(app: AppProtocol) -> AppProtocol {
+        
+        var counter = -1
+        for App in appStorage! {
+            counter += 1
+            if App.appName == app.appName {
+                break
+            }
+        }
+        print("\(appStorage![counter].appName) was selected")
+        return appStorage![counter]
+    }
 }
 
 var myAppStore = AppStore()
@@ -148,7 +163,7 @@ myAppStore.addScore(app: myTodoList, score: 5)
 myAppStore.appStorage
 myTodoList.scores
 
-
+myAppStore.appIndicator(app: myTodoList)
 
 
 
@@ -159,7 +174,7 @@ array.firstIndex(of: "alla")
 
 var objects = [myTodoList, myMaps, myPlanner]
 
-func appIndicator(app: AppProtocol) -> Int {
+func appIndicator(app: AppProtocol) -> AppProtocol {
     
     var counter = -1
     for App in objects {
@@ -168,7 +183,9 @@ func appIndicator(app: AppProtocol) -> Int {
             break
         }
     }
-    return counter
+    return objects[counter]
 }
 
-var appPosition = appIndicator(app: myPlanner)
+var appPosition = appIndicator(app: myTodoList)
+// ok, that's will return a fresh app without changes. Let's study and read about subscripts tomorrow.
+

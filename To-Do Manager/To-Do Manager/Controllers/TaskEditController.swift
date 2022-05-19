@@ -5,23 +5,23 @@ class TaskEditController: UITableViewController {
     @IBAction func saveTask(_ sender: UIBarButtonItem) {
         // получаем актуальные значения
         
-        var newFlag = true
+        var correctTitle = true  // added 18.05.2022
         
-        func checkTittle()  {
+        func checkTittle()  {    // added 18.05.2022
             if taskTitle?.text == " " || taskTitle?.text == "" || taskTitle?.text == nil {
                 
                 
                 let alert = UIAlertController(
                 title: "Ошибка",
-                message: "Отсутствие имя задачи",
+                message: "Отсутствие имени задачи",
                 preferredStyle: .alert)
                 
                 alert.addAction(UIAlertAction(title: "Попробовать еще раз", style: .default, handler: nil))
                 
                 self.present(alert, animated: true, completion: nil)
                 
-                newFlag = false
-                taskTitle?.text = "Новая задача"
+                correctTitle = false
+                taskTitle?.text = ""
             }
         }
         
@@ -32,26 +32,19 @@ class TaskEditController: UITableViewController {
         let type = taskType
         let status: TaskStatus = taskStatusSwitch.isOn ? .completed: .planned
         // вызываем обработчик
-        if newFlag == true {
+        if correctTitle == true {  // added 18.05.2022.
             doAfterEdit?(tittle, type, status)
+            // возвращаемся к предыдущему экрану
+            navigationController?.popViewController(animated: true)
         
         }
        
         
-        // возвращаемся к предыдущему экрану
-        navigationController?.popViewController(animated: true)
+        
     }
     
     
-    
-//    func checkTitle() -> String? {
-//        if taskTitle?.text != nil && taskTitle.text != " " && taskTitle.text != "" { // right now it's check for empty and backspace value
-//                    return taskTitle.text!
-//                } else {
-//                    print("There is a mistake")
-//                  return nil
-//                }
-    // func really working. If there is only backspace or no value it's return a task with name "There is a mistake" or different title if it was writed correctly. But how to change this side effect with "there is mistake" title?
+
     
     // переключатель статуса
     @IBOutlet var taskStatusSwitch: UISwitch!

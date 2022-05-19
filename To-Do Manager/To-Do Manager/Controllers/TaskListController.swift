@@ -15,6 +15,14 @@ class TaskListController: UITableViewController {
         tasksCollection.forEach { task in
             tasks[task.type]?.append(task)
         }
+        
+    
+        
+        if tasksCollection.isEmpty {
+            print("Задачи отсутствуют")
+        }
+        
+    
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -194,11 +202,16 @@ class TaskListController: UITableViewController {
         // порядок отображения секций по типам
         // индекс в массиве соответствует индексу секции в таблице
         var sectionsTypePosition: [TaskPriority] = [.important, .normal]
+    
+   
+    
         
     override func viewDidLoad() {
         super.viewDidLoad()
         // кнопка активации режима редактирования
         navigationItem.leftBarButtonItem = editButtonItem
+    
+        
     }
     
     private func loadTasks() {
@@ -231,6 +244,15 @@ class TaskListController: UITableViewController {
 
     // количество секций в таблице
     override func numberOfSections(in tableView: UITableView) -> Int {
+        
+        var numOfSections: Int = 0
+        
+            let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+                noDataLabel.text = "Задачи отсутствуют"
+            noDataLabel.textColor = UIColor.black
+            noDataLabel.textAlignment = .center
+            tableView.backgroundView = noDataLabel
+            tableView.separatorStyle = .none
         return tasks.count
     }
     // количество строк в определенной секции
@@ -243,7 +265,7 @@ class TaskListController: UITableViewController {
         return currentTasksType.count
     }
 
-    // ячейка для для строки таблицы
+    // ячейка для строки таблицы
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // ячейка на основе констрейнтов
         // return getConfiguredTaskCell_constraints(for: indexPath)

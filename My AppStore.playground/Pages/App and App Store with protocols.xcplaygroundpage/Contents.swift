@@ -38,7 +38,9 @@ protocol AppStoreProtocol {
     
     mutating func addScore(app: AppProtocol, score: Int) -> [AppProtocol]?
     
-    func appIndicator(app: AppProtocol) -> AppProtocol
+    func appSelector(app: AppProtocol) -> AppProtocol
+    
+    subscript(app: AppProtocol) -> AppProtocol { get }
 }
 
 
@@ -116,17 +118,30 @@ struct AppStore: AppStoreProtocol {
     
 }
     
-    func appIndicator(app: AppProtocol) -> AppProtocol {
+    func appSelector(app: AppProtocol) -> AppProtocol {
         
         var counter = -1
-        for App in appStorage! {
-            counter += 1
-            if App.appName == app.appName {
-                break
+            for App in appStorage! {
+                counter += 1
+                if App.appName == app.appName {
+                    break
+                }
             }
-        }
-        print("\(appStorage![counter].appName) was selected")
-        return appStorage![counter]
+            print("\(appStorage![counter].appName) was selected")
+            return appStorage![counter]
+    }
+    
+    subscript(app: AppProtocol) -> AppProtocol {
+        
+        var counter = -1
+            for App in appStorage! {
+                counter += 1
+                if App.appName == app.appName {
+                    break
+                }
+            }
+            print("\(appStorage![counter].appName) was selected")
+            return appStorage![counter]
     }
 }
 
@@ -163,7 +178,8 @@ myAppStore.addScore(app: myTodoList, score: 5)
 myAppStore.appStorage
 myTodoList.scores
 
-myAppStore.appIndicator(app: myTodoList)
+myAppStore[myTodoList]
+myAppStore.appSelector(app: myTodoList)
 
 
 
@@ -174,18 +190,31 @@ array.firstIndex(of: "alla")
 
 var objects = [myTodoList, myMaps, myPlanner]
 
-func appIndicator(app: AppProtocol) -> AppProtocol {
-    
-    var counter = -1
-    for App in objects {
-        counter += 1
-        if App.appName == app.appName {
-            break
-        }
-    }
-    return objects[counter]
-}
+//func appIndicator(app: AppProtocol) -> AppProtocol {
+//
+//    var counter = -1
+//    for App in objects {
+//        counter += 1
+//        if App.appName == app.appName {
+//            break
+//        }
+//    }
+//    return objects[counter]
+//} // it's a correct way to make func "load" as subscript
 
-var appPosition = appIndicator(app: myTodoList)
+//subscript(app: AppProtocol) -> AppProtocol {
+//
+//    var counter = -1
+//    for App in appStorage! {
+//        counter += 1
+//        if App.appName == app.appName {
+//            break
+//        }
+//    }
+//    print("\(appStorage![counter].appName) was selected")
+//    return appStorage![counter]
+//} change subscritp to the func and it's done
+
+//var appPosition = appIndicator(app: myTodoList)
 // ok, that's will return a fresh app without changes. Let's study and read about subscripts tomorrow.
 

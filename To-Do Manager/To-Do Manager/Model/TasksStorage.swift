@@ -1,11 +1,14 @@
-// Протокол, описывающий сущность "Хранилище задач"
 
 import Foundation
+
+/// 1.5
+// Протокол, описывающий сущность "Хранилище задач"
 protocol TasksStorageProtocol {
     func loadTasks() -> [TaskProtocol]
     func saveTasks(_ tasks: [TaskProtocol])
 }
 
+/// 1.6
 // Сущность "Хранилище задач"
 class TasksStorage: TasksStorageProtocol {
     

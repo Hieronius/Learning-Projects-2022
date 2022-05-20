@@ -1,3 +1,4 @@
+/// 1.01.
 // Тип задачи
 enum TaskPriority {
     // текущая
@@ -6,6 +7,7 @@ enum TaskPriority {
     case important
 }
 
+/// 1.2
 // Состояние задачи
 enum TaskStatus: Int {
     // запланированная
@@ -14,6 +16,7 @@ enum TaskStatus: Int {
     case completed
 }
 
+/// 1.3
 // Требования к типу, описывающему сущность "Задача"
 protocol TaskProtocol {
     // название
@@ -25,6 +28,7 @@ protocol TaskProtocol {
     
 }
 
+/// 1.4
 // Сущность "Задача"
 struct Task: TaskProtocol {
     var title: String

@@ -1,8 +1,172 @@
 
+/// "1.1. or 1.1.1" - it's steps that was made during editing this app
 
 import UIKit
 
 class TaskListController: UITableViewController {
+    
+    
+    // порядок отображения задач по их статусу
+    var tasksStatusPosition: [TaskStatus] = [.planned, .completed]
+    
+    /// 1.7
+    // хранилище задач. Used for access to task storage.
+    var tasksStorage: TasksStorageProtocol = TasksStorage() // May be can be useful in my AppStore app
+
+    // коллекция задач. Actual list of tasks. It's mean tasks = [.important: [task 1, task 2, task]], [.normal: [task 1, task 2, task 3]]
+var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
+    didSet {
+        
+        // Сортировка списка задач
+        for (tasksGroupPriority, tasksGroup) in tasks {
+            tasks[tasksGroupPriority] = tasksGroup.sorted { task1, task2 in
+                let task1position = tasksStatusPosition.firstIndex(of: task1.status) ?? 0
+                let task2position = tasksStatusPosition.firstIndex(of: task2.status) ?? 0
+                return task1position < task2position
+            }
+        }
+        
+        // Сохранение задач
+        var savingArray: [TaskProtocol] = []
+        tasks.forEach { _, value in
+            savingArray += value
+        }
+        tasksStorage.saveTasks(savingArray)
+    }
+}
+    
+    // порядок отображения секций по типам
+    // индекс в массиве соответствует индексу секции в таблице
+    var sectionsTypePosition: [TaskPriority] = [.important, .normal]
+    ///
+    
+    
+    /// 1.8
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if tasks[.important]?.count == 0 {
+            let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+                noDataLabel.text = "Задачи отсутствуют"
+            noDataLabel.textColor = UIColor.black
+            noDataLabel.textAlignment = .center
+            tableView.backgroundView = noDataLabel
+            tableView.separatorStyle = .none
+            
+            print("ViewDidLoad working")
+            
+        } else {
+            tableView.backgroundView = nil
+            
+        }
+        // кнопка активации режима редактирования
+        navigationItem.leftBarButtonItem = editButtonItem
+    
+        
+    }
+    
+    /// may be should be deleted
+    private func loadTasks() {
+        // подготовка коллекции с задачами
+        // будем использовать только те задачи, для которых определена секция в таблице
+        sectionsTypePosition.forEach { taskType in
+            tasks[taskType] = []
+        }
+        // загрузка и разбор задач из хранилища
+        tasksStorage.loadTasks().forEach { task in
+            tasks[task.type]?.append(task)
+        }
+        
+        
+       
+    }
+    ///
+    
+    /// 1.9
+    // количество секций в таблице
+    override func numberOfSections(in tableView: UITableView) -> Int {
+
+        return tasks.count
+    } // this block of code "Задачи отсутствуют" is working and print message in the middle of the screen. How to check my data for emptiness?
+    
+    // количество строк в определенной секции
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // определяем приоритет задач, соответствующий текущей секции
+        let taskType = sectionsTypePosition[section] // here
+        guard let currentTasksType = tasks[taskType] else {
+        
+            return 0
+        }
+//        if currentTasksType.count == 0 {
+//
+//            let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+//                noDataLabel.text = "Задачи отсутствуют"
+//            noDataLabel.textColor = UIColor.black
+//            noDataLabel.textAlignment = .center
+//            tableView.backgroundView = noDataLabel
+//            tableView.separatorStyle = .none
+//        } else {
+//            tableView.backgroundView = nil
+//        }
+        
+        return currentTasksType.count
+    }
+
+    // ячейка для строки таблицы
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // ячейка на основе констрейнтов
+        // return getConfiguredTaskCell_constraints(for: indexPath)
+        // ячейка на основе стека
+        return getConfiguredTaskCell_stack(for: indexPath)
+    }
+    
+    // ячейка на основе ограничений
+    private func getConfiguredTaskCell_constraints(for indexPath: IndexPath) -> UITableViewCell {
+        // загружаем прототип ячейки по идентификатору
+        let cell = tableView.dequeueReusableCell(withIdentifier: "taskCellConstraints", for: indexPath)
+        // получаем данные о задаче, которую необходимо вывести в ячейке
+        let taskType = sectionsTypePosition[indexPath.section]
+        guard let currentTask = tasks[taskType]?[indexPath.row] else {
+            return cell
+        }
+        
+        // текстовая метка символа
+        let symbolLabel = cell.viewWithTag(1) as? UILabel
+        // текстовая метка названия задачи
+        let textLabel = cell.viewWithTag(2) as? UILabel
+        
+        // изменяем символ в ячейке
+        symbolLabel?.text = getSymbolForTask(with: currentTask.status)
+        // изменяем текст в ячейке
+        textLabel?.text = currentTask.title
+        
+        // изменяем цвет текста и символа
+        if currentTask.status == .planned {
+            textLabel?.textColor = .black
+            symbolLabel?.textColor = .black
+        } else {
+            textLabel?.textColor = .lightGray
+            symbolLabel?.textColor = .lightGray
+        }
+        
+        return cell
+    }
+    
+    // возвращаем символ для соответствующего типа задачи
+    private func getSymbolForTask(with status: TaskStatus) -> String {
+        var resultSymbol: String
+        if status == .planned {
+            resultSymbol = "\u{25CB}"
+        } else if status == .completed {
+            resultSymbol = "\u{25C9}"
+        } else {
+            resultSymbol = " "
+        }
+        return resultSymbol
+    }
+    ///
+    
+    
     
     // Получение списка задач, их разбор и установка в свойство tasks
     func setTasks(_ tasksCollection: [TaskProtocol]) {
@@ -17,11 +181,11 @@ class TaskListController: UITableViewController {
         }
         
     
-        
-        if tasksCollection.isEmpty {
-            print("Задачи отсутствуют")
-        }
-        
+    //
+//        if tasksCollection.isEmpty {
+//            print("Задачи отсутствуют")
+//        }
+    //
     
     }
     
@@ -171,63 +335,7 @@ class TaskListController: UITableViewController {
                              
     }
     
-        // порядок отображения задач по их статусу
-        var tasksStatusPosition: [TaskStatus] = [.planned, .completed]
-        
-        // хранилище задач
-        var tasksStorage: TasksStorageProtocol = TasksStorage() // May be can be useful in my AppStore app
     
-        // коллекция задач
-    var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
-        didSet {
-            
-            // Сортировка списка задач
-            for (tasksGroupPriority, tasksGroup) in tasks {
-                tasks[tasksGroupPriority] = tasksGroup.sorted { task1, task2 in
-                    let task1position = tasksStatusPosition.firstIndex(of: task1.status) ?? 0
-                    let task2position = tasksStatusPosition.firstIndex(of: task2.status) ?? 0
-                    return task1position < task2position
-                }
-            }
-            
-            // Сохранение задач
-            var savingArray: [TaskProtocol] = []
-            tasks.forEach { _, value in
-                savingArray += value
-            }
-            tasksStorage.saveTasks(savingArray)
-        }
-    }
-        
-        // порядок отображения секций по типам
-        // индекс в массиве соответствует индексу секции в таблице
-        var sectionsTypePosition: [TaskPriority] = [.important, .normal]
-    
-   
-    
-        
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // кнопка активации режима редактирования
-        navigationItem.leftBarButtonItem = editButtonItem
-    
-        
-    }
-    
-    private func loadTasks() {
-        // подготовка коллекции с задачами
-        // будем использовать только те задачи, для которых определена секция в таблице
-        sectionsTypePosition.forEach { taskType in
-            tasks[taskType] = []
-        }
-        // загрузка и разбор задач из хранилища
-        tasksStorage.loadTasks().forEach { task in
-            tasks[task.type]?.append(task)
-        }
-        
-        
-       
-    }
 
     // MARK: - Table view data source
     
@@ -240,87 +348,6 @@ class TaskListController: UITableViewController {
             title = "Текущие"
         }
         return title
-    }
-
-    // количество секций в таблице
-    override func numberOfSections(in tableView: UITableView) -> Int {
-            
-        if tasks.count < 3 {
-            
-            let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
-                noDataLabel.text = "Задачи отсутствуют"
-            noDataLabel.textColor = UIColor.black
-            noDataLabel.textAlignment = .center
-            tableView.backgroundView = noDataLabel
-            tableView.separatorStyle = .none
-            
-        }
-            
-        return tasks.count
-    } // this block of code "Задачи отсутствуют" is working and print message in the middle of the screen. How to check my data for emptiness?
-    
-    
-    // количество строк в определенной секции
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // определяем приоритет задач, соответствующий текущей секции
-        let taskType = sectionsTypePosition[section] // here
-        guard let currentTasksType = tasks[taskType] else {
-            return 0
-        }
-        return currentTasksType.count
-    }
-
-    // ячейка для строки таблицы
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // ячейка на основе констрейнтов
-        // return getConfiguredTaskCell_constraints(for: indexPath)
-        // ячейка на основе стека
-        return getConfiguredTaskCell_stack(for: indexPath)
-    }
-    
-    // ячейка на основе ограничений
-    private func getConfiguredTaskCell_constraints(for indexPath: IndexPath) -> UITableViewCell {
-        // загружаем прототип ячейки по идентификатору
-        let cell = tableView.dequeueReusableCell(withIdentifier: "taskCellConstraints", for: indexPath)
-        // получаем данные о задаче, которую необходимо вывести в ячейке
-        let taskType = sectionsTypePosition[indexPath.section]
-        guard let currentTask = tasks[taskType]?[indexPath.row] else {
-            return cell
-        }
-        
-        // текстовая метка символа
-        let symbolLabel = cell.viewWithTag(1) as? UILabel
-        // текстовая метка названия задачи
-        let textLabel = cell.viewWithTag(2) as? UILabel
-        
-        // изменяем символ в ячейке
-        symbolLabel?.text = getSymbolForTask(with: currentTask.status)
-        // изменяем текст в ячейке
-        textLabel?.text = currentTask.title
-        
-        // изменяем цвет текста и символа
-        if currentTask.status == .planned {
-            textLabel?.textColor = .black
-            symbolLabel?.textColor = .black
-        } else {
-            textLabel?.textColor = .lightGray
-            symbolLabel?.textColor = .lightGray
-        }
-        
-        return cell
-    }
-    
-    // возвращаем символ для соответствующего типа задачи
-    private func getSymbolForTask(with status: TaskStatus) -> String {
-        var resultSymbol: String
-        if status == .planned {
-            resultSymbol = "\u{25CB}"
-        } else if status == .completed {
-            resultSymbol = "\u{25C9}"
-        } else {
-            resultSymbol = " "
-        }
-        return resultSymbol
     }
 
 }

@@ -6,13 +6,19 @@ import UIKit
 class TaskListController: UITableViewController {
     
     
+    /// 2.1
     // порядок отображения задач по их статусу
     var tasksStatusPosition: [TaskStatus] = [.planned, .completed]
+    ///
+    
     
     /// 1.7
     // хранилище задач. Used for access to task storage.
     var tasksStorage: TasksStorageProtocol = TasksStorage() // May be can be useful in my AppStore app
+    ///
 
+    
+    /// 2.5
     // коллекция задач. Actual list of tasks. It's mean tasks = [.important: [task 1, task 2, task]], [.normal: [task 1, task 2, task 3]]
 var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
     didSet {
@@ -25,28 +31,10 @@ var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
                 return task1position < task2position
             }
         }
+        ///
         
-        // Сохранение задач
-        var savingArray: [TaskProtocol] = []
-        tasks.forEach { _, value in
-            savingArray += value
-        }
-        tasksStorage.saveTasks(savingArray)
-    }
-}
-    
-    // порядок отображения секций по типам
-    // индекс в массиве соответствует индексу секции в таблице
-    var sectionsTypePosition: [TaskPriority] = [.important, .normal]
-    ///
-    
-    
-    /// 1.8
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Homework from Usov!!!!!!!!!!!!!!!!!!!!
-        // check if there is no important tasks print a message "There is not tasks" and else - lets load array of tasks
+        // Homework from Usov
+        // This place of code is perfect to add my tasks check because it's reload after each task changes
         if tasks[.important]?.count == 0 {
             let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
                 noDataLabel.text = "There is no important tasks"
@@ -75,6 +63,27 @@ var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
         } else {
             tableView.backgroundView = nil
         }
+        
+        // Сохранение задач
+        var savingArray: [TaskProtocol] = []
+        tasks.forEach { _, value in
+            savingArray += value
+        }
+        tasksStorage.saveTasks(savingArray)
+    }
+}
+    
+    // порядок отображения секций по типам
+    // индекс в массиве соответствует индексу секции в таблице
+    var sectionsTypePosition: [TaskPriority] = [.important, .normal]
+    ///
+    
+    
+    /// 1.8
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
         
         
         // кнопка активации режима редактирования
@@ -119,6 +128,7 @@ var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
         return currentTasksType.count
     }
 
+    /// 2.3
     // ячейка для строки таблицы
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // ячейка на основе констрейнтов
@@ -126,6 +136,7 @@ var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
         // ячейка на основе стека
         return getConfiguredTaskCell_stack(for: indexPath)
     }
+    ///
     
     // ячейка на основе ограничений
     private func getConfiguredTaskCell_constraints(for indexPath: IndexPath) -> UITableViewCell {
@@ -189,8 +200,113 @@ var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
 
    ///
     
+    
+    /// 2.2
+    // ячейка на основе стека
+    private func getConfiguredTaskCell_stack(for indexPath: IndexPath) -> UITableViewCell {
+    // загружаем прототип ячейки по идентификатору
+        let cell = tableView.dequeueReusableCell(withIdentifier: "taskCellStack", for: indexPath) as! TaskCell
+    // получаем данные о задача, которые необходимо вывести в ячейке
+        let taskType = sectionsTypePosition[indexPath.section]
+    guard let currentTask = tasks[taskType]?[indexPath.row] else {
+        return cell
+        
+    }
+                         
+    // изменяем текст в ячейке
+    cell.title.text = currentTask.title
+    // изменяем символ в ячейке
+    cell.symbol.text = getSymbolForTask(with: currentTask.status)
+                         
+    // изменяем цвет текста
+    if currentTask.status == .planned {
+        cell.title.textColor = .black
+        cell.symbol.textColor = .black
+    } else {
+        cell.title.textColor = .lightGray
+        cell.symbol.textColor = .lightGray
+    }
+        return cell
+                         
+}
+    ///
 
-// Получение списка задач, их разбор и установка в свойство tasks
+    
+    /// 2.4
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // 1. Проверяем существование задачи
+        let taskType = sectionsTypePosition[indexPath.section]
+        guard let _ = tasks[taskType]?[indexPath.row] else {
+            return
+        }
+        
+        // 2. Убеждаемся, что задача не является выполненной
+        guard tasks[taskType]![indexPath.row].status == .planned else {
+            // снимаем выделение со строки
+            tableView.deselectRow(at: indexPath, animated: true)
+            return
+        }
+        
+        // 3. Отмечаем задачу как выполненную
+        tasks[taskType]![indexPath.row].status = .completed
+        
+        // 4. Перезагружаем секцию таблицы
+        tableView.reloadSections(IndexSet(arrayLiteral: indexPath.section), with: .automatic)
+    }
+    ///
+    
+    
+    /// 2.6
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        // Получаем данные о задаче, по которой осуществлен свайп
+        let taskType = sectionsTypePosition[indexPath.section]
+        guard let _ = tasks[taskType]?[indexPath.row] else {
+            return nil
+        }
+        
+        // Действие для изменения статуса на "запланирована"
+        let actionSwipeInstance = UIContextualAction(style: .normal, title: "Не выполнена") { _,_,_ in
+            self.tasks[taskType]![indexPath.row].status = .planned
+            self.tableView.reloadSections(IndexSet(arrayLiteral: indexPath.section), with: .automatic)
+        }
+        
+        // Действие для перехода к экрану редактирования
+        let actionEditInstance = UIContextualAction(style: .normal, title: "Изменить") { _,_,_ in
+            // Загрузка сцены со storyboard
+            let editScreen = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TaskEditController") as! TaskEditController
+            // передача значений редактируемой задачи
+            editScreen.taskText = self.tasks[taskType]![indexPath.row].title
+            editScreen.taskType = self.tasks[taskType]![indexPath.row].type
+            editScreen.taskStatus = self.tasks[taskType]![indexPath.row].status
+            // передача обработчика для сохранения задачи
+            editScreen.doAfterEdit = { [self] title, type, status in
+                let editedTask = Task(title: title, type: type, status: status)
+                tasks[taskType]![indexPath.row] = editedTask
+                tableView.reloadData()
+            }
+            // переход к экрану редактирования
+            self.navigationController?.pushViewController(editScreen, animated: true)
+        }
+        
+        // изменяем цвет фона кнопки с действием
+        actionEditInstance.backgroundColor = .darkGray
+        
+        // создаем обьект, описывающий доступные действия
+        // в зависимости от статуса задачи будет отображено 1 или 2 действия
+        let actionsConfiguration: UISwipeActionsConfiguration
+        if tasks[taskType]![indexPath.row].status == .completed {
+            actionsConfiguration = UISwipeActionsConfiguration(actions: [actionSwipeInstance, actionEditInstance])
+        } else {
+            actionsConfiguration = UISwipeActionsConfiguration(actions: [actionEditInstance])
+        }
+        
+        return actionsConfiguration
+    }
+    ///
+
+    
+    // Получение списка задач, их разбор и установка в свойство tasks
     func setTasks(_ tasksCollection: [TaskProtocol]) {
         // подготовка коллекции с задачами
         // будем использовать только те задачи, для которых определена секция
@@ -254,102 +370,10 @@ var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
     }
     
     
-    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
-        // Получаем данные о задаче, по которой осуществлен свайп
-        let taskType = sectionsTypePosition[indexPath.section]
-        guard let _ = tasks[taskType]?[indexPath.row] else {
-            return nil
-        }
-        
-        // Действие для изменения статуса на "запланирована"
-        let actionSwipeInstance = UIContextualAction(style: .normal, title: "Не выполнена") { _,_,_ in
-            self.tasks[taskType]![indexPath.row].status = .planned
-            self.tableView.reloadSections(IndexSet(arrayLiteral: indexPath.section), with: .automatic)
-        }
-        
-        // Действие для перехода к экрану редактирования
-        let actionEditInstance = UIContextualAction(style: .normal, title: "Изменить") { _,_,_ in
-            // Загрузка сцены со storyboard
-            let editScreen = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TaskEditController") as! TaskEditController
-            // передача значений редактируемой задачи
-            editScreen.taskText = self.tasks[taskType]![indexPath.row].title
-            editScreen.taskType = self.tasks[taskType]![indexPath.row].type
-            editScreen.taskStatus = self.tasks[taskType]![indexPath.row].status
-            // передача обработчика для сохранения задачи
-            editScreen.doAfterEdit = { [self] title, type, status in
-                let editedTask = Task(title: title, type: type, status: status)
-                tasks[taskType]![indexPath.row] = editedTask
-                tableView.reloadData()
-            }
-            // переход к экрану редактирования
-            self.navigationController?.pushViewController(editScreen, animated: true)
-        }
-        
-        // изменяем цвет фона кнопки с действием
-        actionEditInstance.backgroundColor = .darkGray
-        
-        // создаем обьект, описывающий доступные действия
-        // в зависимости от статуса задачи будет отображено 1 или 2 действия
-        let actionsConfiguration: UISwipeActionsConfiguration
-        if tasks[taskType]![indexPath.row].status == .completed {
-            actionsConfiguration = UISwipeActionsConfiguration(actions: [actionSwipeInstance, actionEditInstance])
-        } else {
-            actionsConfiguration = UISwipeActionsConfiguration(actions: [actionEditInstance])
-        }
-        
-        return actionsConfiguration
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 1. Проверяем существование задачи
-        let taskType = sectionsTypePosition[indexPath.section]
-        guard let _ = tasks[taskType]?[indexPath.row] else {
-            return
-        }
-        
-        // 2. Убеждаемся, что задача не является выполненной
-        guard tasks[taskType]![indexPath.row].status == .planned else {
-            // снимаем выделение со строки
-            tableView.deselectRow(at: indexPath, animated: true)
-            return
-        }
-        
-        // 3. Отмечаем задачу как выполненную
-        tasks[taskType]![indexPath.row].status = .completed
-        
-        // 4. Перезагружаем секцию таблицы
-        tableView.reloadSections(IndexSet(arrayLiteral: indexPath.section), with: .automatic)
-    }
+   
     
     
-        // ячейка на основе стека
-        private func getConfiguredTaskCell_stack(for indexPath: IndexPath) -> UITableViewCell {
-        // загружаем прототип ячейки по идентификатору
-            let cell = tableView.dequeueReusableCell(withIdentifier: "taskCellStack", for: indexPath) as! TaskCell
-        // получаем данные о задача, которые необходимо вывести в ячейке
-            let taskType = sectionsTypePosition[indexPath.section]
-        guard let currentTask = tasks[taskType]?[indexPath.row] else {
-            return cell
-            
-        }
-                             
-        // изменяем текст в ячейке
-        cell.title.text = currentTask.title
-        // изменяем символ в ячейке
-        cell.symbol.text = getSymbolForTask(with: currentTask.status)
-                             
-        // изменяем цвет текста
-        if currentTask.status == .planned {
-            cell.title.textColor = .black
-            cell.symbol.textColor = .black
-        } else {
-            cell.title.textColor = .lightGray
-            cell.symbol.textColor = .lightGray
-        }
-            return cell
-                             
-    }
+    
 }
     
 

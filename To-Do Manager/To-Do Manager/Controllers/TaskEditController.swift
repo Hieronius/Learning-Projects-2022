@@ -34,8 +34,12 @@ class TaskEditController: UITableViewController {
         // вызываем обработчик
         if correctTitle == true {  // added 18.05.2022.
             doAfterEdit?(tittle, type, status)
+            
+          
             // возвращаемся к предыдущему экрану
             navigationController?.popViewController(animated: true)
+            
+    
         
         }
        

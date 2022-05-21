@@ -8,6 +8,7 @@ enum TaskPriority {
 }
 
 /// 1.2
+/// 2.1
 // Состояние задачи
 enum TaskStatus: Int {
     // запланированная

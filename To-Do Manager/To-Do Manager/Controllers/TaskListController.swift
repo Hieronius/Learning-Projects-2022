@@ -45,20 +45,38 @@ var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Homework from Usov!!!!!!!!!!!!!!!!!!!!
+        // check if there is no important tasks print a message "There is not tasks" and else - lets load array of tasks
         if tasks[.important]?.count == 0 {
             let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
-                noDataLabel.text = "Задачи отсутствуют"
+                noDataLabel.text = "There is no important tasks"
             noDataLabel.textColor = UIColor.black
             noDataLabel.textAlignment = .center
             tableView.backgroundView = noDataLabel
             tableView.separatorStyle = .none
             
-            print("ViewDidLoad working")
+            print("Important tasks check")
             
         } else {
             tableView.backgroundView = nil
-            
         }
+        
+        // check if there is no current tasks print a mesage "There is no current tasks" and else lets load array of tasks
+        if tasks[.normal]?.count == 0 {
+            let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+                noDataLabel.text = "There is no important tasks"
+            noDataLabel.textColor = UIColor.black
+            noDataLabel.textAlignment = .center
+            tableView.backgroundView = noDataLabel
+            tableView.separatorStyle = .none
+            
+            print("Normal tasks check")
+            
+        } else {
+            tableView.backgroundView = nil
+        }
+        
+        
         // кнопка активации режима редактирования
         navigationItem.leftBarButtonItem = editButtonItem
     
@@ -87,7 +105,7 @@ var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
     override func numberOfSections(in tableView: UITableView) -> Int {
 
         return tasks.count
-    } // this block of code "Задачи отсутствуют" is working and print message in the middle of the screen. How to check my data for emptiness?
+    }
     
     // количество строк в определенной секции
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -97,17 +115,6 @@ var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
         
             return 0
         }
-//        if currentTasksType.count == 0 {
-//
-//            let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
-//                noDataLabel.text = "Задачи отсутствуют"
-//            noDataLabel.textColor = UIColor.black
-//            noDataLabel.textAlignment = .center
-//            tableView.backgroundView = noDataLabel
-//            tableView.separatorStyle = .none
-//        } else {
-//            tableView.backgroundView = nil
-//        }
         
         return currentTasksType.count
     }
@@ -167,8 +174,23 @@ var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
     ///
     
     
+    /// 2.0
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        var title: String?
+        let tasksType = sectionsTypePosition[section]
+        if tasksType == .important {
+            title = "Важные"
+        } else if tasksType == .normal {
+            title = "Текущие"
+        }
+        return title
+    }
+
+
+   ///
     
-    // Получение списка задач, их разбор и установка в свойство tasks
+
+// Получение списка задач, их разбор и установка в свойство tasks
     func setTasks(_ tasksCollection: [TaskProtocol]) {
         // подготовка коллекции с задачами
         // будем использовать только те задачи, для которых определена секция
@@ -180,12 +202,6 @@ var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
             tasks[task.type]?.append(task)
         }
         
-    
-    //
-//        if tasksCollection.isEmpty {
-//            print("Задачи отсутствуют")
-//        }
-    //
     
     }
     
@@ -334,20 +350,8 @@ var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
             return cell
                              
     }
-    
+}
     
 
     // MARK: - Table view data source
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        var title: String?
-        let tasksType = sectionsTypePosition[section]
-        if tasksType == .important {
-            title = "Важные"
-        } else if tasksType == .normal {
-            title = "Текущие"
-        }
-        return title
-    }
-
-}

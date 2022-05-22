@@ -71,3 +71,51 @@ var coordinates = (10, -5)
 oneStep(coordinates: &coordinates, stepType: "up")
 oneStep(coordinates: &coordinates, stepType: "right")
 
+///
+
+// function that will select a special type of ammo and attack the target
+// And depend of type of the ammo will be different damage and side effects
+
+func attack(currentEnemyLife: inout Int, typeOftheAmmo: String) -> Void {
+    
+    func fireAmmo(enemyHP: inout Int) {
+        enemyHP = enemyHP - 15
+        print("Enemy was attacked with fire ammo and has \(enemyHP) HP now")
+    }
+    
+    func frostAmmo(enemyHP: inout Int) {
+        enemyHP = enemyHP - 20
+        print("Enemy was frosen and he has \(enemyHP) HP now")
+    }
+    
+    func electricAmmo(enemyHP: inout Int) {
+        enemyHP = enemyHP - 25
+        print("Enemy was shocked and he has \(enemyHP) HP now")
+    }
+    
+    func armorPenetrationAmmo(enemyHP: inout Int) {
+        enemyHP = enemyHP - 50
+        print("Enemy's armor was destroyed and he has \(enemyHP) HP now")
+    }
+    
+    switch typeOftheAmmo {
+    case "fireAmmo":
+        fireAmmo(enemyHP: &currentEnemyLife)
+    case "frostAmmo":
+    frostAmmo(enemyHP: &currentEnemyLife)
+    case "electricAmmo":
+        electricAmmo(enemyHP: &currentEnemyLife)
+    case "armorPenetrationAmmo":
+        armorPenetrationAmmo(enemyHP: &currentEnemyLife)
+    default:
+        break
+}
+}
+
+var currentEnemyLife = 100
+attack(currentEnemyLife: &currentEnemyLife, typeOftheAmmo: "fireAmmo")
+attack(currentEnemyLife: &currentEnemyLife, typeOftheAmmo: "frostAmmo")
+attack(currentEnemyLife: &currentEnemyLife, typeOftheAmmo: "electricAmmo")
+
+
+

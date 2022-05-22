@@ -3,21 +3,42 @@
 import UIKit
 
 class TaskTypeController: UITableViewController {
+
+    /// 4.2
+    // 1. Кортеж, описывающий тип задачи
+    typealias TypeCellDescription = (type: TaskPriority, title: String, description: String)
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // получаем выбранный тип
-        let selectedType = taskTypesInformation[indexPath.row].type
-        // вызор обработчика
-        doAfterTypeSelected?(selectedType)
-        // переход к предыдущему экрану
-        navigationController?.popViewController(animated: true)
-    }
+    // 2. Коллекция доступных типов задач с их описанием
+    private var taskTypesInformation: [TypeCellDescription] = [
+        (type: .important, title: "Важная", description: "Такой тип задач является наиболее приоритетным для выполнения. Все важные задачи выводятся в самом верху списка задач"),
+        (type: .normal, title: "Текущая", description: "Задача с обычным приоритетом")
+    ]
+    
+    // 3. Выбранный приоритет
+    var selectedType: TaskPriority = .normal
+    ///
     
     
+    /// 4.6
     // обработчик выбора типа
     var doAfterTypeSelected: ((TaskPriority) -> Void)?
+    ///
     
     
+    /// 4.3
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return taskTypesInformation.count
+    }
+    ///
+    
+    
+    
+    
+    /// 4.5
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 1. Получение переиспользуемой кастомной ячейки по ее идентификатору
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskTypeCellTableViewCell", for: indexPath) as! TaskTypeCellTableViewCell
@@ -38,20 +59,26 @@ class TaskTypeController: UITableViewController {
         }
         return cell
     }
+    ///
     
     
-    // 1. Кортеж, описывающий тип задачи
-    typealias TypeCellDescription = (type: TaskPriority, title: String, description: String)
+    /// 4.7
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // получаем выбранный тип
+        let selectedType = taskTypesInformation[indexPath.row].type
+        // вызор обработчика
+        doAfterTypeSelected?(selectedType)
+        // переход к предыдущему экрану
+        navigationController?.popViewController(animated: true)
+    }
+    ///
     
-    // 2. Коллекция доступных типов задач с их описанием
-    private var taskTypesInformation: [TypeCellDescription] = [
-        (type: .important, title: "Важная", description: "Такой тип задач является наиболее приоритетным для выполнения. Все важные задачи выводятся в самом верху списка задач"),
-        (type: .normal, title: "Текущая", description: "Задача с обычным приоритетом")
-    ]
     
-    // 3. Выбранный приоритет
-    var selectedType: TaskPriority = .normal
+    
 
+    
+    
+    /// 4.4
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,15 +90,10 @@ class TaskTypeController: UITableViewController {
 
         
     }
-
+    ///
+    
+    
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return taskTypesInformation.count
-    }
    
 }

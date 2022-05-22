@@ -8,7 +8,7 @@ protocol TasksStorageProtocol {
     func saveTasks(_ tasks: [TaskProtocol])
 }
 
-/// 1.6
+/// 1.6 / 5.4
 // Сущность "Хранилище задач"
 class TasksStorage: TasksStorageProtocol {
     

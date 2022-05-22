@@ -18,7 +18,7 @@ class TaskListController: UITableViewController {
     ///
 
     
-    /// 2.5
+    /// 2.5 / 5.6
     // коллекция задач. Actual list of tasks. It's mean tasks = [.important: [task 1, task 2, task]], [.normal: [task 1, task 2, task 3]]
 var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
     didSet {
@@ -52,7 +52,7 @@ var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
         // check if there is no current tasks print a mesage "There is no current tasks" and else lets load array of tasks
         if tasks[.normal]?.count == 0 {
             let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
-                noDataLabel.text = "There is no important tasks"
+                noDataLabel.text = "There is no normal tasks"
             noDataLabel.textColor = UIColor.black
             noDataLabel.textAlignment = .center
             tableView.backgroundView = noDataLabel
@@ -256,7 +256,7 @@ var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
     ///
     
     
-    /// 2.6
+    /// 2.6 / 5.3
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         // Получаем данные о задаче, по которой осуществлен свайп
@@ -304,35 +304,6 @@ var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
         return actionsConfiguration
     }
     ///
-
-    
-    // Получение списка задач, их разбор и установка в свойство tasks
-    func setTasks(_ tasksCollection: [TaskProtocol]) {
-        // подготовка коллекции с задачами
-        // будем использовать только те задачи, для которых определена секция
-        sectionsTypePosition.forEach { taskType in // sectionsTypesPosition - у автора
-            tasks[taskType] = []
-        }
-        // загрузка и разбор задач из хранилища
-        tasksCollection.forEach { task in
-            tasks[task.type]?.append(task)
-        }
-        
-    
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toCreateScreen" {
-            let destination = segue.destination as! TaskEditController
-            destination.doAfterEdit = { [unowned self] title, type, status in
-                let newTask = Task(title: title, type: type, status: status)
-                tasks[type]?.append(newTask)
-                tableView.reloadData()
-            }
-        }
-    }
-    
-    
     
     
     /// 2.8 / 2.9
@@ -376,6 +347,36 @@ var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
     ///
     
     
+    /// 5.2
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toCreateScreen" {
+            let destination = segue.destination as! TaskEditController
+            destination.doAfterEdit = { [unowned self] title, type, status in
+                let newTask = Task(title: title, type: type, status: status)
+                tasks[type]?.append(newTask)
+                tableView.reloadData()
+            }
+        }
+    }
+    ///
+
+
+    /// 5.8
+    // Получение списка задач, их разбор и установка в свойство tasks
+    func setTasks(_ tasksCollection: [TaskProtocol]) {
+        // подготовка коллекции с задачами
+        // будем использовать только те задачи, для которых определена секция
+        sectionsTypePosition.forEach { taskType in // sectionsTypesPosition - у автора
+            tasks[taskType] = []
+        }
+        // загрузка и разбор задач из хранилища
+        tasksCollection.forEach { task in
+            tasks[task.type]?.append(task)
+        }
+        
+    
+    }
+    ///
 }
     
 

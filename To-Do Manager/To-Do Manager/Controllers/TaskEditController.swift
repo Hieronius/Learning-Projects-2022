@@ -21,6 +21,12 @@ class TaskEditController: UITableViewController {
     ///
     
     
+    /// 4.9
+    // переключатель статуса
+    @IBOutlet var taskStatusSwitch: UISwitch!
+    ///
+    
+    
     /// 3.6
     // Название типов задач
     private var taskTitles: [TaskPriority: String] = [
@@ -41,9 +47,25 @@ class TaskEditController: UITableViewController {
     ///
     
     
-
+    /// 4.8
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toTaskTypeScreen" {
+            // ссылка на контроллер назначения
+            let destination = segue.destination as! TaskTypeController
+            // передача выбранного типа
+            destination.selectedType = taskType
+            // передача обработчика выбора типа
+            destination.doAfterTypeSelected = { [unowned self] selectedType in
+                taskType = selectedType
+                // обновляем метку с текущим типом
+                taskTypeLabel?.text = taskTitles[taskType]
+            }
+        }
+    }
+    ///
     
     
+    /// 5.0
     @IBAction func saveTask(_ sender: UIBarButtonItem) {
         // получаем актуальные значения
         
@@ -77,39 +99,13 @@ class TaskEditController: UITableViewController {
         if correctTitle == true {  // added 18.05.2022.
             doAfterEdit?(tittle, type, status)
             
-          
             // возвращаемся к предыдущему экрану
             navigationController?.popViewController(animated: true)
-            
-    
         
         }
        
-        
-        
     }
-    
-    
-
-    
-    // переключатель статуса
-    @IBOutlet var taskStatusSwitch: UISwitch!
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toTaskTypeScreen" {
-            // ссылка на контроллер назначения
-            let destination = segue.destination as! TaskTypeController
-            // передача выбранного типа
-            destination.selectedType = taskType
-            // передача обработчика выбора типа
-            destination.doAfterTypeSelected = { [unowned self] selectedType in
-                taskType = selectedType
-                // обновляем метку с текущим типом
-                taskTypeLabel?.text = taskTitles[taskType]
-            }
-        }
-    }
-    
+    ///
     
     
    

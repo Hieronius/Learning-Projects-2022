@@ -223,7 +223,7 @@
                     <connections>
                         <outlet property="taskStatusSwitch" destination="Kxi-pQ-y4z" id="hUu-m1-vYA"/>
                         <outlet property="taskTitle" destination="VVS-J9-jyP" id="3jj-fa-vOF"/>
-                        <outlet property="taskTypeLabel" destination="gMk-6l-BH9" id="nyc-c6-Nob"/>
+                        <outlet property="taskTypeLabel" destination="vrv-mo-NuV" id="feu-iD-TUK"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lb8-th-DmR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

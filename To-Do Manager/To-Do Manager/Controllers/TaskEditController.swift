@@ -2,6 +2,48 @@ import UIKit
 
 class TaskEditController: UITableViewController {
     
+    /// 3.1
+    // Параметры задачи
+    var taskText = ""
+    var taskType: TaskPriority = .normal
+    var taskStatus: TaskStatus = .planned
+    ///
+    
+    
+    /// 3.2
+    var doAfterEdit: ((String, TaskPriority, TaskStatus) -> Void)?
+    ///
+    
+    
+    /// 3.4 / 3.5
+    @IBOutlet var taskTitle: UITextField!
+    @IBOutlet var taskTypeLabel: UILabel!
+    ///
+    
+    
+    /// 3.6
+    // Название типов задач
+    private var taskTitles: [TaskPriority: String] = [
+        .important:"Важная",
+        .normal: "Текущая"
+    ]
+    
+    
+    
+    /// 3.3
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    ///
+    
+    
+
+    
+    
     @IBAction func saveTask(_ sender: UIBarButtonItem) {
         // получаем актуальные значения
         
@@ -68,30 +110,10 @@ class TaskEditController: UITableViewController {
         }
     }
     
-    // Название типов задач
-    private var taskTitles: [TaskPriority: String] = [
-        .important: "Важная",
-        .normal: "Текущая"]
     
-    @IBOutlet var taskTypeLabel: UILabel!
     
-    @IBOutlet var taskTitle: UITextField!
-    
-    var doAfterEdit: ((String, TaskPriority, TaskStatus) -> Void)?
-    
-    // Параметры задачи
-    var taskText = ""
-    var taskType: TaskPriority = .normal
-    var taskStatus: TaskStatus = .planned
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
-}
-
+   
+    /// 3.5 / 3.7
     override func viewDidLoad() {
         super.viewDidLoad()
         // обновление текстового поля с названием задачи
@@ -105,4 +127,5 @@ class TaskEditController: UITableViewController {
             taskStatusSwitch.isOn = true
         }
     }
+    ///
 }

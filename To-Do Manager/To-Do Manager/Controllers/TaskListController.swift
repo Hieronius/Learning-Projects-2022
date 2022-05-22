@@ -85,10 +85,10 @@ var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
         
         
         
-        
+        /// 2.7
         // кнопка активации режима редактирования
         navigationItem.leftBarButtonItem = editButtonItem
-    
+        ///
         
     }
     
@@ -333,6 +333,21 @@ var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
     }
     
     
+    
+    
+    /// 2.8 / 2.9
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        let taskType = sectionsTypePosition[indexPath.section]
+        // удаляем задачу
+        tasks[taskType]?.remove(at: indexPath.row)
+        // удаляем строку, соответствующую задаче
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
+    ///
+    
+    
+    /// 3.0
     // ручная сортировка списка задач
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         // секция, из которой происходит перемещение
@@ -349,7 +364,7 @@ var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
         // Удаляем задачу с места, откуда она перенесена
         tasks[taskTypeFrom]!.remove(at: sourceIndexPath.row)
         // Вставляем задачу на новую позицию
-        tasks[taskTypeTo]!.insert(movedTask, at: destinationIndexPath.row)
+//        tasks[taskTypeTo]!.insert(movedTask, at: destinationIndexPath.row)
         // если секция изменилась, изменяем тип задачи в соответствии с новой позицией
         if taskTypeFrom != taskTypeTo {
             tasks[taskTypeTo]![destinationIndexPath.row].type = taskTypeTo
@@ -358,20 +373,7 @@ var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
         // обновляем данные
         tableView.reloadData()
     }
-    
-    
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
-        let taskType = sectionsTypePosition[indexPath.section]
-        // удаляем задачу
-        tasks[taskType]?.remove(at: indexPath.row)
-        // удаляем строку, соответствующую задаче
-        tableView.deleteRows(at: [indexPath], with: .automatic)
-    }
-    
-    
-   
-    
+    ///
     
     
 }

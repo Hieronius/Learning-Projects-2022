@@ -119,3 +119,81 @@ attack(currentEnemyLife: &currentEnemyLife, typeOftheAmmo: "electricAmmo")
 
 
 
+
+
+
+enum TypeOfTheAmmo {
+    case fireAmmo
+    case electricAmmo
+    case frozenAmmo
+    case penetrationAmmo
+}
+
+enum TypesOfTheWeapon {
+    case gatlingGun
+    case missles
+    case lazerBeam
+    case claw
+}
+
+func Goliafh(amountOfDamage: inout Int, typeOfTheAmmo: TypeOfTheAmmo, typeOfTheWeapon: TypesOfTheWeapon) {
+    
+    
+    // types of ammo
+    func chargeWithFireAmmo(damage: inout Int) {
+        damage = damage + 15
+        print("Goliath dealt \(damage) with fire ammo")
+    }
+    
+    func chargeWithFrozenAmmo(damage: inout Int) {
+        damage = damage + 25
+        print("Goliath dealt \(damage) with frozen ammo")
+    }
+    
+    func chargeWithElectricAmmo(damage: inout Int) {
+        damage = damage + 35
+        print("Goliath dealt \(damage) with electric ammo")
+    }
+    
+    func chargeWithPenetrationAmmo(damage: inout Int) {
+        damage = damage + 45
+        print("Goliath dealt \(damage) with penetration ammo")
+    }
+    
+    // types of weapon
+    func attackWithGatlingGun(damage: inout Int) {
+        damage = damage + 50
+        print("Goliath dealt \(damage) with gatling gun")
+    }
+    
+    func attackWithMissles(damage: inout Int) {
+        damage = damage + 75
+        print("Goliath dealt \(damage) with missles")
+    }
+    
+    func attackWithLazerBeam(damage: inout Int) {
+        damage = damage + 100
+        print("Goliath dealt \(damage) with lazer beam")
+    }
+    
+    func attackWithClaw(damage: inout Int) {
+        damage = damage + 35
+        print("Goliath dealt \(damage) with claw")
+    }
+    
+    // selecting of weapon and type of ammo
+    
+    switch (typeOfTheAmmo, typeOfTheWeapon) {
+        
+    case (.fireAmmo, .gatlingGun):
+        chargeWithFireAmmo(damage: &totallDamage)
+        attackWithGatlingGun(damage: &totallDamage)
+        
+    case (.frozenAmmo, .gatlingGun):
+        chargeWithFireAmmo(damage: &totallDamage)
+        attackWithGatlingGun(damage: &totallDamage)
+        
+        ///
+    }
+}
+var totallDamage = 0

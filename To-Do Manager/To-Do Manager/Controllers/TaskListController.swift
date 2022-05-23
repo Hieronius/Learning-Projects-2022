@@ -31,44 +31,59 @@ var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
                 return task1position < task2position
             }
         }
+        
+         
         ///
         
         // Homework from Usov
         // This place of code is perfect to add my tasks check because it's reload after each task changes
-        if tasks[.important]?.count == 0 {
-        
-        
-            
-            let noDataImportantLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
-                noDataImportantLabel.text = "There is no important tasks"
-            noDataImportantLabel.textColor = UIColor.black
-            noDataImportantLabel.textAlignment = .center
-            tableView.backgroundView = noDataImportantLabel
-            tableView.separatorStyle = .none
-            
-            print("Important tasks check")
-            
-            
-        
-            
-        } else {
-            tableView.backgroundView = nil
-        }
+//        if tasks[.important]?.count == 0 {
+//
+//             func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//                var title: String?
+//                let tasksType = sectionsTypePosition[section]
+//                 if tasksType == .important {
+//                    title = "Важные задачи отсутствуют"
+//                     print("check point 1")
+//                 }
+//
+//                 print("check point 2")
+//                return title
+//
+//             }
+//        }
+//
+//        if tasks[.important]!.count > 0 {
+//
+//            func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//               var title: String?
+//               let tasksType = sectionsTypePosition[section]
+//                if tasksType == .important {
+//                   title = "Важные"
+//                    print("check point 3")
+//                }
+//
+//                print("check point 4")
+//               return title
+//
+//            }
+//             }
+             
         
         // check if there is no current tasks print a mesage "There is no current tasks" and else lets load array of tasks
-        if tasks[.normal]?.count == 0 {
-            let noDataNormalLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
-                noDataNormalLabel.text = "There is no normal tasks"
-            noDataNormalLabel.textColor = UIColor.black
-            noDataNormalLabel.textAlignment = .center
-            tableView.backgroundView = noDataNormalLabel
-            tableView.separatorStyle = .none
-            
-            print("Normal tasks check")
-            
-        } else {
-            tableView.backgroundView = nil
-        }
+//        if tasks[.normal]?.count == 0 {
+//            let noDataNormalLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+//                noDataNormalLabel.text = "There is no normal tasks"
+//            noDataNormalLabel.textColor = UIColor.black
+//            noDataNormalLabel.textAlignment = .center
+//            tableView.backgroundView = noDataNormalLabel
+//            tableView.separatorStyle = .none
+//
+//            print("Normal tasks check")
+//
+//        } else {
+//            tableView.backgroundView = nil
+//        }
         
             
         
@@ -197,18 +212,32 @@ var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         var title: String?
         let tasksType = sectionsTypePosition[section]
-        if tasksType == .important {
-            title = "Важные"
-        } else if tasksType == .normal {
-            title = "Текущие"
-        }
         
-//        else if tasksType == .important && tasks[.important]?.count == 0 {
-//            title = "Важные задачи отсутствуют"
-//        } else if tasksType == .normal && tasks[.normal]?.count == 0 {
-//            title = "Текущие задачи отсутствуют"
-//        }
-        return title
+        if tasksType == .important && tasks[.important]?.count == 0 {
+            print("Check point 1")
+            title = "Важные задачи отсутствуют"
+            
+            
+        } else if tasksType == .normal && tasks[.normal]?.count == 0 {
+            print("Check point 2")
+            title = "Текущие задачи отсутствуют"
+           
+            
+            
+        
+        } else if tasksType == .important && tasks[.important]?.count != 0 {
+            print("Check point 3")
+            title = "Важные"
+            
+            
+        } else if tasksType == .normal && tasks[.normal]?.count != 0 {
+            print("Check point 4")
+            title = "Текущие"
+            
+           
+        }
+    return title
+        
     }
 
 

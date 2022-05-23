@@ -36,14 +36,20 @@ var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
         // Homework from Usov
         // This place of code is perfect to add my tasks check because it's reload after each task changes
         if tasks[.important]?.count == 0 {
-            let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
-                noDataLabel.text = "There is no important tasks"
-            noDataLabel.textColor = UIColor.black
-            noDataLabel.textAlignment = .center
-            tableView.backgroundView = noDataLabel
+        
+        
+            
+            let noDataImportantLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+                noDataImportantLabel.text = "There is no important tasks"
+            noDataImportantLabel.textColor = UIColor.black
+            noDataImportantLabel.textAlignment = .center
+            tableView.backgroundView = noDataImportantLabel
             tableView.separatorStyle = .none
             
             print("Important tasks check")
+            
+            
+        
             
         } else {
             tableView.backgroundView = nil
@@ -51,11 +57,11 @@ var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
         
         // check if there is no current tasks print a mesage "There is no current tasks" and else lets load array of tasks
         if tasks[.normal]?.count == 0 {
-            let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
-                noDataLabel.text = "There is no normal tasks"
-            noDataLabel.textColor = UIColor.black
-            noDataLabel.textAlignment = .center
-            tableView.backgroundView = noDataLabel
+            let noDataNormalLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+                noDataNormalLabel.text = "There is no normal tasks"
+            noDataNormalLabel.textColor = UIColor.black
+            noDataNormalLabel.textAlignment = .center
+            tableView.backgroundView = noDataNormalLabel
             tableView.separatorStyle = .none
             
             print("Normal tasks check")
@@ -63,6 +69,8 @@ var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
         } else {
             tableView.backgroundView = nil
         }
+        
+            
         
         // Сохранение задач
         var savingArray: [TaskProtocol] = []
@@ -194,6 +202,12 @@ var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
         } else if tasksType == .normal {
             title = "Текущие"
         }
+        
+//        else if tasksType == .important && tasks[.important]?.count == 0 {
+//            title = "Важные задачи отсутствуют"
+//        } else if tasksType == .normal && tasks[.normal]?.count == 0 {
+//            title = "Текущие задачи отсутствуют"
+//        }
         return title
     }
 

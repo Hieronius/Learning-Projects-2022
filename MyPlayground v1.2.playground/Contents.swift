@@ -136,49 +136,50 @@ enum TypesOfTheWeapon {
     case claw
 }
 
-func Goliafh(amountOfDamage: inout Int, typeOfTheAmmo: TypeOfTheAmmo, typeOfTheWeapon: TypesOfTheWeapon) {
+var totalDamage = 0
+func Goliafh(totalDamage: inout Int, typeOfTheAmmo: TypeOfTheAmmo, typeOfTheWeapon: TypesOfTheWeapon) -> Void {
     
     
     // types of ammo
-    func chargeWithFireAmmo(damage: inout Int) {
-        damage = damage + 15
-        print("Goliath dealt \(damage) with fire ammo")
+    func chargeWithFireAmmo(totalDamage: inout Int) {
+        totalDamage = totalDamage + 15
+        print("Goliath dealt \(totalDamage) with fire ammo")
     }
     
-    func chargeWithFrozenAmmo(damage: inout Int) {
-        damage = damage + 25
-        print("Goliath dealt \(damage) with frozen ammo")
+    func chargeWithFrozenAmmo(totalDamage: inout Int) {
+        totalDamage = totalDamage + 25
+        print("Goliath dealt \(totalDamage) with frozen ammo")
     }
     
-    func chargeWithElectricAmmo(damage: inout Int) {
-        damage = damage + 35
-        print("Goliath dealt \(damage) with electric ammo")
+    func chargeWithElectricAmmo(totalDamage: inout Int) {
+        totalDamage = totalDamage + 35
+        print("Goliath dealt \(totalDamage) with electric ammo")
     }
     
-    func chargeWithPenetrationAmmo(damage: inout Int) {
-        damage = damage + 45
-        print("Goliath dealt \(damage) with penetration ammo")
+    func chargeWithPenetrationAmmo(totalDamage: inout Int) {
+        totalDamage = totalDamage + 45
+        print("Goliath dealt \(totalDamage) with penetration ammo")
     }
     
     // types of weapon
-    func attackWithGatlingGun(damage: inout Int) {
-        damage = damage + 50
-        print("Goliath dealt \(damage) with gatling gun")
+    func attackWithGatlingGun(totalDamage: inout Int) {
+        totalDamage = totalDamage + 50
+        print("Goliath dealt \(totalDamage) with gatling gun")
     }
     
-    func attackWithMissles(damage: inout Int) {
-        damage = damage + 75
-        print("Goliath dealt \(damage) with missles")
+    func attackWithMissles(totalDamage: inout Int) {
+        totalDamage = totalDamage + 75
+        print("Goliath dealt \(totalDamage) with missles")
     }
     
-    func attackWithLazerBeam(damage: inout Int) {
-        damage = damage + 100
-        print("Goliath dealt \(damage) with lazer beam")
+    func attackWithLazerBeam(totalDamage: inout Int) {
+        totalDamage = totalDamage + 100
+        print("Goliath dealt \(totalDamage) with lazer beam")
     }
     
-    func attackWithClaw(damage: inout Int) {
-        damage = damage + 35
-        print("Goliath dealt \(damage) with claw")
+    func attackWithClaw(totalDamage: inout Int) {
+        totalDamage = totalDamage + 35
+        print("Goliath dealt \(totalDamage) with claw")
     }
     
     // selecting of weapon and type of ammo
@@ -186,14 +187,86 @@ func Goliafh(amountOfDamage: inout Int, typeOfTheAmmo: TypeOfTheAmmo, typeOfTheW
     switch (typeOfTheAmmo, typeOfTheWeapon) {
         
     case (.fireAmmo, .gatlingGun):
-        chargeWithFireAmmo(damage: &totallDamage)
-        attackWithGatlingGun(damage: &totallDamage)
+        chargeWithFireAmmo(totalDamage: &totalDamage)
+        attackWithGatlingGun(totalDamage: &totalDamage)
+        totalDamage = totalDamage + 50
+        print("This is powerfull hit!")
+        
         
     case (.frozenAmmo, .gatlingGun):
-        chargeWithFireAmmo(damage: &totallDamage)
-        attackWithGatlingGun(damage: &totallDamage)
+        chargeWithFireAmmo(totalDamage: &totalDamage)
+        attackWithGatlingGun(totalDamage: &totalDamage)
         
+        
+    case (.electricAmmo, .gatlingGun):
+        chargeWithElectricAmmo(totalDamage: &totalDamage)
+        attackWithGatlingGun(totalDamage: &totalDamage)
+        
+    case (.penetrationAmmo, .gatlingGun):
+        chargeWithPenetrationAmmo(totalDamage: &totalDamage)
+        attackWithGatlingGun(totalDamage: &totalDamage)
         ///
+    
+    case (.fireAmmo, .missles):
+        chargeWithFireAmmo(totalDamage: &totalDamage)
+        attackWithMissles(totalDamage: &totalDamage)
+        
+    case (.frozenAmmo, .missles):
+        chargeWithFrozenAmmo(totalDamage: &totalDamage)
+        attackWithMissles(totalDamage: &totalDamage)
+        
+    case (.electricAmmo, .missles):
+        chargeWithElectricAmmo(totalDamage: &totalDamage)
+        attackWithMissles(totalDamage: &totalDamage)
+        
+    case (.penetrationAmmo, .missles):
+        chargeWithPenetrationAmmo(totalDamage: &totalDamage)
+        attackWithMissles(totalDamage: &totalDamage)
+        ///
+    
+    case (.fireAmmo, .lazerBeam):
+        chargeWithFireAmmo(totalDamage: &totalDamage)
+        attackWithLazerBeam(totalDamage: &totalDamage)
+        
+    case (.frozenAmmo, .lazerBeam):
+        chargeWithFrozenAmmo(totalDamage: &totalDamage)
+        attackWithLazerBeam(totalDamage: &totalDamage)
+        
+    case (.electricAmmo, .lazerBeam):
+        chargeWithElectricAmmo(totalDamage: &totalDamage)
+        attackWithLazerBeam(totalDamage: &totalDamage)
+        
+    case (.penetrationAmmo, .lazerBeam):
+        chargeWithPenetrationAmmo(totalDamage: &totalDamage)
+        attackWithLazerBeam(totalDamage: &totalDamage)
+        ///
+    
+    case (.fireAmmo, .claw):
+        chargeWithFireAmmo(totalDamage: &totalDamage)
+        attackWithClaw(totalDamage: &totalDamage)
+        
+    case (.frozenAmmo, .claw):
+        chargeWithFrozenAmmo(totalDamage: &totalDamage)
+        attackWithClaw(totalDamage: &totalDamage)
+        
+    case (.electricAmmo, .claw):
+        chargeWithElectricAmmo(totalDamage: &totalDamage)
+        attackWithClaw(totalDamage: &totalDamage)
+        
+    case (.penetrationAmmo, .claw):
+        chargeWithPenetrationAmmo(totalDamage: &totalDamage)
+        attackWithClaw(totalDamage: &totalDamage)
+default:
+    break
     }
+    
+
+    
 }
-var totallDamage = 0
+
+
+
+Goliafh(totalDamage: &totalDamage, typeOfTheAmmo: .fireAmmo, typeOfTheWeapon: .gatlingGun)
+Goliafh(totalDamage: &totalDamage, typeOfTheAmmo: .electricAmmo, typeOfTheWeapon: .missles)
+Goliafh(totalDamage: &totalDamage, typeOfTheAmmo: .frozenAmmo, typeOfTheWeapon: .lazerBeam)
+Goliafh(totalDamage: &totalDamage, typeOfTheAmmo: .penetrationAmmo, typeOfTheWeapon: .claw)

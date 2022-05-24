@@ -117,6 +117,7 @@ class TaskEditController: UITableViewController {
         
         // Обновление метки в соответствии с текущим типом
         taskTypeLabel?.text = taskTitles[taskType]
+        taskTypeLabel?.textColor = .label
         
         // Обновляем статус задачи
         if taskStatus == .completed {

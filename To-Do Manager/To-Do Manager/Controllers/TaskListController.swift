@@ -214,11 +214,11 @@ var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
                          
     // изменяем цвет текста
     if currentTask.status == .planned {
-        cell.title.textColor = .black
-        cell.symbol.textColor = .black
+        cell.title.textColor = .label
+        cell.symbol.textColor = .label
     } else {
-        cell.title.textColor = .lightGray
-        cell.symbol.textColor = .lightGray
+        cell.title.textColor = .darkGray
+        cell.symbol.textColor = .darkGray
     }
         return cell
                          

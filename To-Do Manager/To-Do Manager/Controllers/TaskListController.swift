@@ -221,7 +221,7 @@ var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
         } else if tasksType == .normal && tasks[.normal]?.count == 0 {
             print("Check point 2")
             title = "Текущие задачи отсутствуют"
-           
+            
             
             
         
@@ -230,9 +230,12 @@ var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
             title = "Важные"
             
             
+            
         } else if tasksType == .normal && tasks[.normal]?.count != 0 {
             print("Check point 4")
             title = "Текущие"
+            
+            
             
            
         }
@@ -357,6 +360,7 @@ var tasks: [TaskPriority: [TaskProtocol]] = [:] { // can be useful too
         tasks[taskType]?.remove(at: indexPath.row)
         // удаляем строку, соответствующую задаче
         tableView.deleteRows(at: [indexPath], with: .automatic)
+        tableView.reloadData()
     }
     ///
     

@@ -31,8 +31,47 @@ func sumWallet(banknotesFunction wallet: (Int) -> [Int], walletLenght: Int) -> I
 // Передача функции в функцию
 sumWallet(banknotesFunction: generateWallet, walletLenght: 20)
 
-///
+/// function 3. Magician with left and right hand function
 
+
+typealias Spell = (volumeOfSpellInSquareMeters: Int, speedOfSpellInMetresPerSecond: Int)
+
+func spellCastingSession(numberOfCasts: Int)  -> [Spell] {
+    
+    var spellsDuringSession: [Spell] = []
+    
+    for _ in 1...numberOfCasts {
+        spellsDuringSession.append((volumeOfSpellInSquareMeters: Int.random(in: 1...50), speedOfSpellInMetresPerSecond: Int.random(in: 1...50)))
+       
+    }
+    
+    return spellsDuringSession
+    
+}
+
+var spells = spellCastingSession(numberOfCasts: 5)
+
+func spellSessionTotalResult(ourFirstFunction spellSession: (Int) -> [Spell], numberOfCasts: Int) -> Int {
+    
+    var currentSpellSession = spellSession(numberOfCasts)
+    var sum: Int = 0
+    for spell in 1...currentSpellSession {
+        sum += (spell.0 + spell.1)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+///
 func oneStep(coordinates: inout (Int, Int), stepType: String) -> Void {
     
     func up(coords: inout (Int, Int)) {
@@ -196,6 +235,8 @@ func Goliafh(totalDamage: inout Int, typeOfTheAmmo: TypeOfTheAmmo, typeOfTheWeap
     case (.frozenAmmo, .gatlingGun):
         chargeWithFireAmmo(totalDamage: &totalDamage)
         attackWithGatlingGun(totalDamage: &totalDamage)
+        totalDamage = totalDamage * 2
+        print("That was a massive damage")
         
         
     case (.electricAmmo, .gatlingGun):
@@ -270,3 +311,8 @@ Goliafh(totalDamage: &totalDamage, typeOfTheAmmo: .fireAmmo, typeOfTheWeapon: .g
 Goliafh(totalDamage: &totalDamage, typeOfTheAmmo: .electricAmmo, typeOfTheWeapon: .missles)
 Goliafh(totalDamage: &totalDamage, typeOfTheAmmo: .frozenAmmo, typeOfTheWeapon: .lazerBeam)
 Goliafh(totalDamage: &totalDamage, typeOfTheAmmo: .penetrationAmmo, typeOfTheWeapon: .claw)
+Goliafh(totalDamage: &totalDamage, typeOfTheAmmo: .frozenAmmo, typeOfTheWeapon: .gatlingGun)
+
+
+
+

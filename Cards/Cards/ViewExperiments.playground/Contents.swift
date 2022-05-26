@@ -4,16 +4,16 @@ import UIKit
 import PlaygroundSupport
 
 class MyViewController : UIViewController {
+    
     override func loadView() {
+        setupViews()
+    }
+    
+    // настройка представлений сцены:
+    private func setupViews() {
+        // создание корневого view
         let view = UIView()
-        view.backgroundColor = .white
-
-        let label = UILabel()
-        label.frame = CGRect(x: 150, y: 200, width: 200, height: 20)
-        label.text = "Hello World!"
-        label.textColor = .black
-        
-        view.addSubview(label)
+        view.backgroundColor = .gray
         self.view = view
     }
 }

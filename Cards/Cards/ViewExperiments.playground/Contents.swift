@@ -13,7 +13,17 @@ class MyViewController : UIViewController {
     private func setupViews() {
         
         self.view = getRootView()
+        self.view.addSubview( getRedView() )
         
+    }
+    
+    // Создание красного квадрата
+    private func getRedView() -> UIView {
+        
+        let viewFrame = CGRect(x: 50, y: 50, width: 200, height: 200)
+        let view = UIView(frame: viewFrame)
+        view.backgroundColor = .red
+        return view
     }
     
     // создание корневого view

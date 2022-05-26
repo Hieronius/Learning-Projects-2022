@@ -55,12 +55,13 @@ func spellSessionTotalResult(ourFirstFunction spellSession: (Int) -> [Spell], nu
     
     var currentSpellSession = spellSession(numberOfCasts)
     var sum: Int = 0
-    for spell in 1...currentSpellSession {
+    for spell in currentSpellSession {
         sum += (spell.0 + spell.1)
     }
+    return sum
 }
 
-
+var totalSumOfScores = spellSessionTotalResult(ourFirstFunction: spellCastingSession(numberOfCasts:), numberOfCasts: 5)
 
 
 

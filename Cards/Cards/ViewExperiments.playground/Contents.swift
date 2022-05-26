@@ -11,11 +11,18 @@ class MyViewController : UIViewController {
     
     // настройка представлений сцены:
     private func setupViews() {
-        // создание корневого view
-        let view = UIView()
-        view.backgroundColor = .gray
-        self.view = view
+        
+        self.view = getRootView()
+        
     }
+    
+    // создание корневого view
+    private func getRootView() -> UIView {
+    let view = UIView()
+    view.backgroundColor = .gray
+    return view
+
+}
 }
 // Present the view controller in the Live View window
 PlaygroundPage.current.liveView = MyViewController()

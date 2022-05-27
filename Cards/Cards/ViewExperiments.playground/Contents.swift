@@ -23,6 +23,9 @@ class MyViewController : UIViewController {
         // инициализируем белый квадрат, как полноценное view
         let whiteView = getWhiteView()
         
+        // инициализируем розовое представление, как полноценное view
+        let pinkView = getPinkView()
+        
         // установим требование к расположению зеленого квадрата относительно красного
         set(view: greenView, toCenterOfView: redView)
         
@@ -31,8 +34,10 @@ class MyViewController : UIViewController {
         
         
         self.view.addSubview( redView )
+        self.view.addSubview( pinkView )
         redView.addSubview( greenView )
         redView.addSubview( whiteView )
+        
         
     }
     
@@ -59,11 +64,23 @@ class MyViewController : UIViewController {
         return view
     }
     
+    // Создание белого представления
     private func getWhiteView() -> UIView {
         
         let viewFrame = CGRect(x:0, y:0, width: 50, height: 50)
         let view = UIView(frame: viewFrame)
         view.backgroundColor = .white
+        return view
+    }
+    
+    // Создание розового представления
+    private func getPinkView() -> UIView {
+        let viewFrame = CGRect(x: 50, y: 300, width: 100, height: 100)
+        let view = UIView(frame: viewFrame)
+        view.backgroundColor = .systemPink
+        
+        // толщина границ
+        view.layer.borderWidth = 5
         return view
     }
     

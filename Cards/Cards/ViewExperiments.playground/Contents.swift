@@ -81,7 +81,33 @@ class MyViewController : UIViewController {
         
         // толщина границ
         view.layer.borderWidth = 5
+        
+        // цвет границ
+        view.layer.borderColor = UIColor.yellow.cgColor
+        
+        // скругление углов
+        view.layer.cornerRadius = 10
+        
+        // видимость тени
+        view.layer.shadowOpacity = 0.95
+        
+        // размытие тени
+        view.layer.shadowRadius = 20
+        
+        // смещение тени
+        view.layer.shadowOffset = CGSize(width: 10, height: 20)
+        
+        // цвет тени
+        view.layer.shadowColor = UIColor.white.cgColor
+        
+        // прозрачность слоя
+        view.layer.opacity = 0.7
+        
+        // цвет фона
+        view.layer.backgroundColor = UIColor.systemPink.cgColor
+        
         return view
+        
     }
     
     private func set(view moveView: UIView, toCenterOfView baseView: UIView) {

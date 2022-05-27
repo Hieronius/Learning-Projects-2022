@@ -26,8 +26,8 @@ class MyViewController : UIViewController {
         // установим требование к расположению зеленого квадрата относительно красного
         set(view: greenView, toCenterOfView: redView)
         
-        // установим требование к расположению белого квадрата относительно красного
-        set(view: whiteView, toCenterOfView: redView)
+        // позиционируем белое представление с помощью center
+        whiteView.center = greenView.center
         
         
         self.view.addSubview( redView )

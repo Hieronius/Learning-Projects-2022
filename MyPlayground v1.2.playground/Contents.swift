@@ -386,3 +386,113 @@ func compare(_ r1: Double, _ r2: Double) {
 
 compare(16.0, 15.0)
 
+
+
+enum FanModes {
+    case highSpeed
+    case lowSpeed
+    case hotAir
+    case coldAir
+}
+
+func fan(mode: FanModes) -> (fanSpeed: Int, temperatureOfAir: Int) {
+    
+    var speedOfFan = 0
+    var airTemperature = 20
+    
+    func highSpeed() {
+        print("The fan started to work with high speed")
+        speedOfFan += 5
+    }
+    
+    func lowSpeed() {
+        print("The fan started to work with low speed")
+        speedOfFan += 2
+    }
+    
+    func hotAir() {
+        print("The fan started to supply hot air")
+        airTemperature += 20
+    }
+    
+    func coldAir() {
+        print("The fan started to supply cold air")
+        airTemperature -= 10
+    }
+    
+    
+    switch mode {
+    case .highSpeed:
+        highSpeed()
+    case .lowSpeed:
+        lowSpeed()
+    case .hotAir:
+        hotAir()
+    case .coldAir:
+        coldAir()
+    default:
+        break
+    }
+    
+    return (speedOfFan, airTemperature)
+}
+
+fan(mode: .coldAir)
+//
+
+enum AllPossibleActions {
+    
+    case attack
+    case block
+    case castMagic
+    case healing
+    case checkTheMap
+    case run
+}
+
+func personAction(action: AllPossibleActions) {
+    
+    func personAttack() {
+        print("For the Aliance!")
+    }
+    
+    func personBlock() {
+        print("You will not pass!")
+    }
+    
+    func personMagic() {
+        print("Fire magic! Fire ball!")
+    }
+    
+    func personHealing() {
+        print("For the name of the God! Healing!")
+    }
+    
+    func personCheckingMap() {
+        print("We are on the right course!")
+    }
+    
+    func personRun() {
+        print("Tactical retreat!")
+    }
+    
+    switch action {
+    case .attack:
+        personAttack()
+    case .block:
+        personBlock()
+    case .castMagic:
+        personMagic()
+    case .healing:
+        personHealing()
+    case .checkTheMap:
+        personCheckingMap()
+    case .run:
+        personRun()
+    default: break
+        
+    }
+}
+
+personAction(action: .healing)
+personAction(action: .attack)

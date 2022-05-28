@@ -127,10 +127,13 @@ class MyViewController : UIViewController {
         print(view.frame)
         
         // поворот представления
-        //view.transform = CGAffineTransform(rotationAngle: .pi/4)
+        // view.transform = CGAffineTransform(rotationAngle: .pi/4)
         
         // растяжение представления
-        view.transform = CGAffineTransform(scaleX: 1.5, y: 0.7)
+        // view.transform = CGAffineTransform(scaleX: 1.5, y: 0.7)
+        
+        // смещение представления
+         view.transform.translatedBy(x: 100, y: 5)
         
         // вывод на консоль размеров представления
         print(view.frame)

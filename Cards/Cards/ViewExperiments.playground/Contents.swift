@@ -106,6 +106,22 @@ class MyViewController : UIViewController {
         // цвет фона
         view.layer.backgroundColor = UIColor.systemPink.cgColor
         
+        
+        // создание дочернего слоя
+        let layer = CALayer()
+        
+        // изменение фонового цвета
+        layer.backgroundColor = UIColor.black.cgColor
+        
+        // изменение размеров и положения
+        layer.frame = CGRect(x: 10, y: 10, width: 20, height: 20)
+        
+        // изменение радиуса скругленных углов
+        layer.cornerRadius = 10
+        
+        // добавление в иерархию слоев
+        view.layer.addSublayer(layer)
+        
         return view
         
     }

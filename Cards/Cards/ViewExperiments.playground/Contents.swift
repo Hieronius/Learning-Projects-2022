@@ -136,7 +136,11 @@ class MyViewController : UIViewController {
         // view.transform.translatedBy(x: 100, y: 5)
         
         // цепочка преобразований
-        view.transform = CGAffineTransform(rotationAngle: .pi/3).scaledBy(x: 2, y: 0.8).translatedBy(x: 50, y: 50)
+        // view.transform = CGAffineTransform(rotationAngle: .pi/3).scaledBy(x: 2, y: 0.8).translatedBy(x: 50, y: 50)
+        
+        // свойство inverted()
+        view.transform = CGAffineTransform(rotationAngle: .pi/4)
+        view.transform = CGAffineTransform(rotationAngle: .pi/4).inverted()
         
         // вывод на консоль размеров представления
         print(view.frame)

@@ -122,6 +122,16 @@ class MyViewController : UIViewController {
         // добавление в иерархию слоев
         view.layer.addSublayer(layer)
         
+        
+        // вывод на консоль размеров представления
+        print(view.frame)
+        
+        // поворот представления
+        view.transform = CGAffineTransform(rotationAngle: .pi/4)
+        
+        // вывод на консоль размеров представления
+        print(view.frame)
+        
         return view
         
     }

@@ -49,3 +49,15 @@ print(flatMapDictOfValues)
 let multipleArray = [[[1,2,3], [4,5,6]], [[7,8,9], [10,11,12]]]
 let sortedMultipleArray = multipleArray.flatMap { $0.flatMap  { $0.filter { $0 % 3 == 0} }}
 print(sortedMultipleArray)
+//
+
+
+/// 4. Method compactMap()
+
+let arrayOfValues = ["1", "2", "3", "4", "five"]
+let ar = arrayOfValues.map { Int($0)}
+let arr = arrayOfValues.compactMap { Int($0)}
+print(ar)
+print(arr)
+
+

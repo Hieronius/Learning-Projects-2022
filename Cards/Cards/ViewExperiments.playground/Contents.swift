@@ -26,6 +26,9 @@ class MyViewController : UIViewController {
         // инициализируем розовое представление, как полноценное view
         let pinkView = getPinkView()
         
+        // поворот красного представления
+        redView.transform = CGAffineTransform(rotationAngle: .pi/3)
+        
         // установим требование к расположению зеленого квадрата относительно красного
         set(view: greenView, toCenterOfView: redView)
         
@@ -139,8 +142,8 @@ class MyViewController : UIViewController {
         // view.transform = CGAffineTransform(rotationAngle: .pi/3).scaledBy(x: 2, y: 0.8).translatedBy(x: 50, y: 50)
         
         // свойство inverted()
-        view.transform = CGAffineTransform(rotationAngle: .pi/4)
-        view.transform = CGAffineTransform(rotationAngle: .pi/4).inverted()
+        // view.transform = CGAffineTransform(rotationAngle: .pi/4)
+        // view.transform = CGAffineTransform(rotationAngle: .pi/4).inverted()
         
         // вывод на консоль размеров представления
         print(view.frame)
@@ -156,8 +159,8 @@ class MyViewController : UIViewController {
         let moveViewHeight = moveView.frame.height
         
         // размеры родительского представления
-        let baseViewWidth = baseView.frame.width
-        let baseViewHeight = baseView.frame.height
+        let baseViewWidth = baseView.bounds.width
+        let baseViewHeight = baseView.bounds.height
         
         // вычисление и изменение координат
         let newXCoordinate = (baseViewWidth - moveViewWidth) / 2

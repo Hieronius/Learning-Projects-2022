@@ -66,3 +66,24 @@ let sortedDict = dictOfScore.compactMapValues { Int($0) }
                      
 print(sortedDict)
 // print(zipArray)
+
+
+// Method filter
+
+let arrayOfCommonNumbers = [1, 5, 10, 12, 254, 2, 7, 20, 100]
+let arrayOfEvenNumbers = arrayOfCommonNumbers.filter {$0 % 2 == 0}
+print(arrayOfEvenNumbers)
+
+let arrayOfSortedNumbers = arrayOfCommonNumbers.filter {$0 > 20}
+print(arrayOfSortedNumbers)
+
+let testDictionary = ["One": 1, "Hundred": 100, "Twenty five": 25, "Thousand": 1000, ]
+
+let filteredDictionary = testDictionary.filter {$0.value > 20}
+print(filteredDictionary)
+
+let secondFilteredDictionary = testDictionary.filter {$0.key.contains("O")}
+print(secondFilteredDictionary)
+
+
+// Method reduce()

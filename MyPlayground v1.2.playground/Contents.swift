@@ -7,7 +7,7 @@
 
 // Method map() with dictionary
 var personChars: [String: Int] = ["Intelligence": 10, "Strength": 25, "Agility": 20, "Vatality": 15]
-var personCharsAfterLevelUp = personChars.map {$0.value + 5}
+var personCharsAfterLevelUp = personChars.mapValues {$0 + 5}
 print(personCharsAfterLevelUp)
 //
 
@@ -60,4 +60,9 @@ let arr = arrayOfValues.compactMap { Int($0)}
 print(ar)
 print(arr)
 
-
+let dictOfScore = ["Lana": "5", "Diablo": "4", "Mephisto": "3", "Baall": "4", "Andriel": "five"]
+let sortedDict = dictOfScore.compactMapValues { Int($0) }
+// let zipArray = [dictOfScore.keys: dictOfScore.values.compactMap{Int($0)}]
+                     
+print(sortedDict)
+// print(zipArray)

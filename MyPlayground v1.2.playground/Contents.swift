@@ -87,3 +87,11 @@ print(secondFilteredDictionary)
 
 
 // Method reduce()
+
+var arrayForReduce = [1, 5, 10, 25, 100, 3, 6, 9]
+var newArrayForReduce = arrayForReduce.reduce(2, *)
+print(newArrayForReduce)
+
+var dictForReduce = ["First": 1, "Second": 2, "Third": 3]
+var newDictForReduce = dictForReduce.keys.reduce("", +)
+print(newDictForReduce)

@@ -95,3 +95,23 @@ print(newArrayForReduce)
 var dictForReduce = ["First": 1, "Second": 2, "Third": 3]
 var newDictForReduce = dictForReduce.keys.reduce("", +)
 print(newDictForReduce)
+
+// Method zip()
+
+var firstArray = [1, 5, 10, 100, 1000]
+var secondArray = [2, 12, 22, 122, 1200]
+
+var zipArray = zip(firstArray, secondArray)
+var arrayOfZipArray = Array(zipArray)
+print(arrayOfZipArray)
+
+var newDictArrayForZip = Dictionary(uniqueKeysWithValues: zipArray)
+print(newDictArrayForZip)
+
+let testZipDict = ["first": 1, "second": 2, "third": 3]
+let secondTestZipDict = ["fourth": 4, "fifth": 5, "sixth": 6]
+
+let newZipTestArray = Array(zip(testZipDict, secondTestZipDict))
+print(newZipTestArray)
+
+//

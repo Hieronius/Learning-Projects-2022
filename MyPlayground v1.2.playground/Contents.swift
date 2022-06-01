@@ -1,117 +1,40 @@
 
+// War game from Samoilov
 
-// sorts with functions and closures
-// Methods sort(), sorted(), filter(), map(), flatMap(), mapValues(), compactMap(), reduce(), zip(),
+class Human {
+    
+    var health: Int
+    var weaponDamage: Int
+    
+    init(health: Int, weaponDamage: Int) {
+        self.health = health
+        self.weaponDamage = weaponDamage
+    }
+}
 
-/// 1. Method map()
+class Ork: Human {
+    override var health: Int {
+        didSet {
+            print("Health is not \(health)")
+        }
+    }
+    
+    
+}
 
-// Method map() with dictionary
-var personChars: [String: Int] = ["Intelligence": 10, "Strength": 25, "Agility": 20, "Vatality": 15]
-var personCharsAfterLevelUp = personChars.mapValues {$0 + 5}
-print(personCharsAfterLevelUp)
-//
+class Elf: Human {
+    override var weaponDamage: Int {
+        didSet {
+            print("Weapon damage is increased and now equal \(weaponDamage). Time to buy new armor!")
+        }
+    }
+    
+    
+}
 
+var ork = Ork(health: 100, weaponDamage: 10)
+var elf = Elf(health: 50, weaponDamage: 15)
 
+ork.health = 90
+elf.weaponDamage = 20
 
-// Method map() with array
-var personEquipment: [String] = ["Sword", "Shield", "Knife", "Golden ring", "Key"]
-var upgradedEquipment = personEquipment.map {$0 + " rare quality"}
-print(upgradedEquipment)
-//
-var numbersInArray = [1,2,3,4]
-var newArrayNumbers = numbersInArray.map { Array(repeating: $0, count: $0) }
-print(newArrayNumbers)
-
-
-/// 2. Method mapValues()
-var dictOfNumbers = ["first": 1, "second": 2, "third": 3]
-var newDictOfNumbers = dictOfNumbers.mapValues {$0 + 5}
-print(newDictOfNumbers)
-//
-
-
-/// 3. Method flatMap()
-var newArrayWithFlatMap = numbersInArray.flatMap { Array(repeating: $0, count: $0) }
-print(newArrayWithFlatMap)
-
-var someArray = [[1,2,3,4,5], [11,44,1,6], [16,403,321,10]]
-let filterSomeArray = someArray.flatMap { $0.filter { $0 % 2 == 0 }}
-print(filterSomeArray)
-
-let arrayOfString = [["Alena"], ["Ivanna"], ["Jessica"], ["Suzanna"], ["Jasmine"]]
-let filterArrayOfString = arrayOfString.flatMap { $0.filter { $0.contains("A") }}
-print(filterArrayOfString)
-
-let dictOfValues = [["Inga": 28], ["Marina": 35], ["Janna": 29], ["Alina": 25]]
-let flatMapDictOfValues = dictOfValues.flatMap { $0.filter { $0.value >= 29 }}
-print(flatMapDictOfValues)
-
-let multipleArray = [[[1,2,3], [4,5,6]], [[7,8,9], [10,11,12]]]
-let sortedMultipleArray = multipleArray.flatMap { $0.flatMap  { $0.filter { $0 % 3 == 0} }}
-print(sortedMultipleArray)
-//
-
-
-/// 4. Method compactMap()
-
-let arrayOfValues = ["1", "2", "3", "4", "five"]
-let ar = arrayOfValues.map { Int($0)}
-let arr = arrayOfValues.compactMap { Int($0)}
-print(ar)
-print(arr)
-
-let dictOfScore = ["Lana": "5", "Diablo": "4", "Mephisto": "3", "Baall": "4", "Andriel": "five"]
-let sortedDict = dictOfScore.compactMapValues { Int($0) }
-// let zipArray = [dictOfScore.keys: dictOfScore.values.compactMap{Int($0)}]
-                     
-print(sortedDict)
-// print(zipArray)
-
-
-// Method filter
-
-let arrayOfCommonNumbers = [1, 5, 10, 12, 254, 2, 7, 20, 100]
-let arrayOfEvenNumbers = arrayOfCommonNumbers.filter {$0 % 2 == 0}
-print(arrayOfEvenNumbers)
-
-let arrayOfSortedNumbers = arrayOfCommonNumbers.filter {$0 > 20}
-print(arrayOfSortedNumbers)
-
-let testDictionary = ["One": 1, "Hundred": 100, "Twenty five": 25, "Thousand": 1000, ]
-
-let filteredDictionary = testDictionary.filter {$0.value > 20}
-print(filteredDictionary)
-
-let secondFilteredDictionary = testDictionary.filter {$0.key.contains("O")}
-print(secondFilteredDictionary)
-
-
-// Method reduce()
-
-var arrayForReduce = [1, 5, 10, 25, 100, 3, 6, 9]
-var newArrayForReduce = arrayForReduce.reduce(2, *)
-print(newArrayForReduce)
-
-var dictForReduce = ["First": 1, "Second": 2, "Third": 3]
-var newDictForReduce = dictForReduce.keys.reduce("", +)
-print(newDictForReduce)
-
-// Method zip()
-
-var firstArray = [1, 5, 10, 100, 1000]
-var secondArray = [2, 12, 22, 122, 1200]
-
-var zipArray = zip(firstArray, secondArray)
-var arrayOfZipArray = Array(zipArray)
-print(arrayOfZipArray)
-
-var newDictArrayForZip = Dictionary(uniqueKeysWithValues: zipArray)
-print(newDictArrayForZip)
-
-let testZipDict = ["first": 1, "second": 2, "third": 3]
-let secondTestZipDict = ["fourth": 4, "fifth": 5, "sixth": 6]
-
-let newZipTestArray = Array(zip(testZipDict, secondTestZipDict))
-print(newZipTestArray)
-
-//

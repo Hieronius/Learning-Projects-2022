@@ -8,16 +8,19 @@ import CoreGraphics
  
    Best idea to incapsulate global variables into the struct and if you need a specific variable just use a dot sintaxis */
 
-struct myGlobalVariables {
+struct MyGlobalVariables {
     
     static var firstVar = 1
     static var secondVar = 2
     static var thirdVar = 3
 }
 
-var myNewArray = [myGlobalVariables.firstVar, myGlobalVariables.secondVar, myGlobalVariables.thirdVar]
+var myStructInstance = MyGlobalVariables()
 
-var myFirstLocalVar = myGlobalVariables.firstVar
+
+var myNewArray = [MyGlobalVariables.firstVar, MyGlobalVariables.secondVar, MyGlobalVariables.thirdVar]
+
+var myFirstLocalVar = MyGlobalVariables.firstVar
 
 class FirstClass {
     var arraySortedLeft: [Int]
@@ -34,6 +37,7 @@ class FirstClass {
 }
 
 var objectOfFirstClass = FirstClass(arraySortedLeft: myNewArray)
+print(objectOfFirstClass)
 
 // Let's think about func sorted that want to change my arr variables
 print(var secondNewArray = objectOfFirstClass.sorted()

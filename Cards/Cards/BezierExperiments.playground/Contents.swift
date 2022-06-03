@@ -26,6 +26,16 @@ class MyViewController : UIViewController {
         view.layer.addSublayer(shapeLayer)
     }
     
+    private func getPath() -> UIBezierPath {
+        // 1
+        let path = UIBezierPath()
+        // 2
+        path.move(to: CGPoint(x: 50, y: 50))
+        // 3
+        path.addLine(to: CGPoint(x: 150, y: 50))
+        return path
+    }
+    
 }
 // Present the view controller in the Live View window
 PlaygroundPage.current.liveView = MyViewController()

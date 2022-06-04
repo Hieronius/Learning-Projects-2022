@@ -13,6 +13,7 @@ class MyViewController : UIViewController {
         
         // создаем кривые на сцене
         creatBezier(on: view)
+        creatBezier2(on: view)
         
     }
     
@@ -40,6 +41,10 @@ class MyViewController : UIViewController {
         // 4
         // Создание фигуры
         shapeLayer.path = getPath().cgPath
+        
+        
+        
+        
     }
     
     private func getPath() -> UIBezierPath {
@@ -65,6 +70,45 @@ class MyViewController : UIViewController {
         path.addLine(to: CGPoint(x: 50, y: 170))
         path.close()
         
+        
+        
+        return path
+    }
+    
+    private func creatBezier2(on view: UIView) {
+        // 1
+        // Создаем графический контекст (слой)
+        // на нем в дальнейшем будем рисовать кривые
+        let shapeLayer = CAShapeLayer()
+        // 2
+        // добавляем слой в качестве дочернего к корневому слою корневого представления
+        view.layer.addSublayer(shapeLayer)
+        
+        // 3
+        // изменение цвета линий
+        shapeLayer.strokeColor = UIColor.gray.cgColor
+        
+        // изменение толщины линий
+        shapeLayer.lineWidth = 5
+        
+        // 5. Задаем цвет фона
+        shapeLayer.fillColor = UIColor.green.cgColor
+        
+    
+        
+        // 4
+        // Создание фигуры
+        shapeLayer.path = getRect().cgPath
+        
+
+        
+    }
+    
+    private func getRect() -> UIBezierPath {
+        
+        // 7. Создание прямоугольника
+        let rect = CGRect(x: 150, y: 200, width: 200, height: 100)
+        let path = UIBezierPath(rect: rect)
         return path
     }
     

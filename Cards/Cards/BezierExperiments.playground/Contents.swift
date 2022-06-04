@@ -57,6 +57,14 @@ class MyViewController : UIViewController {
         
         // 5. Используем метод close()
         path.close()
+        
+        
+        // 6. Создание второго треугольника
+        path.move(to: CGPoint(x: 50, y: 70))
+        path.addLine(to: CGPoint(x: 150, y: 170))
+        path.addLine(to: CGPoint(x: 50, y: 170))
+        path.close()
+        
         return path
     }
     

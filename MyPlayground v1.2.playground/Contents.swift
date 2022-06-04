@@ -119,3 +119,58 @@ var MariaVladimirovna = Accountant()
 
 print(MariaVladimirovna.calculateWork(array: globalArray))
 
+// 4.
+
+class Monster {
+    
+    static var minHeight = 100.0
+    static var maxWeight = 300.0
+    
+    static var minWeaponPower = 100
+    static var maxWeaponPower = 100
+    
+    static var counterOfMonsters = 0
+    
+    
+    var name: String
+    var breed: String
+    var planetFrom: String
+    var weapon: String
+    var heightt: Int {
+        didSet {
+            if heightt < Monster.minHeight {
+                print("Invalid value, minimum height is 100")
+                heightt = 100
+            }
+        }
+    }
+    var weight: Int {
+        didSet {
+            if weight > 300 {
+                print("Invalid value, maximum weight")
+                weight = 300
+            }
+        }
+    }
+    
+    
+    init(name: String, breed: String, planetFrom: String, heightt: Int, weight: Int, weapon: String) {
+        self.name = name
+        self.breed = breed
+        self.planetFrom = planetFrom
+        self.heightt = heightt
+        self.weight = weight
+        self.weapon = weapon
+        Monster.counterOfMonsters += 1
+        
+        
+    }
+    
+}
+
+
+Monster.counterOfMonsters
+var myMonster = Monster(name: "Barka", breed: "Yallo", planetFrom: "Neptun", heightt: 90, weight: 350, weapon: "Shock wave bluster")
+Monster.counterOfMonsters
+myMonster.weight = 400
+myMonster.heightt

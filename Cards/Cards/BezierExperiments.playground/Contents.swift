@@ -44,6 +44,10 @@ class MyViewController : UIViewController {
         path.move(to: CGPoint(x: 50, y: 50))
         // 3
         path.addLine(to: CGPoint(x: 150, y: 50))
+        
+        
+        // 4. Создание второй линии
+        path.addLine(to: CGPoint(x: 150, y: 150))
         return path
     }
     

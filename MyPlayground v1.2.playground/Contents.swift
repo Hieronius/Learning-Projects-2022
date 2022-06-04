@@ -16,17 +16,14 @@ struct MyGlobalVariables {
 }
 
 var myStructInstance = MyGlobalVariables()
+var myArray = [MyGlobalVariables.firstVar, MyGlobalVariables.secondVar, MyGlobalVariables.thirdVar]
 
-
-var myNewArray = [MyGlobalVariables.firstVar, MyGlobalVariables.secondVar, MyGlobalVariables.thirdVar]
-
-var myFirstLocalVar = MyGlobalVariables.firstVar
 
 class FirstClass {
     var arraySortedLeft: [Int]
     
-    func sorted() -> [Int] {
-        return arraySortedLeft.sorted(by: {$0 < $1} )
+    func sortedFromLeftToRight() -> [Int] {
+        return arraySortedLeft.sorted(by: {$0 > $1} )
         
         
 }
@@ -36,20 +33,23 @@ class FirstClass {
     
 }
 
-var objectOfFirstClass = FirstClass(arraySortedLeft: myNewArray)
-print(objectOfFirstClass)
-
-// Let's think about func sorted that want to change my arr variables
-print(var secondNewArray = objectOfFirstClass.sorted()
-
+var fromFirstClass = FirstClass(arraySortedLeft: myArray)
+fromFirstClass.sortedFromLeftToRight()
+print(fromFirstClass.arraySortedLeft)
 
 
 class SecondClass {
-    var arraySortedRight: [Int] {
-        get {
-            return arraySortedRight.sorted(by: {$0 > $1 })
-        }
+    var arraySortedRight: [Int]
+    
+    func sortedFromRightToLeft() -> [Int] {
+        
+        return arraySortedRight.sorted(by: {$0 > $1 })
+    }
+    
+    init(arraySortedRight: [Int]) {
+        self.arraySortedRight = arraySortedRight
     }
 }
 
-var firstClassInstance = FirstClass(arraySortedLeft: myNewArray)
+var fromSecondClass = SecondClass(arraySortedRight: myArray)
+print(fromSecondClass.sortedFromRightToLeft())

@@ -53,3 +53,69 @@ class SecondClass {
 
 var fromSecondClass = SecondClass(arraySortedRight: myArray)
 print(fromSecondClass.sortedFromRightToLeft())
+//
+
+class President {
+    
+    static var numberOfLegs = 2
+    static var numberOfHands = 2
+    
+    var salary: Int
+    var experience: Int
+    
+    init(salary: Int, experience: Int) {
+        self.salary = salary
+        self.experience = experience
+    }
+}
+
+var MichailValerievich = President(salary: 100_000, experience: 25)
+
+
+class VisePresident: President{
+    
+    static var MarkOfTheCar = "Audi"
+    
+    var amountOfSales: Int
+    
+    init(amountOfSales: Int, salary: Int, experience: Int) {
+        self.amountOfSales = amountOfSales
+        super.init(salary: salary, experience: experience)
+    }
+}
+
+var VladimirAnatolievich = VisePresident(amountOfSales: 5_000_000, salary: 80_000, experience: 15)
+
+
+print(MichailValerievich.experience)
+print(MichailValerievich.salary)
+
+print(VladimirAnatolievich.amountOfSales)
+print(VladimirAnatolievich.salary)
+print(VladimirAnatolievich.experience)
+
+print(President.numberOfHands)
+print(President.numberOfLegs)
+
+print(VisePresident.MarkOfTheCar)
+
+
+class Accountant {
+    
+    func calculateWork(array: [Int]) -> Int {
+        return array.reduce(0, +)
+    }
+}
+
+struct GlobalNumbers {
+    static var number1 = 1
+    static var number2 = 2
+    static var number3 = 3
+}
+
+var globalArray = [GlobalNumbers.number1, GlobalNumbers.number2, GlobalNumbers.number3]
+
+var MariaVladimirovna = Accountant()
+
+print(MariaVladimirovna.calculateWork(array: globalArray))
+

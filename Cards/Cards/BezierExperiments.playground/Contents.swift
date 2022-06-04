@@ -25,12 +25,17 @@ class MyViewController : UIViewController {
         // добавляем слой в качестве дочернего к корневому слою корневого представления
         view.layer.addSublayer(shapeLayer)
         
+    
         // 3
         // изменение цвета линий
         shapeLayer.strokeColor = UIColor.gray.cgColor
         
         // изменение толщины линий
         shapeLayer.lineWidth = 5
+        
+        // 5. Задаем цвет фона
+        shapeLayer.fillColor = UIColor.green.cgColor
+        
         
         // 4
         // Создание фигуры

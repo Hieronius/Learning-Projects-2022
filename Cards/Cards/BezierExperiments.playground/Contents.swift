@@ -53,6 +53,10 @@ class MyViewController : UIViewController {
         
         // 4. Создание второй линии
         path.addLine(to: CGPoint(x: 150, y: 150))
+        
+        
+        // 5. Используем метод close()
+        path.close()
         return path
     }
     

@@ -137,17 +137,14 @@ class MyViewController : UIViewController {
         
         // 4
         // Создание фигуры
-        shapeLayer.path = getArc().cgPath
+        shapeLayer.path = getFigure().cgPath
         
     }
-    private func getArc() -> UIBezierPath {
+    private func getFigure() -> UIBezierPath {
         
-        let centerPoint = CGPoint(x: 200, y: 400)
-        let path = UIBezierPath(arcCenter: centerPoint,
-                                radius: 150,
-                                startAngle: 0,
-                                endAngle: .pi*2,
-                                clockwise: true)
+        let rect = CGRect(x: 50, y: 250, width: 200, height: 100)
+        let path = UIBezierPath(ovalIn: rect)
+        
         return path
     }
     

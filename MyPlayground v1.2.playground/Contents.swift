@@ -123,8 +123,8 @@ print(MariaVladimirovna.calculateWork(array: globalArray))
 
 class Monster {
     
-    static var minHeight = 100.0
-    static var maxWeight = 300.0
+    static var minHeight = 100
+    static var maxWeight = 300
     
     static var minWeaponPower = 100
     static var maxWeaponPower = 100
@@ -136,29 +136,29 @@ class Monster {
     var breed: String
     var planetFrom: String
     var weapon: String
-    var heightt: Int {
+    var height: Int {
         didSet {
-            if heightt < Monster.minHeight {
+            if height < Monster.minHeight {
                 print("Invalid value, minimum height is 100")
-                heightt = 100
+                height = 100
             }
         }
     }
     var weight: Int {
         didSet {
             if weight > 300 {
-                print("Invalid value, maximum weight")
+                print("Invalid value, maximum weight is 300")
                 weight = 300
             }
         }
     }
     
     
-    init(name: String, breed: String, planetFrom: String, heightt: Int, weight: Int, weapon: String) {
+    init(name: String, breed: String, planetFrom: String, height: Int, weight: Int, weapon: String) {
         self.name = name
         self.breed = breed
         self.planetFrom = planetFrom
-        self.heightt = heightt
+        self.height = height
         self.weight = weight
         self.weapon = weapon
         Monster.counterOfMonsters += 1
@@ -170,7 +170,16 @@ class Monster {
 
 
 Monster.counterOfMonsters
-var myMonster = Monster(name: "Barka", breed: "Yallo", planetFrom: "Neptun", heightt: 90, weight: 350, weapon: "Shock wave bluster")
+var myMonster = Monster(name: "Barka", breed: "Yallo", planetFrom: "Neptun", height: 90, weight: 350, weapon: "Shock wave bluster")
 Monster.counterOfMonsters
 myMonster.weight = 400
-myMonster.heightt
+myMonster.weight
+myMonster.height = 90
+myMonster.height
+
+var newMonster = Monster(name: "Barka", breed: "Yallo", planetFrom: "Neptun", height: 90, weight: 350, weapon: "Shock wave bluster")
+var newMonster1 = Monster(name: "Barka", breed: "Yallo", planetFrom: "Neptun", height: 90, weight: 350, weapon: "Shock wave bluster")
+
+Monster.counterOfMonsters
+
+

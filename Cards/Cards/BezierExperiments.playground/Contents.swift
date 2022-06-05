@@ -108,7 +108,18 @@ class MyViewController : UIViewController {
         
         // 7. Создание прямоугольника
         let rect = CGRect(x: 150, y: 200, width: 200, height: 100)
-        let path = UIBezierPath(rect: rect)
+        let path = UIBezierPath(roundedRect: rect, cornerRadius: 30)
+        return path
+    }
+    
+    private func getArc() -> UIBezierPath {
+        
+        let centerPoint = CGPoint(x: 200, y: 200)
+        let path = UIBezierPath(arcCenter: centerPoint,
+                                radius: 150,
+                                startAngle: .pi/5,
+                                endAngle: .pi,
+                                clockwise: true)
         return path
     }
     

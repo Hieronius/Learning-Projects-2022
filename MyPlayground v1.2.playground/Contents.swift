@@ -132,10 +132,24 @@ class Monster {
     static var counterOfMonsters = 0
     
     
+    
+    enum WeaponType: Int {
+        case energyWeapon = 25
+        case shootGundamage = 50
+        case rocketLauncher = 75
+        case bluntWeapon = 100
+    }
+    
     var name: String
     var breed: String
     var planetFrom: String
-    var weapon: String
+    var weapon: WeaponType {
+        didSet {
+            print("damage is now \(weapon.rawValue)")
+            }
+        }
+    
+
     var height: Int {
         didSet {
             if height < Monster.minHeight {
@@ -154,7 +168,7 @@ class Monster {
     }
     
     
-    init(name: String, breed: String, planetFrom: String, height: Int, weight: Int, weapon: String) {
+    init(name: String, breed: String, planetFrom: String, height: Int, weight: Int, weapon: WeaponType) {
         self.name = name
         self.breed = breed
         self.planetFrom = planetFrom
@@ -170,16 +184,16 @@ class Monster {
 
 
 Monster.counterOfMonsters
-var myMonster = Monster(name: "Barka", breed: "Yallo", planetFrom: "Neptun", height: 90, weight: 350, weapon: "Shock wave bluster")
+var myMonster = Monster(name: "Barka", breed: "Yallo", planetFrom: "Neptun", height: 90, weight: 350, weapon: .bluntWeapon)
 Monster.counterOfMonsters
 myMonster.weight = 400
 myMonster.weight
 myMonster.height = 90
 myMonster.height
 
-var newMonster = Monster(name: "Barka", breed: "Yallo", planetFrom: "Neptun", height: 90, weight: 350, weapon: "Shock wave bluster")
-var newMonster1 = Monster(name: "Barka", breed: "Yallo", planetFrom: "Neptun", height: 90, weight: 350, weapon: "Shock wave bluster")
+var newMonster = Monster(name: "Barka", breed: "Yallo", planetFrom: "Neptun", height: 90, weight: 350, weapon: .energyWeapon)
+var newMonster1 = Monster(name: "Barka", breed: "Yallo", planetFrom: "Neptun", height: 90, weight: 350, weapon: .rocketLauncher)
 
 Monster.counterOfMonsters
 
-
+myMonster.weapon = .rocketLauncher

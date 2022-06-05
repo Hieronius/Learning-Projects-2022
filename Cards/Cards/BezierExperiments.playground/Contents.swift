@@ -14,6 +14,7 @@ class MyViewController : UIViewController {
         // создаем кривые на сцене
         creatBezier(on: view)
         creatBezier2(on: view)
+        creatBezier3(on: view)
         
     }
     
@@ -112,13 +113,40 @@ class MyViewController : UIViewController {
         return path
     }
     
+    
+    private func creatBezier3(on view: UIView) {
+        // 1
+        // Создаем графический контекст (слой)
+        // на нем в дальнейшем будем рисовать кривые
+        let shapeLayer = CAShapeLayer()
+        // 2
+        // добавляем слой в качестве дочернего к корневому слою корневого представления
+        view.layer.addSublayer(shapeLayer)
+        
+        // 3
+        // изменение цвета линий
+        shapeLayer.strokeColor = UIColor.gray.cgColor
+        
+        // изменение толщины линий
+        shapeLayer.lineWidth = 5
+        
+        // 5. Задаем цвет фона
+        shapeLayer.fillColor = UIColor.green.cgColor
+        
+    
+        
+        // 4
+        // Создание фигуры
+        shapeLayer.path = getArc().cgPath
+        
+    }
     private func getArc() -> UIBezierPath {
         
-        let centerPoint = CGPoint(x: 200, y: 200)
+        let centerPoint = CGPoint(x: 200, y: 400)
         let path = UIBezierPath(arcCenter: centerPoint,
                                 radius: 150,
-                                startAngle: .pi/5,
-                                endAngle: .pi,
+                                startAngle: 0,
+                                endAngle: .pi*2,
                                 clockwise: true)
         return path
     }

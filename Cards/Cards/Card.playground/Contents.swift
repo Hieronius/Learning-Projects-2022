@@ -14,8 +14,17 @@ extension ShapeLayerProtocol {
     }
 }
 
+protocol FlippableVIew: UIView {
+    var isFlipped: Bool { get set }
+    var flipCompetionHandler: ((FlippableVIew) -> Void)? { get set }
+    func flip()
+}
 
-class CardView<ShapeType: ShapeLayerProtocol>: UIView {
+class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
+    
+    var isFlipped: Bool = false
+    var flipCompetionHandler: ((FlippableVIew) -> Void)?
+    func flip() {}
     
     // цвет фигуры
     var color: UIColor!
@@ -27,6 +36,52 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    // внутренний отступ представления
+    private let margin: Int = 10
+    
+    // представление с лицевой стороны карты
+    lazy var frontSideView: UIView = self.getFrontSideView()
+    
+    // представление с обратной стороны карты
+    lazy var backSideView: UIView = self.getBackSideView()
+    
+    // возвращает представление с лицевой стороны
+    private func getFrontSideView() -> UIView {
+        let view = UIView(frame: self.bounds)
+        view.backgroundColor = .white
+    
+    
+    let shapeView = UIView(frame: CGRect(x: margin, y: margin, width: Int(self.bounds.width)-margin*2, height: Int(self.bounds.height)-margin*2))
+    view.addSubview(shapeView)
+        
+        // создание слоя с фигурой
+        let shapeLayer = ShapeType(size: shapeView.frame.size, fillColor: color.cgColor)
+        shapeView.layer.addSublayer(shapeLayer)
+        
+        return view
+    }
+    
+    // возвращает представление с обратной стороны
+    private func getBackSideView() -> UIView {
+        let view = UIView(frame: self.bounds)
+        
+        view.backgroundColor = .white
+        
+        // выбор случайного узора для рубашки
+        switch ["circle", "line"].randomElement()! {
+        case "circle":
+            let layer = BackSideCircle(size: self.bounds.size, fillColor: UIColor.black.cgColor)
+            view.layer.addSublayer(layer)
+        case "line":
+            let layer = BackSideLine(size: self.bounds.size, fillColor: UIColor.black.cgColor)
+            view.layer.addSublayer(layer)
+        default:
+            break
+        }
+        return view
     }
 }
 

@@ -16,6 +16,7 @@ extension ShapeLayerProtocol {
 
 
 class CircleShape: CAShapeLayer, ShapeLayerProtocol {
+    
     required init(size: CGSize, fillColor: CGColor) {
         super.init()
         
@@ -45,6 +46,34 @@ class CircleShape: CAShapeLayer, ShapeLayerProtocol {
 }
 
 
+class SquareShape: CAShapeLayer, ShapeLayerProtocol {
+    
+    required init(size: CGSize, fillColor: CGColor) {
+        super.init()
+    
+    
+    // Сторона равна меньшей из сторон
+    let edgeSize = ([size.width, size.height].min() ?? 0)
+    
+    // Рисуем квадрат
+    let rect = CGRect(x: 150, y: 150, width: edgeSize, height: edgeSize)
+    let path = UIBezierPath(rect: rect)
+    path.close()
+    
+    // Инициализируем созданный путь
+    self.path = path.cgPath
+    
+    // Изменяем цвет
+    self.fillColor = fillColor
+}
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+
+
 
 class MyViewController : UIViewController {
     override func loadView() {
@@ -54,6 +83,9 @@ class MyViewController : UIViewController {
         
         // круг
         view.layer.addSublayer(CircleShape(size: CGSize(width: 200, height: 150), fillColor: UIColor.gray.cgColor))
+        
+        // квадрат
+        view.layer.addSublayer(SquareShape(size: CGSize(width: 200, height: 150), fillColor: UIColor.gray.cgColor))
     }
 }
 

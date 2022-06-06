@@ -73,6 +73,32 @@ class SquareShape: CAShapeLayer, ShapeLayerProtocol {
 }
 
 
+class CrossShape: CAShapeLayer, ShapeLayerProtocol {
+    
+    required init(size: CGSize, fillColor: CGColor) {
+        super.init()
+        
+        
+        // Рисуем крест
+        let path = UIBezierPath()
+        path.move(to: CGPoint(x: 0, y: 0))
+        path.addLine(to: CGPoint(x: size.width, y: size.height))
+        path.move(to: CGPoint(x: size.width, y: 0))
+        path.addLine(to: CGPoint(x: 0, y: size.height))
+        
+        // Инициализуем созданный путь
+        self.path = path.cgPath
+        
+        // Изменяем цвет
+        self.strokeColor = fillColor
+        self.lineWidth = 5
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
 
 
 class MyViewController : UIViewController {
@@ -86,6 +112,9 @@ class MyViewController : UIViewController {
         
         // квадрат
         view.layer.addSublayer(SquareShape(size: CGSize(width: 200, height: 150), fillColor: UIColor.gray.cgColor))
+        
+        // крест
+        view.layer.addSublayer(CrossShape(size: CGSize(width: 200, height: 150), fillColor: UIColor.gray.cgColor))
     }
 }
 

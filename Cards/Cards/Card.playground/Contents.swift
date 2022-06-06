@@ -32,6 +32,14 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
     init(frame: CGRect, color: UIColor) {
         super.init(frame: frame)
         self.color = color
+        
+        if isFlipped {
+            self.addSubview(backSideView)
+            self.addSubview(frontSideView)
+        } else {
+            self.addSubview(frontSideView)
+            self.addSubview(backSideView)
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -278,17 +286,20 @@ class MyViewController : UIViewController {
         view.backgroundColor = .white
         self.view = view
         
+        
+        let firstCardView = CardView<CircleShape>(frame: CGRect(x: 0, y: 0, width: 120, height: 150), color: .red)
+        self.view.addSubview(firstCardView)
         // круг
-        view.layer.addSublayer(CircleShape(size: CGSize(width: 200, height: 150), fillColor: UIColor.gray.cgColor))
+        // view.layer.addSublayer(CircleShape(size: CGSize(width: 200, height: 150), fillColor: UIColor.gray.cgColor))
         
         // квадрат
-        view.layer.addSublayer(SquareShape(size: CGSize(width: 200, height: 150), fillColor: UIColor.gray.cgColor))
+        // view.layer.addSublayer(SquareShape(size: CGSize(width: 200, height: 150), fillColor: UIColor.gray.cgColor))
         
         // крест
-        view.layer.addSublayer(CrossShape(size: CGSize(width: 200, height: 150), fillColor: UIColor.gray.cgColor))
+        //view.layer.addSublayer(CrossShape(size: CGSize(width: 200, height: 150), fillColor: UIColor.gray.cgColor))
         
         // прямоугольник
-        view.layer.addSublayer(FillShape(size: CGSize(width: 200, height: 150), fillColor: UIColor.gray.cgColor))
+        //view.layer.addSublayer(FillShape(size: CGSize(width: 200, height: 150), fillColor: UIColor.gray.cgColor))
     }
 }
 

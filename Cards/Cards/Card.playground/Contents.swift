@@ -22,7 +22,11 @@ protocol FlippableVIew: UIView {
 
 class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
     
-    var isFlipped: Bool = false
+    var isFlipped: Bool = false {
+        didSet {
+            self.setNeedsDisplay()
+        }
+    }
     var flipCompetionHandler: ((FlippableVIew) -> Void)?
     func flip() {}
     
@@ -300,8 +304,15 @@ class MyViewController : UIViewController {
         self.view = view
         
         
+        // игральная карточка рубашкой вверх
         let firstCardView = CardView<CircleShape>(frame: CGRect(x: 0, y: 0, width: 120, height: 150), color: .red)
         self.view.addSubview(firstCardView)
+       
+        
+        // игральная карточка лицевой стороной вверх
+        let secondCardView = CardView<CircleShape>(frame: CGRect(x: 200, y: 0, width: 120, height: 150), color: .red)
+        self.view.addSubview(secondCardView)
+        secondCardView.isFlipped = true
         // круг
         // view.layer.addSublayer(CircleShape(size: CGSize(width: 200, height: 150), fillColor: UIColor.gray.cgColor))
         

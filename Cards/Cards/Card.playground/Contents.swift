@@ -26,6 +26,9 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
     var flipCompetionHandler: ((FlippableVIew) -> Void)?
     func flip() {}
     
+    // радиус закругления
+    var cornersRadius = 20
+    
     // цвет фигуры
     var color: UIColor!
     
@@ -40,6 +43,16 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
             self.addSubview(frontSideView)
             self.addSubview(backSideView)
         }
+        
+        setupBorders()
+    }
+    
+    // настройка границ
+    private func setupBorders() {
+        self.clipsToBounds = true
+        self.layer.cornerRadius = CGFloat(cornersRadius)
+        self.layer.borderWidth = 2
+        self.layer.borderColor = UIColor.black.cgColor
     }
     
     required init?(coder: NSCoder) {

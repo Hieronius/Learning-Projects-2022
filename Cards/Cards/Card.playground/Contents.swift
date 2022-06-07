@@ -40,6 +40,17 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
         super.init(frame: frame)
         self.color = color
         
+        
+        setupBorders()
+    }
+    
+    override func draw(_ rect: CGRect) {
+        
+        // удаляем добавленные ранее представления
+        backSideView.removeFromSuperview()
+        frontSideView.removeFromSuperview()
+        
+        // добавляем новые представления
         if isFlipped {
             self.addSubview(backSideView)
             self.addSubview(frontSideView)
@@ -47,8 +58,6 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
             self.addSubview(frontSideView)
             self.addSubview(backSideView)
         }
-        
-        setupBorders()
     }
     
     // настройка границ

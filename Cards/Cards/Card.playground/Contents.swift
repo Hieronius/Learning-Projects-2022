@@ -44,6 +44,14 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
         setupBorders()
     }
     
+    // настройка границ
+    private func setupBorders() {
+        self.clipsToBounds = true
+        self.layer.cornerRadius = CGFloat(cornersRadius)
+        self.layer.borderWidth = 2
+        self.layer.borderColor = UIColor.black.cgColor
+    }
+    
     override func draw(_ rect: CGRect) {
         
         // удаляем добавленные ранее представления
@@ -60,13 +68,7 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
         }
     }
     
-    // настройка границ
-    private func setupBorders() {
-        self.clipsToBounds = true
-        self.layer.cornerRadius = CGFloat(cornersRadius)
-        self.layer.borderWidth = 2
-        self.layer.borderColor = UIColor.black.cgColor
-    }
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -116,6 +118,18 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
             break
         }
         return view
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("touchesBegan Card")
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("touchesMoved Card")
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("touchesEnded Card")
     }
 }
 

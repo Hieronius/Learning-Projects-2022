@@ -29,3 +29,21 @@ class Developer {
 var Maxim = Developer(programmingLanguage: "Swift", knownLibraries: ["UIKIt", "SwiftUI"], knownPatterns: ["Singleton", "Fabric"], knowEnglish: true, hasPortfolio: true)
 
 Maxim.printAllProperties()
+
+class HRManager {
+    func scoreOfCandidat(candidate: Developer) {
+        for library in candidate.knownLibraries {
+            if [library] == ["UIKIt"] {
+                print("This person know \(library).It's fine candidat")
+                break
+            } else {
+                print("Not good, he don't know \(library)")
+            }
+        }
+        
+    }
+}
+
+var myHRManager = HRManager()
+myHRManager.scoreOfCandidat(candidate: Maxim)
+

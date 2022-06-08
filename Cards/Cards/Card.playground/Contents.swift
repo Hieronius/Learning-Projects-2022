@@ -121,15 +121,7 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("touchesBegan Card")
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("touchesMoved Card")
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("touchesEnded Card")
+        print( self.responderChain() )
     }
 }
 
@@ -348,8 +340,18 @@ class MyViewController : UIViewController {
         // прямоугольник
         //view.layer.addSublayer(FillShape(size: CGSize(width: 200, height: 150), fillColor: UIColor.gray.cgColor))
     }
+    
+    
 }
 
+extension UIResponder {
+    func responderChain() -> String {
+        guard let next = next else {
+            return String(describing: Self.self)
+        }
+        return String(describing: Self.self) + " -> " + next.responderChain()
+    }
+}
 
 // Present the view controller in the Live View window
 PlaygroundPage.current.liveView = MyViewController()

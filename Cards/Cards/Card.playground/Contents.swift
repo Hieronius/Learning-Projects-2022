@@ -38,8 +38,11 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
         let toView = isFlipped ? backSideView : frontSideView
         
         // запускаем анимированный переход
-        UIView.transition(from: fromView, to: toView, duration: 0.5, options: [.transitionFlipFromTop], completion: nil)
-        isFlipped = !isFlipped
+        UIView.transition(from: fromView, to: toView, duration: 0.5, options: [.transitionFlipFromTop], completion: { _ in
+            // обработчик переворота
+            self.flipCompetionHandler?(self)
+        })
+        isFlipped.toggle()
     }
     
     // радиус закругления
@@ -107,6 +110,10 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
         let shapeLayer = ShapeType(size: shapeView.frame.size, fillColor: color.cgColor)
         shapeView.layer.addSublayer(shapeLayer)
         
+        // скругляем углы корневого слоя
+        view.layer.masksToBounds = true
+        view.layer.cornerRadius = CGFloat(cornersRadius)
+        
         return view
     }
     
@@ -127,6 +134,11 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
         default:
             break
         }
+        
+        // скругляем углы корневого слоя
+        view.layer.masksToBounds = true
+        view.layer.cornerRadius = CGFloat(cornersRadius)
+        
         return view
     }
     
@@ -354,11 +366,17 @@ class MyViewController : UIViewController {
         
         // игральная карточка рубашкой вверх
         let firstCardView = CardView<CircleShape>(frame: CGRect(x: 0, y: 0, width: 120, height: 150), color: .red)
+        firstCardView.flipCompetionHandler = { card in
+            card.superview?.bringSubviewToFront(card)
+        }
         self.view.addSubview(firstCardView)
        
         
         // игральная карточка лицевой стороной вверх
         let secondCardView = CardView<CircleShape>(frame: CGRect(x: 200, y: 0, width: 120, height: 150), color: .red)
+        secondCardView.flipCompetionHandler = { card in
+            card.superview?.bringSubviewToFront(card)
+        }
         self.view.addSubview(secondCardView)
         secondCardView.isFlipped = true
         // круг

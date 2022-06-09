@@ -29,7 +29,18 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
         }
     }
     var flipCompetionHandler: ((FlippableVIew) -> Void)?
-    func flip() {}
+    
+    
+    func flip() {
+        
+        // определяем, между какими представлениями осуществить переход
+        let fromView = isFlipped ? frontSideView : backSideView
+        let toView = isFlipped ? backSideView : frontSideView
+        
+        // запускаем анимированный переход
+        UIView.transition(from: fromView, to: toView, duration: 0.5, options: [.transitionFlipFromTop], completion: nil)
+        isFlipped = !isFlipped
+    }
     
     // радиус закругления
     var cornersRadius = 20
@@ -68,8 +79,6 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
             self.addSubview(backSideView)
         }
     }
-    
-    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -141,17 +150,7 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // анимировано возвращаем карточку в исходное положение
-        UIView.animate(withDuration: 0.5) {
-            self.frame.origin = self.startTouchPoint
-        }
-        
-        // переворачиваем представление
-        if self.transform.isIdentity {
-            self.transform = CGAffineTransform(rotationAngle: .pi)
-        } else {
-            self.transform = .identity
-        }
+        flip()
     }
     
     // исходные координаты игральной карточки

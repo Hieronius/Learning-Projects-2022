@@ -145,6 +145,13 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
         UIView.animate(withDuration: 0.5) {
             self.frame.origin = self.startTouchPoint
         }
+        
+        // переворачиваем представление
+        if self.transform.isIdentity {
+            self.transform = CGAffineTransform(rotationAngle: .pi)
+        } else {
+            self.transform = .identity
+        }
     }
     
     // исходные координаты игральной карточки

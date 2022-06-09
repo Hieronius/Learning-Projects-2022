@@ -127,14 +127,28 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
     private var anchorPoint: CGPoint = CGPoint(x:0, y:0)
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // изменяем координаты точки привязки
         anchorPoint.x = touches.first!.location(in: window).x - frame.minX
         anchorPoint.y = touches.first!.location(in: window).y - frame.minY
+        
+        // сохраняем исходные координаты
+        startTouchPoint = frame.origin
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.frame.origin.x = touches.first!.location(in: window).x - anchorPoint.x
         self.frame.origin.y = touches.first!.location(in: window).y - anchorPoint.y
     }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // анимировано возвращаем карточку в исходное положение
+        UIView.animate(withDuration: 0.5) {
+            self.frame.origin = self.startTouchPoint
+        }
+    }
+    
+    // исходные координаты игральной карточки
+    private var startTouchPoint: CGPoint!
     
 }
 

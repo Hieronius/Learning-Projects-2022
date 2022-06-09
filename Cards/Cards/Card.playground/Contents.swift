@@ -2,6 +2,7 @@
   
 import UIKit
 import PlaygroundSupport
+import CoreText
 
 
 protocol ShapeLayerProtocol: CAShapeLayer {
@@ -120,9 +121,21 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
         return view
     }
     
+    
+    
+    // точка привязки
+    private var anchorPoint: CGPoint = CGPoint(x:0, y:0)
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print( self.responderChain() )
+        anchorPoint.x = touches.first!.location(in: window).x - frame.minX
+        anchorPoint.y = touches.first!.location(in: window).y - frame.minY
     }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.frame.origin.x = touches.first!.location(in: window).x - anchorPoint.x
+        self.frame.origin.y = touches.first!.location(in: window).y - anchorPoint.y
+    }
+    
 }
 
 

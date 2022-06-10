@@ -162,7 +162,9 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        flip()
+        if self.frame.origin == startTouchPoint {
+            flip()
+        }
     }
     
     // исходные координаты игральной карточки

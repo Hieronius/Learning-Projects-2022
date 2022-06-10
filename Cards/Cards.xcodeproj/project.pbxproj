@@ -15,6 +15,7 @@
 		DDF926832852D6FB00E7E584 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF926822852D6FB00E7E584 /* Shapes.swift */; };
 		DDF926852852D71900E7E584 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF926842852D71900E7E584 /* Cards.swift */; };
 		DDF9268D2852DB6C00E7E584 /* BoardGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF9268C2852DB6C00E7E584 /* BoardGameController.swift */; };
+		DDF926912852E36E00E7E584 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF926902852E36E00E7E584 /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		DDF926822852D6FB00E7E584 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 		DDF926842852D71900E7E584 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
 		DDF9268C2852DB6C00E7E584 /* BoardGameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardGameController.swift; sourceTree = "<group>"; };
+		DDF926902852E36E00E7E584 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		DDF9268E2852DBAA00E7E584 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DDF926902852E36E00E7E584 /* Card.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDF9268D2852DB6C00E7E584 /* BoardGameController.swift in Sources */,
+				DDF926912852E36E00E7E584 /* Card.swift in Sources */,
 				DDF926852852D71900E7E584 /* Cards.swift in Sources */,
 				DD43B728283F1E1B005271D7 /* AppDelegate.swift in Sources */,
 				DD43B72A283F1E1B005271D7 /* SceneDelegate.swift in Sources */,

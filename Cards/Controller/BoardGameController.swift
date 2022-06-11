@@ -4,6 +4,14 @@ import UIKit
 
 class BoardGameController: UIViewController {
     
+    override func loadView() {
+        super.loadView()
+        
+        // добавим кнопку на сцену
+        view.addSubview(startButtonView)
+    }
+    
+    
     // кнопка для запуска/перезапуска игры
     lazy var startButtonView = getStartButtonView()
     

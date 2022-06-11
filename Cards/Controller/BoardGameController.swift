@@ -25,6 +25,16 @@ class BoardGameController: UIViewController {
         // изменяем положение кнопки
         button.center.x = view.center.x
         
+        // получаем доступ к текущему окну
+        let window = UIApplication.shared.windows[0]
+        
+        // определяем отступ сверху от границ окна до Safe Area
+        let topPadding = window.safeAreaInsets.top
+        
+        // устанавливаем координату Y кнопки в соответствии с отступом
+        button.frame.origin.y = topPadding
+        
+        
         // 3
         // Настраиваем внешний вид кнопки
         

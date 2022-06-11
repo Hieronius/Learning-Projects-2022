@@ -48,9 +48,9 @@
 		DD43B71B283F1E1A005271D7 = {
 			isa = PBXGroup;
 			children = (
+				DD43B735283F1E1D005271D7 /* Info.plist */,
 				DD43B727283F1E1B005271D7 /* AppDelegate.swift */,
 				DD43B729283F1E1B005271D7 /* SceneDelegate.swift */,
-				DD43B735283F1E1D005271D7 /* Info.plist */,
 				DDF926812852D6D400E7E584 /* View */,
 				DDF9268E2852DBAA00E7E584 /* Model */,
 				DDF926872852DA3200E7E584 /* Controller */,

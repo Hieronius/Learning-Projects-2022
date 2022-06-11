@@ -3,7 +3,7 @@ import UIKit
 
 protocol FlippableVIew: UIView {
     var isFlipped: Bool { get set }
-    var flipCompetionHandler: ((FlippableVIew) -> Void)? { get set }
+    var flipCompletionHandler: ((FlippableVIew) -> Void)? { get set }
     func flip()
 }
 
@@ -15,7 +15,7 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
             self.setNeedsDisplay()
         }
     }
-    var flipCompetionHandler: ((FlippableVIew) -> Void)?
+    var flipCompletionHandler: ((FlippableVIew) -> Void)?
     
     
     func flip() {
@@ -27,7 +27,7 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
         // запускаем анимированный переход
         UIView.transition(from: fromView, to: toView, duration: 0.5, options: [.transitionFlipFromTop], completion: { _ in
             // обработчик переворота
-            self.flipCompetionHandler?(self)
+            self.flipCompletionHandler?(self)
         })
         isFlipped.toggle()
     }

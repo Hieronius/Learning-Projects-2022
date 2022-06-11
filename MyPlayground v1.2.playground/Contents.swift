@@ -37,8 +37,7 @@ class HRManager {
     var totalScoreOfWorkInterview = 0
     
     
-    
-    func scoreOfCandidat(candidate: Developer) {
+    func scoreOfCandidat(candidate: Developer) -> Bool {
         for library in candidate.knownLibraries {
             if [library] == ["UIKIt"] {
                 print("This person know \(library).It's fine candidat")
@@ -82,8 +81,27 @@ class HRManager {
         
         if self.totalScoreOfWorkInterview > 3 {
             print("We will glad to work with you mr. candidate)")
+            arrayOfCandidates.append(candidate)
+            return true
         } else {
             print("Sorry bro but plz prepare a little bit better and come again")
+            return false
+        }
+    }
+    
+    func letsTrialTheCandidat(candidat: Developer) -> Bool {
+        
+        var totalScore = 0
+        
+        var canditateProgrammingLanguage: String
+        var candidateKnownLibraries: [String]
+        var candidateKnownPatterns: [String]
+        var candidateKnownEnglish: Bool
+        var candidateHasPortfolio: Bool
+        
+        switch candidat {
+        case candidat.programmingLanguage == "Swift":
+            
         }
     }
 }
@@ -95,3 +113,4 @@ var myHRManager = HRManager()
 var David = Developer(programmingLanguage: "Java", knownLibraries: ["JavaCaffe"], knownPatterns: ["Data Source"], knowEnglish: false, hasPortfolio: false)
 myHRManager.scoreOfCandidat(candidate: David)
 myHRManager.scoreOfCandidat(candidate: Maxim)
+myHRManager.arrayOfCandidates

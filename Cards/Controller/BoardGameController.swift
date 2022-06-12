@@ -11,6 +11,9 @@ class BoardGameController: UIViewController {
         view.addSubview(startButtonView)
     }
     
+    @objc func startGame(_ sender: UIButton) {
+        print("button was pressed")
+    }
     
     // кнопка для запуска/перезапуска игры
     lazy var startButtonView = getStartButtonView()
@@ -52,6 +55,9 @@ class BoardGameController: UIViewController {
         
         // 3.5 скругляем углы
         button.layer.cornerRadius = 10
+        
+        // подключаем обработчик нажатия на кнопку
+        button.addTarget(nil, action: #selector(startGame(_:)), for: .touchUpInside)
         
         return button
     }

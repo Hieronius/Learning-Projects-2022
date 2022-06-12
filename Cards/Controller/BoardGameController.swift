@@ -11,9 +11,44 @@ class BoardGameController: UIViewController {
         view.addSubview(startButtonView)
     }
     
+    
+    // игровое поле
+    lazy var boardGameView = getBoardGameView()
+    
+    private func getBoardGameView() -> UIView {
+        
+        // отступ игрового поля от ближайших элементов
+        let margin: CGFloat = 10
+        
+        let boardView = UIView()
+        
+        // указываем координаты
+        // x
+        boardView.frame.origin.x = margin
+        
+        // y
+        let window = UIApplication.shared.windows[0]
+        let topPadding = window.safeAreaInsets.top
+        boardView.frame.origin.y = topPadding + startButtonView.frame.height + margin
+        
+        // рассчитываем ширину
+        boardView.frame.size.width = UIScreen.main.bounds.width - margin*2
+        
+        // рассчитыаем высоту с учетом нижнего отступа
+        let bottomPadding = window.safeAreaInsets.bottom
+        boardView.frame.size.height = UIScreen.main.bounds.height - boardView.frame.origin.y - margin - bottomPadding
+        
+        // изменяем стиль игрового поля
+        boardView.layer.cornerRadius = 5
+        boardView.backgroundColor = UIColor(red: 0.1, green: 0.9, blue: 0.1, alpha: 0.3)
+        
+        return boardView
+    }
+    
     @objc func startGame(_ sender: UIButton) {
         print("button was pressed")
     }
+    
     
     // кнопка для запуска/перезапуска игры
     lazy var startButtonView = getStartButtonView()
@@ -59,8 +94,12 @@ class BoardGameController: UIViewController {
         // подключаем обработчик нажатия на кнопку
         button.addTarget(nil, action: #selector(startGame(_:)), for: .touchUpInside)
         
+        // button.addAction(UIAction(title: "", handler: { action in print("Button was pressed") }), for: .touchUpInside)
+        
         return button
     }
+    
+   
     
     // количество пар уникальных карточек
     var cardsPairCounts = 8

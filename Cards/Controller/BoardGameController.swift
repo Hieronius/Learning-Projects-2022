@@ -9,6 +9,10 @@ class BoardGameController: UIViewController {
         
         // добавим кнопку на сцену
         view.addSubview(startButtonView)
+        
+        // добавляем игровое поле на сцену
+        view.addSubview(boardGameView)
+        
     }
     
     

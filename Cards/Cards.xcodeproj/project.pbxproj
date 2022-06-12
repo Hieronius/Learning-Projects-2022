@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD26F602285592920016283E /* CardViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD26F601285592920016283E /* CardViewFactory.swift */; };
 		DD43B728283F1E1B005271D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD43B727283F1E1B005271D7 /* AppDelegate.swift */; };
 		DD43B72A283F1E1B005271D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD43B729283F1E1B005271D7 /* SceneDelegate.swift */; };
 		DD43B72F283F1E1B005271D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD43B72D283F1E1B005271D7 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD26F601285592920016283E /* CardViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewFactory.swift; sourceTree = "<group>"; };
 		DD43B724283F1E1B005271D7 /* Cards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD43B727283F1E1B005271D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD43B729283F1E1B005271D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,9 +47,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD26F5FE2855924A0016283E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DD26F601285592920016283E /* CardViewFactory.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		DD43B71B283F1E1A005271D7 = {
 			isa = PBXGroup;
 			children = (
+				DD26F5FE2855924A0016283E /* Helpers */,
 				DD43B735283F1E1D005271D7 /* Info.plist */,
 				DD43B727283F1E1B005271D7 /* AppDelegate.swift */,
 				DD43B729283F1E1B005271D7 /* SceneDelegate.swift */,
@@ -187,6 +198,7 @@
 				DDF926932852EC2D00E7E584 /* Game.swift in Sources */,
 				DDF926852852D71900E7E584 /* Cards.swift in Sources */,
 				DD43B728283F1E1B005271D7 /* AppDelegate.swift in Sources */,
+				DD26F602285592920016283E /* CardViewFactory.swift in Sources */,
 				DD43B72A283F1E1B005271D7 /* SceneDelegate.swift in Sources */,
 				DDF926832852D6FB00E7E584 /* Shapes.swift in Sources */,
 			);

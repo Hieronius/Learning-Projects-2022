@@ -43,9 +43,52 @@ class BoardGameController: UIViewController {
         
         // добавляем всем картам обработчик поворота
         for card in cardViews {
-            (card as! FlippableVIew).flipCompletionHandler = { flippedCard in
+            (card as! FlippableVIew).flipCompletionHandler = { [self] flippedCard in
+                
                 // переносим карточку вверх иерархии
                 flippedCard.superview?.bringSubviewToFront(flippedCard)
+                
+                // добавляем или удаляем карточку
+                if flippedCard.isFlipped {
+                    self.flippedCards.append(flippedCard)
+                } else {
+                    if let cardIndex = self.flippedCards.firstIndex(of: flippedCard) {
+                        self.flippedCards.remove(at: cardIndex)
+                    }
+                }
+                
+                // если перевернуто две карточки
+                if self.flippedCards.count == 2 {
+                    
+                    // получаем карточки из данных модели
+                    let firstCard = game.cards[self.flippedCards.first!.tag]
+                    let secondCard = game.cards[self.flippedCards.last!.tag]
+                    
+                    // если карточки одинаковые
+                    if game.checkCards(firstCard, secondCard) {
+                        
+                        // сперва анимированно скрываем их
+                        UIView.animate(withDuration: 0.3, animations: {
+                            self.flippedCards.first!.layer.opacity = 0
+                            self.flippedCards.last!.layer.opacity = 0
+                            
+                            // после чего удаляем из иерархии
+                        }, completion: {_ in
+                            self.flippedCards.first!.removeFromSuperview()
+                            self.flippedCards.last!.removeFromSuperview()
+                            self.flippedCards = []
+                        })
+                        
+                        // в ином случае
+                        
+                    } else {
+                        
+                        // переворачиваем карточки рубашкой вверх
+                        for card in self.flippedCards {
+                            (card as! FlippableVIew).flip()
+                        }
+                    }
+                }
             }
         }
         

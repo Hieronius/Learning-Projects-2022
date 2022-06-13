@@ -27,10 +27,32 @@ class Hero {
         }
     }
     
-    func move() {
+    func move(direction: String) {
         
-        var newPosition: Description = (0, 0, "")
         
+        
+        switch direction {
+        case "Custle":
+            currentPosition.self = map.custle
+            print("\(name.self) is currently in \(currentPosition.0), \(currentPosition.1) in the \(currentPosition.2) custle")
+        case "Mountain":
+            currentPosition.self = map.mountain
+            print("\(name.self) is currently in \(currentPosition.0), \(currentPosition.1) in the \(currentPosition.2) mountain)")
+        case "River":
+            currentPosition.self = map.river
+            print("\(name.self) is currently in \(currentPosition.0), \(currentPosition.1) in the \(currentPosition.2) river)")
+        case "Wastelend":
+            currentPosition.self = map.wasteland
+            print("\(name.self) is currently in \(currentPosition.0), \(currentPosition.1) in the \(currentPosition.2) wasteland)")
+        case "UnknownPlace":
+            currentPosition.self = map.unknownPlace
+            print("\(name.self) is currently in \(currentPosition.0), \(currentPosition.1) in the \(currentPosition.2) unknown place)")
+        default: break
+        }
         
     }
+    
 }
+
+var myHero = Hero()
+myHero.move(direction: "Custle")

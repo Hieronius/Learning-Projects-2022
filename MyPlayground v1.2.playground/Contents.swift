@@ -56,3 +56,21 @@ class Hero {
 
 var myHero = Hero()
 myHero.move(direction: "Custle")
+
+
+class Kinds {
+    var elvs = map.river {
+        didSet {
+            switch elvs.self {
+            case map.mountain:
+                print("Elfs declare war on dwarves")
+            }
+        }
+    }
+    
+    var orcs = map.wasteland
+    var humans = map.custle
+    var dwarfs = map.mountain
+    var demons = map.unknownPlace
+    
+}

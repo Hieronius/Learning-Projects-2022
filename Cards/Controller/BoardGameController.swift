@@ -4,6 +4,42 @@ import UIKit
 
 class BoardGameController: UIViewController {
     
+    // количество пар уникальных карточек
+    var cardsPairCounts = 8
+    
+    // сущность "Игра"
+    lazy var game: Game = getNewGame()
+    
+    // кнопка для запуска/перезапуска игры
+    lazy var startButtonView = getStartButtonView()
+    
+    // игровое поле
+    lazy var boardGameView = getBoardGameView()
+    
+    // игральные карточки
+    var cardViews = [UIView]()
+    
+    // размеры карточек
+    private var cardSize: CGSize {
+        CGSize(width: 80, height: 120)
+    }
+    
+    // предположительно перевернутые карточки
+    private var flippedCards = [UIView]()
+    
+    // предельные координаты размещения карточки
+    // по ширине
+    private var cardMaxXCoordinate: Int {
+        Int(boardGameView.frame.width - cardSize.width)
+    }
+    
+    // по высоте
+    private var cardMaxYCoordinate: Int {
+        Int(boardGameView.frame.height - cardSize.height)
+    }
+    
+    
+    // Загрузка наших представлений и обьектов
     override func loadView() {
         super.loadView()
         
@@ -14,8 +50,6 @@ class BoardGameController: UIViewController {
         view.addSubview(boardGameView)
         
     }
-    
-    private var flippedCards = [UIView]()
     
     
     // генерация массива карточек на основе данных Модели
@@ -43,6 +77,7 @@ class BoardGameController: UIViewController {
         
         // добавляем всем картам обработчик поворота
         for card in cardViews {
+            
             (card as! FlippableVIew).flipCompletionHandler = { [self] flippedCard in
                 
                 // переносим карточку вверх иерархии
@@ -95,22 +130,6 @@ class BoardGameController: UIViewController {
         return cardViews
     }
     
-    // размеры карточек
-    private var cardSize: CGSize {
-        CGSize(width: 80, height: 120)
-    }
-    
-    // предельные координаты размещения карточки
-    private var cardMaxXCoordinate: Int {
-        Int(boardGameView.frame.width - cardSize.width)
-    }
-    
-    private var cardMaxYCoordinate: Int {
-        Int(boardGameView.frame.height - cardSize.height)
-    }
-    
-    // игральные карточки
-    var cardViews = [UIView]()
     
     private func placeCardsOnBoard(_ cards: [UIView]) {
         
@@ -135,8 +154,20 @@ class BoardGameController: UIViewController {
     }
     
     
-    // игровое поле
-    lazy var boardGameView = getBoardGameView()
+    private func getNewGame() -> Game {
+        let game = Game()
+        game.cardsCount = self.cardsPairCounts
+        game.generateCards()
+        return game
+    }
+    
+    
+    @objc func startGame(_ sender: UIButton) {
+        game = getNewGame()
+        let cards = getCardsBy(modelData: game.cards)
+        placeCardsOnBoard(cards)
+    }
+    
     
     private func getBoardGameView() -> UIView {
         
@@ -168,15 +199,6 @@ class BoardGameController: UIViewController {
         return boardView
     }
     
-    @objc func startGame(_ sender: UIButton) {
-        game = getNewGame()
-        let cards = getCardsBy(modelData: game.cards)
-        placeCardsOnBoard(cards)
-    }
-    
-    
-    // кнопка для запуска/перезапуска игры
-    lazy var startButtonView = getStartButtonView()
     
     private func getStartButtonView() -> UIButton {
         
@@ -223,26 +245,11 @@ class BoardGameController: UIViewController {
         
         return button
     }
-    
-   
-    
-    // количество пар уникальных карточек
-    var cardsPairCounts = 8
-    
-    // сущность "Игра"
-    lazy var game: Game = getNewGame()
-    
-    private func getNewGame() -> Game {
-        let game = Game()
-        game.cardsCount = self.cardsPairCounts
-        game.generateCards()
-        return game
-    }
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
     }
     
 }

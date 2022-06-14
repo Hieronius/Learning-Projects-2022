@@ -1,6 +1,7 @@
 import UIKit
 
 
+// протокол отвечающий за переворот карты
 protocol FlippableVIew: UIView {
     var isFlipped: Bool { get set }
     var flipCompletionHandler: ((FlippableVIew) -> Void)? { get set }
@@ -10,33 +11,33 @@ protocol FlippableVIew: UIView {
 
 class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
     
+    // перевернута ли карта
+    // false - если обратной стороной
+    // если перевернуть попросить систему заново отрисовать представления
     var isFlipped: Bool = false {
         didSet {
             self.setNeedsDisplay()
         }
     }
+    
+    // обработчик завершения
     var flipCompletionHandler: ((FlippableVIew) -> Void)?
-    
-    
-    func flip() {
-        
-        // определяем, между какими представлениями осуществить переход
-        let fromView = isFlipped ? frontSideView : backSideView
-        let toView = isFlipped ? backSideView : frontSideView
-        
-        // запускаем анимированный переход
-        UIView.transition(from: fromView, to: toView, duration: 0.5, options: [.transitionFlipFromTop], completion: { _ in
-            // обработчик переворота
-            self.flipCompletionHandler?(self)
-        })
-        isFlipped.toggle()
-    }
     
     // радиус закругления
     var cornersRadius = 20
     
     // цвет фигуры
     var color: UIColor!
+    
+    // отступ от краев корневого представления до фигуры
+    private let margin: Int = 10
+    
+    // представление с лицевой стороны карты
+    lazy var frontSideView: UIView = self.getFrontSideView()
+    
+    // представление с обратной стороны карты
+    lazy var backSideView: UIView = self.getBackSideView()
+    
     
     init(frame: CGRect, color: UIColor) {
         super.init(frame: frame)
@@ -46,13 +47,6 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
         setupBorders()
     }
     
-    // настройка границ
-    private func setupBorders() {
-        self.clipsToBounds = true
-        self.layer.cornerRadius = CGFloat(cornersRadius)
-        self.layer.borderWidth = 2
-        self.layer.borderColor = UIColor.black.cgColor
-    }
     
     override func draw(_ rect: CGRect) {
         
@@ -70,19 +64,20 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
         }
     }
     
+    
+    // настройка границ
+    private func setupBorders() {
+        self.clipsToBounds = true
+        self.layer.cornerRadius = CGFloat(cornersRadius)
+        self.layer.borderWidth = 2
+        self.layer.borderColor = UIColor.black.cgColor
+    }
+    
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    // внутренний отступ представления
-    private let margin: Int = 10
-    
-    // представление с лицевой стороны карты
-    lazy var frontSideView: UIView = self.getFrontSideView()
-    
-    // представление с обратной стороны карты
-    lazy var backSideView: UIView = self.getBackSideView()
     
     // возвращает представление с лицевой стороны
     private func getFrontSideView() -> UIView {
@@ -130,9 +125,12 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
     }
     
     
-    
     // точка привязки
     private var anchorPoint: CGPoint = CGPoint(x:0, y:0)
+    
+    // исходные координаты игральной карточки
+    private var startTouchPoint: CGPoint!
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         // изменяем координаты точки привязки
@@ -154,7 +152,19 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
         }
     }
     
-    // исходные координаты игральной карточки
-    private var startTouchPoint: CGPoint!
+    
+    func flip() {
+        
+        // определяем, между какими представлениями осуществить переход
+        let fromView = isFlipped ? frontSideView : backSideView
+        let toView = isFlipped ? backSideView : frontSideView
+        
+        // запускаем анимированный переход
+        UIView.transition(from: fromView, to: toView, duration: 0.5, options: [.transitionFlipFromTop], completion: { _ in
+            // обработчик переворота
+            self.flipCompletionHandler?(self)
+        })
+        isFlipped.toggle()
+    }
     
 }

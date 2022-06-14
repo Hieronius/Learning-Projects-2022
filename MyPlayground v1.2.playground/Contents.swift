@@ -20,7 +20,7 @@ class Map {
 var map = Map()
 
 class Hero {
-    var name = "Gendalf"
+    var name: String
     var currentPosition: Description = (50, 50, "purple") {
         didSet {
             print("The current position right now is \(currentPosition.coordinateX), \(currentPosition.coordinateY), \(currentPosition.color)")
@@ -44,7 +44,7 @@ class Hero {
         case "Wastelend":
             currentPosition.self = map.wasteland
             print("\(name.self) is currently in \(currentPosition.0), \(currentPosition.1) in the \(currentPosition.2) wasteland)")
-        case "UnknownPlace":
+        case "Unknown place":
             currentPosition.self = map.unknownPlace
             print("\(name.self) is currently in \(currentPosition.0), \(currentPosition.1) in the \(currentPosition.2) unknown place)")
         default: break
@@ -52,25 +52,31 @@ class Hero {
         
     }
     
+    init(name: String) {
+        self.name = name
+    }
+    
 }
 
-var myHero = Hero()
+var myHero = Hero(name: "Gendalf")
 myHero.move(direction: "Custle")
 
 
-class Kinds {
-    var elvs = map.river {
-        didSet {
-            switch elvs.self {
-            case map.mountain:
-                print("Elfs declare war on dwarves")
-            }
-        }
-    }
-    
-    var orcs = map.wasteland
-    var humans = map.custle
-    var dwarfs = map.mountain
-    var demons = map.unknownPlace
-    
-}
+
+
+var elves = Hero(name: "Elves")
+elves.move(direction: "River")
+
+var orcs = Hero(name: "Orcs")
+orcs.move(direction: "Westlend")
+
+var demons = Hero(name: "Demons")
+demons.move(direction: "Unknown place")
+
+var humans = Hero(name: "Humans")
+humans.move(direction: "Custle")
+
+var dwarfs = Hero(name: "Dwarfs")
+dwarfs.move(direction: "Mountain")
+
+

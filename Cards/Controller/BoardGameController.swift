@@ -169,6 +169,7 @@ class BoardGameController: UIViewController {
     }
     
     
+    
     private func getBoardGameView() -> UIView {
         
         // отступ игрового поля от ближайших элементов

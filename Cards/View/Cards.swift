@@ -106,6 +106,7 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
         view.backgroundColor = .white
         
         // выбор случайного узора для рубашки
+        // Сюда добавим новый узор
         switch ["circle", "line"].randomElement()! {
         case "circle":
             let layer = BackSideCircle(size: self.bounds.size, fillColor: UIColor.black.cgColor)
@@ -146,10 +147,23 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
         self.frame.origin.y = touches.first!.location(in: window).y - anchorPoint.y
     }
     
+    // I think exectly here i should implement code to prevent cards from moving out from game board
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if self.frame.origin == startTouchPoint {
             flip()
         }
+        // предельные координаты размещения карточки
+        // по ширине
+//        private var cardMaxXCoordinate: Int {
+//            Int(boardGameView.frame.width - cardSize.width)
+//        }
+//
+//        // по высоте
+//        private var cardMaxYCoordinate: Int {
+//            Int(boardGameView.frame.height - cardSize.height)
+//        }
+        if anchorPoint.x > boardView
+        
     }
     
     

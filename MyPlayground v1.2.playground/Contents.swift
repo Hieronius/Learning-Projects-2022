@@ -35,18 +35,23 @@ class Hero {
         case "Custle":
             currentPosition.self = map.custle
             print("\(name.self) is currently in \(currentPosition.0), \(currentPosition.1) in the \(currentPosition.2) custle")
+            
         case "Mountain":
             currentPosition.self = map.mountain
             print("\(name.self) is currently in \(currentPosition.0), \(currentPosition.1) in the \(currentPosition.2) mountain)")
+            
         case "River":
             currentPosition.self = map.river
             print("\(name.self) is currently in \(currentPosition.0), \(currentPosition.1) in the \(currentPosition.2) river)")
+            
         case "Wastelend":
             currentPosition.self = map.wasteland
             print("\(name.self) is currently in \(currentPosition.0), \(currentPosition.1) in the \(currentPosition.2) wasteland)")
+            
         case "Unknown place":
             currentPosition.self = map.unknownPlace
             print("\(name.self) is currently in \(currentPosition.0), \(currentPosition.1) in the \(currentPosition.2) unknown place)")
+
         default: break
         }
         
@@ -57,9 +62,6 @@ class Hero {
     }
     
 }
-
-var myHero = Hero(name: "Gendalf")
-myHero.move(direction: "Custle")
 
 
 
@@ -79,4 +81,16 @@ humans.move(direction: "Custle")
 var dwarfs = Hero(name: "Dwarfs")
 dwarfs.move(direction: "Mountain")
 
+var myArmy = [elves, orcs, demons, humans, dwarfs]
 
+elves.move(direction: "Custle")
+
+
+/*
+ for army in myArmy {
+    if army.currentPosition == currentPosition {
+        print("\(army.name) was attacked by \(name.self)")
+    }
+}
+ 
+*/

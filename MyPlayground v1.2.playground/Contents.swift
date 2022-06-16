@@ -24,8 +24,7 @@ class Hero {
     var currentPosition: Description? {
         didSet {
             print("The current position right now is \(currentPosition!.0), \(currentPosition!.1), \(currentPosition!.2)")
-            
-            if self.currentPosition == 
+        
         }
     }
     
@@ -83,11 +82,16 @@ humans.move(direction: "Custle")
 var dwarfs = Hero(name: "Dwarfs")
 dwarfs.move(direction: "Mountain")
 
-var myArmy = [elves, orcs, demons, humans, dwarfs]
-
 elves.move(direction: "Custle")
 
 
+
+class Armies {
+    var myArmies: [Hero] = []
+}
+
+var myArmy = Armies()
+myArmy.myArmies
 /*
  for army in myArmy {
     if army.currentPosition == currentPosition {

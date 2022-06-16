@@ -21,9 +21,11 @@ var map = Map()
 
 class Hero {
     var name: String
-    var currentPosition: Description = (50, 50, "purple") {
+    var currentPosition: Description? {
         didSet {
-            print("The current position right now is \(currentPosition.coordinateX), \(currentPosition.coordinateY), \(currentPosition.color)")
+            print("The current position right now is \(currentPosition!.0), \(currentPosition!.1), \(currentPosition!.2)")
+            
+            if self.currentPosition == 
         }
     }
     
@@ -34,23 +36,23 @@ class Hero {
         switch direction {
         case "Custle":
             currentPosition.self = map.custle
-            print("\(name.self) is currently in \(currentPosition.0), \(currentPosition.1) in the \(currentPosition.2) custle")
+            print("\(name.self) is currently in \(currentPosition!.0), \(currentPosition!.1) in the \(currentPosition!.2) custle")
             
         case "Mountain":
             currentPosition.self = map.mountain
-            print("\(name.self) is currently in \(currentPosition.0), \(currentPosition.1) in the \(currentPosition.2) mountain)")
+            print("\(name.self) is currently in \(currentPosition!.0), \(currentPosition!.1) in the \(currentPosition!.2) mountain)")
             
         case "River":
             currentPosition.self = map.river
-            print("\(name.self) is currently in \(currentPosition.0), \(currentPosition.1) in the \(currentPosition.2) river)")
+            print("\(name.self) is currently in \(currentPosition!.0), \(currentPosition!.1) in the \(currentPosition!.2) river)")
             
         case "Wastelend":
             currentPosition.self = map.wasteland
-            print("\(name.self) is currently in \(currentPosition.0), \(currentPosition.1) in the \(currentPosition.2) wasteland)")
+            print("\(name.self) is currently in \(currentPosition!.0), \(currentPosition!.1) in the \(currentPosition!.2) wasteland)")
             
         case "Unknown place":
             currentPosition.self = map.unknownPlace
-            print("\(name.self) is currently in \(currentPosition.0), \(currentPosition.1) in the \(currentPosition.2) unknown place)")
+            print("\(name.self) is currently in \(currentPosition!.0), \(currentPosition!.1) in the \(currentPosition!.2) unknown place)")
 
         default: break
         }

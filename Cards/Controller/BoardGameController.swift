@@ -16,6 +16,7 @@ class BoardGameController: UIViewController {
     // игровое поле
     lazy var boardGameView = getBoardGameView()
     
+    
     // игральные карточки
     var cardViews = [UIView]()
     

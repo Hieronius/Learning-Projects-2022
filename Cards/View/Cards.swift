@@ -152,17 +152,9 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
         if self.frame.origin == startTouchPoint {
             flip()
         }
-        // предельные координаты размещения карточки
-        // по ширине
-//        private var cardMaxXCoordinate: Int {
-//            Int(boardGameView.frame.width - cardSize.width)
-//        }
-//
-//        // по высоте
-//        private var cardMaxYCoordinate: Int {
-//            Int(boardGameView.frame.height - cardSize.height)
-//        }
-        if anchorPoint.x > boardView
+        if self.frame.origin.x > (self.superview?.frame.maxX)! || self.frame.origin.y > (self.superview?.frame.maxY )! {
+            self.frame.origin = self.startTouchPoint
+        }
         
     }
     

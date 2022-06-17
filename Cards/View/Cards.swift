@@ -152,9 +152,19 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
         if self.frame.origin == startTouchPoint {
             flip()
         }
-        if self.frame.origin.x > (self.superview?.frame.maxX)! || self.frame.origin.y > (self.superview?.frame.maxY )! {
+        if touches.first!.location(in: ).x > (self.superview?.frame.maxX)! || touches.first!.location(in: window).y > (self.superview?.frame.maxY)! {
             self.frame.origin = self.startTouchPoint
         }
+        
+//        let superViewMaxX = self.superview?.bounds.maxX
+//        let superViewMaxY = self.superview?.bounds.maxY
+        
+        
+        
+//        if self.frame.origin.x > ((self.superview?.bounds.maxX)!) && self.frame.origin.y > ((self.superview?.bounds.maxY)!) { // ||
+//            // self.frame.origin.x < (self.superview?.bounds.height)! || self.frame.origin.y < (self.superview?.frame.width)! {
+//            self.frame.origin = self.startTouchPoint
+//        }
         
     }
     

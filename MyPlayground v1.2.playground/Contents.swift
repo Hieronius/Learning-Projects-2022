@@ -88,11 +88,33 @@ elves.move(direction: "Custle")
 
 class Armies {
     var myArmies: [Hero] = []
+    
+    subscript(army: String) -> Hero {
+        var choosenArmy: Hero
+        
+        for armies in myArmies {
+            if armies.name == army {
+                print("You choose the \(armies.name)")
+                choosenArmy = armies
+            }
+        }
+        return choosenArmy
+    }
+    
 }
 
-var myArmy = Armies()
-myArmy.myArmies
+var legion = Armies()
+
+legion.myArmies.append(elves)
+legion.myArmies.append(orcs)
+legion.myArmies.append(demons)
+legion.myArmies.append(humans)
+legion.myArmies.append(dwarfs)
+
+
+
 /*
+ 
  for army in myArmy {
     if army.currentPosition == currentPosition {
         print("\(army.name) was attacked by \(name.self)")

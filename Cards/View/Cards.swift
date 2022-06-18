@@ -143,6 +143,10 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
         
         // сохраняем исходные координаты
         startTouchPoint = frame.origin
+        
+        let touch = touches.first!
+        let location = touch.location(in: window)
+        print("touches began \(location)")
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -150,6 +154,10 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
         self.frame.origin.y = touches.first!.location(in: window).y - anchorPoint.y
         
         endTouchPoint = self.frame.origin
+        
+        let touch = touches.first!
+        let location = touch.location(in: window)
+        print("touches moved \(location)")
     }
     
     // I think exectly here i should implement code to prevent cards from moving out from game board
@@ -159,11 +167,17 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
             flip()
         }
         
+        let touch = touches.first!
+        let location = touch.location(in: window)
+        print("touches ended \(location)")
+        
         if self.frame.origin == endTouchPoint {
             print("Yo nigga")
         }
         
-        if self.frame.origin.x > (self.superview?.frame.maxX)! || self.frame.origin.y > (self.superview?.frame.maxY)! {
+        
+        if location.x > (self.superview?.frame.maxX)! || location.y > (self.superview?.frame.maxY)! ||
+            location.x < (self.superview?.frame.minX)! || location.y < (self.superview?.frame.minY)! {
             self.frame.origin = startTouchPoint
         }
         

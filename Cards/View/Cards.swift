@@ -171,11 +171,9 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
         let location = touch.location(in: window)
         print("touches ended \(location)")
         
-        if self.frame.origin == endTouchPoint {
-            print("Yo nigga")
-        }
         
         
+       
         if location.x > (self.superview?.frame.maxX)! || location.y > (self.superview?.frame.maxY)! ||
             location.x < (self.superview?.frame.minX)! || location.y < (self.superview?.frame.minY)! {
             self.frame.origin = startTouchPoint

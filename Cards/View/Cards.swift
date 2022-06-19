@@ -136,6 +136,8 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
     private var endTouchPoint: CGPoint!
     
     
+    
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         // изменяем координаты точки привязки
         anchorPoint.x = touches.first!.location(in: window).x - frame.minX
@@ -170,7 +172,6 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
         let touch = touches.first!
         let location = touch.location(in: window)
         print("touches ended \(location)")
-        
         
         
        

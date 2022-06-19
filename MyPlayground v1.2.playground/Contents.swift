@@ -1,6 +1,17 @@
 // Индексы
 
 
+
+
+var newArray = ["nigga", "Big", "slarc"]
+for string in newArray {
+    if string == "nigga" {
+        print("Yo nigga")
+    }
+}
+
+
+
 typealias Description = (coordinateX: Int, coordinateY: Int, color: String)
 
 
@@ -105,13 +116,12 @@ class Armies {
 
 var legion = Armies()
 
+
 legion.myArmies.append(elves)
 legion.myArmies.append(orcs)
 legion.myArmies.append(demons)
 legion.myArmies.append(humans)
 legion.myArmies.append(dwarfs)
-
-
 
 /*
  
@@ -122,3 +132,4 @@ legion.myArmies.append(dwarfs)
 }
  
 */
+

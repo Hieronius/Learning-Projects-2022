@@ -104,7 +104,7 @@ class CircleShape: CAShapeLayer, ShapeLayerProtocol {
         // радиус равен половине меньшей из сторон
         let radius = ([size.width, size.height].min() ?? 0) / 2
         
-        // центр круга равен центрам каждый из сторон
+        // центр круга равен центрам каждой из сторон
         let centerX = size.width / 2
         let centerY = size.height / 2
         
@@ -118,6 +118,35 @@ class CircleShape: CAShapeLayer, ShapeLayerProtocol {
         // изменяем цвет
         self.fillColor = fillColor
     
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class EmptyCircle: CAShapeLayer, ShapeLayerProtocol {
+    
+    required init(size: CGSize, fillColor: CGColor) {
+        super.init()
+        
+        // Рассчитываем данные круга
+        // радиус равен половине меньшей из сторон
+        let radius = ([size.width, size.height].min() ?? 0) / 2
+        
+        // Рассчитываем центр круга
+        // центр круга равен центрам каждой из сторон
+        let centerX = size.width / 2
+        let centerY = size.height / 2
+        
+        // рисуем круг
+        let path = UIBezierPath(arcCenter: CGPoint(x: centerX, y: centerY), radius: radius, startAngle: 0, endAngle: .pi*2, clockwise: true)
+        
+        // инициализируем созданный путь
+        self.path = path.cgPath
+        
+        // изменяем цвет
+        self.fillColor = fillColor
     }
     
     required init?(coder: NSCoder) {

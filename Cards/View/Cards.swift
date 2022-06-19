@@ -176,8 +176,10 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
        
         if location.x > (self.superview?.frame.maxX)! || location.y > (self.superview?.frame.maxY)! ||
             location.x < (self.superview?.frame.minX)! || location.y < (self.superview?.frame.minY)! {
-            self.frame.origin = startTouchPoint
-        }
+            UIView.animate(withDuration: 0.5, animations: {
+                self.frame.origin = self.startTouchPoint
+        })
+    }
         
         
         

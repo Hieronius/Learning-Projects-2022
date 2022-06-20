@@ -1,25 +1,23 @@
 // Индексы
 
 import Foundation
+import UIKit
 
 
-var arrayOfTerries = ["Terry Jhones", "Terry Crus", "Archibald Terry"]
-var newArrayOfTerries = arrayOfTerries.filter {$0.contains("Terry ")}
-print(newArrayOfTerries)
 
 
-typealias Description = (coordinateX: Int, coordinateY: Int, color: String)
+typealias Description = (coordinateX: Int, coordinateY: Int, color: String, place: String)
 
 
 class Map {
     
     
     
-    var mountain: Description = (1, 2, "red")
-    var river: Description = (5, 6, "green")
-    var custle: Description = (10, 11, "black")
-    var wasteland: Description = (15, 16, "blue")
-    var unknownPlace: Description = (20, 21, "yellow")
+    var mountains: Description = (1, 2, "red", "mountains")
+    var river: Description = (5, 6, "green", "river")
+    var custle: Description = (10, 11, "black", "custle")
+    var wasteland: Description = (15, 16, "blue", "wasteland")
+    var unknownPlace: Description = (20, 21, "yellow", "unknown place")
     
 
 }
@@ -28,9 +26,9 @@ var map = Map()
 
 class Hero {
     var name: String
-    var currentPosition: Description? {
+    var currentPosition: Description {
         didSet {
-            print("The current position right now is \(currentPosition!.0), \(currentPosition!.1), \(currentPosition!.2)")
+            print("The current position right now is \(currentPosition.0), \(currentPosition.1), \(currentPosition.2)")
         
         }
     }
@@ -42,31 +40,32 @@ class Hero {
         switch direction {
         case "Custle":
             currentPosition.self = map.custle
-            print("\(name.self) is currently in \(currentPosition!.0), \(currentPosition!.1) in the \(currentPosition!.2) custle")
+            print("\(name.self) is currently in \(currentPosition.0), \(currentPosition.1) in the \(currentPosition.2) \(currentPosition.3)")
             
-        case "Mountain":
-            currentPosition.self = map.mountain
-            print("\(name.self) is currently in \(currentPosition!.0), \(currentPosition!.1) in the \(currentPosition!.2) mountain)")
+        case "Mountains":
+            currentPosition.self = map.mountains
+            print("\(name.self) is currently in \(currentPosition.0), \(currentPosition.1) in the \(currentPosition.2) \(currentPosition.3)")
             
         case "River":
             currentPosition.self = map.river
-            print("\(name.self) is currently in \(currentPosition!.0), \(currentPosition!.1) in the \(currentPosition!.2) river)")
+            print("\(name.self) is currently in \(currentPosition.0), \(currentPosition.1) in the \(currentPosition.2) \(currentPosition.3)")
             
         case "Wastelend":
             currentPosition.self = map.wasteland
-            print("\(name.self) is currently in \(currentPosition!.0), \(currentPosition!.1) in the \(currentPosition!.2) wasteland)")
+            print("\(name.self) is currently in \(currentPosition.0), \(currentPosition.1) in the \(currentPosition.2) \(currentPosition.3)")
             
         case "Unknown place":
             currentPosition.self = map.unknownPlace
-            print("\(name.self) is currently in \(currentPosition!.0), \(currentPosition!.1) in the \(currentPosition!.2) unknown place)")
+            print("\(name.self) is currently in \(currentPosition.0), \(currentPosition.1) in the \(currentPosition.2) \(currentPosition.3)")
 
         default: break
         }
         
     }
     
-    init(name: String) {
+    init(name: String, currentPosition: (Int, Int, String, String)) {
         self.name = name
+        self.currentPosition = currentPosition
     }
     
 }
@@ -74,20 +73,20 @@ class Hero {
 
 
 
-var elves = Hero(name: "Elves")
-elves.move(direction: "River")
+var elves = Hero(name: "Elves", currentPosition: map.river)
 
-var orcs = Hero(name: "Orcs")
-orcs.move(direction: "Westlend")
 
-var demons = Hero(name: "Demons")
-demons.move(direction: "Unknown place")
+var orcs = Hero(name: "Orcs", currentPosition: map.wasteland)
 
-var humans = Hero(name: "Humans")
-humans.move(direction: "Custle")
 
-var dwarfs = Hero(name: "Dwarfs")
-dwarfs.move(direction: "Mountain")
+var demons = Hero(name: "Demons", currentPosition: map.unknownPlace)
+
+
+var humans = Hero(name: "Humans", currentPosition: map.custle)
+
+
+var dwarfs = Hero(name: "Dwarfs", currentPosition: map.mountains)
+
 
 elves.move(direction: "Custle")
 

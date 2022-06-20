@@ -145,8 +145,12 @@ class EmptyCircle: CAShapeLayer, ShapeLayerProtocol {
         // инициализируем созданный путь
         self.path = path.cgPath
         
+        // изменяем цвет линий
+        self.strokeColor = fillColor
+        self.lineWidth = 5
+        
         // изменяем цвет
-        self.fillColor = fillColor
+        self.fillColor = UIColor.white.cgColor
     }
     
     required init?(coder: NSCoder) {

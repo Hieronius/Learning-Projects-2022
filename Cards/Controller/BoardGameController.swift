@@ -149,8 +149,11 @@ class BoardGameController: UIViewController {
             let randomYCoordinate = Int.random(in: 0...cardMaxYCoordinate)
             card.frame.origin = CGPoint(x: randomXCoordinate, y: randomYCoordinate)
             
+            
+            
             // размещаем карточку на игровом поле
             boardGameView.addSubview(card)
+            
         }
     }
     

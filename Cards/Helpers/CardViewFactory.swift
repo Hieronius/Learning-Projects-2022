@@ -20,6 +20,8 @@ class CardViewFactory {
             return CardView<SquareShape>(frame: frame, color: viewColor)
         case .fill:
             return CardView<FillShape>(frame: frame, color: viewColor)
+        case .emptyCircle:
+            return CardView<EmptyCircle>(frame: frame, color: .clear)
         }
     }
     
@@ -27,7 +29,7 @@ class CardViewFactory {
     private func getViewColorBy(modelColor: CardColor) -> UIColor {
         
         switch modelColor {
-        case .red:
+        case .red:  // where .emptyCircle is CardType:
             return .red
         case .green:
             return .green
@@ -47,3 +49,6 @@ class CardViewFactory {
     }
     
 }
+
+
+

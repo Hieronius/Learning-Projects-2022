@@ -1,15 +1,11 @@
 // Индексы
 
+import Foundation
 
 
-
-var newArray = ["nigga", "Big", "slarc"]
-for string in newArray {
-    if string == "nigga" {
-        print("Yo nigga")
-    }
-}
-
+var arrayOfTerries = ["Terry Jhones", "Terry Crus", "Archibald Terry"]
+var newArrayOfTerries = arrayOfTerries.filter {$0.contains("Terry ")}
+print(newArrayOfTerries)
 
 
 typealias Description = (coordinateX: Int, coordinateY: Int, color: String)

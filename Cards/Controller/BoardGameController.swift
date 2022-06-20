@@ -209,21 +209,25 @@ class BoardGameController: UIViewController {
         
         // 1
         // создаем кнопку
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
         
         // 2
         // изменяем положение кнопки
-        button.center.x = view.center.x
+        
         
         // получаем доступ к текущему окну
-        let window = UIApplication.shared.windows[0]
+        let button1 = startButtonView
         
+        let leftPadding = startButtonView.rightAnchor
+        
+        button.center.x = CGFloat(leftPadding)
+        
+        let window = UIApplication.shared.windows[0]
         // определяем отступ сверху от границ окна до Safe Area
         let topPadding = window.safeAreaInsets.top
         
         // устанавливаем координату Y кнопки в соответствии с отступом
         button.frame.origin.y = topPadding
-        
         
         // 3
         // Настраиваем внешний вид кнопки
@@ -249,6 +253,23 @@ class BoardGameController: UIViewController {
         // button.addAction(UIAction(title: "", handler: { action in print("Button was pressed") }), for: .touchUpInside)
         
         return button
+    }
+    
+    private func getFlippedCardsButton() -> UIButton {
+        
+        // 1. Creating a button
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
+        
+        // 2. Changing position X of the button
+        let window1 = UIApplication.shared.windows[0]
+        
+        let toppadding1 = window1.
+        
+        // 2.1 Changing position Y of the button
+        let window = UIApplication.shared.windows[0]
+        
+        // selecting position of our button below the Safe Area of View
+        let topPadding = window.safeAreaInsets.top
     }
 
     

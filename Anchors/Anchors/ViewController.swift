@@ -39,6 +39,10 @@ class ViewController: UIViewController {
     
     func setupView2() {
         
+        view2.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        view2.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/3).isActive = true
+        view2.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        view2.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
 }
 

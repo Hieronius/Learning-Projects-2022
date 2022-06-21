@@ -11,15 +11,12 @@ typealias Description = (coordinateX: Int, coordinateY: Int, color: String, plac
 
 class Map {
     
-    
-    
     var mountains: Description = (1, 2, "red", "mountains")
     var river: Description = (5, 6, "green", "river")
     var custle: Description = (10, 11, "black", "custle")
     var wasteland: Description = (15, 16, "blue", "wasteland")
     var unknownPlace: Description = (20, 21, "yellow", "unknown place")
     
-
 }
 
 var map = Map()
@@ -32,6 +29,7 @@ class Hero {
         
         }
     }
+    
     
     func move(direction: String) {
         
@@ -95,16 +93,17 @@ elves.move(direction: "Custle")
 class Armies {
     var myArmies: [Hero] = []
     
-    subscript(army: String) -> Hero {
-        var choosenArmy: Hero
+    subscript(army: Hero) -> Hero {
+        var counter = -1
         
         for armies in myArmies {
-            if armies.name == army {
+            counter += 1
+            
+            if armies.name == army.name {
                 print("You choose the \(armies.name)")
-                choosenArmy = armies
             }
         }
-        return choosenArmy
+        return myArmies[counter]
     }
     
 }
@@ -118,6 +117,8 @@ legion.myArmies.append(demons)
 legion.myArmies.append(humans)
 legion.myArmies.append(dwarfs)
 
+legion[elves]
+legion[orcs]
 /*
  
  for army in myArmy {

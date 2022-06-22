@@ -56,10 +56,8 @@ class BoardGameController: UIViewController {
         // adding our new flip button to scene
         view.addSubview(flipButtonView)
         
-        flipButtonView.translatesAutoresizingMaskIntoConstraints = false
-        flipButtonView.leftAnchor.constraint(equalTo: startButtonView.rightAnchor, constant: 15).isActive = true
-        flipButtonView.topAnchor.constraint(equalTo: startButtonView.topAnchor).isActive = true
-        flipButtonView.bottomAnchor.constraint(equalTo: startButtonView.bottomAnchor).isActive = true
+        // making the setup of our flip button with anchors which is connected to startButtonView
+        getSetupOfFlipButton()
         
         
         
@@ -225,7 +223,7 @@ class BoardGameController: UIViewController {
         
         // 1
         // создаем кнопку
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 150, height: 50))
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
         
         
         // 2
@@ -290,8 +288,20 @@ class BoardGameController: UIViewController {
         // set corner radius value
         button.layer.cornerRadius = 10
         
+        // set complation handler for our button
+        
         return button
         
+        
+    }
+    
+    private func getSetupOfFlipButton() {
+        
+        flipButtonView.translatesAutoresizingMaskIntoConstraints = false
+        flipButtonView.leftAnchor.constraint(equalTo: startButtonView.rightAnchor, constant: 15).isActive = true
+        flipButtonView.topAnchor.constraint(equalTo: startButtonView.topAnchor).isActive = true
+        flipButtonView.bottomAnchor.constraint(equalTo: startButtonView.bottomAnchor).isActive = true
+        flipButtonView.widthAnchor.constraint(equalToConstant: 75).isActive = true
         
     }
 

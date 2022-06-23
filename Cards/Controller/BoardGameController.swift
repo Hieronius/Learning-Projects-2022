@@ -19,8 +19,7 @@ class BoardGameController: UIViewController {
     // игровое поле
     lazy var boardGameView = getBoardGameView()
     
-    // sceneView subView
-    // var sceneView: UIView
+    
     
     
     // игральные карточки
@@ -187,6 +186,18 @@ class BoardGameController: UIViewController {
     }
     
     
+    ////////////////////////
+    
+    
+    // Adding function to flip all our cards
+    @objc func flipCards(_ sender: UIButton) {
+        for card in self.cardViews {
+            (card as! FlippableVIew).flip()
+            }
+        }
+    
+    
+    ///////////////////////
     
     private func getBoardGameView() -> UIView {
         
@@ -288,7 +299,8 @@ class BoardGameController: UIViewController {
         // set corner radius value
         button.layer.cornerRadius = 10
         
-        // set complation handler for our button
+        // set completion handler for our button
+        button.addTarget(nil, action: #selector(flipCards(_:)), for: .touchUpInside)
         
         return button
         
@@ -311,5 +323,22 @@ class BoardGameController: UIViewController {
         
 
     }
-    
+
 }
+
+//// добавляем всем картам обработчик поворота
+//for card in cardViews {
+//
+//    (card as! FlippableVIew).flipCompletionHandler = { [self] flippedCard in
+//
+//        // переносим карточку вверх иерархии
+//        flippedCard.superview?.bringSubviewToFront(flippedCard)
+//
+//        // добавляем или удаляем карточку
+//        if flippedCard.isFlipped {
+//            self.flippedCards.append(flippedCard)
+//        } else {
+//            if let cardIndex = self.flippedCards.firstIndex(of: flippedCard) {
+//                self.flippedCards.remove(at: cardIndex)
+//            }
+//        }

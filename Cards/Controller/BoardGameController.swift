@@ -135,6 +135,7 @@ class BoardGameController: UIViewController {
                         // переворачиваем карточки рубашкой вверх
                         for card in self.flippedCards {
                             (card as! FlippableVIew).flip()
+                            flippedCards.remove(at: 0)
                         }
                     }
                 }
@@ -326,19 +327,4 @@ class BoardGameController: UIViewController {
 
 }
 
-//// добавляем всем картам обработчик поворота
-//for card in cardViews {
-//
-//    (card as! FlippableVIew).flipCompletionHandler = { [self] flippedCard in
-//
-//        // переносим карточку вверх иерархии
-//        flippedCard.superview?.bringSubviewToFront(flippedCard)
-//
-//        // добавляем или удаляем карточку
-//        if flippedCard.isFlipped {
-//            self.flippedCards.append(flippedCard)
-//        } else {
-//            if let cardIndex = self.flippedCards.firstIndex(of: flippedCard) {
-//                self.flippedCards.remove(at: cardIndex)
-//            }
-//        }
+

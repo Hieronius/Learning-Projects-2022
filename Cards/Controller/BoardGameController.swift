@@ -176,12 +176,14 @@ class BoardGameController: UIViewController {
         let game = Game()
         game.cardsCount = self.cardsPairCounts
         game.generateCards()
+        
         return game
     }
     
     
     @objc func startGame(_ sender: UIButton) {
         game = getNewGame()
+        self.flippedCards = []
         let cards = getCardsBy(modelData: game.cards)
         placeCardsOnBoard(cards)
     }
@@ -191,11 +193,42 @@ class BoardGameController: UIViewController {
     
     
     // Adding function to flip all our cards
+    
     @objc func flipCards(_ sender: UIButton) {
+            for card in self.cardViews {
+                (card as! FlippableVIew).flip()
+                flippedCards.append(card)
+                }
+            }
+    
+    
+   /* @objc func flipCards(_ sender: UIButton) {
+        
+        var oneOfTheCardIsFlipped: Bool
+        var counterOfCards = -1
+        
         for card in self.cardViews {
-            (card as! FlippableVIew).flip()
+            counterOfCards += 1
+            if (card as! FlippableVIew).isFlipped == true {
+                oneOfTheCardIsFlipped = true
+            } else {
+                oneOfTheCardIsFlipped = false
+            }
+            if oneOfTheCardIsFlipped == true {
+                for card in self.cardViews {
+                    (card as! FlippableVIew).flip()
+                        flippedCards.append(card)
+                    (self.cardViews[counterOfCards] as! FlippableVIew).flip()
+                }
+            } else {
+                for card in self.cardViews {
+                    (card as! FlippableVIew).flip()
+                    flippedCards.append(card)
+            }
             }
         }
+    }
+    */
     
     
     ///////////////////////

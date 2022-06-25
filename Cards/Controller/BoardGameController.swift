@@ -31,7 +31,11 @@ class BoardGameController: UIViewController {
     }
     
     // предположительно перевернутые карточки
-    private var flippedCards = [UIView]()
+    private var flippedCards = [UIView]() {
+        didSet {
+            print("the current amount of elements here is \(flippedCards.count)")
+        }
+    }
     
     // предельные координаты размещения карточки
     // по ширине
@@ -195,12 +199,37 @@ class BoardGameController: UIViewController {
     // Adding function to flip all our cards
     
     @objc func flipCards(_ sender: UIButton) {
-            for card in self.cardViews {
-                (card as! FlippableVIew).flipOne() // done here
-        }
+        
+        var cardsViewsForFlip = self.cardViews
+        var cardForFlip = UIView()
+        
+        if self.flippedCards.isEmpty == false {
+            cardForFlip = self.flippedCards[0]
+            print(cardForFlip)
+            
+        
+        for card in cardsViewsForFlip {
+                if card == cardForFlip {
+                    cardsViewsForFlip.remove(at: cardsViewsForFlip.firstIndex(of: cardForFlip)!)
+                    
+                }
+            }
+         for card in cardsViewsForFlip {
+            (card as! FlippableVIew).flipOne()
+                    flippedCards = []
+         }
+                } else {
+                    for card in self.cardViews {
+                        (card as! FlippableVIew).flipOne()
+                    }
+            }
+            
+        
         
         print(flippedCards.count)
     }
+    
+    
     
     
   

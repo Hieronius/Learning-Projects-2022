@@ -135,7 +135,7 @@ class BoardGameController: UIViewController {
                         // переворачиваем карточки рубашкой вверх
                         for card in self.flippedCards {
                             (card as! FlippableVIew).flip()
-                            flippedCards.remove(at: 0)
+                            
                         }
                     }
                 }
@@ -196,39 +196,14 @@ class BoardGameController: UIViewController {
     
     @objc func flipCards(_ sender: UIButton) {
             for card in self.cardViews {
-                (card as! FlippableVIew).flip()
-                flippedCards.append(card)
-                }
-            }
-    
-    
-   /* @objc func flipCards(_ sender: UIButton) {
-        
-        var oneOfTheCardIsFlipped: Bool
-        var counterOfCards = -1
-        
-        for card in self.cardViews {
-            counterOfCards += 1
-            if (card as! FlippableVIew).isFlipped == true {
-                oneOfTheCardIsFlipped = true
-            } else {
-                oneOfTheCardIsFlipped = false
-            }
-            if oneOfTheCardIsFlipped == true {
-                for card in self.cardViews {
-                    (card as! FlippableVIew).flip()
-                        flippedCards.append(card)
-                    (self.cardViews[counterOfCards] as! FlippableVIew).flip()
-                }
-            } else {
-                for card in self.cardViews {
-                    (card as! FlippableVIew).flip()
-                    flippedCards.append(card)
-            }
-            }
+                (card as! FlippableVIew).flipOne() // done here
         }
+        
+        print(flippedCards.count)
     }
-    */
+    
+    
+  
     
     
     ///////////////////////

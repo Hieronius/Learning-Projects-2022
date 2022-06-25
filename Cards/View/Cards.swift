@@ -6,6 +6,7 @@ protocol FlippableVIew: UIView {
     var isFlipped: Bool { get set }
     var flipCompletionHandler: ((FlippableVIew) -> Void)? { get set }
     func flip()
+    func flipOne()
 }
 
 
@@ -211,4 +212,15 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
         isFlipped.toggle()
     }
     
+    func flipOne() {
+        
+        // определяем, между какими представлениями осуществить переход
+        let fromView = isFlipped ? frontSideView : backSideView
+        let toView = isFlipped ? backSideView : frontSideView
+        
+        // запускаем анимированный переход
+        UIView.transition(from: fromView, to: toView, duration: 0.5, options: [.transitionFlipFromTop], completion: nil)
+        
+        isFlipped.toggle()
+    }
 }

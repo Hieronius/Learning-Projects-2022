@@ -4,6 +4,29 @@ import Foundation
 import UIKit
 
 
+// 1.
+func getEvenNumbers() -> [Int] {
+    
+    var arrayOfEvenNumbers: [Int] = []
+    
+    for number in 1...100 {
+        if number % 2 == 0 {
+            arrayOfEvenNumbers.append(number)
+        }
+    }
+    print(arrayOfEvenNumbers)
+    return arrayOfEvenNumbers
+}
+getEvenNumbers()
+
+
+
+
+
+
+
+
+
 
 
 typealias Description = (coordinateX: Int, coordinateY: Int, color: String, place: String)
@@ -21,7 +44,19 @@ class Map {
 
 var map = Map()
 
-class Hero {
+
+
+protocol MainHero {
+    var name: String { get set }
+    var currentPosition: Description { get set }
+    
+    func move(direction: String)
+    
+    func attack(destination: MainHero)
+}
+
+
+class Hero: MainHero {
     var name: String
     var currentPosition: Description {
         didSet {
@@ -61,13 +96,21 @@ class Hero {
         
     }
     
+    
+    func attack(destination: MainHero ) {
+        if self.currentPosition == destination.currentPosition {
+            print("The \(self.name) attacked the \(destination.name)")
+        }
+        
+    }
+    
+    
     init(name: String, currentPosition: (Int, Int, String, String)) {
         self.name = name
         self.currentPosition = currentPosition
     }
     
 }
-
 
 
 
@@ -86,12 +129,23 @@ var humans = Hero(name: "Humans", currentPosition: map.custle)
 var dwarfs = Hero(name: "Dwarfs", currentPosition: map.mountains)
 
 
-elves.move(direction: "Custle")
+
 
 
 
 class Armies {
     var myArmies: [Hero] = []
+    
+    var listOfCoordinates = map
+    
+    
+    func attack(army: Hero, destination: Hero) {
+        if army.currentPosition == destination.currentPosition {
+            print("The \(army.name) attack the \(destination.name)")
+        }
+        
+    }
+    
     
     subscript(army: Hero) -> Hero {
         var counter = -1
@@ -101,12 +155,16 @@ class Armies {
             
             if armies.name == army.name {
                 print("You choose the \(armies.name)")
+                break
             }
         }
         return myArmies[counter]
     }
     
+    
 }
+
+
 
 var legion = Armies()
 
@@ -117,8 +175,7 @@ legion.myArmies.append(demons)
 legion.myArmies.append(humans)
 legion.myArmies.append(dwarfs)
 
-legion[elves]
-legion[orcs]
+legion[orcs].attack(destination: )
 /*
  
  for army in myArmy {

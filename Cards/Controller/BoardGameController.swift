@@ -203,6 +203,10 @@ class BoardGameController: UIViewController {
         var cardsViewsForFlip = self.cardViews
         var cardForFlip = UIView()
         
+        var cardsWasFlipped = false
+        
+        
+        if cardsWasFlipped == false { // 1 condition ------------------------- if there is cards in flippedArray - flip all cards except this one
         if self.flippedCards.isEmpty == false {
             cardForFlip = self.flippedCards[0]
             print(cardForFlip)
@@ -218,13 +222,40 @@ class BoardGameController: UIViewController {
             (card as! FlippableVIew).flipOne()
                     flippedCards = []
          }
+            cardsWasFlipped = true
+            print("Fliped all cards except one")
+        
+        } // -------------------------------------
+        
+        
+        // 2 condition --------------------------  Just flip all the cards
+        else {
+                    for card in self.cardViews {
+                        (card as! FlippableVIew).flipOne()
+                    }
+            cardsWasFlipped = true
+            print("All cards were flipped")
+            
+            }
+         // -----------------------------------
+        }
+        
+        if cardsWasFlipped == true {
+            for card in self.cardViews {
+                if (card as! FlippableVIew).isFlipped == false {
+                    (card as! FlippableVIew).flipOne()
                 } else {
                     for card in self.cardViews {
                         (card as! FlippableVIew).flipOne()
                     }
+                    cardsWasFlipped = false
+                    print("All cards were turn back")
+                    
+                }
             }
             
-        
+            
+        }
         
         print(flippedCards.count)
     }

@@ -210,6 +210,7 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableVIew {
             self.flipCompletionHandler?(self)
         })
         isFlipped.toggle()
+        print("ifFlipped was toggled")
     }
     
     func flipOne() {

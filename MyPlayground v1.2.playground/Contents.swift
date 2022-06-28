@@ -4,24 +4,15 @@ import Foundation
 import UIKit
 
 
-// 1.
-func getEvenNumbers() -> [Int] {
-    
-    var arrayOfEvenNumbers: [Int] = []
-    
-    for number in 1...100 {
-        if number % 2 == 0 {
-            arrayOfEvenNumbers.append(number)
-        }
+let names = ["Terry Jones", "Jonh Terry", "Terry Crews", "Terry Farrell", "Samuel Terry"]
+
+var terryArray = [String]()
+for name in names {
+    if name.contains("Terry ") {
+        terryArray.append(name)
     }
-    print(arrayOfEvenNumbers)
-    return arrayOfEvenNumbers
 }
-getEvenNumbers()
-
-
-
-
+print(terryArray)
 
 
 

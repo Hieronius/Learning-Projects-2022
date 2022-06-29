@@ -195,7 +195,7 @@ class BoardGameController: UIViewController {
     
     ////////////////////////
     
-    
+    var cardsWasFlipped = false
     // Adding function to flip all our cards
     
     @objc func flipCards(_ sender: UIButton) {
@@ -203,11 +203,17 @@ class BoardGameController: UIViewController {
         var cardsViewsForFlip = self.cardViews
         var cardForFlip = UIView()
         
-        var cardsWasFlipped = false
         
         
-        if cardsWasFlipped == false { // 1 condition ------------------------- if there is cards in flippedArray - flip all cards except this one
-        if self.flippedCards.isEmpty == false {
+        switch cardsWasFlipped {
+            
+        
+        
+        case false: // 1 condition ------------------------- if there is cards in flippedArray - flip all cards except this one
+            
+            
+                    
+            if self.flippedCards.isEmpty == false {
             cardForFlip = self.flippedCards[0]
             print(cardForFlip)
             
@@ -220,10 +226,11 @@ class BoardGameController: UIViewController {
             }
          for card in cardsViewsForFlip {
             (card as! FlippableVIew).flipOne()
-                    flippedCards = []
+             self.flippedCards = []
          }
             cardsWasFlipped = true
             print("Fliped all cards except one")
+            break
         
         } // -------------------------------------
         
@@ -235,27 +242,38 @@ class BoardGameController: UIViewController {
                     }
             cardsWasFlipped = true
             print("All cards were flipped")
+            break
             
             }
          // -----------------------------------
-        }
+
         
-        if cardsWasFlipped == true {
+    case true:
+            
             for card in self.cardViews {
-                if (card as! FlippableVIew).isFlipped == false {
+                if (card as! FlippableVIew).isFlipped == true {
                     (card as! FlippableVIew).flipOne()
+                    
+                    print("Single card was turn back to the front side")
+
+                    break
+                    
+                    
                 } else {
+                    
                     for card in self.cardViews {
                         (card as! FlippableVIew).flipOne()
                     }
                     cardsWasFlipped = false
                     print("All cards were turn back")
+                    self.flippedCards = []
+                    break
                     
                 }
             }
             
-            
-        }
+
+        } // switch end here
         
         print(flippedCards.count)
     }

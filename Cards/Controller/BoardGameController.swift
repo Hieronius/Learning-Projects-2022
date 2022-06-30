@@ -205,6 +205,7 @@ class BoardGameController: UIViewController {
         
         
         
+        
         switch cardsWasFlipped {
             
         
@@ -251,26 +252,12 @@ class BoardGameController: UIViewController {
     case true:
             
             for card in self.cardViews {
-                if (card as! FlippableVIew).isFlipped == true {
-                    (card as! FlippableVIew).flipOne()
-                    
-                    print("Single card was turn back to the front side")
-
-                    break
-                    
-                    
-                } else {
-                    
-                    for card in self.cardViews {
-                        (card as! FlippableVIew).flipOne()
-                    }
-                    cardsWasFlipped = false
-                    print("All cards were turn back")
-                    self.flippedCards = []
-                    break
-                    
-                }
+                (card as! FlippableVIew).flipOne()
             }
+            cardsWasFlipped = false
+            print("All cards were turn back")
+            self.flippedCards = []
+            break
             
 
         } // switch end here
@@ -414,3 +401,30 @@ class BoardGameController: UIViewController {
 }
 
 
+
+//case true: for experiments
+//
+//        for card in self.cardViews {
+//            if (card as! FlippableVIew).isFlipped == true {
+//               (card as! FlippableVIew).flipOne()
+//
+//                print("Single card was turn back to the front side")
+//
+//                break
+//
+//
+//            } else {
+//
+//                for card in self.cardViews {
+//                    (card as! FlippableVIew).flipOne()
+//                }
+//                cardsWasFlipped = false
+//                print("All cards were turn back")
+//                self.flippedCards = []
+//                break
+//
+//            }
+//        }
+//
+//
+//    } // switch end here

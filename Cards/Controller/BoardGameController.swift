@@ -251,6 +251,7 @@ class BoardGameController: UIViewController {
         
     case true:
             
+            // When cards is flipped to the back side make it flipped to the front side.
             for card in self.cardViews {
                 (card as! FlippableVIew).flipOne()
             }
@@ -272,6 +273,9 @@ class BoardGameController: UIViewController {
     
     
     ///////////////////////
+    
+    
+    
     
     private func getBoardGameView() -> UIView {
         

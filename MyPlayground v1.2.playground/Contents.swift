@@ -4,21 +4,21 @@ import Foundation
 import UIKit
 
 
-let names = ["Terry Jones", "Jonh Terry", "Terry Crews", "Terry Farrell", "Samuel Terry"]
-
-var terryArray = [String]()
-for name in names {
-    if name.contains("Terry ") {
-        terryArray.append(name)
-    }
+func swingBat() -> () -> Void {
+    var swingCount = 0
+    
+    if swingCount >= 3 {
+        print("You're out!")
+    } else {
+        swingCount += 1
 }
-print(terryArray)
+    return {
+        print("Strike \(swingCount)")
+    }
 
-
-
-
-
-
+}
+let swing = swingBat()
+print(swing())
 
 typealias Description = (coordinateX: Int, coordinateY: Int, color: String, place: String)
 

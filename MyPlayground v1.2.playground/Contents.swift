@@ -4,21 +4,36 @@ import Foundation
 import UIKit
 
 
-func swingBat() -> () -> Void {
-    var swingCount = 0
+protocol Knight {
     
-    if swingCount >= 3 {
-        print("You're out!")
-    } else {
-        swingCount += 1
+    var health: Int { get set }
+    var attack: Int { get set }
+    
+    func doAttack()
 }
-    return {
-        print("Strike \(swingCount)")
-    }
 
+class Paladin: Knight {
+    
+    var health: Int = 100
+    var attack: Int = 20
+    
+    func doAttack() {
+        print("Paladin attacked target with damage \(attack)")
+    }
 }
-let swing = swingBat()
-print(swing())
+
+var malborn = Paladin()
+malborn.attack
+
+extension Knight {
+    
+    
+    
+    var level: Int {
+        self.attack * self.health
+    }
+}
+
 
 typealias Description = (coordinateX: Int, coordinateY: Int, color: String, place: String)
 

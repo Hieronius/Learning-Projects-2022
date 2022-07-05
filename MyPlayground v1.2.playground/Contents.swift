@@ -4,35 +4,18 @@ import Foundation
 import UIKit
 
 
-protocol Knight {
+func great(_ name: String, _ owner: String) -> String {
+  // complete this function
     
-    var health: Int { get set }
-    var attack: Int { get set }
+    if name == owner {
+        return "Hello boss"
     
-    func doAttack()
-}
-
-class Paladin: Knight {
-    
-    var health: Int = 100
-    var attack: Int = 20
-    
-    func doAttack() {
-        print("Paladin attacked target with damage \(attack)")
+    } else {
+        return "Hello guest"
     }
 }
+great("Boss", "Boss")
 
-var malborn = Paladin()
-malborn.attack
-
-extension Knight {
-    
-    
-    
-    var level: Int {
-        self.attack * self.health
-    }
-}
 
 
 typealias Description = (coordinateX: Int, coordinateY: Int, color: String, place: String)

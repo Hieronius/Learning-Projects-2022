@@ -4,18 +4,16 @@ import Foundation
 import UIKit
 
 
-func great(_ name: String, _ owner: String) -> String {
-  // complete this function
+func century(_ year: Int) -> Int {
     
-    if name == owner {
-        return "Hello boss"
-    
+    if year % 100 != 0 {
+        return year / 100 + 1
     } else {
-        return "Hello guest"
+        return year / 100
     }
 }
-great("Boss", "Boss")
 
+century(1699)
 
 
 typealias Description = (coordinateX: Int, coordinateY: Int, color: String, place: String)

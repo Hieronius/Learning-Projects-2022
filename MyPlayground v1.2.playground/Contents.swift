@@ -4,16 +4,23 @@ import Foundation
 import UIKit
 
 
-func century(_ year: Int) -> Int {
-    
-    if year % 100 != 0 {
-        return year / 100 + 1
-    } else {
-        return year / 100
-    }
+func greet() -> Void {
+  print("hello world!")
 }
+greet()
 
-century(1699)
+func RentalCarCost(_ days: Int) -> Int {
+if days < 3 {
+  return days * 40
+} else if days >= 3 && days < 7 {
+  return days * 40 - 20
+} else {
+  return days * 40 - 50
+}
+}
+RentalCarCost(2)
+RentalCarCost(3)
+RentalCarCost(7)
 
 
 typealias Description = (coordinateX: Int, coordinateY: Int, color: String, place: String)

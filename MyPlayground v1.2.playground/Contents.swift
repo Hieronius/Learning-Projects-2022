@@ -4,23 +4,22 @@ import Foundation
 import UIKit
 
 
-func greet() -> Void {
-  print("hello world!")
+func sumOfPositives (_ numbers: [Int] ) -> Int {
+    
+    var sum = 0
+    
+    for number in numbers {
+        if number > 0 {
+            sum += number
+        }
+    }
+    return sum
 }
-greet()
 
-func RentalCarCost(_ days: Int) -> Int {
-if days < 3 {
-  return days * 40
-} else if days >= 3 && days < 7 {
-  return days * 40 - 20
-} else {
-  return days * 40 - 50
-}
-}
-RentalCarCost(2)
-RentalCarCost(3)
-RentalCarCost(7)
+sumOfPositives([1, 3, 5])
+
+
+
 
 
 typealias Description = (coordinateX: Int, coordinateY: Int, color: String, place: String)

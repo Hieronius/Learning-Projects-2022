@@ -4,19 +4,22 @@ import Foundation
 import UIKit
 
 
-func sumOfPositives (_ numbers: [Int] ) -> Int {
+func sumMix(_ arr: [Any]) -> Int {
+
+    var total = 0
     
-    var sum = 0
-    
-    for number in numbers {
-        if number > 0 {
-            sum += number
+    for number in arr {
+        if number is Int {
+            total += number as! Int
+        } else {
+            total += Int(number as! String)!
         }
     }
-    return sum
+    return total
 }
 
-sumOfPositives([1, 3, 5])
+sumMix([1,2,"3","4"])
+
 
 
 

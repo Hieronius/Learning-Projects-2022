@@ -4,21 +4,17 @@ import Foundation
 import UIKit
 
 
-func sumMix(_ arr: [Any]) -> Int {
-
-    var total = 0
-    
-    for number in arr {
-        if number is Int {
-            total += number as! Int
-        } else {
-            total += Int(number as! String)!
-        }
+func sum_str(_ a:String, _ b:String) -> String {
+    if Int(a)! == Int(a)! && Int(b)! == Int(b)! {
+        let sum = String(Int(a)! + Int(b)!)
+            return sum
+    } else {
+        return "0"
     }
-    return total
+
 }
 
-sumMix([1,2,"3","4"])
+sum_str("", "")
 
 
 

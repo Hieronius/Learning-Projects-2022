@@ -4,18 +4,14 @@ import Foundation
 import UIKit
 
 
-func sum_str(_ a:String, _ b:String) -> String {
-    if Int(a)! == Int(a)! && Int(b)! == Int(b)! {
-        let sum = String(Int(a)! + Int(b)!)
-            return sum
-    } else {
-        return "0"
-    }
-
+func opposite(number: Double) -> Double {
+  return -number
 }
 
-sum_str("", "")
-
+opposite(number: 5)
+opposite(number: -5)
+opposite(number: 35)
+opposite(number: -35)
 
 
 

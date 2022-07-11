@@ -4,14 +4,10 @@ import Foundation
 import UIKit
 
 
-func opposite(number: Double) -> Double {
-  return -number
+func multiply(_ first: Double, _ second: Double) -> Double {
+    return first * second
 }
-
-opposite(number: 5)
-opposite(number: -5)
-opposite(number: 35)
-opposite(number: -35)
+let actual = multiply(2,3)
 
 
 

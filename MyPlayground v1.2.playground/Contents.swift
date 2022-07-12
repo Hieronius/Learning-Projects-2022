@@ -4,11 +4,20 @@ import Foundation
 import UIKit
 
 
-func multiply(_ first: Double, _ second: Double) -> Double {
-    return first * second
+// Expressions Mater
+func expressionMatter(_ a: Int, _ b: Int, _ c: Int) -> Int {
+    let sumOne = a * (b + c)
+    let sumTwo = a * b * c
+    let sumThree = a + b + c
+    let sumFour = (a + b) * c
+    
+    let maxResult = [sumOne, sumTwo, sumThree, sumFour].max()!
+    return maxResult
+    
+    
 }
-let actual = multiply(2,3)
 
+expressionMatter(1, 2, 3)
 
 
 

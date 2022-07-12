@@ -4,21 +4,14 @@ import Foundation
 import UIKit
 
 
-// Expressions Mater
-func expressionMatter(_ a: Int, _ b: Int, _ c: Int) -> Int {
-    let sumOne = a * (b + c)
-    let sumTwo = a * b * c
-    let sumThree = a + b + c
-    let sumFour = (a + b) * c
+func repeatStr(_ n: Int, _ string: String) -> String {
+    var output = ""
+    for _ in 1...n {
+        output += string
+    }
     
-    let maxResult = [sumOne, sumTwo, sumThree, sumFour].max()!
-    return maxResult
-    
-    
+  return output
 }
-
-expressionMatter(1, 2, 3)
-
 
 
 

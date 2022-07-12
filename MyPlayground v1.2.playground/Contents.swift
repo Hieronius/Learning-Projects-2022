@@ -4,15 +4,12 @@ import Foundation
 import UIKit
 
 
-func repeatStr(_ n: Int, _ string: String) -> String {
-    var output = ""
-    for _ in 1...n {
-        output += string
-    }
-    
-  return output
+func squareSum(_ vals: [Int]) -> Int {
+    let squared = vals.map {$0 * $0}
+    let result = squared.reduce(0, +)
+    return result
 }
-
+squareSum([1,2,3,4,5])
 
 
 typealias Description = (coordinateX: Int, coordinateY: Int, color: String, place: String)

@@ -4,10 +4,30 @@ import Foundation
 import UIKit
 
 
-func KataTwist() {
-    var websites = [String]()
-    for word in 1...1000 {
-        websites.append("codewars")
+func switchItUp(_ number: Int) -> String {
+    switch number {
+    case 0:
+        return "Zero"
+    case 1:
+        return "One"
+    case 2:
+        return "Two"
+    case 3:
+        return "Three"
+    case 4:
+        return "Four"
+    case 5:
+        return "Five"
+    case 6:
+        return "Six"
+    case 7:
+        return "Seven"
+    case 8:
+        return "Eight"
+    case 9:
+        return "Nine"
+    default:
+        return "There is a mistake"
     }
 }
 

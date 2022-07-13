@@ -4,13 +4,12 @@ import Foundation
 import UIKit
 
 
-func squareSum(_ vals: [Int]) -> Int {
-    let squared = vals.map {$0 * $0}
-    let result = squared.reduce(0, +)
-    return result
+func KataTwist() {
+    var websites = [String]()
+    for word in 1...1000 {
+        websites.append("codewars")
+    }
 }
-squareSum([1,2,3,4,5])
-
 
 typealias Description = (coordinateX: Int, coordinateY: Int, color: String, place: String)
 

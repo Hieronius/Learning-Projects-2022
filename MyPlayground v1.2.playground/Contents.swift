@@ -4,15 +4,10 @@ import Foundation
 import UIKit
 
 
-func hero(bullets: Int, dragons: Int) -> Bool {
-    if bullets / 2 > dragons {
-        return true
-    } else {
-        return false
-    }
+func reverse(_ str: String) -> String {
+    return String(str.reversed())
 }
-hero(bullets: 3, dragons: 2)
-
+reverse("word")
 
 
 

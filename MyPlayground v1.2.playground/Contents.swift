@@ -4,33 +4,17 @@ import Foundation
 import UIKit
 
 
-func bmi(_ weight: Int, _ height: Double) -> String {
-    
-    let result = Double(weight) / (height * height)
-    switch result {
-    case ...18.5:
-        return "bmi = \(result) Underweight"
-    case 18.6...25.0:
-        return "bmi = \(result) Normal"
-    case 25.1...30.0:
-        return "bmi = \(result) Overweight"
-    case 30.1... :
-        return "bmi = \(result) Obese"
-    default:
-        return "There is miscalculation"
+func hero(bullets: Int, dragons: Int) -> Bool {
+    if bullets / 2 > dragons {
+        return true
+    } else {
+        return false
     }
 }
-
-bmi(5, 5)
-bmi(1, 100)
-bmi(100, 1)
-bmi(50, 2)
-bmi(2, 50)
-bmi(100, 4)
+hero(bullets: 3, dragons: 2)
 
 
 
-let totalResult = weight1 / (height1 * height1)
 
 typealias Description = (coordinateX: Int, coordinateY: Int, color: String, place: String)
 

@@ -4,14 +4,14 @@ import Foundation
 import UIKit
 
 
-func summation(_ n: Int) -> Int {
-    var total = 0
+func monkeyCount(_ n: Int) -> [Int] {
+    var array = [Int]()
     for number in 1...n {
-        total += number
+        array.append(number)
     }
-    return total
+    return array
 }
-
+monkeyCount(5)
 
 typealias Description = (coordinateX: Int, coordinateY: Int, color: String, place: String)
 

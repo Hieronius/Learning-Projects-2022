@@ -4,27 +4,11 @@ import Foundation
 import UIKit
 
 
-func getGrade(_ s1: Int, _ s2: Int, _ s3: Int) -> String {
-  let totalResult = (s1 + s2 + s3) / 3
-    
-    switch totalResult {
-    case 0...59:
-        return "F"
-    case 60...69:
-        return "D"
-    case 70...79:
-        return "C"
-    case 80...89:
-        return "B"
-    case 90...100:
-        return "A"
-    default:
-        return "There is not exact number"
-    }
-  
+func checkForFactor(_ base: Int, _ factor: Int) -> Bool {
+    return factor % base == 0
 }
-
-getGrade(25, 75, 100)
+checkForFactor(2, 6)
+checkForFactor(3, 10)
 
 typealias Description = (coordinateX: Int, coordinateY: Int, color: String, place: String)
 

@@ -4,10 +4,11 @@ import Foundation
 import UIKit
 
 
-func squareSum(_ vals: [Int]) -> Int {
-    vals.map {$0 * $0}.reduce(0, +)
-    }
-squareSum([1,2,3])
+func nthEven(_ n: Int) -> Int {
+return 2*n - 2
+}
+
+nthEven(3)
 
 typealias Description = (coordinateX: Int, coordinateY: Int, color: String, place: String)
 

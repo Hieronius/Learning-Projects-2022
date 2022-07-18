@@ -4,14 +4,10 @@ import Foundation
 import UIKit
 
 
-func monkeyCount(_ n: Int) -> [Int] {
-    var array = [Int]()
-    for number in 1...n {
-        array.append(number)
+func squareSum(_ vals: [Int]) -> Int {
+    vals.map {$0 * $0}.reduce(0, +)
     }
-    return array
-}
-monkeyCount(5)
+squareSum([1,2,3])
 
 typealias Description = (coordinateX: Int, coordinateY: Int, color: String, place: String)
 

@@ -4,26 +4,23 @@ import Foundation
 import UIKit
 
 
-func formatMoney(_ val:Float) -> String {
-    
-    val.de
-    return "$ \(val + 0.00)"
+func formatMoney(_ val:Double) -> String {
+    let formater = NumberFormatter()
+    formater.minimumFractionDigits = 2
+    formater.maximumFractionDigits = 2
+    return "$\(formater.string(from: NSNumber(value: val)) ?? "0")"
 }
-formatMoney(2)
+formatMoney(2.0)
 
-var distanceFloat1: Double = 5.0
-var distanceFloat2: Double = 5.540
-var distanceFloat3: Double = 5.03
+let x = 1.234
+let y = Double(round(100*x) / 100)
 
-extension Double {
-    var clean: String {
-        return self.truncatingRemainder(dividingBy: 2) == 0 ? String(format: "%.0f", self): String(self)
-    }
-}
-distanceFloat1.clean
-distanceFloat2.clean
-distanceFloat3.clean
-formatMoney(6.00)
+var formater = NumberFormatter()
+formater.minimumFractionDigits = 2
+formater.maximumFractionDigits = 2
+
+let roundedValue1 = formater.string(from: 2.324234)
+let roundedValue2 = formater.string(from: 2)
 
 
 

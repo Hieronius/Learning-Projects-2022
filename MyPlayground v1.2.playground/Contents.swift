@@ -4,11 +4,28 @@ import Foundation
 import UIKit
 
 
-func past(_ h: Int, _ m: Int, _ s: Int) -> Int {
-    return h*360_000_0 + m*600_00 + s*1000
+func formatMoney(_ val:Float) -> String {
+    
+    val.de
+    return "$ \(val + 0.00)"
 }
+formatMoney(2)
 
-past(1, 1, 1)
+var distanceFloat1: Double = 5.0
+var distanceFloat2: Double = 5.540
+var distanceFloat3: Double = 5.03
+
+extension Double {
+    var clean: String {
+        return self.truncatingRemainder(dividingBy: 2) == 0 ? String(format: "%.0f", self): String(self)
+    }
+}
+distanceFloat1.clean
+distanceFloat2.clean
+distanceFloat3.clean
+formatMoney(6.00)
+
+
 
 typealias Description = (coordinateX: Int, coordinateY: Int, color: String, place: String)
 

@@ -44,10 +44,10 @@
 		DDBDF3DF2888DFC80059E08D = {
 			isa = PBXGroup;
 			children = (
-				DDEE674B288A557800ADC6FB /* Birthday.swift */,
 				DDEE6745288A53F600ADC6FB /* Helpers */,
 				DDEE6746288A540E00ADC6FB /* View */,
 				DDEE6748288A542800ADC6FB /* Model */,
+				DDEE674D288A565B00ADC6FB /* Storage */,
 				DDEE6749288A542F00ADC6FB /* Controller */,
 				DDEE674A288A543600ADC6FB /* Resources */,
 				DDBDF3E92888DFC90059E08D /* Products */,
@@ -111,6 +111,14 @@
 				DDBDF3F72888DFCD0059E08D /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		DDEE674D288A565B00ADC6FB /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				DDEE674B288A557800ADC6FB /* Birthday.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

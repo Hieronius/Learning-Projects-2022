@@ -117,7 +117,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add Birthday" id="eey-gg-15l">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="SJ1-jP-1fk"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="JZh-nn-dNz"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="JZh-nn-dNz">
+                            <connections>
+                                <action selector="saveTapped:" destination="KNI-3F-J7l" id="aLM-gM-AIj"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="birthdayPicker" destination="PcO-XC-fVa" id="tUO-xD-ps5"/>

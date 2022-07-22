@@ -1,6 +1,7 @@
 
 
 import UIKit
+import Foundation
 
 class AddBirthdayViewController: UIViewController {
 
@@ -10,7 +11,13 @@ class AddBirthdayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        birthdayPicker.maximumDate = Date()
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func saveTapped(_ sender: UIBarButtonItem) {
+        print("Нажата кнопка сохранени")
     }
 
 

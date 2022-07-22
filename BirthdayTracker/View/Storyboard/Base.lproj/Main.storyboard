@@ -46,7 +46,7 @@
         <!--Add Birthday-->
         <scene sceneID="O5d-FP-zzv">
             <objects>
-                <viewController title="Add Birthday" id="KNI-3F-J7l" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddBirthdayViewController" title="Add Birthday" id="KNI-3F-J7l" customClass="AddBirthdayViewController" customModule="BirthdayTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Y5s-h5-Lkz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -119,6 +119,11 @@
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="SJ1-jP-1fk"/>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="JZh-nn-dNz"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="birthdayPicker" destination="PcO-XC-fVa" id="tUO-xD-ps5"/>
+                        <outlet property="firstNameTextField" destination="nZ7-b2-cDg" id="VSD-Xf-bPh"/>
+                        <outlet property="lastNameTextField" destination="kcT-qJ-eVl" id="6XN-qB-FwN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q4K-wp-wYj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

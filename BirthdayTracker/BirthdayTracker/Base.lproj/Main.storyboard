@@ -34,7 +34,7 @@
                     <navigationItem key="navigationItem" title="Birthday" id="OBu-yl-qZD">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="DdA-SK-r2G">
                             <connections>
-                                <segue destination="KNI-3F-J7l" kind="presentation" id="gqL-e4-qkR"/>
+                                <segue destination="URW-tE-mgb" kind="presentation" id="gqL-e4-qkR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -43,20 +43,44 @@
             </objects>
             <point key="canvasLocation" x="1920.289855072464" y="93.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Birthday-->
         <scene sceneID="O5d-FP-zzv">
             <objects>
-                <viewController id="KNI-3F-J7l" sceneMemberID="viewController">
+                <viewController title="Add Birthday" id="KNI-3F-J7l" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Y5s-h5-Lkz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRi-dx-WNq">
+                                <rect key="frame" x="20" y="100" width="100" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Birthdate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAW-WG-14y">
+                                <rect key="frame" x="20" y="158" width="100" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAw-0m-nIM">
+                                <rect key="frame" x="20" y="129" width="100" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="9Cb-HS-bIq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="eey-gg-15l"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q4K-wp-wYj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2609" y="78"/>
+            <point key="canvasLocation" x="3566.666666666667" y="102.45535714285714"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zhq-nc-LgW">
@@ -75,6 +99,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="axr-Gi-eeP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1010.144927536232" y="93.75"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cqW-ph-nj8">
+            <objects>
+                <navigationController title="Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" id="URW-tE-mgb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rd3-pl-rjv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KNI-3F-J7l" kind="relationship" relationship="rootViewController" id="YKK-7T-r0a"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rOL-B2-kKR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2656.521739130435" y="102.45535714285714"/>
         </scene>
     </scenes>
     <resources>

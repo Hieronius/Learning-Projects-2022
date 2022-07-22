@@ -11,9 +11,8 @@ class Birthday {
     init(firstName: String, lastName: String, birthdate: Date) {
         self.firstName = firstName
         self.lastName = lastName
-        self.birthdate = Date
+        self.birthdate = birthdate
     }
 }
 
 
-class Date {}

@@ -14,6 +14,7 @@
 		DDBDF3F62888DFC90059E08D /* BirthdayTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DDBDF3F42888DFC90059E08D /* BirthdayTracker.xcdatamodeld */; };
 		DDBDF3F82888DFCD0059E08D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDBDF3F72888DFCD0059E08D /* Assets.xcassets */; };
 		DDBDF3FB2888DFCD0059E08D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDBDF3F92888DFCD0059E08D /* LaunchScreen.storyboard */; };
+		DDEE674C288A557800ADC6FB /* Birthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEE674B288A557800ADC6FB /* Birthday.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		DDBDF3F72888DFCD0059E08D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDBDF3FA2888DFCD0059E08D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDBDF3FC2888DFCD0059E08D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDEE674B288A557800ADC6FB /* Birthday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Birthday.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +44,12 @@
 		DDBDF3DF2888DFC80059E08D = {
 			isa = PBXGroup;
 			children = (
-				DDBDF3EA2888DFC90059E08D /* BirthdayTracker */,
+				DDEE674B288A557800ADC6FB /* Birthday.swift */,
+				DDEE6745288A53F600ADC6FB /* Helpers */,
+				DDEE6746288A540E00ADC6FB /* View */,
+				DDEE6748288A542800ADC6FB /* Model */,
+				DDEE6749288A542F00ADC6FB /* Controller */,
+				DDEE674A288A543600ADC6FB /* Resources */,
 				DDBDF3E92888DFC90059E08D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,19 +62,55 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DDBDF3EA2888DFC90059E08D /* BirthdayTracker */ = {
+		DDEE6745288A53F600ADC6FB /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				DDBDF3EB2888DFC90059E08D /* AppDelegate.swift */,
-				DDBDF3ED2888DFC90059E08D /* SceneDelegate.swift */,
-				DDBDF3EF2888DFC90059E08D /* ViewController.swift */,
-				DDBDF3F12888DFC90059E08D /* Main.storyboard */,
-				DDBDF3F72888DFCD0059E08D /* Assets.xcassets */,
-				DDBDF3F92888DFCD0059E08D /* LaunchScreen.storyboard */,
 				DDBDF3FC2888DFCD0059E08D /* Info.plist */,
 				DDBDF3F42888DFC90059E08D /* BirthdayTracker.xcdatamodeld */,
+				DDBDF3EB2888DFC90059E08D /* AppDelegate.swift */,
+				DDBDF3ED2888DFC90059E08D /* SceneDelegate.swift */,
 			);
-			path = BirthdayTracker;
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DDEE6746288A540E00ADC6FB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DDEE6747288A541400ADC6FB /* Storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DDEE6747288A541400ADC6FB /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				DDBDF3F12888DFC90059E08D /* Main.storyboard */,
+				DDBDF3F92888DFCD0059E08D /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		DDEE6748288A542800ADC6FB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DDEE6749288A542F00ADC6FB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DDBDF3EF2888DFC90059E08D /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DDEE674A288A543600ADC6FB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DDBDF3F72888DFCD0059E08D /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDEE674C288A557800ADC6FB /* Birthday.swift in Sources */,
 				DDBDF3F02888DFC90059E08D /* ViewController.swift in Sources */,
 				DDBDF3EC2888DFC90059E08D /* AppDelegate.swift in Sources */,
 				DDBDF3EE2888DFC90059E08D /* SceneDelegate.swift in Sources */,

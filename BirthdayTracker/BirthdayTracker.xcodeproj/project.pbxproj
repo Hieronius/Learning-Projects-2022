@@ -7,31 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DDBDF3EC2888DFC90059E08D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBDF3EB2888DFC90059E08D /* AppDelegate.swift */; };
-		DDBDF3EE2888DFC90059E08D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBDF3ED2888DFC90059E08D /* SceneDelegate.swift */; };
-		DDBDF3F02888DFC90059E08D /* AddBirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBDF3EF2888DFC90059E08D /* AddBirthdayViewController.swift */; };
-		DDBDF3F32888DFC90059E08D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDBDF3F12888DFC90059E08D /* Main.storyboard */; };
-		DDBDF3F62888DFC90059E08D /* BirthdayTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DDBDF3F42888DFC90059E08D /* BirthdayTracker.xcdatamodeld */; };
-		DDBDF3F82888DFCD0059E08D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDBDF3F72888DFCD0059E08D /* Assets.xcassets */; };
-		DDBDF3FB2888DFCD0059E08D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDBDF3F92888DFCD0059E08D /* LaunchScreen.storyboard */; };
-		DDEE674C288A557800ADC6FB /* Birthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEE674B288A557800ADC6FB /* Birthday.swift */; };
+		DD903109288C036500E39721 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD903108288C036500E39721 /* AppDelegate.swift */; };
+		DD90310B288C036500E39721 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD90310A288C036500E39721 /* SceneDelegate.swift */; };
+		DD90310D288C036500E39721 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD90310C288C036500E39721 /* ViewController.swift */; };
+		DD903110288C036500E39721 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD90310E288C036500E39721 /* Main.storyboard */; };
+		DD903113288C036500E39721 /* BirthdayTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD903111288C036500E39721 /* BirthdayTracker.xcdatamodeld */; };
+		DD903115288C036B00E39721 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD903114288C036B00E39721 /* Assets.xcassets */; };
+		DD903118288C036B00E39721 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD903116288C036B00E39721 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DDBDF3E82888DFC90059E08D /* BirthdayTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BirthdayTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DDBDF3EB2888DFC90059E08D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DDBDF3ED2888DFC90059E08D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DDBDF3EF2888DFC90059E08D /* AddBirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBirthdayViewController.swift; sourceTree = "<group>"; };
-		DDBDF3F22888DFC90059E08D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DDBDF3F52888DFC90059E08D /* BirthdayTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BirthdayTracker.xcdatamodel; sourceTree = "<group>"; };
-		DDBDF3F72888DFCD0059E08D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DDBDF3FA2888DFCD0059E08D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		DDBDF3FC2888DFCD0059E08D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DDEE674B288A557800ADC6FB /* Birthday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Birthday.swift; sourceTree = "<group>"; };
+		DD903105288C036400E39721 /* BirthdayTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BirthdayTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD903108288C036500E39721 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DD90310A288C036500E39721 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		DD90310C288C036500E39721 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DD90310F288C036500E39721 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DD903112288C036500E39721 /* BirthdayTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BirthdayTracker.xcdatamodel; sourceTree = "<group>"; };
+		DD903114288C036B00E39721 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DD903117288C036B00E39721 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DD903119288C036B00E39721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DDBDF3E52888DFC90059E08D /* Frameworks */ = {
+		DD903102288C036400E39721 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,96 +39,111 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DDBDF3DF2888DFC80059E08D = {
+		DD9030FC288C036400E39721 = {
 			isa = PBXGroup;
 			children = (
-				DDEE6745288A53F600ADC6FB /* Helpers */,
-				DDEE6746288A540E00ADC6FB /* View */,
-				DDEE6748288A542800ADC6FB /* Model */,
-				DDEE674D288A565B00ADC6FB /* Storage */,
-				DDEE6749288A542F00ADC6FB /* Controller */,
-				DDEE674A288A543600ADC6FB /* Resources */,
-				DDBDF3E92888DFC90059E08D /* Products */,
+				DD903107288C036500E39721 /* BirthdayTracker */,
+				DD90311F288C045100E39721 /* View */,
+				DD903120288C045900E39721 /* Model */,
+				DD903121288C046000E39721 /* Storage */,
+				DD903122288C046B00E39721 /* Network */,
+				DD903123288C047800E39721 /* Controller */,
+				DD903124288C048200E39721 /* Helpers */,
+				DD903125288C048A00E39721 /* Resources */,
+				DD903106288C036500E39721 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		DDBDF3E92888DFC90059E08D /* Products */ = {
+		DD903106288C036500E39721 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DDBDF3E82888DFC90059E08D /* BirthdayTracker.app */,
+				DD903105288C036400E39721 /* BirthdayTracker.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DDEE6745288A53F600ADC6FB /* Helpers */ = {
+		DD903107288C036500E39721 /* BirthdayTracker */ = {
 			isa = PBXGroup;
 			children = (
-				DDBDF3FC2888DFCD0059E08D /* Info.plist */,
-				DDBDF3F42888DFC90059E08D /* BirthdayTracker.xcdatamodeld */,
-				DDBDF3EB2888DFC90059E08D /* AppDelegate.swift */,
-				DDBDF3ED2888DFC90059E08D /* SceneDelegate.swift */,
+				DD903119288C036B00E39721 /* Info.plist */,
+				DD903108288C036500E39721 /* AppDelegate.swift */,
+				DD90310A288C036500E39721 /* SceneDelegate.swift */,
 			);
-			path = Helpers;
+			path = BirthdayTracker;
 			sourceTree = "<group>";
 		};
-		DDEE6746288A540E00ADC6FB /* View */ = {
+		DD90311F288C045100E39721 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DDEE6747288A541400ADC6FB /* Storyboard */,
+				DD903126288C04B900E39721 /* Storyboards */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		DDEE6747288A541400ADC6FB /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				DDBDF3F12888DFC90059E08D /* Main.storyboard */,
-				DDBDF3F92888DFCD0059E08D /* LaunchScreen.storyboard */,
-			);
-			path = Storyboard;
-			sourceTree = "<group>";
-		};
-		DDEE6748288A542800ADC6FB /* Model */ = {
+		DD903120288C045900E39721 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		DDEE6749288A542F00ADC6FB /* Controller */ = {
+		DD903121288C046000E39721 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
-				DDBDF3EF2888DFC90059E08D /* AddBirthdayViewController.swift */,
+				DD903111288C036500E39721 /* BirthdayTracker.xcdatamodeld */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		DD903122288C046B00E39721 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		DD903123288C047800E39721 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DD90310C288C036500E39721 /* ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		DDEE674A288A543600ADC6FB /* Resources */ = {
+		DD903124288C048200E39721 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				DDBDF3F72888DFCD0059E08D /* Assets.xcassets */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DD903125288C048A00E39721 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DD903114288C036B00E39721 /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		DDEE674D288A565B00ADC6FB /* Storage */ = {
+		DD903126288C04B900E39721 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				DDEE674B288A557800ADC6FB /* Birthday.swift */,
+				DD90310E288C036500E39721 /* Main.storyboard */,
+				DD903116288C036B00E39721 /* LaunchScreen.storyboard */,
 			);
-			path = Storage;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DDBDF3E72888DFC90059E08D /* BirthdayTracker */ = {
+		DD903104288C036400E39721 /* BirthdayTracker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DDBDF3FF2888DFCD0059E08D /* Build configuration list for PBXNativeTarget "BirthdayTracker" */;
+			buildConfigurationList = DD90311C288C036B00E39721 /* Build configuration list for PBXNativeTarget "BirthdayTracker" */;
 			buildPhases = (
-				DDBDF3E42888DFC90059E08D /* Sources */,
-				DDBDF3E52888DFC90059E08D /* Frameworks */,
-				DDBDF3E62888DFC90059E08D /* Resources */,
+				DD903101288C036400E39721 /* Sources */,
+				DD903102288C036400E39721 /* Frameworks */,
+				DD903103288C036400E39721 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -138,25 +151,25 @@
 			);
 			name = BirthdayTracker;
 			productName = BirthdayTracker;
-			productReference = DDBDF3E82888DFC90059E08D /* BirthdayTracker.app */;
+			productReference = DD903105288C036400E39721 /* BirthdayTracker.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		DDBDF3E02888DFC80059E08D /* Project object */ = {
+		DD9030FD288C036400E39721 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
-					DDBDF3E72888DFC90059E08D = {
+					DD903104288C036400E39721 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
 				};
 			};
-			buildConfigurationList = DDBDF3E32888DFC80059E08D /* Build configuration list for PBXProject "BirthdayTracker" */;
+			buildConfigurationList = DD903100288C036400E39721 /* Build configuration list for PBXProject "BirthdayTracker" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -164,57 +177,56 @@
 				en,
 				Base,
 			);
-			mainGroup = DDBDF3DF2888DFC80059E08D;
-			productRefGroup = DDBDF3E92888DFC90059E08D /* Products */;
+			mainGroup = DD9030FC288C036400E39721;
+			productRefGroup = DD903106288C036500E39721 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DDBDF3E72888DFC90059E08D /* BirthdayTracker */,
+				DD903104288C036400E39721 /* BirthdayTracker */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		DDBDF3E62888DFC90059E08D /* Resources */ = {
+		DD903103288C036400E39721 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDBDF3FB2888DFCD0059E08D /* LaunchScreen.storyboard in Resources */,
-				DDBDF3F82888DFCD0059E08D /* Assets.xcassets in Resources */,
-				DDBDF3F32888DFC90059E08D /* Main.storyboard in Resources */,
+				DD903118288C036B00E39721 /* LaunchScreen.storyboard in Resources */,
+				DD903115288C036B00E39721 /* Assets.xcassets in Resources */,
+				DD903110288C036500E39721 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DDBDF3E42888DFC90059E08D /* Sources */ = {
+		DD903101288C036400E39721 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDEE674C288A557800ADC6FB /* Birthday.swift in Sources */,
-				DDBDF3F02888DFC90059E08D /* AddBirthdayViewController.swift in Sources */,
-				DDBDF3EC2888DFC90059E08D /* AppDelegate.swift in Sources */,
-				DDBDF3EE2888DFC90059E08D /* SceneDelegate.swift in Sources */,
-				DDBDF3F62888DFC90059E08D /* BirthdayTracker.xcdatamodeld in Sources */,
+				DD90310D288C036500E39721 /* ViewController.swift in Sources */,
+				DD903109288C036500E39721 /* AppDelegate.swift in Sources */,
+				DD90310B288C036500E39721 /* SceneDelegate.swift in Sources */,
+				DD903113288C036500E39721 /* BirthdayTracker.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DDBDF3F12888DFC90059E08D /* Main.storyboard */ = {
+		DD90310E288C036500E39721 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				DDBDF3F22888DFC90059E08D /* Base */,
+				DD90310F288C036500E39721 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		DDBDF3F92888DFCD0059E08D /* LaunchScreen.storyboard */ = {
+		DD903116288C036B00E39721 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				DDBDF3FA2888DFCD0059E08D /* Base */,
+				DD903117288C036B00E39721 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -222,7 +234,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		DDBDF3FD2888DFCD0059E08D /* Debug */ = {
+		DD90311A288C036B00E39721 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -283,7 +295,7 @@
 			};
 			name = Debug;
 		};
-		DDBDF3FE2888DFCD0059E08D /* Release */ = {
+		DD90311B288C036B00E39721 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -338,7 +350,7 @@
 			};
 			name = Release;
 		};
-		DDBDF4002888DFCD0059E08D /* Debug */ = {
+		DD90311D288C036B00E39721 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -348,7 +360,6 @@
 				DEVELOPMENT_TEAM = 7YW3V66545;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BirthdayTracker/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Birthdays;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -368,7 +379,7 @@
 			};
 			name = Debug;
 		};
-		DDBDF4012888DFCD0059E08D /* Release */ = {
+		DD90311E288C036B00E39721 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -378,7 +389,6 @@
 				DEVELOPMENT_TEAM = 7YW3V66545;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BirthdayTracker/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Birthdays;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -401,20 +411,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DDBDF3E32888DFC80059E08D /* Build configuration list for PBXProject "BirthdayTracker" */ = {
+		DD903100288C036400E39721 /* Build configuration list for PBXProject "BirthdayTracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DDBDF3FD2888DFCD0059E08D /* Debug */,
-				DDBDF3FE2888DFCD0059E08D /* Release */,
+				DD90311A288C036B00E39721 /* Debug */,
+				DD90311B288C036B00E39721 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DDBDF3FF2888DFCD0059E08D /* Build configuration list for PBXNativeTarget "BirthdayTracker" */ = {
+		DD90311C288C036B00E39721 /* Build configuration list for PBXNativeTarget "BirthdayTracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DDBDF4002888DFCD0059E08D /* Debug */,
-				DDBDF4012888DFCD0059E08D /* Release */,
+				DD90311D288C036B00E39721 /* Debug */,
+				DD90311E288C036B00E39721 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -422,17 +432,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		DDBDF3F42888DFC90059E08D /* BirthdayTracker.xcdatamodeld */ = {
+		DD903111288C036500E39721 /* BirthdayTracker.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				DDBDF3F52888DFC90059E08D /* BirthdayTracker.xcdatamodel */,
+				DD903112288C036500E39721 /* BirthdayTracker.xcdatamodel */,
 			);
-			currentVersion = DDBDF3F52888DFC90059E08D /* BirthdayTracker.xcdatamodel */;
+			currentVersion = DD903112288C036500E39721 /* BirthdayTracker.xcdatamodel */;
 			path = BirthdayTracker.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = DDBDF3E02888DFC80059E08D /* Project object */;
+	rootObject = DD9030FD288C036400E39721 /* Project object */;
 }

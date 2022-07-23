@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  BirthdayTracker
 //
-//  Created by Арсентий Халимовский on 21.07.2022.
+//  Created by Арсентий Халимовский on 23.07.2022.
 //
 
 import UIKit

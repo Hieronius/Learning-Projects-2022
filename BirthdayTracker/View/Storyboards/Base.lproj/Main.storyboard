@@ -77,7 +77,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pMq-WL-hEY" secondAttribute="trailing" constant="59" id="zEz-br-yjh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Birthday" id="tnD-eX-qrw"/>
+                    <navigationItem key="navigationItem" title="Add Birthday" id="tnD-eX-qrw">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="3t7-CC-Dus"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="FCk-xU-Pzi"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

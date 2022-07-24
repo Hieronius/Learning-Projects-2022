@@ -79,8 +79,17 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add Birthday" id="tnD-eX-qrw">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="3t7-CC-Dus"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="FCk-xU-Pzi"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="FCk-xU-Pzi">
+                            <connections>
+                                <action selector="saveTapped:" destination="BYZ-38-t0r" id="ltI-7X-J2X"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="birthdatePicker" destination="z6Q-sE-Lku" id="A3d-Bj-7oF"/>
+                        <outlet property="firstNameTextField" destination="pMq-WL-hEY" id="eaE-PX-uwD"/>
+                        <outlet property="lastNameTextField" destination="hRX-Nc-zaf" id="Vud-cZ-0dd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -78,7 +78,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Birthday" id="tnD-eX-qrw">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="3t7-CC-Dus"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="3t7-CC-Dus">
+                            <connections>
+                                <action selector="cancelTapped:" destination="BYZ-38-t0r" id="PVK-4A-M5n"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="FCk-xU-Pzi">
                             <connections>
                                 <action selector="saveTapped:" destination="BYZ-38-t0r" id="ltI-7X-J2X"/>
@@ -104,12 +108,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="8Dd-cO-sQ3">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="birthdayCellidentifier" textLabel="d0Q-Wi-yDj" detailTextLabel="1Rk-1k-cMv" style="IBUITableViewCellStyleSubtitle" id="8Dd-cO-sQ3">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8Dd-cO-sQ3" id="9En-19-LPB">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="d0Q-Wi-yDj">
+                                            <rect key="frame" x="20" y="6" width="25" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Rk-1k-cMv">
+                                            <rect key="frame" x="20" y="22.5" width="40.5" height="13.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -118,7 +138,7 @@
                             <outlet property="delegate" destination="LFI-SQ-DoW" id="RGJ-bU-QWN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Birthday" id="gw5-cu-gtY">
+                    <navigationItem key="navigationItem" title="Birthday" id="gw5-cu-gtY" customClass="BirthdaysTableViewController">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="crj-7R-Cwm">
                             <connections>
                                 <segue destination="GLL-xW-WII" kind="presentation" id="wx0-QH-r3T"/>

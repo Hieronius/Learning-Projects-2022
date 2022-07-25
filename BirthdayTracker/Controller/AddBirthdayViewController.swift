@@ -31,6 +31,10 @@ class AddBirthdayViewController: UIViewController {
         print("Last name: \(newBirthday.lastName)")
         print("Birthdate: \(newBirthday.birthdate)")
     }
+    
+    @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
 
 
 }

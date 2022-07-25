@@ -2,6 +2,11 @@
 
 import UIKit
 
+protocol AddBirthdayViewControllerDelegate {
+    
+    func addBirthdayViewController(_ addBirthdayViewController: AddBirthdayViewController, didAddBirthdaybirthday: Birthday)
+}
+
 class AddBirthdayViewController: UIViewController {
 
     @IBOutlet var firstNameTextField: UITextField!

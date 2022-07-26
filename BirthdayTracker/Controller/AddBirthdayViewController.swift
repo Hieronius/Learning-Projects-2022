@@ -34,6 +34,11 @@ class AddBirthdayViewController: UIViewController {
         
         let newBirthday = Birthday(firstName: firstName, lastName: lastName, birthdate: birthdate)
         
+        delegate?.addBirthdayViewController(self, didAddBirthday: newBirthday)
+        dismiss(animated: true, completion: nil)
+        
+        
+        
         print("Record about new birthday is created")
         print("First name: \(newBirthday.firstName)")
         print("Last name: \(newBirthday.lastName)")

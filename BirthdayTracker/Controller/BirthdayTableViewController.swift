@@ -27,6 +27,19 @@ class BirthdayTableViewController: UITableViewController, AddBirthdayViewControl
     }
     
     
+    // MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller segue.destination
+        
+        let navigationController = segue.destination as! UINavigationController
+        
+        let addBirthdayViewController = navigationController.topViewController as! AddBirthdayViewController
+        
+        addBirthdayViewController.delegate = self
+    }
+    
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

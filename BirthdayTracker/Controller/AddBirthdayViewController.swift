@@ -4,7 +4,7 @@ import UIKit
 
 protocol AddBirthdayViewControllerDelegate {
     
-    func addBirthdayViewController(_ addBirthdayViewController: AddBirthdayViewController, didAddBirthdaybirthday: Birthday)
+    func addBirthdayViewController(_ addBirthdayViewController: AddBirthdayViewController, didAddBirthday birthday: Birthday)
 }
 
 class AddBirthdayViewController: UIViewController {
@@ -12,6 +12,9 @@ class AddBirthdayViewController: UIViewController {
     @IBOutlet var firstNameTextField: UITextField!
     @IBOutlet var lastNameTextField: UITextField!
     @IBOutlet var birthdatePicker: UIDatePicker!
+    
+    
+    var delegate: AddBirthdayViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()

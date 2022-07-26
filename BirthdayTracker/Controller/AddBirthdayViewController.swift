@@ -1,6 +1,7 @@
 
 
 import UIKit
+import CoreData
 
 protocol AddBirthdayViewControllerDelegate {
     
@@ -32,17 +33,31 @@ class AddBirthdayViewController: UIViewController {
         
         let birthdate = birthdatePicker.date
         
-        let newBirthday = Birthday(firstName: firstName, lastName: lastName, birthdate: birthdate)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
         
-        delegate?.addBirthdayViewController(self, didAddBirthday: newBirthday)
+        let newBirthday = Birthday(context: context)
+        newBirthday.firstName = firstName
+        newBirthday.lastName = lastName
+        newBirthday.birthdate = birthdate as Date?
+        newBirthday.birthdayID = UUID().uuidString
+        
+        if let uniqueID = newBirthday.birthdayID {
+            print("birthdayID: \(uniqueID)")
+        }
+        
+        do {
+            try context.save()
+        } catch let error {
+            print("Не удалось сохранить из-за ошибки \(error).")
+        }
+        
         dismiss(animated: true, completion: nil)
         
         
         
         print("Record about new birthday is created")
-        print("First name: \(newBirthday.firstName)")
-        print("Last name: \(newBirthday.lastName)")
-        print("Birthdate: \(newBirthday.birthdate)")
+        
     }
     
     @IBAction func cancelTapped(_ sender: UIBarButtonItem) {

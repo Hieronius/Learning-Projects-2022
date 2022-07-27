@@ -3,7 +3,7 @@
 import UIKit
 import CoreData
 
-class BirthdayTableViewController: UITableViewController, AddBirthdayViewControllerDelegate {
+class BirthdaysTableViewController: UITableViewController {
     
     var birthdays = [Birthday]()
     
@@ -33,26 +33,6 @@ class BirthdayTableViewController: UITableViewController, AddBirthdayViewControl
     }
     
     
-    // MARK: - AddBirthdayViewControllerDelegate
-    
-    func addBirthdayViewController(_ addBirthdayViewController: AddBirthdayViewController, didAddBirthday birthday: Birthday) {
-        birthdays.append(birthday)
-        tableView.reloadData()
-    }
-    
-    
-    // MARK: Navigation
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller segue.destination
-        
-        let navigationController = segue.destination as! UINavigationController
-        
-        let addBirthdayViewController = navigationController.topViewController as! AddBirthdayViewController
-        
-        addBirthdayViewController.delegate = self
-    }
-    
     
     // MARK: - Table view data source
 
@@ -72,9 +52,15 @@ class BirthdayTableViewController: UITableViewController, AddBirthdayViewControl
         
         let birthday = birthdays[indexPath.row]
         
-        cell.textLabel?.text = birthday.firstName + "" + birthday.lastName
+        let firstName = birthday.firstName ?? ""
+        let lastName = birthday.lastName ?? ""
+        cell.textLabel?.text = firstName + "" + lastName
         
-        cell.detailTextLabel?.text = dateFormatter.string(from: birthday.birthdate)
+        if let date = birthday.birthdate as Date? {
+            cell.detailTextLabel?.text = dateFormatter.string(from: date)
+        } else {
+            cell.detailTextLabel?.text = ""
+        }
         
         return cell
     }

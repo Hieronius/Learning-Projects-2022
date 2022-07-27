@@ -69,5 +69,26 @@ class BirthdaysTableViewController: UITableViewController {
         
         return cell
     }
-
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if birthdays.count > indexPath.row {
+            let birthday = birthdays[indexPath.row]
+            
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            context.delete(birthday)
+            birthdays.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath,], with: .fade)
+            
+            do {
+                try context.save()
+            } catch let error {
+                print("Can't save date because of error \(error).")
+            }
+        }
+    }
 }

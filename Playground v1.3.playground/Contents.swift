@@ -2,11 +2,23 @@ import Foundation
 import UIKit
 
 
-func grow(_ arr: [Int]) -> Int {
-    return arr.reduce(1,*)
+var newArr = [1,5,4,2,1]
+print(newArr.sorted {$0>$1}.reversed())
+func flip(_ direction: String, _ a: [Int]) -> [Int] {
+    
+    switch direction {
+    case "R":
+        let b = Array(a.sorted {$0>$1}.reversed())
+        return b
+    case "L":
+      let b = Array(a.sorted {$0<$1}.reversed())
+        return b
+    default:
+        return []
+    }
 }
-
-grow([1,2,3,4,5])
+flip("R", [1,5,4,2,1])
+flip("L", [1,5,4,2,1])
 
 func take(_ arr: [Int], _ n: Int) -> [Int] {
     if arr.isEmpty {

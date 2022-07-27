@@ -48,11 +48,12 @@ class AddBirthdayViewController: UIViewController {
         
         dismiss(animated: true, completion: nil)
         
-        
+    
         
         print("Record about new birthday is created")
         
     }
+    
     
     @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)

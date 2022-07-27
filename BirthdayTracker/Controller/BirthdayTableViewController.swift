@@ -24,6 +24,11 @@ class BirthdaysTableViewController: UITableViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = Birthday.fetchRequest() as NSFetchRequest<Birthday>
+        
+        let sortDescriptor1 = NSSortDescriptor(key: "lastName", ascending: true)
+        let sortDescriptor2 = NSSortDescriptor(key: "firstName", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor1,sortDescriptor2]
+        
         do {
             birthdays = try context.fetch(fetchRequest)
         } catch let error {
@@ -54,7 +59,7 @@ class BirthdaysTableViewController: UITableViewController {
         
         let firstName = birthday.firstName ?? ""
         let lastName = birthday.lastName ?? ""
-        cell.textLabel?.text = firstName + "" + lastName
+        cell.textLabel?.text = firstName + " " + lastName
         
         if let date = birthday.birthdate as Date? {
             cell.detailTextLabel?.text = dateFormatter.string(from: date)

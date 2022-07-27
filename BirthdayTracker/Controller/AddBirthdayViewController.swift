@@ -43,8 +43,24 @@ class AddBirthdayViewController: UIViewController {
         
         do {
             try context.save()
+            let message = "Today is the birthday of \(firstName) \(lastName)"
+            
+            let content = UNMutableNotificationContent()
+            content.body = message
+            content.sound = UNNotificationSound.default
+            
+            var dateComponents = Calendar.current.dateComponents([.month, .day], from: birthdate)
+            dateComponents.hour = 8
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+            
+            if let identifier = newBirthday.birthdayID {
+                let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+                let center = UNUserNotificationCenter.current()
+                center.add(request, withCompletionHandler: nil)
+            }
+            
         } catch let error {
-            print("Не удалось сохранить из-за ошибки \(error).")
+            print("Can't save because of error -  \(error).")
         }
         
         dismiss(animated: true, completion: nil)

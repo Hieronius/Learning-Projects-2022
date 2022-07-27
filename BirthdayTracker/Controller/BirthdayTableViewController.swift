@@ -1,13 +1,13 @@
 
 
 import UIKit
+import CoreData
 
 class BirthdayTableViewController: UITableViewController, AddBirthdayViewControllerDelegate {
     
     var birthdays = [Birthday]()
     
     let dateFormatter = DateFormatter()
-    
 
 
     override func viewDidLoad() {
@@ -16,6 +16,20 @@ class BirthdayTableViewController: UITableViewController, AddBirthdayViewControl
         dateFormatter.dateStyle = .full
         dateFormatter.timeStyle = .none
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super .viewWillAppear(animated)
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = Birthday.fetchRequest() as NSFetchRequest<Birthday>
+        do {
+            birthdays = try context.fetch(fetchRequest)
+        } catch let error {
+            print("Can't download data because of error - \(error).")
+        }
+        tableView.reloadData()
     }
     
     

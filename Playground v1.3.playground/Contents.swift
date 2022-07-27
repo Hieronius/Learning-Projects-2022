@@ -2,13 +2,11 @@ import Foundation
 import UIKit
 
 
-func getAverage(_ marks: [Int]) -> Int {
-    
-    
-    return  marks.reduce(0,+) / marks.count
+func grow(_ arr: [Int]) -> Int {
+    return arr.reduce(1,*)
 }
 
-getAverage([2,3,4,5,6])
+grow([1,2,3,4,5])
 
 func take(_ arr: [Int], _ n: Int) -> [Int] {
     if arr.isEmpty {

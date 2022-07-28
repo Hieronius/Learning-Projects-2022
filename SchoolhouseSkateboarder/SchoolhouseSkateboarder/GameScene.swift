@@ -63,6 +63,36 @@ class GameScene: SKScene {
         return brick
     }
     
+    func updateBricks(withScrollAmount currentScrollAmount: CGFloat) {
+        
+        // Monitoring for biggest value of X axis for all current sections
+        var farthestRightBrickX: CGFloat = 0.0
+        
+        for brick in bricks {
+            
+            let newX = brick.position.x - currentScrollAmount
+            
+            // If section shifted to much to the left (out from screen), delete it
+            if newX < -brickSize.width {
+                brick.removeFromParent()
+                
+                if let brickIndex = bricks.index(of: brick) {
+                    bricks.remove(at: brickIndex)
+                }
+                
+            } else {
+                
+                // for section which is staying on the screen, update position
+                brick.position = CGPoint(x: newX, y: brick.position.y)
+                
+                // Updating value for far right section
+                if brick.position.x > farthestRightBrickX {
+                    farthestRightBrickX = brick.position.x
+                }
+            }
+        }
+    }
+    
     override func update(_ currentTime: TimeInterval) {
         // calling after drowing each shot
     }

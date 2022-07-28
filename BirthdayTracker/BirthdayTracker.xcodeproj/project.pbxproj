@@ -14,7 +14,7 @@
 		DD903113288C036500E39721 /* BirthdayTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD903111288C036500E39721 /* BirthdayTracker.xcdatamodeld */; };
 		DD903115288C036B00E39721 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD903114288C036B00E39721 /* Assets.xcassets */; };
 		DD903118288C036B00E39721 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD903116288C036B00E39721 /* LaunchScreen.storyboard */; };
-		DD90312A288D45AD00E39721 /* BirthdayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD903129288D45AD00E39721 /* BirthdayTableViewController.swift */; };
+		DD90312A288D45AD00E39721 /* BirthdaysTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD903129288D45AD00E39721 /* BirthdaysTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		DD903114288C036B00E39721 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD903117288C036B00E39721 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD903119288C036B00E39721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
-		DD903129288D45AD00E39721 /* BirthdayTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayTableViewController.swift; sourceTree = "<group>"; };
+		DD903129288D45AD00E39721 /* BirthdaysTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdaysTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +107,7 @@
 		DD903123288C047800E39721 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				DD903129288D45AD00E39721 /* BirthdayTableViewController.swift */,
+				DD903129288D45AD00E39721 /* BirthdaysTableViewController.swift */,
 				DD90310C288C036500E39721 /* AddBirthdayViewController.swift */,
 			);
 			path = Controller;
@@ -208,7 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD90312A288D45AD00E39721 /* BirthdayTableViewController.swift in Sources */,
+				DD90312A288D45AD00E39721 /* BirthdaysTableViewController.swift in Sources */,
 				DD90310D288C036500E39721 /* AddBirthdayViewController.swift in Sources */,
 				DD903109288C036500E39721 /* AppDelegate.swift in Sources */,
 				DD90310B288C036500E39721 /* SceneDelegate.swift in Sources */,

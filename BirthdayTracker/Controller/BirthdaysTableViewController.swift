@@ -58,6 +58,12 @@ class BirthdaysTableViewController: UITableViewController {
         
         let birthday = birthdays[indexPath.row]
         
+        // Deleting notification
+        if let identifier = birthday.birthdayID {
+            let center = UNUserNotificationCenter.current()
+            center.removePendingNotificationRequests(withIdentifiers: [identifier])
+        }
+        
         let firstName = birthday.firstName ?? ""
         let lastName = birthday.lastName ?? ""
         cell.textLabel?.text = firstName + " " + lastName

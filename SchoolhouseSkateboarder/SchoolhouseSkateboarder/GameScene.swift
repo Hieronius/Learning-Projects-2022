@@ -10,6 +10,16 @@ import GameplayKit
 
 class GameScene: SKScene {
     
+    // array for all sections of sidewalk
+    var bricks = [SKSpriteNode]()
+    
+    // size of the sections
+    var brickSize = CGSize.zero
+    
+    // Settings for the bricks speed on our scene
+    // This value can be increased in game
+    var scrollSpeed: CGFloat = 5.0
+    
     let skater = Skater(imageNamed: "skater")
     
     
@@ -21,6 +31,10 @@ class GameScene: SKScene {
         let yMid = frame.midY
         background.position = CGPoint(x: xMid, y: yMid)
         addChild(background)
+        
+        // Set properties of skater sprite and adding it to the scene resetSkater()
+        resetSkater()
+        addChild(skater)
     }
     
     func resetSkater() {

@@ -46,6 +46,23 @@ class GameScene: SKScene {
         skater.minimumY = skaterY
     }
     
+    func spawnBrick (atPosition position: CGPoint) -> SKSpriteNode {
+        
+        // Creating sprite of the break section of our sidewalk and adding him to the scene
+        let brick = SKSpriteNode(imageNamed: "sidewalk")
+        brick.position = position
+        brick.zPosition = 8
+        
+        // Updating property of brickSize with real value of section size
+        brickSize = brick.size
+        
+        // Adding new section to the array of bricks
+        bricks.append(brick)
+        
+        // Return of new section for calling code
+        return brick
+    }
+    
     override func update(_ currentTime: TimeInterval) {
         // calling after drowing each shot
     }

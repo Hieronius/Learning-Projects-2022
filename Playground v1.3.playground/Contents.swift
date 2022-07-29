@@ -2,19 +2,18 @@ import Foundation
 import UIKit
 
 
-func findDifference(_ a: [Int], _ b: [Int]) -> Int {
+func multi_table(_ number: Int) -> String {
+    var counter = 2
+    var string = "1 * \(number) = \(number * 1)"
     
-    if a.reduce(1, *) > b.reduce(1, *) {
-        return a.reduce(1, *) - b.reduce(1, *)
-    } else {
-        return b.reduce(1, *) - a.reduce(1, *)
+    for _ in 2...10 {
+        string += "\n\(counter) * \(number) = \(number * counter)"
+        counter += 1
     }
-    
-    
+    print(string)
+    return string
 }
 
-findDifference([1,4,4], [3,2,5])
-findDifference([9,7,2], [5,2,2])
+multi_table(5)
 
-
-// return Int(exactly: UInt(a.reduce(1, *)) - UInt(b.reduce(1, *)))!
+// almost done but seems like result with \n is wrong. Something simple.

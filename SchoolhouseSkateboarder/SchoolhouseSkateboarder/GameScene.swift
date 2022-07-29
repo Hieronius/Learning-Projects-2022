@@ -40,6 +40,7 @@ class GameScene: SKScene {
         
         // Set properties of skater sprite and adding it to the scene resetSkater()
         resetSkater()
+        
         addChild(skater)
         
         // Adding click recognizer to find out when user clicks screen of the phone
@@ -66,6 +67,7 @@ class GameScene: SKScene {
         let brick = SKSpriteNode(imageNamed: "sidewalk")
         brick.position = position
         brick.zPosition = 8
+        addChild(brick)
         
         // Updating property of brickSize with real value of section size
         brickSize = brick.size
@@ -104,6 +106,7 @@ class GameScene: SKScene {
                     farthestRightBrickX = brick.position.x
                 }
             }
+        }
             
             // cycle While, providing non stop filing the display with sections
             while farthestRightBrickX < frame.width {
@@ -124,7 +127,7 @@ class GameScene: SKScene {
                 // Adding new section and updating position of farthest right
                 let newBrick = spawnBrick(atPosition: CGPoint(x: brickX, y: brickY))
                 farthestRightBrickX = newBrick.position.x
-            }
+            
         }
     }
     

@@ -20,6 +20,9 @@ class GameScene: SKScene {
     // This value can be increased in game
     var scrollSpeed: CGFloat = 5.0
     
+    // Constant for gravitation
+    let gravitySpeed: CGFloat = 1.5
+    
     // Time of last call of update method
     var lastUpdateTime: TimeInterval?
     
@@ -125,6 +128,28 @@ class GameScene: SKScene {
         }
     }
     
+    func updateSkater() {
+        
+        if !skater.isOnGround {
+            
+            // Setting a new value of skater speed with regard to gravity
+            let velocityY = skater.velocity.y - gravitySpeed
+            skater.velocity = CGPoint(x: skater.velocity.x, y: velocityY)
+            
+            // Setting a new value for new position skater in Y axis in regard of her speed
+            let newSkaterY: CGFloat = skater.position.y + skater.velocity.y
+            skater.position = CGPoint(x: skater.position.x, y: newSkaterY)
+            
+            // Check if skater is already on the ground
+            if skater.position.y < skater.minimumY {
+                
+                skater.position.y = skater.minimumY
+                skater.velocity = CGPoint.zero
+                skater.isOnGround = true
+            }
+        }
+    }
+    
     override func update(_ currentTime: TimeInterval) {
         // calling after drowing each shot
         
@@ -143,6 +168,8 @@ class GameScene: SKScene {
         let currentScrollAmount = scrollSpeed * scrollAdjustment
         
         updateBricks(withScrollAmount: currentScrollAmount)
+        
+        updateSkater()
     }
     
     @objc func handleTap(tapGesture: UITapGestureRecognizer) {

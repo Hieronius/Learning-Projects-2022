@@ -38,7 +38,15 @@ class GameScene: SKScene {
         // Set properties of skater sprite and adding it to the scene resetSkater()
         resetSkater()
         addChild(skater)
+        
+        // Adding click recognizer to find out when user clicks screen of the phone
+        let tapMethod = #selector(GameScene.handleTap(tapGesture:))
+        let tapGesture = UITapGestureRecognizer(target: self, action: tapMethod)
+        view.addGestureRecognizer(tapGesture)
+        
+    
     }
+    
     
     func resetSkater() {
         // Defining start position for skater, zPosition and minimumY
@@ -79,7 +87,7 @@ class GameScene: SKScene {
             if newX < -brickSize.width {
                 brick.removeFromParent()
                 
-                if let brickIndex = bricks.index(of: brick) {
+                if let brickIndex = bricks.firstIndex(of: brick) {
                     bricks.remove(at: brickIndex)
                 }
                 
@@ -127,5 +135,26 @@ class GameScene: SKScene {
         }
         
         lastUpdateTime = currentTime
+        
+        let expectedElapsedTime: TimeInterval = 1.0 / 60.0
+        
+        // Calculating how far objects should move with current update
+        let scrollAdjustment = CGFloat(elapsedTime / expectedElapsedTime)
+        let currentScrollAmount = scrollSpeed * scrollAdjustment
+        
+        updateBricks(withScrollAmount: currentScrollAmount)
+    }
+    
+    @objc func handleTap(tapGesture: UITapGestureRecognizer) {
+        
+        // Skater jumps when user clicks on the screen when she is on the ground
+        if skater.isOnGround {
+            
+            // Setting speed on Y axis for skater equal to her start speed of jump
+            skater.velocity = CGPoint(x: 0.0, y: skater.jumpSpeed)
+            
+            // Note that skater already is not on the ground
+            skater.isOnGround = false
+        }
     }
 }

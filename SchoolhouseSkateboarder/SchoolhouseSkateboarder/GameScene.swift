@@ -20,6 +20,9 @@ class GameScene: SKScene {
     // This value can be increased in game
     var scrollSpeed: CGFloat = 5.0
     
+    // Time of last call of update method
+    var lastUpdateTime: TimeInterval?
+    
     let skater = Skater(imageNamed: "skater")
     
     
@@ -116,5 +119,13 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // calling after drowing each shot
+        
+        // Count the time that left from last moment of call update method
+        var elapsedTime: TimeInterval = 0.0
+        if let lastTimeStamp = lastUpdateTime {
+            elapsedTime = currentTime - lastTimeStamp
+        }
+        
+        lastUpdateTime = currentTime
     }
 }

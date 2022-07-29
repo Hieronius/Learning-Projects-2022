@@ -90,6 +90,27 @@ class GameScene: SKScene {
                     farthestRightBrickX = brick.position.x
                 }
             }
+            
+            // cycle While, providing non stop filing the display with sections
+            while farthestRightBrickX < frame.width {
+                
+                var brickX = farthestRightBrickX + brickSize.width + 1.0
+                let brickY = brickSize.height / 2.0
+                
+                // Making some gaps in the sidewalk so our hero should jump over them
+                let randomNumber = arc4random_uniform(99)
+                
+                if randomNumber < 5 {
+                    
+                    // 5 % chance to spawn gaps between the sections
+                    let gap = 20.0 * scrollSpeed
+                    brickX += gap
+                }
+                
+                // Adding new section and updating position of farthest right
+                let newBrick = spawnBrick(atPosition: CGPoint(x: brickX, y: brickY))
+                farthestRightBrickX = newBrick.position.x
+            }
         }
     }
     

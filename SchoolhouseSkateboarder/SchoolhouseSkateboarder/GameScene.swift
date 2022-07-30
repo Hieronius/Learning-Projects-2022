@@ -41,6 +41,9 @@ class GameScene: SKScene {
         background.position = CGPoint(x: xMid, y: yMid)
         addChild(background)
         
+        // Creation of skater and adding her to the scene
+        skater.setupPhysicsBody()
+        
         // Set properties of skater sprite and adding it to the scene resetSkater()
         resetSkater()
         
@@ -77,6 +80,11 @@ class GameScene: SKScene {
         
         // Adding new section to the array of bricks
         bricks.append(brick)
+        
+        // Setting of physical body of the section
+        let center = brick.centerRect.origin
+        brick.physicsBody = SKPhysicsBody(rectangleOf: brick.size, center: center)
+        brick.physicsBody?.affectedByGravity = false
         
         // Return of new section for calling code
         return brick

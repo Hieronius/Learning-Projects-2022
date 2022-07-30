@@ -8,6 +8,19 @@
 import SpriteKit
 import GameplayKit
 
+
+// This structure contains different physical categories and we can set
+// which is will be contact or collide with each other
+
+struct PhysicsCategory {
+    
+    static let skater: UInt32 = 0x1 << 0
+    static let brick: UInt32 = 0x1 << 1
+    static let gem: UInt32 = 0x1 << 2
+    
+}
+
+
 class GameScene: SKScene {
     
     // array for all sections of sidewalk
@@ -85,6 +98,9 @@ class GameScene: SKScene {
         let center = brick.centerRect.origin
         brick.physicsBody = SKPhysicsBody(rectangleOf: brick.size, center: center)
         brick.physicsBody?.affectedByGravity = false
+        
+        brick.physicsBody?.categoryBitMask = PhysicsCategory.brick
+        brick.physicsBody?.collisionBitMask = 0
         
         // Return of new section for calling code
         return brick

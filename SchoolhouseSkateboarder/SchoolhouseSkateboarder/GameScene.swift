@@ -113,6 +113,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         bricks.removeAll(keepingCapacity: true)
+        
+        for gem in gems {
+            removeGem(gem)
+        }
     }
     
     func gameOver() {
@@ -161,6 +165,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
+    func removeGem(_ gem: SKSpriteNode) {
+        
+        gem.removeFromParent()
+        
+        if let gemIndex = gems.firstIndex(of: gem) {
+            gems.remove(at: gemIndex)
+        }
+        
+    }
+    
     func updateBricks(withScrollAmount currentScrollAmount: CGFloat) {
         
         // Monitoring for biggest value of X axis for all current sections
@@ -204,6 +218,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     // 5 % chance to spawn gaps between the sections
                     let gap = 20.0 * scrollSpeed
                     brickX += gap
+                    
+                    // In location of each gap
+                    let randomGemYAmount = CGFloat(arc4random_uniform(150))
+                    let newGemY = brickY + skater.size.height + randomGemYAmount
+                    let newGemX = brickX - gap / 2
+                    
+                    spawnGem(atPosition: CGPoint(x: newGemX, y: newGemY))
                 }
                 
                 else if randomNumber < 10 {

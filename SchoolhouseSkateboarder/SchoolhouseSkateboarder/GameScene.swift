@@ -33,6 +33,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // This value can be increased in game
     var scrollSpeed: CGFloat = 5.0
     
+    let startingScrollSpeed: CGFloat = 5.0
+    
     // Constant for gravitation
     let gravitySpeed: CGFloat = 1.5
     
@@ -58,15 +60,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // Creation of skater and adding her to the scene
         skater.setupPhysicsBody()
         
-        // Set properties of skater sprite and adding it to the scene resetSkater()
-        resetSkater()
-        
         addChild(skater)
         
         // Adding click recognizer to find out when user clicks screen of the phone
         let tapMethod = #selector(GameScene.handleTap(tapGesture:))
         let tapGesture = UITapGestureRecognizer(target: self, action: tapMethod)
         view.addGestureRecognizer(tapGesture)
+        
+        startGame()
         
     
     }
@@ -79,6 +80,29 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         skater.position = CGPoint(x: skaterX, y: skaterY)
         skater.zPosition = 10
         skater.minimumY = skaterY
+        
+        skater.zRotation = 0.0
+        skater.physicsBody?.velocity = CGVector(dx: 0.0, dy: 0.0)
+        skater.physicsBody?.angularVelocity = 0.0
+    }
+    
+    func startGame() {
+        
+        // Return to the start condition when you run a new game
+        resetSkater()
+        
+        scrollSpeed = startingScrollSpeed
+        lastUpdateTime = nil
+        
+        for brick in bricks {
+            brick.removeFromParent()
+        }
+        
+        bricks.removeAll(keepingCapacity: true)
+    }
+    
+    func gameOver() {
+        startGame()
     }
     
     func spawnBrick (atPosition position: CGPoint) -> SKSpriteNode {
@@ -161,24 +185,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func updateSkater() {
         
-        if !skater.isOnGround {
+        // Check is skater is on the ground or not
+        if let velocityY = skater.physicsBody?.velocity.dy {
             
-            // Setting a new value of skater speed with regard to gravity
-            let velocityY = skater.velocity.y - gravitySpeed
-            skater.velocity = CGPoint(x: skater.velocity.x, y: velocityY)
-            
-            // Setting a new value for new position skater in Y axis in regard of her speed
-            let newSkaterY: CGFloat = skater.position.y + skater.velocity.y
-            skater.position = CGPoint(x: skater.position.x, y: newSkaterY)
-            
-            // Check if skater is already on the ground
-            if skater.position.y < skater.minimumY {
-                
-                skater.position.y = skater.minimumY
-                skater.velocity = CGPoint.zero
-                skater.isOnGround = true
+            if velocityY < -100.0 || velocityY > 100.0 {
+                skater.isOnGround = false
             }
         }
+        
+        // Check should new game end or not
+        let isOffScreen = skater.position.y < 0.0 || skater.position.x < 0.0
+        
+        let maxRotation = CGFloat(GLKMathDegreesToRadians(85.0))
+        let isTippedOver = skater.zRotation > maxRotation || skater.zRotation < -maxRotation
+        
+        if isOffScreen || isTippedOver {
+            gameOver()
+        }
+        
+        
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -208,11 +233,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // Skater jumps when user clicks on the screen when she is on the ground
         if skater.isOnGround {
             
-            // Setting speed on Y axis for skater equal to her start speed of jump
-            skater.velocity = CGPoint(x: 0.0, y: skater.jumpSpeed)
-            
-            // Note that skater already is not on the ground
-            skater.isOnGround = false
+            skater.physicsBody?.applyImpulse(CGVector(dx: 0.0, dy: 260.0))
         }
     }
     

@@ -33,6 +33,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // array for all sections of sidewalk
     var bricks = [SKSpriteNode]()
     
+    // array for all active gems
+    var gems = [SKSpriteNode]()
+    
     // size of the sections
     var brickSize = CGSize.zero
     
@@ -140,6 +143,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // Return of new section for calling code
         return brick
+    }
+    
+    func spawnGem(atPosition position: CGPoint) {
+        
+        // Creating sprite for diamond and adding him to the scene
+        let gem = SKSpriteNode(imageNamed: "gem")
+        gem.position = position
+        gem.zPosition = 9
+        addChild(gem)
+        gem.physicsBody = SKPhysicsBody(rectangleOf: gem.size, center: gem.centerRect.origin)
+        gem.physicsBody?.categoryBitMask = PhysicsCategory.gem
+        gem.physicsBody?.affectedByGravity = false
+        
+        // Adding new diamond to the array of diamonds
+        gems.append(gem)
+        
     }
     
     func updateBricks(withScrollAmount currentScrollAmount: CGFloat) {

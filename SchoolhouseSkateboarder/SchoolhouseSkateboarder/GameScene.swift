@@ -23,11 +23,21 @@ struct PhysicsCategory {
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
+    // Enum for position of sections in Y axis
+    // Sections on the ground is low and section in the upper platform is high
+    enum BrickLevel: CGFloat {
+        case low = 0.0
+        case high = 100.0
+    }
+    
     // array for all sections of sidewalk
     var bricks = [SKSpriteNode]()
     
     // size of the sections
     var brickSize = CGSize.zero
+    
+    // Current level defines position on axis Y for new sections
+    var brickLevel = BrickLevel.low
     
     // Settings for the bricks speed on our scene
     // This value can be increased in game
@@ -92,6 +102,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         resetSkater()
         
         scrollSpeed = startingScrollSpeed
+        brickLevel = .low
         lastUpdateTime = nil
         
         for brick in bricks {
@@ -164,7 +175,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             while farthestRightBrickX < frame.width {
                 
                 var brickX = farthestRightBrickX + brickSize.width + 1.0
-                let brickY = brickSize.height / 2.0
+                let brickY = (brickSize.height / 2.0) + brickLevel.rawValue
                 
                 // Making some gaps in the sidewalk so our hero should jump over them
                 let randomNumber = arc4random_uniform(99)
@@ -174,6 +185,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     // 5 % chance to spawn gaps between the sections
                     let gap = 20.0 * scrollSpeed
                     brickX += gap
+                }
+                
+                else if randomNumber < 10 {
+                    // 5 % chance to change lower section to the upper section and vice versa
+                    if brickLevel == .high {
+                        brickLevel = .low
+                    }
+                    else if brickLevel == .low {
+                        brickLevel = .high
+                    }
                 }
                 
                 // Adding new section and updating position of farthest right
@@ -208,6 +229,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func update(_ currentTime: TimeInterval) {
         // calling after drowing each shot
+        
+        // Slowly increasing value of scrollSpeed during the game
+        scrollSpeed += 0.01
         
         // Count the time that left from last moment of call update method
         var elapsedTime: TimeInterval = 0.0

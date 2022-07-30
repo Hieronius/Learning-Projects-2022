@@ -21,7 +21,7 @@ struct PhysicsCategory {
 }
 
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // array for all sections of sidewalk
     var bricks = [SKSpriteNode]()
@@ -45,6 +45,7 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         
         physicsWorld.gravity = CGVector(dx: 0.0, dy: -6.0)
+        physicsWorld.contactDelegate = self
         
         anchorPoint = CGPoint.zero
         
@@ -212,6 +213,16 @@ class GameScene: SKScene {
             
             // Note that skater already is not on the ground
             skater.isOnGround = false
+        }
+    }
+    
+    // MARK: - SKPhysicsContactDelegate Methods
+    func didBegin(_ contact: SKPhysicsContact) {
+        // Check up for contact between skater and brick of sidewalk
+        if contact.bodyA.categoryBitMask == PhysicsCategory.skater &&
+            contact.bodyB.categoryBitMask == PhysicsCategory.brick {
+            
+            skater.isOnGround = true
         }
     }
 }

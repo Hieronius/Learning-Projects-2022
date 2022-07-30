@@ -30,6 +30,9 @@ class GameScene: SKScene {
     
     
     override func didMove(to view: SKView) {
+        
+        physicsWorld.gravity = CGVector(dx: 0.0, dy: -6.0)
+        
         anchorPoint = CGPoint.zero
         
         let background = SKSpriteNode(imageNamed: "background")

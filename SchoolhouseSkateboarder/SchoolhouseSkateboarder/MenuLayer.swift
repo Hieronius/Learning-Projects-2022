@@ -26,5 +26,28 @@ class MenuLayer: SKSpriteNode {
         let finalX = frame.width / 2.0
         let messageAction = SKAction.moveTo(x: finalX, duration: 0.3)
         messageLabel.run(messageAction)
+        
+        // If number of points was granted to the method, let's display label on the screen
+        if let scoreToDisplay = score {
+            
+            // Making a text with amount of points from score
+            let scoreString = String(format: "Points:%04d", scoreToDisplay)
+            let scoreLabel: SKLabelNode = SKLabelNode(text: scoreString)
+            
+            // Setting a starting position of label in the right from menu layer
+            let scoreLabelX = frame.width
+            let scoreLabelY = messageLabel.position.y - messageLabel.frame.height
+            scoreLabel.position = CGPoint(x: scoreLabelX, y: scoreLabelY)
+            
+            scoreLabel.horizontalAlignmentMode = .center
+            scoreLabel.fontName = "Courier-Bold"
+            scoreLabel.fontSize = 32.0
+            scoreLabel.zPosition = 20
+            addChild(scoreLabel)
+            
+            // Animate movement of label to the center
+            let scoreAction = SKAction.moveTo(x: finalX, duration: 0.3)
+            scoreLabel.run(scoreAction)
+        }
     }
 }

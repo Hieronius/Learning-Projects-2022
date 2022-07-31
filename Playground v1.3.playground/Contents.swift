@@ -2,12 +2,32 @@ import Foundation
 import UIKit
 
 
+
+func accum(_ s: String) -> String {
+    var totalString = ""
+    var counter = 1
+for letter in s {
+  totalString += String(letter) + "-"
+}
+    return String(totalString.dropLast())
+}
+
+accum("abcd")
+
+
+
+
+
+
+
+var newArr = ["sheep", "sheep", "sheep", "sheep", "sheep", "wolf", "sheep", "sheep"].reversed()
+print(newArr)
+
 func warnTheSheep(_ queue: [String]) -> String {
     if queue.last == "wolf" {
         return "Pls go away and stop eating my sheep"
     }
-    let wolfPosition = queue.firstIndex(of: "wolf")!
-    return "yo, sheep number \(queue[wolfPosition+1]) , there is the wolf"
+    for animal in queue.reversed()
 }
 
 warnTheSheep(["sheep", "sheep", "sheep", "sheep", "sheep", "wolf", "sheep", "sheep"])

@@ -158,6 +158,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    func updateHighScoreLabelText() {
+        
+        if let highScoreLabel = childNode(withName: "highScoreLabel") as? SKLabelNode {
+            highScoreLabel.text = String(format: "%04d", highScore)
+        }
+    }
+    
     func startGame() {
         
         // Return to the start condition when you run a new game
@@ -181,7 +188,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func gameOver() {
+        
+        // When game is over let's check for new user record
+        if score > highScore {
+            highScore = score
+            updateHighScoreLabelText()
+        }
+        
         startGame()
+        
     }
     
     func spawnBrick (atPosition position: CGPoint) -> SKSpriteNode {
@@ -417,6 +432,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             // When skater touched the gem we will delete it
             if let gem = contact.bodyB.node as? SKSpriteNode {
                 removeGem(gem)
+                
+                // User will collect 50 points for each gem
+                score += 50
+                updateScoreLabelText()
             }
         }
     }

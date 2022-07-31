@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD0C830B28963136009F35DD /* MenuLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0C830A28963136009F35DD /* MenuLayer.swift */; };
 		DD76E88A289226E800A34E90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD76E889289226E800A34E90 /* AppDelegate.swift */; };
 		DD76E88C289226E800A34E90 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DD76E88B289226E800A34E90 /* GameScene.sks */; };
 		DD76E88E289226E800A34E90 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = DD76E88D289226E800A34E90 /* Actions.sks */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD0C830A28963136009F35DD /* MenuLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuLayer.swift; sourceTree = "<group>"; };
 		DD76E886289226E800A34E90 /* SchoolhouseSkateboarder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchoolhouseSkateboarder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD76E889289226E800A34E90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD76E88B289226E800A34E90 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 		DD76E888289226E800A34E90 /* SchoolhouseSkateboarder */ = {
 			isa = PBXGroup;
 			children = (
+				DD0C830A28963136009F35DD /* MenuLayer.swift */,
 				DD76E8A02892331F00A34E90 /* Skater.swift */,
 				DD76E889289226E800A34E90 /* AppDelegate.swift */,
 				DD76E88B289226E800A34E90 /* GameScene.sks */,
@@ -149,6 +152,7 @@
 			files = (
 				DD76E890289226E800A34E90 /* GameScene.swift in Sources */,
 				DD76E8A12892331F00A34E90 /* Skater.swift in Sources */,
+				DD0C830B28963136009F35DD /* MenuLayer.swift in Sources */,
 				DD76E892289226E800A34E90 /* GameViewController.swift in Sources */,
 				DD76E88A289226E800A34E90 /* AppDelegate.swift in Sources */,
 			);

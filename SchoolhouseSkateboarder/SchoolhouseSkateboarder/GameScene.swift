@@ -30,6 +30,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         case high = 100.0
     }
     
+    // Enum for all possible game states
+    enum GameState {
+        case notRunning
+        case running
+    }
+    
     // array for all sections of sidewalk
     var bricks = [SKSpriteNode]()
     
@@ -41,6 +47,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // Current level defines position on axis Y for new sections
     var brickLevel = BrickLevel.low
+    
+    // Tracking of current game state
+    var gameState = GameState.notRunning
     
     // Settings for the bricks speed on our scene
     // This value can be increased in game
@@ -167,6 +176,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func startGame() {
         
+        gameState = .running
+        
         // Return to the start condition when you run a new game
         resetSkater()
         
@@ -190,12 +201,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func gameOver() {
         
         // When game is over let's check for new user record
+        
+        gameState = .notRunning
+        
         if score > highScore {
             highScore = score
             updateHighScoreLabelText()
         }
-        
-        startGame()
         
     }
     
@@ -289,9 +301,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 // Making some gaps in the sidewalk so our hero should jump over them
                 let randomNumber = arc4random_uniform(99)
                 
-                if randomNumber < 5 {
+                if randomNumber < 2 && score > 10 {
                     
-                    // 5 % chance to spawn gaps between the sections
+                    // 2 % chance to spawn gaps between the sections
                     let gap = 20.0 * scrollSpeed
                     brickX += gap
                     
@@ -303,8 +315,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     spawnGem(atPosition: CGPoint(x: newGemX, y: newGemY))
                 }
                 
-                else if randomNumber < 10 {
-                    // 5 % chance to change lower section to the upper section and vice versa
+                else if randomNumber < 4 && score > 20 {
+                    
+                    // 2 % chance to change lower section to the upper section and vice versa
                     if brickLevel == .high {
                         brickLevel = .low
                     }
@@ -379,6 +392,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func update(_ currentTime: TimeInterval) {
+        
+        if gameState != .running {
+            return
+        }
         // calling after drowing each shot
         
         // Slowly increasing value of scrollSpeed during the game

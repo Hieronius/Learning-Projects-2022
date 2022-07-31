@@ -51,6 +51,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // Constant for gravitation
     let gravitySpeed: CGFloat = 1.5
     
+    // Properties for monitoring results
+    var score: Int = 0
+    var highScore: Int = 0
+    var lastScoreUpdateTime: TimeInterval = 0.0
+    
     // Time of last call of update method
     var lastUpdateTime: TimeInterval?
     
@@ -69,6 +74,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let yMid = frame.midY
         background.position = CGPoint(x: xMid, y: yMid)
         addChild(background)
+        
+        setupLabels()
         
         // Creation of skater and adding her to the scene
         skater.setupPhysicsBody()
@@ -117,6 +124,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreLabel.position = CGPoint(x: 14.0, y: frame.size.height - 40.0)
         scoreLabel.horizontalAlignmentMode = .left
         scoreLabel.fontName = "Courier-Bold"
+        scoreLabel.fontSize = 18.0
         scoreLabel.name = "scoreLabel"
         scoreLabel.zPosition = 20
         addChild(scoreLabel)
@@ -126,6 +134,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let highScoreTextLabel: SKLabelNode = SKLabelNode(text: "best result")
         highScoreTextLabel.position = CGPoint(x: frame.size.width - 14.0, y: frame.size.height - 20.0)
         highScoreTextLabel.fontName = "Courier-Bold"
+        highScoreTextLabel.horizontalAlignmentMode = .right
         highScoreTextLabel.fontSize = 14.0
         highScoreTextLabel.zPosition = 20
         addChild(highScoreTextLabel)
@@ -140,6 +149,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         highScoreLabel.name = "highScoreLabel"
         highScoreLabel.zPosition = 20
         addChild(highScoreLabel)
+    }
+    
+    func updateScoreLabelText() {
+        
+        if let scoreLabel = childNode(withName: "scoreLabel") as? SKLabelNode {
+            scoreLabel.text = String(format: "%04d", score)
+        }
     }
     
     func startGame() {

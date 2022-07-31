@@ -244,6 +244,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    func updateGems(withScrollAmount currentScrollAmount: CGFloat) {
+        
+        for gem in gems {
+            
+            // Update of each gem position
+            let thisGemX = gem.position.x - currentScrollAmount
+            gem.position = CGPoint(x: thisGemX, y: gem.position.y)
+            
+            // Delete all gems which is left from the screen
+            if gem.position.x < 0.0 {
+                
+                removeGem(gem)
+            }
+        }
+    }
+    
     func updateSkater() {
         
         // Check is skater is on the ground or not
@@ -290,6 +306,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         updateBricks(withScrollAmount: currentScrollAmount)
         
         updateSkater()
+        
+        updateGems(withScrollAmount: currentScrollAmount)
     }
     
     @objc func handleTap(tapGesture: UITapGestureRecognizer) {

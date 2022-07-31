@@ -163,6 +163,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // Return to the start condition when you run a new game
         resetSkater()
         
+        score = 0
+        
         scrollSpeed = startingScrollSpeed
         brickLevel = .low
         lastUpdateTime = nil
@@ -342,6 +344,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
+    func updateScore(withCurrentTime currentTime: TimeInterval) {
+        
+        // Amount of points will be increased during the time of the game
+        // Score is being updated every second
+        
+        let elapsedTIme = currentTime - lastScoreUpdateTime
+        
+        if elapsedTIme > 1.0 {
+            
+            // Add points
+            score += Int(scrollSpeed)
+            
+            // Assing value of current time to lastScoreUpdateTime property
+            lastScoreUpdateTime = currentTime
+            
+            updateScoreLabelText()
+        }
+    }
+    
     override func update(_ currentTime: TimeInterval) {
         // calling after drowing each shot
         
@@ -367,6 +388,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         updateSkater()
         
         updateGems(withScrollAmount: currentScrollAmount)
+        
+        updateScore(withCurrentTime: currentTime)
     }
     
     @objc func handleTap(tapGesture: UITapGestureRecognizer) {

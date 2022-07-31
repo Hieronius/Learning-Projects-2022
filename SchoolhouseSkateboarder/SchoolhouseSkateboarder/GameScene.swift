@@ -99,6 +99,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         skater.physicsBody?.angularVelocity = 0.0
     }
     
+    func setupLabels() {
+        
+        // Label with word "Score" in upper left triangle of the screen
+        
+        let scoreTextLabel: SKLabelNode = SKLabelNode(text: "Score")
+        scoreTextLabel.position = CGPoint(x: 14.0, y: frame.size.height - 20.0)
+        scoreTextLabel.horizontalAlignmentMode = .left
+        
+        scoreTextLabel.fontName = "Courier-Bold"
+        scoreTextLabel.fontSize = 14.0
+        scoreTextLabel.zPosition = 20
+        addChild(scoreTextLabel)
+    }
+    
     func startGame() {
         
         // Return to the start condition when you run a new game

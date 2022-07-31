@@ -320,12 +320,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     // MARK: - SKPhysicsContactDelegate Methods
+    
     func didBegin(_ contact: SKPhysicsContact) {
+        
         // Check up for contact between skater and brick of sidewalk
         if contact.bodyA.categoryBitMask == PhysicsCategory.skater &&
             contact.bodyB.categoryBitMask == PhysicsCategory.brick {
             
             skater.isOnGround = true
+        }
+        
+        else if contact.bodyA.categoryBitMask == PhysicsCategory.skater && contact.bodyB.categoryBitMask == PhysicsCategory.gem {
+            
+            // When skater touched the gem we will delete it
+            if let gem = contact.bodyB.node as? SKSpriteNode {
+                removeGem(gem)
+            }
         }
     }
 }

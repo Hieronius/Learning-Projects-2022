@@ -101,7 +101,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func setupLabels() {
         
-        // Label with word "Score" in upper left triangle of the screen
+        // Label with word "Score" in upper left angle of the screen
         
         let scoreTextLabel: SKLabelNode = SKLabelNode(text: "Score")
         scoreTextLabel.position = CGPoint(x: 14.0, y: frame.size.height - 20.0)
@@ -111,6 +111,35 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreTextLabel.fontSize = 14.0
         scoreTextLabel.zPosition = 20
         addChild(scoreTextLabel)
+        
+        // Label with current score of the user
+        let scoreLabel: SKLabelNode = SKLabelNode(text: "0")
+        scoreLabel.position = CGPoint(x: 14.0, y: frame.size.height - 40.0)
+        scoreLabel.horizontalAlignmentMode = .left
+        scoreLabel.fontName = "Courier-Bold"
+        scoreLabel.name = "scoreLabel"
+        scoreLabel.zPosition = 20
+        addChild(scoreLabel)
+        
+        // label "best result" in the upper right angle
+        
+        let highScoreTextLabel: SKLabelNode = SKLabelNode(text: "best result")
+        highScoreTextLabel.position = CGPoint(x: frame.size.width - 14.0, y: frame.size.height - 20.0)
+        highScoreTextLabel.fontName = "Courier-Bold"
+        highScoreTextLabel.fontSize = 14.0
+        highScoreTextLabel.zPosition = 20
+        addChild(highScoreTextLabel)
+        
+        // label with maximum user score
+        
+        let highScoreLabel: SKLabelNode = SKLabelNode(text: "0")
+        highScoreLabel.position = CGPoint(x: frame.size.width - 14.0, y: frame.size.height - 40.0)
+        highScoreLabel.horizontalAlignmentMode = .right
+        highScoreLabel.fontName = "Courier-Bold"
+        highScoreLabel.fontSize = 18.0
+        highScoreLabel.name = "highScoreLabel"
+        highScoreLabel.zPosition = 20
+        addChild(highScoreLabel)
     }
     
     func startGame() {

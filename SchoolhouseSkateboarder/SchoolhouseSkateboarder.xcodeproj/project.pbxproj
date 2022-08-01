@@ -10,6 +10,8 @@
 		DD0C830B28963136009F35DD /* MenuLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0C830A28963136009F35DD /* MenuLayer.swift */; };
 		DD0C830E28976F8C009F35DD /* jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = DD0C830C28976F8C009F35DD /* jump.wav */; };
 		DD0C830F28976F8C009F35DD /* gem.wav in Resources */ = {isa = PBXBuildFile; fileRef = DD0C830D28976F8C009F35DD /* gem.wav */; };
+		DD0C8312289771A4009F35DD /* sparks.sks in Resources */ = {isa = PBXBuildFile; fileRef = DD0C8310289771A4009F35DD /* sparks.sks */; };
+		DD0C8313289771A4009F35DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD0C8311289771A4009F35DD /* Assets.xcassets */; };
 		DD76E88A289226E800A34E90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD76E889289226E800A34E90 /* AppDelegate.swift */; };
 		DD76E88C289226E800A34E90 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DD76E88B289226E800A34E90 /* GameScene.sks */; };
 		DD76E88E289226E800A34E90 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = DD76E88D289226E800A34E90 /* Actions.sks */; };
@@ -25,6 +27,8 @@
 		DD0C830A28963136009F35DD /* MenuLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuLayer.swift; sourceTree = "<group>"; };
 		DD0C830C28976F8C009F35DD /* jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jump.wav; sourceTree = "<group>"; };
 		DD0C830D28976F8C009F35DD /* gem.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gem.wav; sourceTree = "<group>"; };
+		DD0C8310289771A4009F35DD /* sparks.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = sparks.sks; sourceTree = "<group>"; };
+		DD0C8311289771A4009F35DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD76E886289226E800A34E90 /* SchoolhouseSkateboarder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchoolhouseSkateboarder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD76E889289226E800A34E90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD76E88B289226E800A34E90 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -51,6 +55,8 @@
 		DD76E87D289226E800A34E90 = {
 			isa = PBXGroup;
 			children = (
+				DD0C8310289771A4009F35DD /* sparks.sks */,
+				DD0C8311289771A4009F35DD /* Assets.xcassets */,
 				DD76E888289226E800A34E90 /* SchoolhouseSkateboarder */,
 				DD76E887289226E800A34E90 /* Products */,
 			);
@@ -146,7 +152,9 @@
 				DD76E895289226E800A34E90 /* Main.storyboard in Resources */,
 				DD76E88C289226E800A34E90 /* GameScene.sks in Resources */,
 				DD76E897289226EF00A34E90 /* Assets.xcassets in Resources */,
+				DD0C8312289771A4009F35DD /* sparks.sks in Resources */,
 				DD76E89A289226EF00A34E90 /* LaunchScreen.storyboard in Resources */,
+				DD0C8313289771A4009F35DD /* Assets.xcassets in Resources */,
 				DD76E88E289226E800A34E90 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

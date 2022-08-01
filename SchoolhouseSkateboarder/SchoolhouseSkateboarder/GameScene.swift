@@ -445,11 +445,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     @objc func handleTap(tapGesture: UITapGestureRecognizer) {
         
-        // Skater jumps when user clicks on the screen when she is on the ground
-        if skater.isOnGround {
+        if gameState == .running {
             
-            skater.physicsBody?.applyImpulse(CGVector(dx: 0.0, dy: 260.0))
+            // Skater jumps when user clicks on the screen when she is on the ground
+            if skater.isOnGround {
+                
+                skater.physicsBody?.applyImpulse(CGVector(dx: 0.0, dy: 260.0))
+            }
+        } else {
+            
+            // If game is not running tapping of the screen will start a new game
+            if let menuLayer: SKSpriteNode = childNode(withName: "menuLayer") as? SKSpriteNode {
+                
+                menuLayer.removeFromParent()
+            }
+            startGame()
         }
+        
     }
     
     // MARK: - SKPhysicsContactDelegate Methods

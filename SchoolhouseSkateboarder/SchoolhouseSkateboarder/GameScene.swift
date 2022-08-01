@@ -451,6 +451,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if skater.isOnGround {
                 
                 skater.physicsBody?.applyImpulse(CGVector(dx: 0.0, dy: 260.0))
+                run(SKAction.playSoundFileNamed("jump.wav", waitForCompletion: false))
             }
         } else {
             
@@ -484,6 +485,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 // User will collect 50 points for each gem
                 score += 50
                 updateScoreLabelText()
+                
+                run(SKAction.playSoundFileNamed("gem.wav", waitForCompletion: false))
             }
         }
     }

@@ -22,4 +22,23 @@ class Skater: SKSpriteNode {
         }
     }
     
+    func createSparks() {
+        
+        // Find a file of particle emitter
+        let bundle = Bundle.main
+        if let sparkPath = bundle.path(forResource: "sparks", ofType: "sks") {
+            
+            // Create sprite of partice emitter
+            let sparksNode = NSKeyedUnarchiver.unarchiveObject(withFile: sparkPath) as! SKEmitterNode
+            sparksNode.position = CGPoint(x: 0.0, y: -50)
+            addChild(sparksNode)
+            
+            // Taking action, waiting for half of the second and after deleting emitter
+            let waitAction = SKAction.wait(forDuration: 0.5)
+            let removeAction = SKAction.removeFromParent()
+            let waitThenRemove = SKAction.sequence([waitAction, removeAction])
+            sparksNode.run(waitThenRemove)
+        }
+    }
+    
 }

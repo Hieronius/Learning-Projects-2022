@@ -473,6 +473,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if contact.bodyA.categoryBitMask == PhysicsCategory.skater &&
             contact.bodyB.categoryBitMask == PhysicsCategory.brick {
             
+            if let velocityY = skater.physicsBody?.velocity.dy {
+                
+                if !skater.isOnGround && velocityY < 100.0 {
+                    
+                    skater.createSparks()
+                }
+            }
+            
             skater.isOnGround = true
         }
         

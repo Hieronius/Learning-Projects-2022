@@ -4,23 +4,13 @@ import Foundation
 import UIKit
 
 
-func formatMoney(_ val:Double) -> String {
-    let formater = NumberFormatter()
-    formater.minimumFractionDigits = 2
-    formater.maximumFractionDigits = 2
-    return "$\(formater.string(from: NSNumber(value: val)) ?? "0")"
+func move(_ p: Int, _ r: Int) -> Int {
+    return p + r*2
 }
-formatMoney(2.0)
 
-let x = 1.234
-let y = Double(round(100*x) / 100)
+move(3, 6)
 
-var formater = NumberFormatter()
-formater.minimumFractionDigits = 2
-formater.maximumFractionDigits = 2
 
-let roundedValue1 = formater.string(from: 2.324234)
-let roundedValue2 = formater.string(from: 2)
 
 
 

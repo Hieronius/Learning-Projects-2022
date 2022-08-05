@@ -2,6 +2,9 @@ import Foundation
 import UIKit
 
 
+var array = [12,32,43]
+array.map {$0*$1*$2}
+
 
 func accum(_ s: String) -> String {
     var totalString = ""

@@ -1,10 +1,8 @@
 import Foundation
 import UIKit
 
-
-var array = [12,32,43]
-array.map {$0*$1*$2}
-
+var name = "Terry "
+name.contains("Terry")
 
 func accum(_ s: String) -> String {
     var totalString = ""

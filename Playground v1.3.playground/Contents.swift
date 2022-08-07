@@ -1,21 +1,33 @@
 import Foundation
 import UIKit
 
-var name = "Terry "
-name.contains("Terry")
-
-func accum(_ s: String) -> String {
-    var totalString = ""
-    var counter = 1
-for letter in s {
-  totalString += String(letter) + "-"
+// bubble sort
+func bubbleSort(_ input: [Int]) -> [Int] {
+    guard input.count > 1 else {
+        return input
+    }
+    
+    var result = input
+    let count = result.count
+    
+    var isSwapped = false
+    
+    repeat {
+    
+    isSwapped = false
+        
+        for index in 1..<count {
+            if result[index] < result[index-1] {
+                result.swapAt(index-1, index)
+                isSwapped = true
+            }
+        }
+    } while isSwapped
+    
+    return result
 }
-    return String(totalString.dropLast())
-}
 
-accum("abcd")
-
-
+bubbleSort([1, 5, 10, 2, 1, 5, 15, 100, 1])
 
 
 

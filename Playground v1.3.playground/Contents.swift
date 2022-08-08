@@ -1,6 +1,34 @@
 import Foundation
 import UIKit
 
+
+
+
+
+// Counting Sort
+
+func countingSort(list: [Int], maxVal: Int) -> [Int] {
+    
+    let size = list.count
+    let m = maxVal + 1
+    var container = [Int](repeating: 0, count: m)
+    
+    for j in list {
+        container[j] += 1
+    }
+    
+    var outer = [Int](repeating: 0, count: size)
+    var i = 0
+    
+    for a in 0..<m {
+        for c in 0..<container[a] {
+            outer[i] = a
+            i += 1
+        }
+    }
+    return outer
+}
+
 // bubble sort
 func bubbleSort(_ input: [Int]) -> [Int] {
     guard input.count > 1 else {

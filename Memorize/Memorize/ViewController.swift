@@ -8,6 +8,8 @@
 import UIKit
 
 class ViewController: UITableViewController {
+    
+    var items = [MemoryItem]()
 
     override func viewDidLoad() {
         super.viewDidLoad()

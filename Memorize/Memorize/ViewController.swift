@@ -40,7 +40,7 @@ class ViewController: UITableViewController {
         return items.count
     }
     
-    override func tableVIew(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let item = items[indexPath.row]
         
@@ -49,6 +49,8 @@ class ViewController: UITableViewController {
         
         return cell
     }
+    
+    
 
 }
 

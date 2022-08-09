@@ -14,7 +14,7 @@
 		DD3904EA28A24B130093D59B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD3904E928A24B130093D59B /* Assets.xcassets */; };
 		DD3904ED28A24B130093D59B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3904EB28A24B130093D59B /* LaunchScreen.storyboard */; };
 		DD3904F528A24CBF0093D59B /* MemoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3904F428A24CBF0093D59B /* MemoryItem.swift */; };
-		DD3904F728A24F010093D59B /* MemoryItems.json in Resources */ = {isa = PBXBuildFile; fileRef = DD3904F628A24F010093D59B /* MemoryItems.json */; };
+		DD3904F728A24F010093D59B /* Items.json in Resources */ = {isa = PBXBuildFile; fileRef = DD3904F628A24F010093D59B /* Items.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		DD3904EC28A24B130093D59B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD3904EE28A24B130093D59B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD3904F428A24CBF0093D59B /* MemoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryItem.swift; sourceTree = "<group>"; };
-		DD3904F628A24F010093D59B /* MemoryItems.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MemoryItems.json; sourceTree = "<group>"; };
+		DD3904F628A24F010093D59B /* Items.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Items.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +44,6 @@
 		DD3904D428A24B0F0093D59B = {
 			isa = PBXGroup;
 			children = (
-				DD3904F428A24CBF0093D59B /* MemoryItem.swift */,
 				DD3904DF28A24B0F0093D59B /* Memorize */,
 				DD3904DE28A24B0F0093D59B /* Products */,
 			);
@@ -61,6 +60,7 @@
 		DD3904DF28A24B0F0093D59B /* Memorize */ = {
 			isa = PBXGroup;
 			children = (
+				DD3904F428A24CBF0093D59B /* MemoryItem.swift */,
 				DD3904E028A24B0F0093D59B /* AppDelegate.swift */,
 				DD3904E228A24B0F0093D59B /* SceneDelegate.swift */,
 				DD3904E428A24B0F0093D59B /* ViewController.swift */,
@@ -68,7 +68,7 @@
 				DD3904E928A24B130093D59B /* Assets.xcassets */,
 				DD3904EB28A24B130093D59B /* LaunchScreen.storyboard */,
 				DD3904EE28A24B130093D59B /* Info.plist */,
-				DD3904F628A24F010093D59B /* MemoryItems.json */,
+				DD3904F628A24F010093D59B /* Items.json */,
 			);
 			path = Memorize;
 			sourceTree = "<group>";
@@ -134,7 +134,7 @@
 				DD3904ED28A24B130093D59B /* LaunchScreen.storyboard in Resources */,
 				DD3904EA28A24B130093D59B /* Assets.xcassets in Resources */,
 				DD3904E828A24B0F0093D59B /* Main.storyboard in Resources */,
-				DD3904F728A24F010093D59B /* MemoryItems.json in Resources */,
+				DD3904F728A24F010093D59B /* Items.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -53,20 +53,39 @@
             </objects>
             <point key="canvasLocation" x="402.89855072463769" y="122.54464285714285"/>
         </scene>
-        <!--View Controller-->
+        <!--Memory View Controller-->
         <scene sceneID="BdV-cP-9GN">
             <objects>
-                <viewController id="vtv-WV-6cU" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemoryViewController" id="vtv-WV-6cU" customClass="MemoryViewController" customModule="Memorize" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9OA-jJ-axy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YV9-Qf-EU4">
+                                <rect key="frame" x="20" y="44" width="374" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="28"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="tEq-WU-r0p"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YV9-Qf-EU4" firstAttribute="top" secondItem="tEq-WU-r0p" secondAttribute="top" id="7rX-6D-iji"/>
+                            <constraint firstItem="tEq-WU-r0p" firstAttribute="trailing" secondItem="YV9-Qf-EU4" secondAttribute="trailing" constant="20" id="GQa-Ux-aNh"/>
+                            <constraint firstItem="tEq-WU-r0p" firstAttribute="bottom" secondItem="YV9-Qf-EU4" secondAttribute="bottom" id="IWj-qK-cjp"/>
+                            <constraint firstItem="YV9-Qf-EU4" firstAttribute="leading" secondItem="tEq-WU-r0p" secondAttribute="leading" constant="20" id="ZVg-Jy-BhT"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="YV9-Qf-EU4" id="buF-fA-MQH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nsk-ta-e7c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1129" y="123"/>
+            <point key="canvasLocation" x="1128.985507246377" y="122.54464285714285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="z1L-2F-JbQ">
@@ -88,6 +107,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

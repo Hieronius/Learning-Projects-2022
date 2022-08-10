@@ -15,6 +15,7 @@
 		DD3904ED28A24B130093D59B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3904EB28A24B130093D59B /* LaunchScreen.storyboard */; };
 		DD3904F528A24CBF0093D59B /* MemoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3904F428A24CBF0093D59B /* MemoryItem.swift */; };
 		DD3904F728A24F010093D59B /* Items.json in Resources */ = {isa = PBXBuildFile; fileRef = DD3904F628A24F010093D59B /* Items.json */; };
+		DD3904F928A3C6180093D59B /* MemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3904F828A3C6180093D59B /* MemoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		DD3904EE28A24B130093D59B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD3904F428A24CBF0093D59B /* MemoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryItem.swift; sourceTree = "<group>"; };
 		DD3904F628A24F010093D59B /* Items.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Items.json; sourceTree = "<group>"; };
+		DD3904F828A3C6180093D59B /* MemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				DD3904E028A24B0F0093D59B /* AppDelegate.swift */,
 				DD3904E228A24B0F0093D59B /* SceneDelegate.swift */,
 				DD3904E428A24B0F0093D59B /* ViewController.swift */,
+				DD3904F828A3C6180093D59B /* MemoryViewController.swift */,
 				DD3904E628A24B0F0093D59B /* Main.storyboard */,
 				DD3904E928A24B130093D59B /* Assets.xcassets */,
 				DD3904EB28A24B130093D59B /* LaunchScreen.storyboard */,
@@ -149,6 +152,7 @@
 				DD3904E128A24B0F0093D59B /* AppDelegate.swift in Sources */,
 				DD3904E328A24B0F0093D59B /* SceneDelegate.swift in Sources */,
 				DD3904F528A24CBF0093D59B /* MemoryItem.swift in Sources */,
+				DD3904F928A3C6180093D59B /* MemoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

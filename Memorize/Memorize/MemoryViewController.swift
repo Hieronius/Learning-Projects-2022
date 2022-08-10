@@ -10,6 +10,18 @@ class MemoryViewController: UIViewController {
     
     var blankCounter = 0
     
+    let visibleText: [NSAttributedString.Key: Any] = [
+        .font: UIFont(name: "Georgia", size: 28)!,
+        .foregroundColor: UIColor.black
+        ]
+    
+    let invisibleText: [NSAttributedString.Key: Any] = [
+        .font: UIFont(name: "Georgia", size: 28)!,
+        .foregroundColor: UIColor.clear,
+        .strikethroughStyle: 1,
+        .strikethroughColor: UIColor.black
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,18 +34,25 @@ class MemoryViewController: UIViewController {
     
     func showText() {
         let words = item.text.components(separatedBy: " ")
-        var output = ""
+        let output = NSMutableAttributedString()
+        
+        let space = NSAttributedString(string: " ", attributes: visibleText)
+        
+        
         
         for (index, word) in words.enumerated() {
             if index < blankCounter {
-                output += "\(word) "
+                let attributedWord = NSAttributedString(string: word, attributes: visibleText)
+                output.append(attributedWord)
             } else {
-                let blank = String(repeating: "_", count: word.count)
-                output += "\(blank) "
+                let attributedWord = NSAttributedString(string: word, attributes: invisibleText)
+                output.append(attributedWord)
+                
             }
+            output.append(space)
         }
         
-        textView.text = output
+        textView.attributedText = output
     }
     
     @objc func wordsTapped() {

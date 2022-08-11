@@ -6,7 +6,8 @@ class MemoryViewController: UIViewController {
 
     @IBOutlet var textView: UITextView!
     
-    var item: MemoryItem!
+    
+    var memoryItem: MemoryItem!
     
     var blankCounter = 0
     
@@ -25,15 +26,17 @@ class MemoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        assert(item != nil, "You must provide a memory item before trying to show this view controller")
-        showText()
+        assert(memoryItem != nil, "You must provide a memory item before trying to show this view controller")
+        
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(wordsTapped))
         textView.addGestureRecognizer(tapRecognizer)
+        
+        textView.attributedText = showText(for: memoryItem)
     }
     
-    func showText() {
-        let words = item.text.components(separatedBy: " ")
+    func showText(for memoryItem: MemoryItem) -> NSAttributedString {
+        let words = memoryItem.text.components(separatedBy: " ")
         let output = NSMutableAttributedString()
         
         let space = NSAttributedString(string: " ", attributes: visibleText)
@@ -42,21 +45,32 @@ class MemoryViewController: UIViewController {
         
         for (index, word) in words.enumerated() {
             if index < blankCounter {
-                let attributedWord = NSAttributedString(string: word, attributes: visibleText)
+                let attributedWord = NSAttributedString(string: "\(word)", attributes: visibleText)
                 output.append(attributedWord)
             } else {
-                let attributedWord = NSAttributedString(string: word, attributes: invisibleText)
+                
+                var strippedWord = word
+                var punctiation: String?
+                
+                if ".,".contains(word.last!) {
+                    punctiation = String(strippedWord.removeLast())
+                }
+                let attributedWord = NSAttributedString(string: "\(strippedWord)", attributes: invisibleText)
                 output.append(attributedWord)
                 
+                if let symbol = punctiation {
+                    let attirubetedPunctuation = NSAttributedString(string: symbol, attributes: visibleText)
+                    output.append(attirubetedPunctuation)
+                }
             }
             output.append(space)
         }
         
-        textView.attributedText = output
+        return output
     }
     
     @objc func wordsTapped() {
         blankCounter += 1
-        showText()
+        textView.attributedText = showText(for: memoryItem)
     }
 }

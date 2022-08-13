@@ -21,6 +21,13 @@ class ViewController: UIViewController {
 
 extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        let urlString = 
+        let urlString = "http://api.weatherapi.com/v1/current.json?key=46e527355e2741a393d92034221308&q=Moscow"
+        
+        let url = URL(string: urlString)
+        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            
+        }
+        
+        task.resume()
     }
 }

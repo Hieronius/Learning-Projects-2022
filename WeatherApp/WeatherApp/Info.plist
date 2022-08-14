@@ -8,6 +8,8 @@
 		<true/>
 		<key>NSExceptionDomains</key>
 		<dict>
+			<key>apixu.com</key>
+			<string></string>
 			<key>weatherapi.com</key>
 			<string></string>
 		</dict>

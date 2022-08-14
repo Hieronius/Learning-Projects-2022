@@ -24,10 +24,26 @@ extension ViewController: UISearchBarDelegate {
         let urlString = "http://api.apixu.com/v1/current.json?key=2fbcbca7114dd43fb82e1449491806018q=\(searchBar.text!)"
         
         let url = URL(string: urlString)
-        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
-            
-        }
         
-        task.resume()
+        var locationName: String?
+        var temperature: Double?
+        
+        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+        
+        do {
+            let json = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves) as! [String: AnyObject]
+            
+            if let location = json["location"] as? String {
+                locationName = location["name"] as? String
+    }
+            if let current = json["current"] {
+                temperature = current["temp_c"] as? Double
+            }
+        catch let jsonError {
+            print(jsonError)
+        }
+                
+                task.resume()
     }
 }
+    }

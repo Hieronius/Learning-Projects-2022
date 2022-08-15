@@ -15,6 +15,11 @@
 		DD39055528A96AA50093D59B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD39055328A96AA50093D59B /* LaunchScreen.storyboard */; };
 		DD39056028A96DF50093D59B /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD39055F28A96DF50093D59B /* Tabbar.storyboard */; };
 		DD39056228AA3A1D0093D59B /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD39056128AA3A1D0093D59B /* TabbarController.swift */; };
+		DD39056928AA3B210093D59B /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD39056828AA3B210093D59B /* FeedViewController.swift */; };
+		DD39056B28AA3B4E0093D59B /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD39056A28AA3B4E0093D59B /* NotificationsViewController.swift */; };
+		DD39056D28AA3B5C0093D59B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD39056C28AA3B5C0093D59B /* ChatViewController.swift */; };
+		DD39056F28AA3B720093D59B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD39056E28AA3B720093D59B /* SearchViewController.swift */; };
+		DD39057128AA3B800093D59B /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD39057028AA3B800093D59B /* FeedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		DD39055628A96AA50093D59B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD39055F28A96DF50093D59B /* Tabbar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tabbar.storyboard; sourceTree = "<group>"; };
 		DD39056128AA3A1D0093D59B /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
+		DD39056828AA3B210093D59B /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		DD39056A28AA3B4E0093D59B /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		DD39056C28AA3B5C0093D59B /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		DD39056E28AA3B720093D59B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		DD39057028AA3B800093D59B /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +70,11 @@
 		DD39054728A96A9E0093D59B /* VK */ = {
 			isa = PBXGroup;
 			children = (
+				DD39056728AA3ADA0093D59B /* profile */,
+				DD39056628AA3ACE0093D59B /* notifications */,
+				DD39056528AA3AC80093D59B /* chat */,
+				DD39056428AA3AC10093D59B /* search */,
+				DD39056328AA3AA40093D59B /* feed */,
 				DD39054828A96A9E0093D59B /* AppDelegate.swift */,
 				DD39054A28A96A9E0093D59B /* SceneDelegate.swift */,
 				DD39054C28A96A9E0093D59B /* ViewController.swift */,
@@ -95,6 +110,46 @@
 			children = (
 			);
 			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		DD39056328AA3AA40093D59B /* feed */ = {
+			isa = PBXGroup;
+			children = (
+				DD39057028AA3B800093D59B /* FeedViewController.swift */,
+			);
+			path = feed;
+			sourceTree = "<group>";
+		};
+		DD39056428AA3AC10093D59B /* search */ = {
+			isa = PBXGroup;
+			children = (
+				DD39056E28AA3B720093D59B /* SearchViewController.swift */,
+			);
+			path = search;
+			sourceTree = "<group>";
+		};
+		DD39056528AA3AC80093D59B /* chat */ = {
+			isa = PBXGroup;
+			children = (
+				DD39056C28AA3B5C0093D59B /* ChatViewController.swift */,
+			);
+			path = chat;
+			sourceTree = "<group>";
+		};
+		DD39056628AA3ACE0093D59B /* notifications */ = {
+			isa = PBXGroup;
+			children = (
+				DD39056A28AA3B4E0093D59B /* NotificationsViewController.swift */,
+			);
+			path = notifications;
+			sourceTree = "<group>";
+		};
+		DD39056728AA3ADA0093D59B /* profile */ = {
+			isa = PBXGroup;
+			children = (
+				DD39056828AA3B210093D59B /* FeedViewController.swift */,
+			);
+			path = profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,7 +225,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD39054D28A96A9E0093D59B /* ViewController.swift in Sources */,
+				DD39057128AA3B800093D59B /* FeedViewController.swift in Sources */,
 				DD39056228AA3A1D0093D59B /* TabbarController.swift in Sources */,
+				DD39056F28AA3B720093D59B /* SearchViewController.swift in Sources */,
+				DD39056928AA3B210093D59B /* FeedViewController.swift in Sources */,
+				DD39056D28AA3B5C0093D59B /* ChatViewController.swift in Sources */,
+				DD39056B28AA3B4E0093D59B /* NotificationsViewController.swift in Sources */,
 				DD39054928A96A9E0093D59B /* AppDelegate.swift in Sources */,
 				DD39054B28A96A9E0093D59B /* SceneDelegate.swift in Sources */,
 			);

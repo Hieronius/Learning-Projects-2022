@@ -31,14 +31,25 @@
                     <view key="view" contentMode="scaleToFill" id="lEx-uY-Coq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notifications-2" translatesAutoresizingMaskIntoConstraints="NO" id="t8d-uG-Vdm">
+                                <rect key="frame" x="20" y="64" width="374" height="812"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="kf1-VO-6oM"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.92157220839999998" green="0.92548459770000002" blue="0.93782955410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="kf1-VO-6oM" firstAttribute="trailing" secondItem="t8d-uG-Vdm" secondAttribute="trailing" constant="20" id="1kZ-oN-STV"/>
+                            <constraint firstAttribute="bottom" secondItem="t8d-uG-Vdm" secondAttribute="bottom" constant="20" id="BB6-Dg-TbL"/>
+                            <constraint firstItem="t8d-uG-Vdm" firstAttribute="leading" secondItem="lEx-uY-Coq" secondAttribute="leading" constant="20" id="PdC-ca-lDv"/>
+                            <constraint firstItem="t8d-uG-Vdm" firstAttribute="top" secondItem="kf1-VO-6oM" secondAttribute="top" constant="20" id="WyO-cg-lX6"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="notifications" id="krH-G0-7Wo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xil-36-brw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="884" y="522"/>
+            <point key="canvasLocation" x="882.60869565217399" y="521.65178571428567"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="xlB-yN-XKm">
@@ -114,6 +125,7 @@
         <image name="chat" width="23.666666030883789" height="22.666666030883789"/>
         <image name="feed" width="20" height="20"/>
         <image name="notifications" width="22.333333969116211" height="22"/>
+        <image name="notifications-2" width="786" height="810"/>
         <image name="profile" width="24.333333969116211" height="20"/>
         <image name="search" width="21.333333969116211" height="21"/>
         <systemColor name="systemBackgroundColor">

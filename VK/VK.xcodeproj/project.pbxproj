@@ -21,6 +21,8 @@
 		DD39056F28AA3B720093D59B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD39056E28AA3B720093D59B /* SearchViewController.swift */; };
 		DD39057128AA3B800093D59B /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD39057028AA3B800093D59B /* FeedViewController.swift */; };
 		DD39057328AB7D7F0093D59B /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD39057228AB7D7F0093D59B /* ProfileTableViewCell.swift */; };
+		DD39057628AB81540093D59B /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD39057528AB81540093D59B /* HeaderView.xib */; };
+		DD39057828AB81A00093D59B /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD39057728AB81A00093D59B /* HeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		DD39056E28AA3B720093D59B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		DD39057028AA3B800093D59B /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		DD39057228AB7D7F0093D59B /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		DD39057528AB81540093D59B /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		DD39057728AB81A00093D59B /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,10 +153,20 @@
 		DD39056728AA3ADA0093D59B /* profile */ = {
 			isa = PBXGroup;
 			children = (
+				DD39057428AB81220093D59B /* header */,
 				DD39056828AA3B210093D59B /* ProfileViewController.swift */,
 				DD39057228AB7D7F0093D59B /* ProfileTableViewCell.swift */,
 			);
 			path = profile;
+			sourceTree = "<group>";
+		};
+		DD39057428AB81220093D59B /* header */ = {
+			isa = PBXGroup;
+			children = (
+				DD39057528AB81540093D59B /* HeaderView.xib */,
+				DD39057728AB81A00093D59B /* HeaderView.swift */,
+			);
+			path = header;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD39056028A96DF50093D59B /* Tabbar.storyboard in Resources */,
+				DD39057628AB81540093D59B /* HeaderView.xib in Resources */,
 				DD39055528A96AA50093D59B /* LaunchScreen.storyboard in Resources */,
 				DD39055228A96AA50093D59B /* Assets.xcassets in Resources */,
 				DD39055028A96A9E0093D59B /* Main.storyboard in Resources */,
@@ -234,6 +249,7 @@
 				DD39056F28AA3B720093D59B /* SearchViewController.swift in Sources */,
 				DD39056928AA3B210093D59B /* ProfileViewController.swift in Sources */,
 				DD39056D28AA3B5C0093D59B /* ChatViewController.swift in Sources */,
+				DD39057828AB81A00093D59B /* HeaderView.swift in Sources */,
 				DD39056B28AA3B4E0093D59B /* NotificationsViewController.swift in Sources */,
 				DD39054928A96A9E0093D59B /* AppDelegate.swift in Sources */,
 				DD39054B28A96A9E0093D59B /* SceneDelegate.swift in Sources */,

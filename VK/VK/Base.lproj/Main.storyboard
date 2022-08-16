@@ -35,6 +35,9 @@
                         <color key="barTintColor" systemColor="systemPurpleColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Oo7-hh-hGk">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="UcB-9H-YQR" kind="relationship" relationship="rootViewController" id="vYy-uc-eEL"/>
                     </connections>

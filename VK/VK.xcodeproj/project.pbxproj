@@ -20,6 +20,7 @@
 		DD39056D28AA3B5C0093D59B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD39056C28AA3B5C0093D59B /* ChatViewController.swift */; };
 		DD39056F28AA3B720093D59B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD39056E28AA3B720093D59B /* SearchViewController.swift */; };
 		DD39057128AA3B800093D59B /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD39057028AA3B800093D59B /* FeedViewController.swift */; };
+		DD39057328AB7D7F0093D59B /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD39057228AB7D7F0093D59B /* ProfileTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		DD39056C28AA3B5C0093D59B /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		DD39056E28AA3B720093D59B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		DD39057028AA3B800093D59B /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		DD39057228AB7D7F0093D59B /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				DD39056828AA3B210093D59B /* ProfileViewController.swift */,
+				DD39057228AB7D7F0093D59B /* ProfileTableViewCell.swift */,
 			);
 			path = profile;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				DD39054D28A96A9E0093D59B /* ViewController.swift in Sources */,
 				DD39057128AA3B800093D59B /* FeedViewController.swift in Sources */,
 				DD39056228AA3A1D0093D59B /* TabbarController.swift in Sources */,
+				DD39057328AB7D7F0093D59B /* ProfileTableViewCell.swift in Sources */,
 				DD39056F28AA3B720093D59B /* SearchViewController.swift in Sources */,
 				DD39056928AA3B210093D59B /* ProfileViewController.swift in Sources */,
 				DD39056D28AA3B5C0093D59B /* ChatViewController.swift in Sources */,

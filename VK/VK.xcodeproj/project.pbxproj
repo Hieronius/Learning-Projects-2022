@@ -28,6 +28,7 @@
 		DD39057F28ACDED70093D59B /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = DD39057E28ACDED70093D59B /* FirebaseDatabase */; };
 		DD39058128ACDED70093D59B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DD39058028ACDED70093D59B /* FirebaseFirestore */; };
 		DD39058328ACDED70093D59B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = DD39058228ACDED70093D59B /* FirebaseStorage */; };
+		DDE0CFC528AEAB8E0064B787 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0CFC428AEAB8E0064B787 /* APIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		DD39057528AB81540093D59B /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		DD39057728AB81A00093D59B /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		DD39057928ACDAAA0093D59B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DDE0CFC428AEAB8E0064B787 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				DD39057028AA3B800093D59B /* FeedViewController.swift */,
+				DDE0CFC428AEAB8E0064B787 /* APIManager.swift */,
 			);
 			path = feed;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDE0CFC528AEAB8E0064B787 /* APIManager.swift in Sources */,
 				DD39054D28A96A9E0093D59B /* ViewController.swift in Sources */,
 				DD39057128AA3B800093D59B /* FeedViewController.swift in Sources */,
 				DD39056228AA3A1D0093D59B /* TabbarController.swift in Sources */,

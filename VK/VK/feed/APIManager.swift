@@ -27,8 +27,8 @@ class APIManager {
     func getPost(id: String, imageID: String, completion: @escaping (Post?) -> Void) {
         
         let db = configureFB()
-        db.collection("posts").document(id).getDocument() { (document, error) in
-            guard error == nil else {completion(nil); return }
+        db.collection("Posts").document(id).getDocument() { (document, error) in
+            guard error == nil else {completion(nil); return}
             self.getImage(id: imageID, completion: {image in
                 let post = Post(name: document?.get("name") as! String, date: document?.get("date") as! String, text: document?.get("text") as! String, image: image)
                 completion(post)

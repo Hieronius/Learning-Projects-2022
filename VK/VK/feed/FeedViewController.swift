@@ -4,6 +4,10 @@ import UIKit
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
+    @IBOutlet weak var table: UITableView!
+    
+    
     var posts: [Post] = []
 
     override func viewDidLoad() {
@@ -19,6 +23,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                         self.posts.append(res4!)
                         APIManager.shared.getPost(id: "post5", imageID: "5") {res5 in
                             self.posts.append(res5!)
+                            DispatchQueue.main.async {
+                                self.table.reloadData()
+                            }
                         }
                     }
                 }

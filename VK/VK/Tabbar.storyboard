@@ -51,10 +51,10 @@
             </objects>
             <point key="canvasLocation" x="882.60869565217399" y="521.65178571428567"/>
         </scene>
-        <!--View Controller-->
+        <!--Feed View Controller-->
         <scene sceneID="xlB-yN-XKm">
             <objects>
-                <viewController id="4aY-dY-T8r" sceneMemberID="viewController">
+                <viewController id="4aY-dY-T8r" customClass="FeedViewController" customModule="VK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oeV-DM-bZW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -128,6 +128,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="feed" id="u11-9X-Nhm"/>
+                    <connections>
+                        <outlet property="table" destination="fAA-Ll-2iz" id="NwP-UU-uQb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vsl-vo-kmO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

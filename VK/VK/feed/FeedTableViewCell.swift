@@ -9,7 +9,7 @@ import UIKit
 
 class FeedTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var postName: UIStackView!
+    @IBOutlet weak var postName: UILabel!
     
     @IBOutlet weak var postDate: UILabel!
     

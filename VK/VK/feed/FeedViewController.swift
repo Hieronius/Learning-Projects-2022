@@ -9,15 +9,34 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        APIManager.shared.getPost(id: "post1", imageID: "1") {res1 in
+            self.posts.append(res1!)
+            APIManager.shared.getPost(id: "post2", imageID: "2") {res2 in
+                self.posts.append(res2!)
+                APIManager.shared.getPost(id: "post3", imageID: "3") {res3 in
+                    self.posts.append(res1!)
+                    APIManager.shared.getPost(id: "post4", imageID: "4") {res4 in
+                        self.posts.append(res4!)
+                        APIManager.shared.getPost(id: "post5", imageID: "5") {res5 in
+                            self.posts.append(res5!)
+                        }
+                    }
+                }
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FeedTableViewCell
+        cell.postName.text = posts[indexPath.row].name
+        cell.postDate.text = posts[indexPath.row].date
+        cell.postText.text = posts[indexPath.row].text
+        cell.postImage.image = posts[indexPath.row].image
+        return cell
     }
     
 

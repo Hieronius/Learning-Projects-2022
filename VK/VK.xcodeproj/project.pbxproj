@@ -29,6 +29,7 @@
 		DD39058128ACDED70093D59B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DD39058028ACDED70093D59B /* FirebaseFirestore */; };
 		DD39058328ACDED70093D59B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = DD39058228ACDED70093D59B /* FirebaseStorage */; };
 		DDE0CFC528AEAB8E0064B787 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0CFC428AEAB8E0064B787 /* APIManager.swift */; };
+		DDE0CFC728AEB2E60064B787 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0CFC628AEB2E60064B787 /* FeedTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		DD39057728AB81A00093D59B /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		DD39057928ACDAAA0093D59B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DDE0CFC428AEAB8E0064B787 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		DDE0CFC628AEB2E60064B787 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 			children = (
 				DD39057028AA3B800093D59B /* FeedViewController.swift */,
 				DDE0CFC428AEAB8E0064B787 /* APIManager.swift */,
+				DDE0CFC628AEB2E60064B787 /* FeedTableViewCell.swift */,
 			);
 			path = feed;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				DD39057128AA3B800093D59B /* FeedViewController.swift in Sources */,
 				DD39056228AA3A1D0093D59B /* TabbarController.swift in Sources */,
 				DD39057328AB7D7F0093D59B /* ProfileTableViewCell.swift in Sources */,
+				DDE0CFC728AEB2E60064B787 /* FeedTableViewCell.swift in Sources */,
 				DD39056F28AA3B720093D59B /* SearchViewController.swift in Sources */,
 				DD39056928AA3B210093D59B /* ProfileViewController.swift in Sources */,
 				DD39056D28AA3B5C0093D59B /* ChatViewController.swift in Sources */,

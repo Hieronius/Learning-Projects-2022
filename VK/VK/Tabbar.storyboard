@@ -63,15 +63,15 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="299" id="hjp-Aq-YiG">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="299" id="hjp-Aq-YiG" customClass="FeedTableViewCell" customModule="VK" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="299"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hjp-Aq-YiG" id="gy3-f6-KZr">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="299"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="pST-Jp-2Fb">
-                                                    <rect key="frame" x="20" y="11" width="374" height="276"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="pST-Jp-2Fb">
+                                                    <rect key="frame" x="30" y="21" width="374" height="257"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXW-eu-PXK">
                                                             <rect key="frame" x="0.0" y="0.0" width="43.5" height="20.5"/>
@@ -91,15 +91,31 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F85-Ws-vmY">
-                                                            <rect key="frame" x="0.0" y="133" width="374" height="143"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F85-Ws-vmY">
+                                                            <rect key="frame" x="0.0" y="133" width="374" height="124"/>
                                                         </imageView>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="pST-Jp-2Fb" firstAttribute="trailing" secondItem="gy3-f6-KZr" secondAttribute="trailingMargin" constant="10" id="0FE-fq-CrY"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="pST-Jp-2Fb" secondAttribute="bottom" constant="10" id="BvC-Mp-K0j"/>
+                                                <constraint firstItem="pST-Jp-2Fb" firstAttribute="leading" secondItem="gy3-f6-KZr" secondAttribute="leadingMargin" constant="10" id="V7B-h9-CiI"/>
+                                                <constraint firstItem="pST-Jp-2Fb" firstAttribute="top" secondItem="gy3-f6-KZr" secondAttribute="topMargin" constant="10" id="p1o-tP-Vmk"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="postDate" destination="AaK-4A-scT" id="Ed6-Er-ZRK"/>
+                                            <outlet property="postImage" destination="F85-Ws-vmY" id="bWV-Gt-9gi"/>
+                                            <outlet property="postName" destination="pST-Jp-2Fb" id="WCo-DC-8kY"/>
+                                            <outlet property="postText" destination="j56-1m-cSb" id="1u0-GB-GMa"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="4aY-dY-T8r" id="mZU-ME-fkU"/>
+                                    <outlet property="delegate" destination="4aY-dY-T8r" id="tOJ-E8-Ip2"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iaU-YJ-bkg"/>

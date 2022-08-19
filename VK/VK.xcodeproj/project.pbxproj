@@ -136,8 +136,8 @@
 		DD39056328AA3AA40093D59B /* feed */ = {
 			isa = PBXGroup;
 			children = (
-				DD39057028AA3B800093D59B /* FeedViewController.swift */,
 				DDE0CFC428AEAB8E0064B787 /* APIManager.swift */,
+				DD39057028AA3B800093D59B /* FeedViewController.swift */,
 				DDE0CFC628AEB2E60064B787 /* FeedTableViewCell.swift */,
 			);
 			path = feed;

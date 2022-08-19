@@ -1,9 +1,4 @@
-//
-//  APIManager.swift
-//  VK
-//
-//  Created by Арсентий Халимовский on 18.08.2022.
-//
+
 
 import Foundation
 import UIKit
@@ -40,7 +35,7 @@ class APIManager {
         
         let storage = Storage.storage()
         let reference = storage.reference()
-        let pathRef = reference.child("pictures")
+        let pathRef = reference.child("Pictures")
         
         var image: UIImage = UIImage(named: "chat")!
         

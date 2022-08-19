@@ -105,10 +105,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="postDate" destination="AaK-4A-scT" id="Ed6-Er-ZRK"/>
-                                            <outlet property="postImage" destination="F85-Ws-vmY" id="bWV-Gt-9gi"/>
-                                            <outlet property="postName" destination="pST-Jp-2Fb" id="WCo-DC-8kY"/>
-                                            <outlet property="postText" destination="j56-1m-cSb" id="1u0-GB-GMa"/>
+                                            <outlet property="postDate" destination="AaK-4A-scT" id="BtA-4a-fAG"/>
+                                            <outlet property="postImage" destination="F85-Ws-vmY" id="4aF-aI-aNQ"/>
+                                            <outlet property="postName" destination="iXW-eu-PXK" id="oS4-AM-COM"/>
+                                            <outlet property="postText" destination="j56-1m-cSb" id="B5m-uS-87E"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -26,6 +26,33 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         stackView.axis = .horizontal
         stackView.distribution = .equalSpacing
         
+        let btn1 = UIButton()
+        btn1.setImage(UIImage(named: "Home"), for: .normal)
+        
+        let btn2 = UIButton()
+        btn2.setImage(UIImage(named: "Discover"), for: .normal)
+        
+        let btn3 = UIButton()
+        btn3.setImage(UIImage(named: "Button Shape"), for: .normal)
+        
+        let btn4 = UIButton()
+        btn4.setImage(UIImage(named: "Inbox"), for: .normal)
+        
+        let btn5 = UIButton()
+        btn5.setImage(UIImage(named: "Me"), for: .normal)
+        
+        stackView.addArrangedSubview(btn1)
+        stackView.addArrangedSubview(btn2)
+        stackView.addArrangedSubview(btn3)
+        stackView.addArrangedSubview(btn4)
+        stackView.addArrangedSubview(btn5)
+        
+        view.addSubview(stackView)
+        stackView.snp.makeConstraints { maker in
+            maker.left.right.bottom.equalTo(60)
+        }
+        
+        
         
     }
 
@@ -34,7 +61,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        return UITableViewCell()
     }
 
 }

@@ -22,6 +22,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             maker.edges.equalToSuperview()
         }
         
+        let blackView = UIView()
+        blackView.backgroundColor = .black
+        view.addSubview(blackView)
+        blackView.snp.makeConstraints { maker in
+            maker.left.right.bottom.equalToSuperview()
+            maker.height.equalTo(80)
+        }
+        
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.distribution = .equalSpacing
@@ -53,13 +61,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             maker.height.equalTo(60)
         }
         
-        let blackView = UIView()
-        blackView.backgroundColor = .black
-        view.addSubview(blackView)
-        blackView.snp.makeConstraints { maker in
-            maker.left.right.bottom.equalToSuperview()
-            maker.height.equalTo(80)
-        }
+        
         
         
     }

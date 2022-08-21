@@ -14,6 +14,7 @@
 		DDE0CFDC28B114A90064B787 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE0CFDA28B114A90064B787 /* Main.storyboard */; };
 		DDE0CFDE28B114AD0064B787 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDE0CFDD28B114AD0064B787 /* Assets.xcassets */; };
 		DDE0CFE128B114AD0064B787 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE0CFDF28B114AD0064B787 /* LaunchScreen.storyboard */; };
+		DDE0CFE928B229880064B787 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0CFE828B229880064B787 /* VideoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		DDE0CFDD28B114AD0064B787 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDE0CFE028B114AD0064B787 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDE0CFE228B114AD0064B787 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDE0CFE828B229880064B787 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		E6C6CB919B0F19646F18174B /* Pods-TikTok.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikTok.release.xcconfig"; path = "Target Support Files/Pods-TikTok/Pods-TikTok.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,7 +50,6 @@
 				5F776EF485CE17F4783A21BD /* Pods-TikTok.debug.xcconfig */,
 				E6C6CB919B0F19646F18174B /* Pods-TikTok.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -88,6 +89,7 @@
 				DDE0CFDD28B114AD0064B787 /* Assets.xcassets */,
 				DDE0CFDF28B114AD0064B787 /* LaunchScreen.storyboard */,
 				DDE0CFE228B114AD0064B787 /* Info.plist */,
+				DDE0CFE828B229880064B787 /* VideoTableViewCell.swift */,
 			);
 			path = TikTok;
 			sourceTree = "<group>";
@@ -208,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDE0CFD928B114A90064B787 /* ViewController.swift in Sources */,
+				DDE0CFE928B229880064B787 /* VideoTableViewCell.swift in Sources */,
 				DDE0CFD528B114A90064B787 /* AppDelegate.swift in Sources */,
 				DDE0CFD728B114A90064B787 /* SceneDelegate.swift in Sources */,
 			);

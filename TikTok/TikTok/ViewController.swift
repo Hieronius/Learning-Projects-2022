@@ -49,9 +49,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         view.addSubview(stackView)
         stackView.snp.makeConstraints { maker in
-            maker.left.right.bottom.equalTo(60)
+            maker.left.right.bottom.equalToSuperview().inset(15)
+            maker.height.equalTo(60)
         }
         
+        let blackView = UIView()
+        blackView.backgroundColor = .black
+        view.addSubview(blackView)
+        blackView.snp.makeConstraints { maker in
+            maker.left.right.bottom.equalToSuperview()
+            maker.height.equalTo(80)
+        }
         
         
     }

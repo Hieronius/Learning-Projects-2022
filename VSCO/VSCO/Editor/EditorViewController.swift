@@ -21,6 +21,20 @@ class EditorViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-
+    @IBAction func action1(_ sender: Any) {
+    }
+    
+    @IBAction func action2(_ sender: Any) {
+    }
+    
+    @IBAction func action3(_ sender: Any) {
+    }
+    
+    @IBAction func action4(_ sender: Any) {
+    }
+    
+    @IBAction func action5(_ sender: Any) {
+    }
+    
+    
 }

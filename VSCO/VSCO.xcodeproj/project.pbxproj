@@ -14,6 +14,8 @@
 		DDE0D00028B230B20064B787 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDE0CFFF28B230B20064B787 /* Assets.xcassets */; };
 		DDE0D00328B230B20064B787 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE0D00128B230B20064B787 /* LaunchScreen.storyboard */; };
 		DDE0D00B28B2315F0064B787 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0D00A28B2315F0064B787 /* ImagePicker.swift */; };
+		DDE0D00E28B35BBF0064B787 /* Editor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE0D00D28B35BBF0064B787 /* Editor.storyboard */; };
+		DDE0D01028B35BF90064B787 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0D00F28B35BF90064B787 /* EditorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		DDE0D00228B230B20064B787 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDE0D00428B230B20064B787 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDE0D00A28B2315F0064B787 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		DDE0D00D28B35BBF0064B787 /* Editor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Editor.storyboard; sourceTree = "<group>"; };
+		DDE0D00F28B35BF90064B787 /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 		DDE0CFF528B230AF0064B787 /* VSCO */ = {
 			isa = PBXGroup;
 			children = (
+				DDE0D00C28B35BA70064B787 /* Editor */,
 				DDE0CFF628B230AF0064B787 /* AppDelegate.swift */,
 				DDE0CFF828B230AF0064B787 /* SceneDelegate.swift */,
 				DDE0CFFA28B230AF0064B787 /* ViewController.swift */,
@@ -68,6 +73,15 @@
 				DDE0D00A28B2315F0064B787 /* ImagePicker.swift */,
 			);
 			path = VSCO;
+			sourceTree = "<group>";
+		};
+		DDE0D00C28B35BA70064B787 /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				DDE0D00D28B35BBF0064B787 /* Editor.storyboard */,
+				DDE0D00F28B35BF90064B787 /* EditorViewController.swift */,
+			);
+			path = Editor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +145,7 @@
 				DDE0D00328B230B20064B787 /* LaunchScreen.storyboard in Resources */,
 				DDE0D00028B230B20064B787 /* Assets.xcassets in Resources */,
 				DDE0CFFE28B230AF0064B787 /* Main.storyboard in Resources */,
+				DDE0D00E28B35BBF0064B787 /* Editor.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +159,7 @@
 				DDE0CFFB28B230AF0064B787 /* ViewController.swift in Sources */,
 				DDE0D00B28B2315F0064B787 /* ImagePicker.swift in Sources */,
 				DDE0CFF728B230AF0064B787 /* AppDelegate.swift in Sources */,
+				DDE0D01028B35BF90064B787 /* EditorViewController.swift in Sources */,
 				DDE0CFF928B230AF0064B787 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

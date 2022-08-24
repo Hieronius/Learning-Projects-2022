@@ -16,6 +16,7 @@
 		DDE0D03728B4AC630064B787 /* Basic_requestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0D03628B4AC630064B787 /* Basic_requestTests.swift */; };
 		DDE0D04128B4AC630064B787 /* Basic_requestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0D04028B4AC630064B787 /* Basic_requestUITests.swift */; };
 		DDE0D04328B4AC630064B787 /* Basic_requestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0D04228B4AC630064B787 /* Basic_requestUITestsLaunchTests.swift */; };
+		DDE0D05028B4B7440064B787 /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0D04F28B4B7440064B787 /* Joke.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		DDE0D03C28B4AC630064B787 /* Basic requestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Basic requestUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDE0D04028B4AC630064B787 /* Basic_requestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basic_requestUITests.swift; sourceTree = "<group>"; };
 		DDE0D04228B4AC630064B787 /* Basic_requestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basic_requestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DDE0D04F28B4B7440064B787 /* Joke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				DDE0D02828B4AC630064B787 /* Assets.xcassets */,
 				DDE0D02A28B4AC630064B787 /* LaunchScreen.storyboard */,
 				DDE0D02D28B4AC630064B787 /* Info.plist */,
+				DDE0D04F28B4B7440064B787 /* Joke.swift */,
 			);
 			path = "Basic request";
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			files = (
 				DDE0D02428B4AC5E0064B787 /* ViewController.swift in Sources */,
 				DDE0D02028B4AC5E0064B787 /* AppDelegate.swift in Sources */,
+				DDE0D05028B4B7440064B787 /* Joke.swift in Sources */,
 				DDE0D02228B4AC5E0064B787 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

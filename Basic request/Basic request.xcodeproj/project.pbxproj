@@ -17,6 +17,7 @@
 		DDE0D04128B4AC630064B787 /* Basic_requestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0D04028B4AC630064B787 /* Basic_requestUITests.swift */; };
 		DDE0D04328B4AC630064B787 /* Basic_requestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0D04228B4AC630064B787 /* Basic_requestUITestsLaunchTests.swift */; };
 		DDE0D05028B4B7440064B787 /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0D04F28B4B7440064B787 /* Joke.swift */; };
+		DDE0D05328B603680064B787 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0D05228B603670064B787 /* ApiManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		DDE0D04028B4AC630064B787 /* Basic_requestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basic_requestUITests.swift; sourceTree = "<group>"; };
 		DDE0D04228B4AC630064B787 /* Basic_requestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basic_requestUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DDE0D04F28B4B7440064B787 /* Joke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
+		DDE0D05228B603670064B787 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		DDE0D01E28B4AC5E0064B787 /* Basic request */ = {
 			isa = PBXGroup;
 			children = (
+				DDE0D05128B6034A0064B787 /* API */,
 				DDE0D01F28B4AC5E0064B787 /* AppDelegate.swift */,
 				DDE0D02128B4AC5E0064B787 /* SceneDelegate.swift */,
 				DDE0D02328B4AC5E0064B787 /* ViewController.swift */,
@@ -128,6 +131,30 @@
 				DDE0D04228B4AC630064B787 /* Basic_requestUITestsLaunchTests.swift */,
 			);
 			path = "Basic requestUITests";
+			sourceTree = "<group>";
+		};
+		DDE0D05128B6034A0064B787 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				DDE0D05528B603840064B787 /* models */,
+				DDE0D05428B603700064B787 /* services */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		DDE0D05428B603700064B787 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				DDE0D05228B603670064B787 /* ApiManager.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		DDE0D05528B603840064B787 /* models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +290,7 @@
 			files = (
 				DDE0D02428B4AC5E0064B787 /* ViewController.swift in Sources */,
 				DDE0D02028B4AC5E0064B787 /* AppDelegate.swift in Sources */,
+				DDE0D05328B603680064B787 /* ApiManager.swift in Sources */,
 				DDE0D05028B4B7440064B787 /* Joke.swift in Sources */,
 				DDE0D02228B4AC5E0064B787 /* SceneDelegate.swift in Sources */,
 			);

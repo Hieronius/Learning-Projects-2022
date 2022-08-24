@@ -24,7 +24,7 @@ class ViewController: UIViewController {
             
             if let data = data, let joke = try? JSONDecoder().decode(Joke.self, from: data) {
                 
-                print(joke.setup)
+                print(joke.flags.racist)
             }
         }
         task.resume()

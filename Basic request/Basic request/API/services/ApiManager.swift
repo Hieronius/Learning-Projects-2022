@@ -14,7 +14,7 @@ enum ApiType {
         return "https://jsonplaceholder.typicode.com/"
     }
     
-    var header: [String: String] {
+    var headers: [String: String] {
         switch self {
         case .login:
             return ["authToken": "12345"]
@@ -33,6 +33,27 @@ enum ApiType {
     }
     
     var request: URLRequest {
+        var url = URL(string: path, relativeTo: URL(string: baseURL)!)!
+        var request = URLRequest(url: url)
+        request.allHTTPHeaderFields = headers
+        switch self {
+        case .login:
+            request.httpMethod = "POST"
+            return request
+        default:
+            request.httpMethod = "GET"
+            return request
+        }
+    }
+}
+
+
+class ApiManager {
+    
+    static let shared = ApiManager()
+    
+    func getUsers() {
+        
         
     }
 }

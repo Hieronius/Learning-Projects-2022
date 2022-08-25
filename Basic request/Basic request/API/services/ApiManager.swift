@@ -1,6 +1,7 @@
 
 
 import Foundation
+import UIKit
 
 
 enum ApiType {
@@ -52,8 +53,13 @@ class ApiManager {
     
     static let shared = ApiManager()
     
-    func getUsers() {
+    func getUsers(completion: @escaping (Users) -> Void) {
         
-        
-    }
+        var request = ApiType.getUsers.request
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            print(data?.count))
+        }
+        task.resume()
+}
+
 }

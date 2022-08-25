@@ -19,6 +19,8 @@
 		DDE0D05028B4B7440064B787 /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0D04F28B4B7440064B787 /* Joke.swift */; };
 		DDE0D05328B603680064B787 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0D05228B603670064B787 /* ApiManager.swift */; };
 		DDE0D05728B608280064B787 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0D05628B608280064B787 /* Users.swift */; };
+		DDE0D05928B757AF0064B787 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0D05828B757AF0064B787 /* Posts.swift */; };
+		DDE0D05B28B757EB0064B787 /* Albums.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0D05A28B757EB0064B787 /* Albums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		DDE0D04F28B4B7440064B787 /* Joke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
 		DDE0D05228B603670064B787 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		DDE0D05628B608280064B787 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		DDE0D05828B757AF0064B787 /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
+		DDE0D05A28B757EB0064B787 /* Albums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Albums.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +159,8 @@
 		DDE0D05528B603840064B787 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				DDE0D05A28B757EB0064B787 /* Albums.swift */,
+				DDE0D05828B757AF0064B787 /* Posts.swift */,
 				DDE0D05628B608280064B787 /* Users.swift */,
 			);
 			path = models;
@@ -292,7 +298,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDE0D02428B4AC5E0064B787 /* ViewController.swift in Sources */,
+				DDE0D05928B757AF0064B787 /* Posts.swift in Sources */,
 				DDE0D02028B4AC5E0064B787 /* AppDelegate.swift in Sources */,
+				DDE0D05B28B757EB0064B787 /* Albums.swift in Sources */,
 				DDE0D05328B603680064B787 /* ApiManager.swift in Sources */,
 				DDE0D05028B4B7440064B787 /* Joke.swift in Sources */,
 				DDE0D05728B608280064B787 /* Users.swift in Sources */,

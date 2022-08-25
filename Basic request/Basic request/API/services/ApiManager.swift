@@ -1,6 +1,5 @@
 
 
-import Foundation
 import UIKit
 
 
@@ -55,11 +54,14 @@ class ApiManager {
     
     func getUsers(completion: @escaping (Users) -> Void) {
         
-        var request = ApiType.getUsers.request
+        let request = ApiType.getUsers.request
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            print(data?.count))
+            if let data = data, let users = try? JSONDecoder().decode(Users.self, from: data) {
+                completion(users)
+            } else {
+                completion([])
+            }
         }
         task.resume()
-}
-
+    }
 }

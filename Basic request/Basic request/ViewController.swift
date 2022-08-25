@@ -13,7 +13,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        ApiManager.shared.getUsers(completion: <#T##(Users) -> Void#>)
+        ApiManager.shared.getUsers { users in
+            print(users.count)
+        }
     }
 
     

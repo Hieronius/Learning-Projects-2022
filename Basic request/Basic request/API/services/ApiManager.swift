@@ -64,4 +64,31 @@ class ApiManager {
         }
         task.resume()
     }
+    
+    func getPosts(completion: @escaping (Posts) -> Void) {
+        
+        let request = ApiType.getPosts.request
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let data = data, let posts = try? JSONDecoder().decode(Posts.self, from: data) {
+                completion(posts)
+            } else {
+                completion([])
+            }
+        }
+        task.resume()
+    }
+    
+    
+    func getAlbums(completion: @escaping (Albums) -> Void) {
+        
+        let request = ApiType.getAlbums.request
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let data = data, let albums = try? JSONDecoder().decode(Albums.self, from: data) {
+                completion(albums)
+            } else {
+                completion([])
+            }
+        }
+        task.resume()
+    }
 }

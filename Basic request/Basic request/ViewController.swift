@@ -13,8 +13,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        ApiManager.shared.getUsers { users in
-            print(users.count)
+        ApiManager.shared.getPosts { posts in
+            // do something with posts
+        }
+        ApiManager.shared.getAlbums { albums in
+            // do something with albums
         }
     }
 

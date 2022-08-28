@@ -18,6 +18,7 @@
 		DD6A213A28B8CB10002D27A8 /* RouteTestTask_YouTubeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6A213928B8CB10002D27A8 /* RouteTestTask_YouTubeTests.swift */; };
 		DD6A214428B8CB10002D27A8 /* RouteTestTask_YouTubeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6A214328B8CB10002D27A8 /* RouteTestTask_YouTubeUITests.swift */; };
 		DD6A214628B8CB10002D27A8 /* RouteTestTask_YouTubeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6A214528B8CB10002D27A8 /* RouteTestTask_YouTubeUITestsLaunchTests.swift */; };
+		DD82B23C28BB88A700E4EE85 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD82B23B28BB88A700E4EE85 /* Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		DD6A213F28B8CB10002D27A8 /* RouteTestTask_YouTubeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RouteTestTask_YouTubeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD6A214328B8CB10002D27A8 /* RouteTestTask_YouTubeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTestTask_YouTubeUITests.swift; sourceTree = "<group>"; };
 		DD6A214528B8CB10002D27A8 /* RouteTestTask_YouTubeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTestTask_YouTubeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DD82B23B28BB88A700E4EE85 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				DD6A212228B8CB0B002D27A8 /* AppDelegate.swift */,
 				DD6A212428B8CB0B002D27A8 /* SceneDelegate.swift */,
 				DD6A212628B8CB0B002D27A8 /* ViewController.swift */,
+				DD82B23B28BB88A700E4EE85 /* Alert.swift */,
 				DD6A212D28B8CB0F002D27A8 /* LaunchScreen.storyboard */,
 				DD6A213028B8CB0F002D27A8 /* Info.plist */,
 			);
@@ -276,6 +279,7 @@
 			files = (
 				DD6A212728B8CB0B002D27A8 /* ViewController.swift in Sources */,
 				DD6A212328B8CB0B002D27A8 /* AppDelegate.swift in Sources */,
+				DD82B23C28BB88A700E4EE85 /* Alert.swift in Sources */,
 				DD6A212528B8CB0B002D27A8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

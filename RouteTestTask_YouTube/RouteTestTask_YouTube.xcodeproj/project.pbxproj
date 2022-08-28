@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD4A8E2128BA674600FA4A84 /* route.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4A8E1D28BA674500FA4A84 /* route.png */; };
+		DD4A8E2228BA674600FA4A84 /* reset.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4A8E1E28BA674500FA4A84 /* reset.png */; };
+		DD4A8E2328BA674600FA4A84 /* addAdress.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4A8E1F28BA674600FA4A84 /* addAdress.png */; };
 		DD6A212328B8CB0B002D27A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6A212228B8CB0B002D27A8 /* AppDelegate.swift */; };
 		DD6A212528B8CB0B002D27A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6A212428B8CB0B002D27A8 /* SceneDelegate.swift */; };
 		DD6A212728B8CB0B002D27A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6A212628B8CB0B002D27A8 /* ViewController.swift */; };
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DD4A8E1D28BA674500FA4A84 /* route.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = route.png; sourceTree = "<group>"; };
+		DD4A8E1E28BA674500FA4A84 /* reset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reset.png; sourceTree = "<group>"; };
+		DD4A8E1F28BA674600FA4A84 /* addAdress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addAdress.png; sourceTree = "<group>"; };
 		DD6A211F28B8CB0B002D27A8 /* RouteTestTask_YouTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RouteTestTask_YouTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD6A212228B8CB0B002D27A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD6A212428B8CB0B002D27A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,11 +80,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD4A8E2428BA679700FA4A84 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				DD6A212B28B8CB0F002D27A8 /* Assets.xcassets */,
+				DD4A8E1F28BA674600FA4A84 /* addAdress.png */,
+				DD4A8E1E28BA674500FA4A84 /* reset.png */,
+				DD4A8E1D28BA674500FA4A84 /* route.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		DD6A211628B8CB0B002D27A8 = {
 			isa = PBXGroup;
 			children = (
 				DD6A212128B8CB0B002D27A8 /* RouteTestTask_YouTube */,
 				DD6A213828B8CB10002D27A8 /* RouteTestTask_YouTubeTests */,
+				DD4A8E2428BA679700FA4A84 /* Assets */,
 				DD6A214228B8CB10002D27A8 /* RouteTestTask_YouTubeUITests */,
 				DD6A212028B8CB0B002D27A8 /* Products */,
 			);
@@ -100,7 +118,6 @@
 				DD6A212228B8CB0B002D27A8 /* AppDelegate.swift */,
 				DD6A212428B8CB0B002D27A8 /* SceneDelegate.swift */,
 				DD6A212628B8CB0B002D27A8 /* ViewController.swift */,
-				DD6A212B28B8CB0F002D27A8 /* Assets.xcassets */,
 				DD6A212D28B8CB0F002D27A8 /* LaunchScreen.storyboard */,
 				DD6A213028B8CB0F002D27A8 /* Info.plist */,
 			);
@@ -228,7 +245,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD4A8E2128BA674600FA4A84 /* route.png in Resources */,
+				DD4A8E2228BA674600FA4A84 /* reset.png in Resources */,
 				DD6A212F28B8CB0F002D27A8 /* LaunchScreen.storyboard in Resources */,
+				DD4A8E2328BA674600FA4A84 /* addAdress.png in Resources */,
 				DD6A212C28B8CB0F002D27A8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

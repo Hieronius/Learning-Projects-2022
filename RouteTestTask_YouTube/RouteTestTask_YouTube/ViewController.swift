@@ -49,11 +49,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        mapView.delegate = self
+        
         setConstraints()
         
         addAddressButton.addTarget(self, action: #selector(addAdressButtonTapped), for: .touchUpInside)
-        routeButton.addTarget(self, action: #selector(addAdressButtonTapped), for: .touchUpInside)
-        resetButton.addTarget(self, action: #selector(addAdressButtonTapped), for: .touchUpInside)
+        routeButton.addTarget(self, action: #selector(routeButtonTapped), for: .touchUpInside)
+        resetButton.addTarget(self, action: #selector(resetButtonTapped), for: .touchUpInside)
     }
     
     @objc func addAdressButtonTapped() {
@@ -64,7 +67,13 @@ class ViewController: UIViewController {
     }
     
     @objc func routeButtonTapped() {
-        print("TapRoute")
+        
+        for index in 0...annotationArray.count - 2 {
+            
+            createDirectionRequest(startCoordinate: annotationArray[index].coordinate, destinationCoordinate: annotationArray[index + 1].coordinate)
+        }
+        
+        mapView.showAnnotations(annotationArray, animated: true)
     }
     
     @objc func resetButtonTapped() {
@@ -129,7 +138,19 @@ class ViewController: UIViewController {
             for route in responce.routes {
                 minRoute = (route.distance < minRoute.distance) ? route : minRoute
             }
+            
+            self.mapView.addOverlay(minRoute.polyline)
         }
+    }
+}
+
+extension ViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        
+        let renderer = MKPolylineRenderer(overlay: overlay as! MKPolyline)
+        renderer.strokeColor = .orange
+        return renderer
     }
 }
 

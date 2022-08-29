@@ -44,7 +44,7 @@ class ViewController: UIViewController {
         
     }()
     
-    let annotation
+    var annotationArray = [MKPointAnnotation]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,8 +57,8 @@ class ViewController: UIViewController {
     }
     
     @objc func addAdressButtonTapped() {
-        alertAddAdress(title: "Добавить", placeholder: "Введите адрес") { (text) in
-            print(text)
+        alertAddAdress(title: "Добавить", placeholder: "Введите адрес") { [self] (text) in
+            setupPlacemark(adressPlace: text)
         }
         
     }
@@ -90,11 +90,47 @@ class ViewController: UIViewController {
             guard let placemarkLocation = placemark?.location else { return }
             annotation.coordinate = placemarkLocation.coordinate
             
-            mapView.annotations
+            annotationArray.append(annotation)
+            
+            if annotationArray.count > 2 {
+                routeButton.isHidden = false
+                resetButton.isHidden = false
+            }
+            
+            mapView.showAnnotations(annotationArray, animated: true)
         }
     }
-
-
+    
+    private func createDirectionRequest(startCoordinate: CLLocationCoordinate2D, destinationCoordinate: CLLocationCoordinate2D) {
+        
+        let startLocation = MKPlacemark(coordinate: startCoordinate)
+        let destionationLocation = MKPlacemark(coordinate: destinationCoordinate)
+        
+        let request = MKDirections.Request()
+        request.source = MKMapItem(placemark: startLocation)
+        request.destination = MKMapItem(placemark: destionationLocation)
+        request.transportType = .walking
+        request.requestsAlternateRoutes = true
+        
+        let diraction = MKDirections(request: request)
+        diraction.calculate { (responce, error) in
+            
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            guard let responce = responce else {
+                self.alertError(title: "Ошибка", message: "Маршрут недоступен")
+                return
+            }
+            
+            var minRoute = responce.routes[0]
+            for route in responce.routes {
+                minRoute = (route.distance < minRoute.distance) ? route : minRoute
+            }
+        }
+    }
 }
 
 extension ViewController {

@@ -60,45 +60,41 @@ bubbleSort([1, 5, 10, 2, 1, 5, 15, 100, 1])
 
 
 
+// Cocktail Sort
+var arr = [123, 12, 435, 65, 767, 433]
+var left: Int = 0
+var right: Int = arr.count - 1
+var index: Int = 0
 
-var newArr = ["sheep", "sheep", "sheep", "sheep", "sheep", "wolf", "sheep", "sheep"].reversed()
-print(newArr)
-
-func warnTheSheep(_ queue: [String]) -> String {
-    if queue.last == "wolf" {
-        return "Pls go away and stop eating my sheep"
-    }
-    for animal in queue.reversed()
-}
-
-warnTheSheep(["sheep", "sheep", "sheep", "sheep", "sheep", "wolf", "sheep", "sheep"])
-warnTheSheep(["sheep", "wolf", "sheep", "sheep", "sheep", "sheep", "sheep"])
-warnTheSheep(["sheep", "sheep", "wolf"])
-
-
-
-
-
-
-
-
-
-func stringy(_ size: Int) -> String {
-
-    var sum1 = ""
-    var sum2 = "1"
-    
-    if size % 2 == 0 {
-        for _ in 1...size/2 {
-            sum1 += "10"
+func cocktailSort() -> [Int] {
+    while left < right {
+        for i in left..<right {
+            if arr[i] > arr[i+1] {
+                arr.swapAt(i, i+1)
+                index = i
+            }
         }
-        return sum1
         
-    } else {
-        for _ in 0...size/2 {
-            sum2 += "01"
+        right = index
+        let temp: Int = left + 1
+        if temp < right {
+            for i in (temp...right).reversed() {
+                if arr[i] < arr[i-1] {
+                    arr.swapAt(i, i-1)
+                    index = i
+                }
+            }
+            left = index
         }
-        return sum2
     }
-    
+    return arr
 }
+
+
+
+cocktailSort()
+
+
+
+
+

@@ -13,6 +13,7 @@
 		DD82B25328BDFAD600E4EE85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD82B25228BDFAD600E4EE85 /* Assets.xcassets */; };
 		DD82B25628BDFAD600E4EE85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD82B25428BDFAD600E4EE85 /* LaunchScreen.storyboard */; };
 		DD82B25E28BDFBDC00E4EE85 /* ListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD82B25D28BDFBDC00E4EE85 /* ListTVC.swift */; };
+		DD9CDE4C28C262B700FA33A6 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CDE4B28C262B700FA33A6 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		DD82B25528BDFAD600E4EE85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD82B25728BDFAD600E4EE85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD82B25D28BDFBDC00E4EE85 /* ListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTVC.swift; sourceTree = "<group>"; };
+		DD9CDE4B28C262B700FA33A6 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +42,10 @@
 		DD82B23D28BDFAD100E4EE85 = {
 			isa = PBXGroup;
 			children = (
-				DD82B25D28BDFBDC00E4EE85 /* ListTVC.swift */,
+				DD9CDE4A28C260FA00FA33A6 /* Model */,
+				DD9CDE4928C260F300FA33A6 /* View */,
+				DD9CDE4828C260EA00FA33A6 /* Products */,
+				DD9CDE4728C260DB00FA33A6 /* SupportingFiles */,
 				DD82B24828BDFAD200E4EE85 /* WeatherJun */,
 				DD82B24728BDFAD200E4EE85 /* Products */,
 			);
@@ -57,14 +62,44 @@
 		DD82B24828BDFAD200E4EE85 /* WeatherJun */ = {
 			isa = PBXGroup;
 			children = (
-				DD82B24928BDFAD200E4EE85 /* AppDelegate.swift */,
-				DD82B24B28BDFAD200E4EE85 /* SceneDelegate.swift */,
-				DD82B24F28BDFAD200E4EE85 /* Main.storyboard */,
-				DD82B25228BDFAD600E4EE85 /* Assets.xcassets */,
-				DD82B25428BDFAD600E4EE85 /* LaunchScreen.storyboard */,
-				DD82B25728BDFAD600E4EE85 /* Info.plist */,
 			);
 			path = WeatherJun;
+			sourceTree = "<group>";
+		};
+		DD9CDE4728C260DB00FA33A6 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				DD82B24928BDFAD200E4EE85 /* AppDelegate.swift */,
+				DD82B24B28BDFAD200E4EE85 /* SceneDelegate.swift */,
+				DD82B25228BDFAD600E4EE85 /* Assets.xcassets */,
+				DD82B25728BDFAD600E4EE85 /* Info.plist */,
+				DD9CDE4B28C262B700FA33A6 /* Constant.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		DD9CDE4828C260EA00FA33A6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
+		DD9CDE4928C260F300FA33A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DD82B25D28BDFBDC00E4EE85 /* ListTVC.swift */,
+				DD82B24F28BDFAD200E4EE85 /* Main.storyboard */,
+				DD82B25428BDFAD600E4EE85 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DD9CDE4A28C260FA00FA33A6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +176,7 @@
 				DD82B25E28BDFBDC00E4EE85 /* ListTVC.swift in Sources */,
 				DD82B24A28BDFAD200E4EE85 /* AppDelegate.swift in Sources */,
 				DD82B24C28BDFAD200E4EE85 /* SceneDelegate.swift in Sources */,
+				DD9CDE4C28C262B700FA33A6 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +327,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7YW3V66545;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WeatherJun/Info.plist;
+				INFOPLIST_FILE = SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -319,7 +355,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7YW3V66545;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WeatherJun/Info.plist;
+				INFOPLIST_FILE = SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

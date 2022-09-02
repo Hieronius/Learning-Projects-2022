@@ -6,12 +6,14 @@ class ListTVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fetchWeather()
 
     }
     
-    func fatchWeather() {
+    func fetchWeather() {
         
-        let urlString = "https://api.weather.yandex.ru/v2/forecast?lat=59.932455?lon=30.349285"
+        let urlString = "https://api.weather.yandex.ru/v2/forecast?lat=59.932602&lon=30.347810"
         guard let url = URL(string: urlString) else { return }
         
         var request = URLRequest(url: url, timeoutInterval: Double.infinity)
@@ -23,8 +25,10 @@ class ListTVC: UITableViewController {
                 print(String(describing: error))
                 return
             }
-            print(String(data: data, encoding: .utf8))
+            print(String(data: data, encoding: .utf8)!)
         }
+        
+        task.resume()
         
     }
 

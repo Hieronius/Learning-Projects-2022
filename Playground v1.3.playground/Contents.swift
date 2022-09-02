@@ -2,8 +2,33 @@ import Foundation
 import UIKit
 
 
+// quick sort
+func quickSort(arr:[Int]) -> [Int] {
+    var less = [Int]()
+    var equal = [Int]()
+    var greater = [Int]()
+    
+    if arr.count > 1 {
+        let pivot = arr[0]
+        
+        for x in arr {
+            if x < pivot {
+                less.append(x)
+            }
+            if x == pivot {
+                equal.append(x)
+            }
+            if x > pivot {
+                greater.append(x)
+            }
+        }
+        return (quickSort(arr: less) + equal + quickSort(arr: greater))
+    } else {
+        return arr
+    }
+}
 
-
+let sortedArr = quickSort(arr: [1, 5, 10, 2, 1, 5, 15, 100, 1])
 
 // Counting Sort
 

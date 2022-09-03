@@ -26,6 +26,15 @@ struct Fact: Decodable {
     let condition: String
     let windSpeed: Int
     let pressureMm: Int
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case temp
+        case icon
+        case condition
+        case windSpeed = "wind_speed"
+        case pressureMm = "pressure_Mm"
+    }
 }
 
 struct Forecast: Decodable {
@@ -43,4 +52,10 @@ struct Day: Decodable {
     
     let tempMin: Int?
     let tempMax: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case tempMin = "temp_min"
+        case tempMax = "temp_max"
+    }
 }

@@ -38,8 +38,19 @@ struct Weather {
             
         default: return "Загрузка..."
             
-            
         }
+    }
+    
+    init?(weatherData: WeatherData) {
+        
+        temperature = weatherData.fact.temp
+        conditionCode = weatherData.fact.icon
+        url = weatherData.info.url
+        condition = weatherData.fact.condition
+        pressureMm = weatherData.fact.pressureMm
+        windSpeed = weatherData.fact.windSpeed
+        tempMin = weatherData.forecast.first!.parts.day.tempMin!
+        tempMax = weatherData.forecast.first!.parts.day.tempMax!
     }
     
     

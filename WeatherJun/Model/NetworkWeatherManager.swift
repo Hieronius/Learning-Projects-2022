@@ -4,7 +4,7 @@ import Foundation
 
 struct NetworkWeatherManager {
     
-    func fetchWeather() {
+    func fetchWeather(complitionHandler: @escaping (Weather) -> Void) {
         
         let urlString = "https://api.weather.yandex.ru/v2/forecast?lat=59.932602&lon=30.347810"
         guard let url = URL(string: urlString) else { return }
@@ -19,6 +19,9 @@ struct NetworkWeatherManager {
                 return
             }
             print(String(data: data, encoding: .utf8)!)
+            if let weather = self.parseJSON(withData: data) {
+                complitionHandler(weather)
+            }
         }
         
         task.resume()

@@ -2,18 +2,33 @@
 
 import UIKit
 
+
 class ListTVC: UITableViewController {
+    
+    var citiesArray = [Weather]()
+    
+    let nameCitiesArray = ["Москва", "Петербург", "Пенза", "Уфа", "Новосибирск", "Челябинск", "Омск", "Екатеринбург", "Томск", "Сочи"]
     
     let networkWeatherManager = NetworkWeatherManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // networkWeatherManager.fetchWeather()
-
+        addCities()
+        print(citiesArray)
+        
     }
     
-
+    func addCities() {
+        
+        getCityWeather(citiesArray: self.nameCitiesArray) { (index, weather) in
+            
+            self.citiesArray[index] = weather
+            self.citiesArray[index].name = self.nameCitiesArray[index]
+        }
+    }
+    
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

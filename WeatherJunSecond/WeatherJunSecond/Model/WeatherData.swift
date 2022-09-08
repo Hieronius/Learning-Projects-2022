@@ -23,7 +23,7 @@ struct Fact: Decodable {
     let temp: Int
     let icon: String
     let condition: String
-    let windSpeed: Int
+    let windSpeed: Int?
     let pressureMm: Int
     
     enum CodingKeys: String, CodingKey {

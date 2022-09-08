@@ -3,10 +3,10 @@ import Foundation
 
 struct NetworkWeatherManager {
     
-    func fetchWeather() {
+    func fetchWeather(latitude: Double, longitude: Double, completionHandler: @escaping(Weather) -> Void) {
         
-        // let urlString = "https://api.weather.yandex.ru/v2/forecast?lat=59.932455&lon=30.349285"
-        let urlString = "https://api.weather.yandex.ru/v2/forecast?lat=55.751133&lon=37.599310"
+        // let urlString = "https://api.weather.yandex.ru/v2/forecast?lat=59.932455&lon=30.349285" SPB have problems with wind speed.
+        let urlString = "https://api.weather.yandex.ru/v2/forecast?lat=\(latitude)&lon=\(longitude)"
     
         guard let url = URL(string: urlString) else { return }
         
@@ -21,7 +21,8 @@ struct NetworkWeatherManager {
             }
             // print(String(data: data, encoding: .utf8)!)
             if let weather = self.parseJSON(withData: data) {
-                print(weather)
+                // print(weather)
+                completionHandler(weather)
             }
         }
         
@@ -45,7 +46,7 @@ struct NetworkWeatherManager {
             
         } catch let error as NSError {
             
-            // print(error.localizedDescription)
+            // print(error.localizedDescription) it's wrong formula
             print(String(describing: error))
             print("It's won't work")
             

@@ -11,8 +11,8 @@ struct Weather {
     var condition: String
     var pressureMm: Int
     var windSpeed: Int
-    var tempMin: Int
-    var tempMax: Int
+    var tempMin: Int = 0
+    var tempMax: Int = 0
     
     var conditionString: String {
         

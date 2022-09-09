@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--ListTVC-->
+        <!--WeatherJunSecond-->
         <scene sceneID="MEw-SB-Hss">
             <objects>
                 <tableViewController id="1bk-1I-Dc5" customClass="ListTVC" customModule="WeatherJunSecond" customModuleProvider="target" sceneMemberID="viewController">
@@ -79,8 +79,12 @@
                             <outlet property="delegate" destination="1bk-1I-Dc5" id="XGD-7B-VRW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="SMz-FW-Fg9">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1jQ-jJ-dwg"/>
+                    <navigationItem key="navigationItem" title="WeatherJunSecond" id="SMz-FW-Fg9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1jQ-jJ-dwg">
+                            <connections>
+                                <action selector="pressPlusButton:" destination="1bk-1I-Dc5" id="WLx-ux-QqT"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rZe-HH-90f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

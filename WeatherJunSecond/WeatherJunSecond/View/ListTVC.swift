@@ -79,6 +79,11 @@ class ListTVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        if isFiltering {
+            
+            return filterCityArray.count
+        }
+        
         return citiesArray.count
     }
 
@@ -88,7 +93,16 @@ class ListTVC: UITableViewController {
         
         var weather = Weather()
         
-        weather = citiesArray[indexPath.row]
+        if isFiltering {
+            
+            weather = filterCityArray[indexPath.row]
+        } else {
+            
+            weather = citiesArray[indexPath.row]
+            
+        }
+        
+        // weather = citiesArray[indexPath.row]
         
         cell.configure(weather: weather)
         
@@ -103,7 +117,14 @@ class ListTVC: UITableViewController {
             
             if let index = self.nameCitiesArray.firstIndex(of: editingRow) {
                 
+                if self.isFiltering {
+                    
+                    self.filterCityArray.remove(at: index)
+                    
+                } else {
+                
                 self.citiesArray.remove(at: index)
+                }
             }
             
             tableView.reloadData()
@@ -120,21 +141,39 @@ class ListTVC: UITableViewController {
             
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             
-            let cityWeather = citiesArray[indexPath.row]
-            let dstVC = segue.destination as! DetailVC
-            dstVC.weatherModel = cityWeather 
+            if isFiltering {
+                
+                let filter = filterCityArray[indexPath.row]
+                let dstVC = segue.destination as! DetailVC
+                dstVC.weatherModel = filter
+                
+            } else {
+                
+                let cityWeather = citiesArray[indexPath.row]
+                let dstVC = segue.destination as! DetailVC
+                dstVC.weatherModel = cityWeather
+                
+            }
         }
     }
-
 }
 
 extension ListTVC: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
         
-        
+        filterContentForSearchText(searchController.searchBar.text!)
         
     }
     
-    private func filter
+    private func filterContentForSearchText(_ searchText: String) {
+        
+        filterCityArray = citiesArray.filter {
+            
+            $0.name.contains(searchText)
+            
+        }
+        
+        tableView.reloadData()
+    }
 }

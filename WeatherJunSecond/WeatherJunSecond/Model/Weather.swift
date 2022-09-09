@@ -10,7 +10,7 @@ struct Weather {
     var url: String = ""
     var condition: String = ""
     var pressureMm: Int = 0
-    var windSpeed: Int = 0
+    var windSpeed: Double = 0.00
     var tempMin: Int = 0
     var tempMax: Int = 0
     
@@ -50,7 +50,7 @@ struct Weather {
         url = weatherData.info.url
         condition = weatherData.fact.condition
         pressureMm = weatherData.fact.pressureMm
-        windSpeed = weatherData.fact.windSpeed!
+        windSpeed = weatherData.fact.windSpeed
         tempMin = weatherData.forecasts.first!.parts.day.tempMin!
         tempMax = weatherData.forecasts.first!.parts.day.tempMax!
         

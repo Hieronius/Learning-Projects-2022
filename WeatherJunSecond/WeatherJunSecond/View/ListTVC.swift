@@ -8,9 +8,24 @@ class ListTVC: UITableViewController {
     
     var citiesArray = [Weather]()
     
+    var filterCityArray = [Weather]()
+    
     var nameCitiesArray = ["Москва", "Петербург", "Пенза", "Уфа", "Новосибирск", "Челябинск", "Омск", "Екатеринбург", "Томск", "Сочи"]
     
-    let networkWeatherManager = NetworkWeatherManager()
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    var searchBarIsEmpty: Bool {
+        
+        guard let text = searchController.searchBar.text else { return false }
+        return text.isEmpty
+        
+    }
+    
+    var isFiltering: Bool {
+        
+        return searchController.isActive && !searchBarIsEmpty
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +36,14 @@ class ListTVC: UITableViewController {
         }
         
         addCities()
+        
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Поиск"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        navigationItem.hidesSearchBarWhenScrolling = false
+        
         
     }
     
@@ -103,4 +126,15 @@ class ListTVC: UITableViewController {
         }
     }
 
+}
+
+extension ListTVC: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        
+        
+        
+    }
+    
+    private func filter
 }

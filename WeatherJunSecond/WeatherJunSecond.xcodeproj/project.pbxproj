@@ -21,6 +21,7 @@
 		DD9CDE8628CA147A00FA33A6 /* GetCitiesWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CDE8528CA147A00FA33A6 /* GetCitiesWeather.swift */; };
 		DD9CDE8828CA1FE200FA33A6 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CDE8728CA1FE200FA33A6 /* ListCell.swift */; };
 		DD9CDE8A28CB1DD800FA33A6 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CDE8928CB1DD800FA33A6 /* DetailVC.swift */; };
+		DD9CDE8C28CB370C00FA33A6 /* addCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CDE8B28CB370C00FA33A6 /* addCity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		DD9CDE8528CA147A00FA33A6 /* GetCitiesWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCitiesWeather.swift; sourceTree = "<group>"; };
 		DD9CDE8728CA1FE200FA33A6 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		DD9CDE8928CB1DD800FA33A6 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		DD9CDE8B28CB370C00FA33A6 /* addCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addCity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +64,6 @@
 				28371E2BD79AF97C9E9C8B83 /* Pods-WeatherJunSecond.debug.xcconfig */,
 				1ED4038A2D23CCADE90679F1 /* Pods-WeatherJunSecond.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -111,6 +112,7 @@
 				DD9CDE8328C9E1A700FA33A6 /* Weather.swift */,
 				DD9CDE8528CA147A00FA33A6 /* GetCitiesWeather.swift */,
 				DD9CDE8728CA1FE200FA33A6 /* ListCell.swift */,
+				DD9CDE8B28CB370C00FA33A6 /* addCity.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -261,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD9CDE7828C9D3FA00FA33A6 /* ListTVC.swift in Sources */,
+				DD9CDE8C28CB370C00FA33A6 /* addCity.swift in Sources */,
 				DD9CDE6428C9D39800FA33A6 /* AppDelegate.swift in Sources */,
 				DD9CDE8628CA147A00FA33A6 /* GetCitiesWeather.swift in Sources */,
 				DD9CDE8028C9DD3800FA33A6 /* NetworkWeatherManager.swift in Sources */,

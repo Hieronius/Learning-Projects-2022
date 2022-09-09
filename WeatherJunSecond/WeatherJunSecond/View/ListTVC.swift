@@ -8,7 +8,7 @@ class ListTVC: UITableViewController {
     
     var citiesArray = [Weather]()
     
-    let nameCitiesArray = ["Москва", "Петербург", "Пенза", "Уфа", "Новосибирск", "Челябинск", "Омск", "Екатеринбург", "Томск", "Сочи"]
+    var nameCitiesArray = ["Москва", "Петербург", "Пенза", "Уфа", "Новосибирск", "Челябинск", "Омск", "Екатеринбург", "Томск", "Сочи"]
     
     let networkWeatherManager = NetworkWeatherManager()
 
@@ -26,7 +26,13 @@ class ListTVC: UITableViewController {
     
     @IBAction func pressPlusButton(_ sender: Any) {
         
-        print("111")
+        alertPlusCity(name: "Town", placeholder: "Write name of the town") { (city) in
+            
+            self.nameCitiesArray.append(city)
+            self.citiesArray.append(self.emptyCity)
+            self.addCities()
+            
+        }
     }
     
     

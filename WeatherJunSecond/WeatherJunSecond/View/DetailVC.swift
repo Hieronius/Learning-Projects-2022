@@ -1,6 +1,7 @@
 
 
 import UIKit
+import SwiftSVG
 
 class DetailVC: UIViewController {
     
@@ -19,6 +20,8 @@ class DetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        refreshLabels()
 
     }
     
@@ -26,6 +29,13 @@ class DetailVC: UIViewController {
         
         nameCityLabel.text = weatherModel?.name
         
+        let url = URL(string: "https://yastatic.net/weather/i/icons/funky/dark/\(weatherModel!.conditionCode).svg")
+        
+        let weatherImage = UIView(SVGURL: url!) { (image) in
+            image.resizeToFit(self.viewCity.bounds)
+        }
+        
+        self.viewCity.addSubview(weatherImage)
         
         conditionLabel.text = weatherModel?.conditionString
         tempCity.text = "\((weatherModel?.temperature)!)"

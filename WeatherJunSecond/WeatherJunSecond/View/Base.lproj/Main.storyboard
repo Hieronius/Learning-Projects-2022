@@ -57,6 +57,11 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="conditionCityLabel" destination="bhq-fI-qAu" id="tvp-ga-KfP"/>
+                                    <outlet property="nameCityLabel" destination="k6d-LG-W0h" id="4bT-Wv-goj"/>
+                                    <outlet property="tempCityLabel" destination="cXC-fq-VVm" id="x2C-Pt-gz5"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

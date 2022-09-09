@@ -18,6 +18,7 @@
 		DD9CDE8228C9DED200FA33A6 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CDE8128C9DED200FA33A6 /* WeatherData.swift */; };
 		DD9CDE8428C9E1A700FA33A6 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CDE8328C9E1A700FA33A6 /* Weather.swift */; };
 		DD9CDE8628CA147A00FA33A6 /* GetCitiesWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CDE8528CA147A00FA33A6 /* GetCitiesWeather.swift */; };
+		DD9CDE8828CA1FE200FA33A6 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CDE8728CA1FE200FA33A6 /* ListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		DD9CDE8128C9DED200FA33A6 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		DD9CDE8328C9E1A700FA33A6 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		DD9CDE8528CA147A00FA33A6 /* GetCitiesWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCitiesWeather.swift; sourceTree = "<group>"; };
+		DD9CDE8728CA1FE200FA33A6 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				DD9CDE8128C9DED200FA33A6 /* WeatherData.swift */,
 				DD9CDE8328C9E1A700FA33A6 /* Weather.swift */,
 				DD9CDE8528CA147A00FA33A6 /* GetCitiesWeather.swift */,
+				DD9CDE8728CA1FE200FA33A6 /* ListCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				DD9CDE8028C9DD3800FA33A6 /* NetworkWeatherManager.swift in Sources */,
 				DD9CDE6628C9D39800FA33A6 /* SceneDelegate.swift in Sources */,
 				DD9CDE8228C9DED200FA33A6 /* WeatherData.swift in Sources */,
+				DD9CDE8828CA1FE200FA33A6 /* ListCell.swift in Sources */,
 				DD9CDE7E28C9DCBF00FA33A6 /* Constant.swift in Sources */,
 				DD9CDE8428C9E1A700FA33A6 /* Weather.swift in Sources */,
 			);

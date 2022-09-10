@@ -61,7 +61,7 @@ extension VerificationViewController {
         
             statusLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 300),
             statusLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            statusLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: <#T##CGFloat#>)
+            statusLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         
         ])
     }

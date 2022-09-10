@@ -1,5 +1,3 @@
-
-
 import Foundation
 import UIKit
 
@@ -9,6 +7,7 @@ class StatusLabel: UILabel {
         
         super.init(frame: frame)
         
+        configure()
     }
     
     required init?(coder: NSCoder) {

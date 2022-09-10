@@ -20,6 +20,7 @@
 		DD9CDEBD28CC5C2800FA33A6 /* StatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CDEBC28CC5C2800FA33A6 /* StatusLabel.swift */; };
 		DD9CDEC128CC604100FA33A6 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CDEC028CC604100FA33A6 /* UIStackView + Extensions.swift */; };
 		DD9CDEC328CC617600FA33A6 /* MailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CDEC228CC617600FA33A6 /* MailTextField.swift */; };
+		DD9CDEC528CC644A00FA33A6 /* VerificationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CDEC428CC644A00FA33A6 /* VerificationButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		DD9CDEBC28CC5C2800FA33A6 /* StatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusLabel.swift; sourceTree = "<group>"; };
 		DD9CDEC028CC604100FA33A6 /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
 		DD9CDEC228CC617600FA33A6 /* MailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailTextField.swift; sourceTree = "<group>"; };
+		DD9CDEC428CC644A00FA33A6 /* VerificationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				DD9CDEBC28CC5C2800FA33A6 /* StatusLabel.swift */,
 				DD9CDEC228CC617600FA33A6 /* MailTextField.swift */,
+				DD9CDEC428CC644A00FA33A6 /* VerificationButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD9CDEBD28CC5C2800FA33A6 /* StatusLabel.swift in Sources */,
+				DD9CDEC528CC644A00FA33A6 /* VerificationButton.swift in Sources */,
 				DD9CDE9E28CB95E600FA33A6 /* VerificationViewController.swift in Sources */,
 				DD9CDEC328CC617600FA33A6 /* MailTextField.swift in Sources */,
 				DD9CDE9A28CB95E600FA33A6 /* AppDelegate.swift in Sources */,

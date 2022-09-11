@@ -36,13 +36,17 @@ class StatusLabel: UILabel {
     }
     
     private func setNotValidSetting() {
-        text = "Mail is not valid. Example: name@domail.ru"
+        text = "Mail is not valid. Example: name@domain.ru"
         textColor = #colorLiteral(red: 0.5215686275, green: 0.1098039216, blue: 0.05098039216, alpha: 1)
     }
     
     private func setValidSetting() {
         text = "Mail is valid."
         textColor = #colorLiteral(red: 0.1960784314, green: 0.3411764706, blue: 0.1019607843, alpha: 1)
+    }
+    
+    public func setDefaultSetting() {
+        configure()
     }
 }
 

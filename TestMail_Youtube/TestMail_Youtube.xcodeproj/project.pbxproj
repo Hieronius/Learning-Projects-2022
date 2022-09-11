@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD87E64728CDB0B4004A05DA /* VerificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87E64628CDB0B4004A05DA /* VerificationModel.swift */; };
 		DD9CDE9A28CB95E600FA33A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CDE9928CB95E600FA33A6 /* AppDelegate.swift */; };
 		DD9CDE9C28CB95E600FA33A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CDE9B28CB95E600FA33A6 /* SceneDelegate.swift */; };
 		DD9CDE9E28CB95E600FA33A6 /* VerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CDE9D28CB95E600FA33A6 /* VerificationViewController.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD87E64628CDB0B4004A05DA /* VerificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationModel.swift; sourceTree = "<group>"; };
 		DD9CDE9628CB95E600FA33A6 /* TestMail_Youtube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestMail_Youtube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD9CDE9928CB95E600FA33A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD9CDE9B28CB95E600FA33A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		DD9CDEAE28CB965900FA33A6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DD87E64628CDB0B4004A05DA /* VerificationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD87E64728CDB0B4004A05DA /* VerificationModel.swift in Sources */,
 				DD9CDEBD28CC5C2800FA33A6 /* StatusLabel.swift in Sources */,
 				DD9CDECA28CC68ED00FA33A6 /* MailCollectionViewCell.swift in Sources */,
 				DD9CDEC528CC644A00FA33A6 /* VerificationButton.swift in Sources */,

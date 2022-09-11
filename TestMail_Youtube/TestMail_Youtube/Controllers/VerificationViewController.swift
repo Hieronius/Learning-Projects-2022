@@ -21,6 +21,9 @@ class VerificationViewController: UIViewController {
     }()
     
     private let statusLabel = StatusLabel()
+    private let mailTextField = MailTextField()
+    private let verificationButton = VerificationButton()
+    private let collectionView = MailCollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +49,26 @@ class VerificationViewController: UIViewController {
 
 }
 
+// MARK: - UICollectionViewDataSource
+
+extension VerificationViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        6
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: idCell.idMailCell.rawValue, for: indexPath) as? MailCollectionViewCell
+        else {
+            return UICollectionViewCell()
+        }
+        return cell
+    }
+}
+
+
+
+// MARK: - SetConstraints
 extension VerificationViewController {
     
     private func setConstraints() {

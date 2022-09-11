@@ -16,7 +16,11 @@ struct Alert {
         }
     }
     
-    static func showResultAlert(vs: UIViewController, message: String) {
-        
+    static func showResultAlert(vc: UIViewController, message: String) {
+        showSimpleAlert(vc: vc, title: "Result", message: message)
+    }
+    
+    static func showErrorAlert(vc: UIViewController, message: String, completion: @escaping() -> Void) {
+        showSimpleAlert(vc: vc, title: "Error", message: message)
     }
 }

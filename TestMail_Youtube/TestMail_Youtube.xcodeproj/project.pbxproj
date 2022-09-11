@@ -29,6 +29,7 @@
 		DDDDFBB628CDF83200D64DA0 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDDFBB528CDF83200D64DA0 /* NetworkRequest.swift */; };
 		DDDDFBB828CDFF6200D64DA0 /* MailResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDDFBB728CDFF6200D64DA0 /* MailResponseModel.swift */; };
 		DDDDFBBA28CE035200D64DA0 /* NetworkDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDDFBB928CE035200D64DA0 /* NetworkDataFetch.swift */; };
+		DDDDFBBC28CE067200D64DA0 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDDFBBB28CE067200D64DA0 /* Alerts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		DDDDFBB528CDF83200D64DA0 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		DDDDFBB728CDFF6200D64DA0 /* MailResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailResponseModel.swift; sourceTree = "<group>"; };
 		DDDDFBB928CE035200D64DA0 /* NetworkDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetch.swift; sourceTree = "<group>"; };
+		DDDDFBBB28CE067200D64DA0 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			children = (
 				DD9CDEC828CC68CF00FA33A6 /* Cells */,
 				DD9CDECB28CC6B1300FA33A6 /* VerificationVC */,
+				DDDDFBBB28CE067200D64DA0 /* Alerts.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 			files = (
 				DDDDFBB628CDF83200D64DA0 /* NetworkRequest.swift in Sources */,
 				DD87E64728CDB0B4004A05DA /* VerificationModel.swift in Sources */,
+				DDDDFBBC28CE067200D64DA0 /* Alerts.swift in Sources */,
 				DD9CDEBD28CC5C2800FA33A6 /* StatusLabel.swift in Sources */,
 				DD9CDECA28CC68ED00FA33A6 /* MailCollectionViewCell.swift in Sources */,
 				DDDDFBBA28CE035200D64DA0 /* NetworkDataFetch.swift in Sources */,

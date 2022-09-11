@@ -27,6 +27,8 @@
 		DD9CDECA28CC68ED00FA33A6 /* MailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CDEC928CC68ED00FA33A6 /* MailCollectionViewCell.swift */; };
 		DDDDFBB428CDF5DD00D64DA0 /* MailApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDDFBB328CDF5DD00D64DA0 /* MailApiKey.swift */; };
 		DDDDFBB628CDF83200D64DA0 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDDFBB528CDF83200D64DA0 /* NetworkRequest.swift */; };
+		DDDDFBB828CDFF6200D64DA0 /* MailResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDDFBB728CDFF6200D64DA0 /* MailResponseModel.swift */; };
+		DDDDFBBA28CE035200D64DA0 /* NetworkDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDDFBB928CE035200D64DA0 /* NetworkDataFetch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		DD9CDEC928CC68ED00FA33A6 /* MailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailCollectionViewCell.swift; sourceTree = "<group>"; };
 		DDDDFBB328CDF5DD00D64DA0 /* MailApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailApiKey.swift; sourceTree = "<group>"; };
 		DDDDFBB528CDF83200D64DA0 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		DDDDFBB728CDFF6200D64DA0 /* MailResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailResponseModel.swift; sourceTree = "<group>"; };
+		DDDDFBB928CE035200D64DA0 /* NetworkDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				DD87E64628CDB0B4004A05DA /* VerificationModel.swift */,
+				DDDDFBB728CDFF6200D64DA0 /* MailResponseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 			children = (
 				DDDDFBB328CDF5DD00D64DA0 /* MailApiKey.swift */,
 				DDDDFBB528CDF83200D64DA0 /* NetworkRequest.swift */,
+				DDDDFBB928CE035200D64DA0 /* NetworkDataFetch.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -268,9 +274,11 @@
 				DD87E64728CDB0B4004A05DA /* VerificationModel.swift in Sources */,
 				DD9CDEBD28CC5C2800FA33A6 /* StatusLabel.swift in Sources */,
 				DD9CDECA28CC68ED00FA33A6 /* MailCollectionViewCell.swift in Sources */,
+				DDDDFBBA28CE035200D64DA0 /* NetworkDataFetch.swift in Sources */,
 				DD9CDEC528CC644A00FA33A6 /* VerificationButton.swift in Sources */,
 				DD9CDE9E28CB95E600FA33A6 /* VerificationViewController.swift in Sources */,
 				DDDDFBB428CDF5DD00D64DA0 /* MailApiKey.swift in Sources */,
+				DDDDFBB828CDFF6200D64DA0 /* MailResponseModel.swift in Sources */,
 				DD87E64928CDBAFD004A05DA /* String + Extensions.swift in Sources */,
 				DD9CDEC328CC617600FA33A6 /* MailTextField.swift in Sources */,
 				DD9CDE9A28CB95E600FA33A6 /* AppDelegate.swift in Sources */,

@@ -26,6 +26,8 @@ class VerificationViewController: UIViewController {
     private let collectionView = MailCollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     
     private lazy var stackView = UIStackView(arrangedSubviews: [mailTextField, verificationButton, collectionView], axis: .vertical, spacing: 20)
+    
+    private let verificationModel = VerificationModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +66,7 @@ class VerificationViewController: UIViewController {
 extension VerificationViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        6
+        verificationModel.filtredMailArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -72,6 +74,9 @@ extension VerificationViewController: UICollectionViewDataSource {
         else {
             return UICollectionViewCell()
         }
+        
+        let mailLabelText = verificationModel.filtredMailArray[indexPath.row]
+        cell.cellConfigure(mailLabelText: mailLabelText)
         return cell
     }
 }
@@ -85,12 +90,13 @@ extension VerificationViewController: SelectProposedMailProtocol {
     }
 }
 
-// MARK: -
+// MARK: - ActionsMailTextFieldProtocol
 
 extension VerificationViewController: ActionsMailTextFieldProtocol {
     
     func typingText(text: String) {
-        print(text)
+        verificationModel.getFilteredMail(text: text)
+        collectionView.reloadData()
     }
     
     func cleanOutTextField() {

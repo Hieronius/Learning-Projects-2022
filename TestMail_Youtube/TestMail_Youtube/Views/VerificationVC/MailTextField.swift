@@ -1,12 +1,22 @@
 import Foundation
 import UIKit
 
+protocol ActionsMailTextFieldProtocol: AnyObject {
+    
+    func typingText(text: String)
+    func cleanOutTextField()
+    
+}
+
 class MailTextField: UITextField {
+    
+    weak var textFieldDelegate: ActionsMailTextFieldProtocol?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         configure()
+        delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -32,4 +42,23 @@ class MailTextField: UITextField {
         translatesAutoresizingMaskIntoConstraints = false
     }
     
+}
+
+extension MailTextField: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.resignFirstResponder()
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        guard let text = textField.text else { return true }
+        textFieldDelegate?.typingText(text: text)
+        return true
+    }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        textFieldDelegate?.cleanOutTextField()
+        return true
+    }
 }

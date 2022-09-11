@@ -42,7 +42,8 @@ class VerificationViewController: UIViewController {
     }
     
     private func setDelegate() {
-        
+        collectionView.dataSource = self
+        collectionView.selectMailDelegate = self
         
     }
 
@@ -66,7 +67,14 @@ extension VerificationViewController: UICollectionViewDataSource {
     }
 }
 
+//MARK: - SelectProposedMailProtocol
 
+extension VerificationViewController: SelectProposedMailProtocol {
+    
+    func selectProposedMail(indexPath: IndexPath) {
+        print(indexPath)
+    }
+}
 
 // MARK: - SetConstraints
 extension VerificationViewController {

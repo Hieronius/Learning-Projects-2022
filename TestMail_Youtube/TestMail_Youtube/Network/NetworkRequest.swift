@@ -9,7 +9,8 @@ class NetworkRequest {
     
     func requestData(verifiableMail: String, completion: @escaping(Result<Data, Error>) -> Void) {
         
-        let urlString = "https://api.kickbox.com/v2/verify?email=\(verifiableMail)&apikey=\(apiKey)"
+        // let urlString = "https://api.kickbox.com/v2/verify?email=\(verifiableMail)&apikey=\(apiKey)"
+        let urlString = "https://api.debounce.io/v1/?api=\(apiKeySecond)&email=\(verifiableMail)"
         guard let url = URL(string: urlString) else { return }
         
         URLSession.shared.dataTask(with: url) {data, response, error in
@@ -20,6 +21,8 @@ class NetworkRequest {
                 }
                 guard let data = data else { return }
                 completion(.success(data))
+                print(response)
+                print("We are done")
             }
         }
         .resume()

@@ -15,12 +15,14 @@ class NetworkDataFetch {
                     let mail = try JSONDecoder().decode(MailResponseModel.self, from: data)
                     response(mail, nil)
                 } catch let jsonError {
+                    print("Fail here")
                     print("Failed to decode JSON", jsonError)
+                    
                 }
             case .failure(let error):
                 print("Error received requesting data: \(error.localizedDescription)")
                 response(nil, error)
             }
+        }
     }
-}
 }

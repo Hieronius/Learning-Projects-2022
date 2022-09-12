@@ -30,6 +30,7 @@
 		DDDDFBB828CDFF6200D64DA0 /* MailResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDDFBB728CDFF6200D64DA0 /* MailResponseModel.swift */; };
 		DDDDFBBA28CE035200D64DA0 /* NetworkDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDDFBB928CE035200D64DA0 /* NetworkDataFetch.swift */; };
 		DDDDFBBC28CE067200D64DA0 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDDFBBB28CE067200D64DA0 /* Alerts.swift */; };
+		DDDDFBBE28CF5CD800D64DA0 /* TestJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDDFBBD28CF5CD800D64DA0 /* TestJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		DDDDFBB728CDFF6200D64DA0 /* MailResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailResponseModel.swift; sourceTree = "<group>"; };
 		DDDDFBB928CE035200D64DA0 /* NetworkDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetch.swift; sourceTree = "<group>"; };
 		DDDDFBBB28CE067200D64DA0 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		DDDDFBBD28CF5CD800D64DA0 /* TestJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 				DDDDFBB328CDF5DD00D64DA0 /* MailApiKey.swift */,
 				DDDDFBB528CDF83200D64DA0 /* NetworkRequest.swift */,
 				DDDDFBB928CE035200D64DA0 /* NetworkDataFetch.swift */,
+				DDDDFBBD28CF5CD800D64DA0 /* TestJSON.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				DD9CDE9A28CB95E600FA33A6 /* AppDelegate.swift in Sources */,
 				DD9CDEC728CC65B400FA33A6 /* MailCollectionView.swift in Sources */,
 				DD9CDEC128CC604100FA33A6 /* UIStackView + Extensions.swift in Sources */,
+				DDDDFBBE28CF5CD800D64DA0 /* TestJSON.swift in Sources */,
 				DD9CDE9C28CB95E600FA33A6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

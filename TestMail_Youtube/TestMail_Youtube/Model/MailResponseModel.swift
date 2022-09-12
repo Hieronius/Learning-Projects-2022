@@ -36,3 +36,4 @@ struct MailResponseModel: Decodable { // I've used different name from autor bec
         }
     }
 }
+

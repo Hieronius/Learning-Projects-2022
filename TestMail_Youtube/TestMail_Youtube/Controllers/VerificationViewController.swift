@@ -31,6 +31,8 @@ class VerificationViewController: UIViewController {
         setupViews()
         setDelegate()
         setConstraints()
+        
+        fetchMailTest()
     }
     
     private func setupViews() {

@@ -1,9 +1,4 @@
-//
-//  ViewController.swift
-//  TestMail_Youtube
-//
-//  Created by Арсентий Халимовский on 09.09.2022.
-//
+
 
 import UIKit
 
@@ -65,16 +60,19 @@ class VerificationViewController: UIViewController {
                 if result.success {
                     guard let didYouMeanError = result.did_you_mean else {
                         Alert.showResultAlert(vc: self, message: "Mail status \(result.result) \n \(result.reasonDescription)")
+                        print("result 1")
                         return
                     }
                     Alert.showErrorAlert(vc: self, message: "Did you mean: \(didYouMeanError)") { [weak self] in
                         guard let self = self else { return }
                         self.mailTextField.text = didYouMeanError
+                        print("result 2")
                     }
                 }
             } else {
                 guard let errorDescription = error?.localizedDescription else { return }
                 Alert.showResultAlert(vc: self, message: errorDescription)
+                print("result 3")
             }
         }
     }

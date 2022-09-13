@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     var countries = [String]()
     var score = 0
     var correctAnswer = 0
+    var counterOfQuestions = 0
+    
     
     
     override func viewDidLoad() {
@@ -43,7 +45,9 @@ class ViewController: UIViewController {
         button2.setImage(UIImage(named: countries[1]), for: .normal)
         button3.setImage(UIImage(named: countries[2]), for: .normal)
         
-        title = countries[correctAnswer].uppercased() // define title as correct answer.uppercased()
+        title = "\(countries[correctAnswer].uppercased()) PLAYER SCORE: \(score) QUESTIONS: \(counterOfQuestions)"
+        counterOfQuestions += 1
+        
         // And after new game it will make new random countries and correct answer
     }
     
@@ -58,13 +62,24 @@ class ViewController: UIViewController {
             score -= 1
         }
         
+        
+        
+        
+        
         let ac = UIAlertController(title: title, message: "Your score is \(score)", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuastion))
+        
+        
+        if counterOfQuestions == 10 {
+            ac.message = "Total score is \(score)"
+            ac.addAction(UIAlertAction(title: "Start again", style: .default, handler: askQuastion))
+            counterOfQuestions = 0
+            score = 0
+        } else {
+            ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuastion))
+        }
+        
         
         present(ac, animated: true)
                      
-    }
-    
-
-}
-
+        }
+     }

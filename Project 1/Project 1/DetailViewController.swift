@@ -15,11 +15,15 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = selectedImage
+        
+         //title = selectedImage
+        // title = "Picture \(pictures[selectedImage.row"
+        title = title
         navigationItem.largeTitleDisplayMode = .never
 
         if let imageToLoad = selectedImage {
             imageView.image = UIImage(named: imageToLoad)
+            
         }
         
     }

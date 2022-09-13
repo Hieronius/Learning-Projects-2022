@@ -35,13 +35,13 @@ class ViewController: UIViewController {
         askQuastion()
     }
     
-    func askQuastion() {
+    func askQuastion(action: UIAlertAction! = nil) {
         countries.shuffle() // it's shuffle the array
         correctAnswer = Int.random(in: 0...2) // it's take random number of element in 0-2 index and set it's as a right answer
         
         button1.setImage(UIImage(named: countries[0]), for: .normal)
         button2.setImage(UIImage(named: countries[1]), for: .normal)
-        button2.setImage(UIImage(named: countries[2]), for: .normal)
+        button3.setImage(UIImage(named: countries[2]), for: .normal)
         
         title = countries[correctAnswer].uppercased() // define title as correct answer.uppercased()
         // And after new game it will make new random countries and correct answer
@@ -57,6 +57,12 @@ class ViewController: UIViewController {
             title = "Wrong"
             score -= 1
         }
+        
+        let ac = UIAlertController(title: title, message: "Your score is \(score)", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuastion))
+        
+        present(ac, animated: true)
+                     
     }
     
 

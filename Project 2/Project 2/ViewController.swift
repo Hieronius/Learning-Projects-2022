@@ -35,6 +35,8 @@ class ViewController: UIViewController {
         button3.layer.borderColor = UIColor.lightGray.cgColor
         
         askQuastion()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(openScore))
     }
     
     func askQuastion(action: UIAlertAction! = nil) {
@@ -82,4 +84,12 @@ class ViewController: UIViewController {
         present(ac, animated: true)
                      
         }
-     }
+    
+    @objc func openScore() {
+        let score = "The current score is \(score)"
+        
+        let vc = UIActivityViewController(activityItems: [score], applicationActivities: [])
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(vc, animated: true)
+    }
+}

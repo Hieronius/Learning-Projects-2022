@@ -17,6 +17,8 @@ class ViewController: UITableViewController {
         
         navigationController?.navigationBar.prefersLargeTitles = true
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(sharedApp))
+        
         title = "Storm Viewer"
         
         let fm = FileManager.default
@@ -30,7 +32,7 @@ class ViewController: UITableViewController {
             }
         }
         pictures.sort()
-        print(pictures.sort())
+        // print(pictures.sort())
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,6 +51,16 @@ class ViewController: UITableViewController {
             vc.title = "Picture \(pictures.firstIndex(of: (pictures[indexPath.row]))! + 1) of \(pictures.count)"
             navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    @objc func sharedApp() {
+        
+        let sharedLink = "Check this app - Storm Viewer!"
+        let image = "📲"
+        
+        let vc = UIActivityViewController(activityItems: [sharedLink, image], applicationActivities: [])
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(vc, animated: true)
     }
 }
 

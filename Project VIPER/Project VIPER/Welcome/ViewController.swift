@@ -1,13 +1,14 @@
-//
-//  ViewController.swift
-//  Project VIPER
-//
-//  Created by Арсентий Халимовский on 15.09.2022.
-//
+// Module name "Welcome" because this module supposed to meet user
 
 import UIKit
 
+protocol WelcomeViewProtocol: AnyObject {
+    
+}
+
 class ViewController: UIViewController {
+    
+    var presenter: WelcomePresenterProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -91,7 +91,6 @@
 				DDDDFC4B28D30CD500D64DA0 /* Assets.xcassets */,
 				DDDDFC5028D30CD500D64DA0 /* Info.plist */,
 				DDDDFC4D28D30CD500D64DA0 /* LaunchScreen.storyboard */,
-				DDDDFC4828D30CD100D64DA0 /* Main.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -108,11 +107,12 @@
 		DDDDFC5D28D3107500D64DA0 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
+				DDDDFC4828D30CD100D64DA0 /* Main.storyboard */,
 				DDDDFC4628D30CD100D64DA0 /* ViewController.swift */,
-				DDDDFC6028D3114200D64DA0 /* WelcomePresenter.swift */,
-				DDDDFC6228D3121900D64DA0 /* WelcomeRouter.swift */,
 				DDDDFC6428D312BE00D64DA0 /* WelcomeInteractor.swift */,
 				DDDDFC6628D3132700D64DA0 /* WelcomeModuleBuilder.swift */,
+				DDDDFC6028D3114200D64DA0 /* WelcomePresenter.swift */,
+				DDDDFC6228D3121900D64DA0 /* WelcomeRouter.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";

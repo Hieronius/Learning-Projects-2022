@@ -6,6 +6,6 @@ protocol WelcomeRouterProtocol: AnyObject {
     
 }
 
-class WelcomeRouter: WelcomePresenter {
+class WelcomeRouter: WelcomeRouterProtocol {
     weak var presenter: WelcomePresenterProtocol?
 }

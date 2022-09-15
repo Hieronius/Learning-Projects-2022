@@ -19,7 +19,10 @@ class ViewController: UIViewController {
         presenter?.viewDidLoaded()
     }
 
-
+    @IBAction func didTapedImageButton(_ sender: Any) {
+        presenter?.didTapImageButton()
+    }
+    
 }
 
 extension ViewController: WelcomeViewProtocol {

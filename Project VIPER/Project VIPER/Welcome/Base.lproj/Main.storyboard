@@ -28,6 +28,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PjS-WK-Y1A">
+                                <rect key="frame" x="157" y="801" width="103" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="fdq-rj-2OG"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Show image"/>
+                                <connections>
+                                    <action selector="didTapedImageButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mwi-Lv-XZP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -35,7 +46,10 @@
                             <constraint firstItem="4VC-H2-um4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="219" id="Bfa-oJ-xSA"/>
                             <constraint firstItem="fV9-Lx-byq" firstAttribute="top" secondItem="4VC-H2-um4" secondAttribute="bottom" constant="109" id="J5I-uB-9Na"/>
                             <constraint firstItem="fV9-Lx-byq" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="MXX-q3-iyJ"/>
+                            <constraint firstItem="PjS-WK-Y1A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="157" id="VW0-y2-9Lg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PjS-WK-Y1A" secondAttribute="bottom" constant="30" id="ZSs-9x-KJm"/>
                             <constraint firstItem="4VC-H2-um4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ccC-X0-nJm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PjS-WK-Y1A" secondAttribute="trailing" constant="154" id="hWA-xV-qJH"/>
                         </constraints>
                     </view>
                     <connections>

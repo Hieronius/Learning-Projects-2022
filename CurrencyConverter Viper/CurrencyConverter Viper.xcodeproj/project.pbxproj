@@ -13,6 +13,18 @@
 		DD4B3BD028D5EFE9002E89AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD4B3BCE28D5EFE9002E89AC /* Main.storyboard */; };
 		DD4B3BD228D5EFED002E89AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD4B3BD128D5EFED002E89AC /* Assets.xcassets */; };
 		DD4B3BD528D5EFED002E89AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD4B3BD328D5EFED002E89AC /* LaunchScreen.storyboard */; };
+		DD4B3BE528D5F1C3002E89AC /* AboutConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4B3BE428D5F1C3002E89AC /* AboutConfigurator.swift */; };
+		DD4B3BE728D5F1D4002E89AC /* AboutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4B3BE628D5F1D4002E89AC /* AboutInteractor.swift */; };
+		DD4B3BE928D5F1E0002E89AC /* AboutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4B3BE828D5F1E0002E89AC /* AboutPresenter.swift */; };
+		DD4B3BEB28D5F1F4002E89AC /* AboutProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4B3BEA28D5F1F4002E89AC /* AboutProtocols.swift */; };
+		DD4B3BED28D5F201002E89AC /* AboutRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4B3BEC28D5F201002E89AC /* AboutRouter.swift */; };
+		DD4B3BEF28D5F213002E89AC /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4B3BEE28D5F213002E89AC /* AboutViewController.swift */; };
+		DD4B3BF128D5F23E002E89AC /* MainConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4B3BF028D5F23E002E89AC /* MainConfigurator.swift */; };
+		DD4B3BF328D5F253002E89AC /* MainInterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4B3BF228D5F253002E89AC /* MainInterator.swift */; };
+		DD4B3BF528D5F25F002E89AC /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4B3BF428D5F25F002E89AC /* MainPresenter.swift */; };
+		DD4B3BF728D5F269002E89AC /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4B3BF628D5F269002E89AC /* MainRouter.swift */; };
+		DD4B3BF928D5F279002E89AC /* MainProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4B3BF828D5F279002E89AC /* MainProtocols.swift */; };
+		DD4B3BFB28D5F287002E89AC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4B3BFA28D5F287002E89AC /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +36,18 @@
 		DD4B3BD128D5EFED002E89AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD4B3BD428D5EFED002E89AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD4B3BD628D5EFED002E89AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD4B3BE428D5F1C3002E89AC /* AboutConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutConfigurator.swift; sourceTree = "<group>"; };
+		DD4B3BE628D5F1D4002E89AC /* AboutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutInteractor.swift; sourceTree = "<group>"; };
+		DD4B3BE828D5F1E0002E89AC /* AboutPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPresenter.swift; sourceTree = "<group>"; };
+		DD4B3BEA28D5F1F4002E89AC /* AboutProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutProtocols.swift; sourceTree = "<group>"; };
+		DD4B3BEC28D5F201002E89AC /* AboutRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRouter.swift; sourceTree = "<group>"; };
+		DD4B3BEE28D5F213002E89AC /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		DD4B3BF028D5F23E002E89AC /* MainConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConfigurator.swift; sourceTree = "<group>"; };
+		DD4B3BF228D5F253002E89AC /* MainInterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInterator.swift; sourceTree = "<group>"; };
+		DD4B3BF428D5F25F002E89AC /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		DD4B3BF628D5F269002E89AC /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		DD4B3BF828D5F279002E89AC /* MainProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProtocols.swift; sourceTree = "<group>"; };
+		DD4B3BFA28D5F287002E89AC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +80,91 @@
 		DD4B3BC728D5EFE9002E89AC /* CurrencyConverter Viper */ = {
 			isa = PBXGroup;
 			children = (
+				DD4B3BE128D5F097002E89AC /* Views */,
+				DD4B3BE028D5F08F002E89AC /* Storyboards */,
+				DD4B3BDF28D5F07A002E89AC /* Services */,
+				DD4B3BDE28D5F072002E89AC /* Modules */,
+				DD4B3BDD28D5F068002E89AC /* Extensions */,
+				DD4B3BDC28D5F04E002E89AC /* Entities */,
 				DD4B3BC828D5EFE9002E89AC /* AppDelegate.swift */,
 				DD4B3BCA28D5EFE9002E89AC /* SceneDelegate.swift */,
 				DD4B3BCC28D5EFE9002E89AC /* ViewController.swift */,
-				DD4B3BCE28D5EFE9002E89AC /* Main.storyboard */,
 				DD4B3BD128D5EFED002E89AC /* Assets.xcassets */,
-				DD4B3BD328D5EFED002E89AC /* LaunchScreen.storyboard */,
 				DD4B3BD628D5EFED002E89AC /* Info.plist */,
 			);
 			path = "CurrencyConverter Viper";
+			sourceTree = "<group>";
+		};
+		DD4B3BDC28D5F04E002E89AC /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		DD4B3BDD28D5F068002E89AC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DD4B3BDE28D5F072002E89AC /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				DD4B3BE228D5F11F002E89AC /* About */,
+				DD4B3BE328D5F123002E89AC /* Main */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		DD4B3BDF28D5F07A002E89AC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		DD4B3BE028D5F08F002E89AC /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				DD4B3BCE28D5EFE9002E89AC /* Main.storyboard */,
+				DD4B3BD328D5EFED002E89AC /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		DD4B3BE128D5F097002E89AC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DD4B3BE228D5F11F002E89AC /* About */ = {
+			isa = PBXGroup;
+			children = (
+				DD4B3BEE28D5F213002E89AC /* AboutViewController.swift */,
+				DD4B3BE428D5F1C3002E89AC /* AboutConfigurator.swift */,
+				DD4B3BE628D5F1D4002E89AC /* AboutInteractor.swift */,
+				DD4B3BE828D5F1E0002E89AC /* AboutPresenter.swift */,
+				DD4B3BEC28D5F201002E89AC /* AboutRouter.swift */,
+				DD4B3BEA28D5F1F4002E89AC /* AboutProtocols.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		DD4B3BE328D5F123002E89AC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DD4B3BF028D5F23E002E89AC /* MainConfigurator.swift */,
+				DD4B3BF228D5F253002E89AC /* MainInterator.swift */,
+				DD4B3BF428D5F25F002E89AC /* MainPresenter.swift */,
+				DD4B3BF628D5F269002E89AC /* MainRouter.swift */,
+				DD4B3BF828D5F279002E89AC /* MainProtocols.swift */,
+				DD4B3BFA28D5F287002E89AC /* MainViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +238,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD4B3BED28D5F201002E89AC /* AboutRouter.swift in Sources */,
+				DD4B3BE928D5F1E0002E89AC /* AboutPresenter.swift in Sources */,
+				DD4B3BF928D5F279002E89AC /* MainProtocols.swift in Sources */,
+				DD4B3BE728D5F1D4002E89AC /* AboutInteractor.swift in Sources */,
+				DD4B3BEF28D5F213002E89AC /* AboutViewController.swift in Sources */,
+				DD4B3BF328D5F253002E89AC /* MainInterator.swift in Sources */,
+				DD4B3BF728D5F269002E89AC /* MainRouter.swift in Sources */,
+				DD4B3BE528D5F1C3002E89AC /* AboutConfigurator.swift in Sources */,
+				DD4B3BEB28D5F1F4002E89AC /* AboutProtocols.swift in Sources */,
+				DD4B3BFB28D5F287002E89AC /* MainViewController.swift in Sources */,
+				DD4B3BF528D5F25F002E89AC /* MainPresenter.swift in Sources */,
 				DD4B3BCD28D5EFE9002E89AC /* ViewController.swift in Sources */,
 				DD4B3BC928D5EFE9002E89AC /* AppDelegate.swift in Sources */,
 				DD4B3BCB28D5EFE9002E89AC /* SceneDelegate.swift in Sources */,
+				DD4B3BF128D5F23E002E89AC /* MainConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

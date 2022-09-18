@@ -5,12 +5,14 @@ import UIKit
 protocol WelcomeViewProtocol: AnyObject {
     func showDate(date: String)
     func showWeather(weather: String)
+    func showWindSpeed(windSpeed: String)
 }
 
 class ViewController: UIViewController {
     
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var weatherLabel: UILabel!
+    @IBOutlet var windSpeedLabel: UILabel!
     
     var presenter: WelcomePresenterProtocol?
     
@@ -21,6 +23,10 @@ class ViewController: UIViewController {
 
     @IBAction func didTapedImageButton(_ sender: Any) {
         presenter?.didTapImageButton()
+    }
+    
+    @IBAction func didTapedWindSpeedButton(_ sender: Any) {
+        presenter?.didTapWindSpeedButton()
     }
     
 }
@@ -35,6 +41,12 @@ extension ViewController: WelcomeViewProtocol {
     func showWeather(weather: String) {
         DispatchQueue.main.async {
             self.weatherLabel.text = weather
+        }
+    }
+    
+    func showWindSpeed(windSpeed: String) {
+        DispatchQueue.main.async {
+            self.windSpeedLabel.text = windSpeed
         }
     }
     

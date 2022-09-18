@@ -13,6 +13,13 @@
 		DD4B3BB828D365E0002E89AC /* ImageViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4B3BB328D365E0002E89AC /* ImageViewerViewController.swift */; };
 		DD4B3BB928D365E0002E89AC /* ImageViewerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4B3BB428D365E0002E89AC /* ImageViewerInteractor.swift */; };
 		DD4B3BBB28D366E4002E89AC /* ImageViewer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD4B3BBA28D366E4002E89AC /* ImageViewer.storyboard */; };
+		DD4B3BFE28D6DFD6002E89AC /* WindSpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4B3BFD28D6DFD6002E89AC /* WindSpeedViewController.swift */; };
+		DD4B3C0028D6DFEB002E89AC /* WindSpeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4B3BFF28D6DFEB002E89AC /* WindSpeedPresenter.swift */; };
+		DD4B3C0228D6DFF8002E89AC /* WindSpeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4B3C0128D6DFF8002E89AC /* WindSpeedInteractor.swift */; };
+		DD4B3C0428D6E008002E89AC /* WindSpeedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4B3C0328D6E008002E89AC /* WindSpeedRouter.swift */; };
+		DD4B3C0628D6E021002E89AC /* WindSpeedModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4B3C0528D6E021002E89AC /* WindSpeedModuleBuilder.swift */; };
+		DD4B3C0828D6E02E002E89AC /* WindSpeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD4B3C0728D6E02E002E89AC /* WindSpeed.storyboard */; };
+		DD4B3C0A28D6E150002E89AC /* WindSpeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4B3C0928D6E150002E89AC /* WindSpeedService.swift */; };
 		DDDDFC4328D30CD100D64DA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDDFC4228D30CD100D64DA0 /* AppDelegate.swift */; };
 		DDDDFC4528D30CD100D64DA0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDDFC4428D30CD100D64DA0 /* SceneDelegate.swift */; };
 		DDDDFC4728D30CD100D64DA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDDFC4628D30CD100D64DA0 /* ViewController.swift */; };
@@ -34,6 +41,13 @@
 		DD4B3BB328D365E0002E89AC /* ImageViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerViewController.swift; sourceTree = "<group>"; };
 		DD4B3BB428D365E0002E89AC /* ImageViewerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerInteractor.swift; sourceTree = "<group>"; };
 		DD4B3BBA28D366E4002E89AC /* ImageViewer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImageViewer.storyboard; sourceTree = "<group>"; };
+		DD4B3BFD28D6DFD6002E89AC /* WindSpeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindSpeedViewController.swift; sourceTree = "<group>"; };
+		DD4B3BFF28D6DFEB002E89AC /* WindSpeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindSpeedPresenter.swift; sourceTree = "<group>"; };
+		DD4B3C0128D6DFF8002E89AC /* WindSpeedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindSpeedInteractor.swift; sourceTree = "<group>"; };
+		DD4B3C0328D6E008002E89AC /* WindSpeedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindSpeedRouter.swift; sourceTree = "<group>"; };
+		DD4B3C0528D6E021002E89AC /* WindSpeedModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindSpeedModuleBuilder.swift; sourceTree = "<group>"; };
+		DD4B3C0728D6E02E002E89AC /* WindSpeed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WindSpeed.storyboard; sourceTree = "<group>"; };
+		DD4B3C0928D6E150002E89AC /* WindSpeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindSpeedService.swift; sourceTree = "<group>"; };
 		DDDDFC3F28D30CD100D64DA0 /* Project VIPER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project VIPER.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDDDFC4228D30CD100D64DA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDDDFC4428D30CD100D64DA0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +75,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD4B3BFC28D6DFAF002E89AC /* WindSpeed */ = {
+			isa = PBXGroup;
+			children = (
+				DD4B3C0728D6E02E002E89AC /* WindSpeed.storyboard */,
+				DD4B3BFD28D6DFD6002E89AC /* WindSpeedViewController.swift */,
+				DD4B3BFF28D6DFEB002E89AC /* WindSpeedPresenter.swift */,
+				DD4B3C0128D6DFF8002E89AC /* WindSpeedInteractor.swift */,
+				DD4B3C0328D6E008002E89AC /* WindSpeedRouter.swift */,
+				DD4B3C0528D6E021002E89AC /* WindSpeedModuleBuilder.swift */,
+			);
+			path = WindSpeed;
+			sourceTree = "<group>";
+		};
 		DDDDFC3628D30CD100D64DA0 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +107,7 @@
 		DDDDFC4128D30CD100D64DA0 /* Project VIPER */ = {
 			isa = PBXGroup;
 			children = (
+				DD4B3BFC28D6DFAF002E89AC /* WindSpeed */,
 				DDDDFC6828D3600100D64DA0 /* ImageViewer */,
 				DDDDFC5D28D3107500D64DA0 /* Welcome */,
 				DDDDFC5828D30E2700D64DA0 /* API */,
@@ -113,6 +141,7 @@
 			children = (
 				DDDDFC5928D30E3900D64DA0 /* DateService.swift */,
 				DDDDFC5B28D30E4B00D64DA0 /* WeatherService.swift */,
+				DD4B3C0928D6E150002E89AC /* WindSpeedService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -122,10 +151,10 @@
 			children = (
 				DDDDFC4828D30CD100D64DA0 /* Main.storyboard */,
 				DDDDFC4628D30CD100D64DA0 /* ViewController.swift */,
-				DDDDFC6428D312BE00D64DA0 /* WelcomeInteractor.swift */,
-				DDDDFC6628D3132700D64DA0 /* WelcomeModuleBuilder.swift */,
 				DDDDFC6028D3114200D64DA0 /* WelcomePresenter.swift */,
+				DDDDFC6428D312BE00D64DA0 /* WelcomeInteractor.swift */,
 				DDDDFC6228D3121900D64DA0 /* WelcomeRouter.swift */,
+				DDDDFC6628D3132700D64DA0 /* WelcomeModuleBuilder.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -135,10 +164,10 @@
 			children = (
 				DD4B3BBA28D366E4002E89AC /* ImageViewer.storyboard */,
 				DD4B3BB328D365E0002E89AC /* ImageViewerViewController.swift */,
-				DD4B3BB428D365E0002E89AC /* ImageViewerInteractor.swift */,
 				DD4B3BB128D365E0002E89AC /* ImageViewerPresenter.swift */,
-				DD4B3BB028D365E0002E89AC /* ImageViewerModuleBuilder.swift */,
+				DD4B3BB428D365E0002E89AC /* ImageViewerInteractor.swift */,
 				DD4B3BB228D365E0002E89AC /* ImageViewerRouter.swift */,
+				DD4B3BB028D365E0002E89AC /* ImageViewerModuleBuilder.swift */,
 			);
 			path = ImageViewer;
 			sourceTree = "<group>";
@@ -201,6 +230,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD4B3C0828D6E02E002E89AC /* WindSpeed.storyboard in Resources */,
 				DDDDFC4F28D30CD500D64DA0 /* LaunchScreen.storyboard in Resources */,
 				DD4B3BBB28D366E4002E89AC /* ImageViewer.storyboard in Resources */,
 				DDDDFC4C28D30CD500D64DA0 /* Assets.xcassets in Resources */,
@@ -220,15 +250,21 @@
 				DD4B3BB828D365E0002E89AC /* ImageViewerViewController.swift in Sources */,
 				DDDDFC6528D312BE00D64DA0 /* WelcomeInteractor.swift in Sources */,
 				DDDDFC6128D3114200D64DA0 /* WelcomePresenter.swift in Sources */,
+				DD4B3BFE28D6DFD6002E89AC /* WindSpeedViewController.swift in Sources */,
 				DD4B3BB628D365E0002E89AC /* ImageViewerPresenter.swift in Sources */,
 				DDDDFC4728D30CD100D64DA0 /* ViewController.swift in Sources */,
 				DDDDFC4328D30CD100D64DA0 /* AppDelegate.swift in Sources */,
+				DD4B3C0A28D6E150002E89AC /* WindSpeedService.swift in Sources */,
 				DDDDFC6728D3132700D64DA0 /* WelcomeModuleBuilder.swift in Sources */,
 				DDDDFC6328D3121900D64DA0 /* WelcomeRouter.swift in Sources */,
 				DDDDFC4528D30CD100D64DA0 /* SceneDelegate.swift in Sources */,
 				DDDDFC5A28D30E3900D64DA0 /* DateService.swift in Sources */,
 				DD4B3BB928D365E0002E89AC /* ImageViewerInteractor.swift in Sources */,
+				DD4B3C0428D6E008002E89AC /* WindSpeedRouter.swift in Sources */,
+				DD4B3C0628D6E021002E89AC /* WindSpeedModuleBuilder.swift in Sources */,
+				DD4B3C0028D6DFEB002E89AC /* WindSpeedPresenter.swift in Sources */,
 				DD4B3BB528D365E0002E89AC /* ImageViewerModuleBuilder.swift in Sources */,
+				DD4B3C0228D6DFF8002E89AC /* WindSpeedInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

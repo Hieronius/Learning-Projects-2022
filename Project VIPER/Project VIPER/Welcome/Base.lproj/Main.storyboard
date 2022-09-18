@@ -39,22 +39,45 @@
                                     <action selector="didTapedImageButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mwi-Lv-XZP"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNp-L7-uUf">
+                                <rect key="frame" x="139" y="723" width="138" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Show wind speed"/>
+                                <connections>
+                                    <action selector="didTapedWindSpeedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ng1-Oh-wmh"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPX-rb-guO">
+                                <rect key="frame" x="186" y="144" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="4VC-H2-um4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="219" id="Bfa-oJ-xSA"/>
+                            <constraint firstItem="UPX-rb-guO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="EsN-K7-xmD"/>
+                            <constraint firstItem="4VC-H2-um4" firstAttribute="top" secondItem="UPX-rb-guO" secondAttribute="bottom" constant="98" id="HBx-wt-ypc"/>
                             <constraint firstItem="fV9-Lx-byq" firstAttribute="top" secondItem="4VC-H2-um4" secondAttribute="bottom" constant="109" id="J5I-uB-9Na"/>
+                            <constraint firstItem="PjS-WK-Y1A" firstAttribute="top" secondItem="tNp-L7-uUf" secondAttribute="bottom" constant="47" id="MH0-G4-6lh"/>
                             <constraint firstItem="fV9-Lx-byq" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="MXX-q3-iyJ"/>
+                            <constraint firstItem="tNp-L7-uUf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="139" id="UHa-KD-eTk"/>
                             <constraint firstItem="PjS-WK-Y1A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="157" id="VW0-y2-9Lg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PjS-WK-Y1A" secondAttribute="bottom" constant="30" id="ZSs-9x-KJm"/>
                             <constraint firstItem="4VC-H2-um4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ccC-X0-nJm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UPX-rb-guO" secondAttribute="trailing" constant="186" id="dTR-Wf-9Ge"/>
+                            <constraint firstItem="UPX-rb-guO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="186" id="fxK-VN-w0I"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PjS-WK-Y1A" secondAttribute="trailing" constant="154" id="hWA-xV-qJH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tNp-L7-uUf" secondAttribute="trailing" constant="137" id="htc-mP-ICf"/>
+                            <constraint firstItem="tNp-L7-uUf" firstAttribute="top" secondItem="fV9-Lx-byq" secondAttribute="bottom" constant="309" id="twa-lo-v7d"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="dateLabel" destination="4VC-H2-um4" id="TfC-hx-OZo"/>
                         <outlet property="weatherLabel" destination="fV9-Lx-byq" id="Lhz-6R-8H0"/>
+                        <outlet property="windSpeedLabel" destination="UPX-rb-guO" id="Pcr-Hg-cYy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

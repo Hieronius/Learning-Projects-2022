@@ -15,7 +15,7 @@ class Currency: Codable, Equatable {
     var ratio: Double
     var index: Int
     
-    init(fullName: String, shortName: String, ratio: Double, index: Int) {
+    required init(fullName: String, shortName: String, ratio: Double, index: Int) {
         self.fullName = fullName
         self.shortName = shortName
         self.ratio = ratio

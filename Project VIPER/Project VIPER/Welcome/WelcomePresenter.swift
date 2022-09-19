@@ -8,7 +8,7 @@ protocol WelcomePresenterProtocol: AnyObject {
     func didTapWindSpeedButton()
     func didLoad(date: String?)
     func didLoad(weather: Int?)
-    func didLoad(windSpeed: Int?)
+    func didLoad(wind: Int?)
 }
 
 class WelcomePresenter {
@@ -34,8 +34,8 @@ extension WelcomePresenter: WelcomePresenterProtocol {
     }
     
     func didTapWindSpeedButton() {
-        let windSpeed = interactor?.windSpeed
-        router?.openWindSpeed(for: windSpeed!)
+        let wind = interactor?.wind
+        router?.openWindSpeed(for: wind!)
     }
     
     func didLoad(date: String?) {
@@ -47,9 +47,9 @@ extension WelcomePresenter: WelcomePresenterProtocol {
         view?.showWeather(weather: temperature)
     }
     
-    func didLoad(windSpeed: Int?) {
-        let windSpeed = windSpeed?.description ?? "No wind speed"
-        view?.showWindSpeed(windSpeed: windSpeed)
+    func didLoad(wind: Int?) {
+        let wind = wind?.description ?? "No wind speed"
+        view?.showWindSpeed(wind: wind)
     }
     
 }

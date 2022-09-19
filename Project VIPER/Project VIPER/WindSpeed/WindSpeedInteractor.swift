@@ -3,27 +3,32 @@
 import Foundation
 import UIKit
 
-protocol WindSpeedInteractorProtocol {
+protocol WindSpeedInteractorProtocol: AnyObject {
     func getImageCurrentWindSpeed() -> UIImage?
 }
-class WindSpeedInteractor {
+
+class WindSpeedInteractor: WindSpeedInteractorProtocol {
     weak var presenter: WindSpeedPresenterProtocol?
     
-    var windSpeed: Int
+    var wind: Int
     
-    init(windSpeed: Int) {
-        self.windSpeed = windSpeed
+    init(wind: Int) {
+        self.wind = wind
     }
-}
-
-extension WindSpeedInteractor: WindSpeedInteractorProtocol {
+    
     func getImageCurrentWindSpeed() -> UIImage? {
-        if windSpeed >= 0, windSpeed <= 10 {
+        if wind > 0 {
             return UIImage(systemName: "wind")
+            print("breakpoint2")
         } else {
             return UIImage(systemName: "wind.circle")
+            print("breakpoint3")
         }
     }
 }
+
+
+    
+
 
 

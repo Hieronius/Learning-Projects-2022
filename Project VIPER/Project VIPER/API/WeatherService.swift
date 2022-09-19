@@ -12,6 +12,7 @@ class WeatherService {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             let temperature = Int.random(in: -30...30)
             completion(temperature)
+            
         }
     }
 }

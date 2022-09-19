@@ -2,8 +2,8 @@
 
 import Foundation
 
-protocol WindSpeedPresenterProtocol {
-    func viewDidLoad()
+protocol WindSpeedPresenterProtocol: AnyObject {
+    func viewDidLoaded()
 }
 
 class WindSpeedPresenter {
@@ -20,9 +20,9 @@ class WindSpeedPresenter {
 
 extension WindSpeedPresenter: WindSpeedPresenterProtocol {
     
-    func viewDidLoad() {
-        let image = interactor.getImageCurrentWindSpeed()
-        view?.showWindSpeed(image: image)
+    func viewDidLoaded() {
+        let wind = interactor.getImageCurrentWindSpeed()
+        view?.showWindSpeed(wind: wind)
         
     }
 }

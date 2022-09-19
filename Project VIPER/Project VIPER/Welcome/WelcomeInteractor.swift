@@ -7,7 +7,7 @@ protocol WelcomeInteractorProtocol: AnyObject {
     func loadWeather()
     func loadWindSpeed()
     var temperature: Int { get }
-    var windSpeed: Int { get }
+    var wind: Int { get }
 }
 
 class WelcomeInteractor: WelcomeInteractorProtocol {
@@ -17,7 +17,7 @@ class WelcomeInteractor: WelcomeInteractorProtocol {
     let windSpeedService = WindSpeedService()
     
     var temperature: Int = 0
-    var windSpeed: Int = 0
+    var wind: Int = 0
     
     func loadDate() {
         dateService.getDate { [weak self] date in
@@ -33,9 +33,10 @@ class WelcomeInteractor: WelcomeInteractorProtocol {
     }
     
     func loadWindSpeed() {
-        windSpeedService.getWindSpeed { [weak self] windSpeed in
-            self?.presenter?.didLoad(windSpeed:windSpeed)
-            self?.windSpeed = windSpeed
+        windSpeedService.getWindSpeed { [weak self] wind in
+            print("breakPoint4")
+            self?.presenter?.didLoad(wind: wind)
+            self?.wind = wind
     }
   }
 }

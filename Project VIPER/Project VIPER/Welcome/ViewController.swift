@@ -5,7 +5,7 @@ import UIKit
 protocol WelcomeViewProtocol: AnyObject {
     func showDate(date: String)
     func showWeather(weather: String)
-    func showWindSpeed(windSpeed: String)
+    func showWindSpeed(wind: String)
 }
 
 class ViewController: UIViewController {
@@ -44,9 +44,9 @@ extension ViewController: WelcomeViewProtocol {
         }
     }
     
-    func showWindSpeed(windSpeed: String) {
+    func showWindSpeed(wind: String) {
         DispatchQueue.main.async {
-            self.windSpeedLabel.text = windSpeed
+            self.windSpeedLabel.text = wind
         }
     }
     

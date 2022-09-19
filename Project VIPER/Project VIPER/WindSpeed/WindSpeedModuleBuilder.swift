@@ -4,8 +4,8 @@ import Foundation
 import UIKit
 
 class WindSpeedModuleBuilder {
-    static func build(windSpeed: Int) -> WindSpeedViewController {
-        let interactor = WindSpeedInteractor(windSpeed: windSpeed)
+    static func build(wind: Int) -> WindSpeedViewController {
+        let interactor = WindSpeedInteractor(wind: wind)
         let router = WindSpeedRouter()
         let presenter = WindSpeedPresenter(interactor: interactor, router: router)
         let storyboard = UIStoryboard(name: "WindSpeed", bundle: nil)

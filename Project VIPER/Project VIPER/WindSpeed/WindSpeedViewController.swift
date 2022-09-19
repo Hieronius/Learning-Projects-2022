@@ -3,13 +3,13 @@
 import Foundation
 import UIKit
 
-protocol WindSpeedViewControllerProtocol {
-    func showWindSpeed(image: UIImage?)
+protocol WindSpeedViewControllerProtocol: AnyObject {
+    func showWindSpeed(wind: UIImage?)
 }
 
-class WindSpeedViewController: ViewController {
+class WindSpeedViewController: UIViewController {
     
-    @IBOutlet var windSpeed: UIImageView!
+    @IBOutlet var wind: UIImageView!
     
     
     // MARK: Public
@@ -37,9 +37,9 @@ class WindSpeedViewController: ViewController {
     // MARK: WindSpeedViewControllerProtocol:
     
     extension WindSpeedViewController: WindSpeedViewControllerProtocol {
-         func showWindSpeed(image: UIImage?) {
+         func showWindSpeed(wind: UIImage?) {
              DispatchQueue.main.async {
-                 self.windSpeed.image = image
+                 self.wind.image = wind
              }
         }
     }

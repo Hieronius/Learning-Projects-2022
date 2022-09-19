@@ -4,7 +4,7 @@ import Foundation
 
 protocol WelcomeRouterProtocol: AnyObject {
     func openImage(for temperature: Int)
-    func openWindSpeed(for windSpeed: Int)
+    func openWindSpeed(for wind: Int)
 }
 
 class WelcomeRouter: WelcomeRouterProtocol {
@@ -15,8 +15,8 @@ class WelcomeRouter: WelcomeRouterProtocol {
         viewController?.present(vc, animated: true, completion: nil)
     }
     
-    func openWindSpeed(for windSpeed: Int) {
-        let vc = WindSpeedModuleBuilder.build(windSpeed: windSpeed)
+    func openWindSpeed(for wind: Int) {
+        let vc = WindSpeedModuleBuilder.build(wind: wind)
         viewController?.present(vc, animated: true, completion: nil)
     }
 }

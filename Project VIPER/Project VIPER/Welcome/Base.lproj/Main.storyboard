@@ -44,7 +44,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Show wind speed"/>
                                 <connections>
-                                    <action selector="didTapedWindSpeedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ng1-Oh-wmh"/>
+                                    <action selector="didTapedWindSpeedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LGf-3D-qC3"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPX-rb-guO">
@@ -77,7 +77,7 @@
                     <connections>
                         <outlet property="dateLabel" destination="4VC-H2-um4" id="TfC-hx-OZo"/>
                         <outlet property="weatherLabel" destination="fV9-Lx-byq" id="Lhz-6R-8H0"/>
-                        <outlet property="windSpeedLabel" destination="UPX-rb-guO" id="Pcr-Hg-cYy"/>
+                        <outlet property="windSpeedLabel" destination="UPX-rb-guO" id="4lz-BM-9v6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

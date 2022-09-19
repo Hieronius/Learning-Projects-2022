@@ -9,6 +9,7 @@ protocol WelcomePresenterProtocol: AnyObject {
     func didLoad(date: String?)
     func didLoad(weather: Int?)
     func didLoad(wind: Int?)
+    func didLoad(pressure: Int?)
 }
 
 class WelcomePresenter {
@@ -26,6 +27,7 @@ extension WelcomePresenter: WelcomePresenterProtocol {
     func viewDidLoaded() {
         interactor?.loadDate()
         interactor?.loadWeather()
+        interactor?.loadWindSpeed()
     }
     
     func didTapImageButton() {
@@ -40,16 +42,24 @@ extension WelcomePresenter: WelcomePresenterProtocol {
     
     func didLoad(date: String?) {
         view?.showDate(date: date ?? "No date today")
+        print("Date breakpoint2")
     }
     
     func didLoad(weather: Int?) {
         let temperature = weather?.description ?? "No  temperature"
         view?.showWeather(weather: temperature)
+        print("Weather breakpoint2")
     }
     
     func didLoad(wind: Int?) {
         let wind = wind?.description ?? "No wind speed"
         view?.showWindSpeed(wind: wind)
+        print("Wind breakpoint 5")
+    }
+    
+    func didLoad(pressure: Int?) {
+        let pressure = pressure?.description ?? "No pressure"
+        view?.showPressure(pressure: pressure)
     }
     
 }

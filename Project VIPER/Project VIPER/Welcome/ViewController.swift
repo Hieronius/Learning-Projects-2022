@@ -6,13 +6,17 @@ protocol WelcomeViewProtocol: AnyObject {
     func showDate(date: String)
     func showWeather(weather: String)
     func showWindSpeed(wind: String)
+    func showPressure(pressure: String)
 }
 
 class ViewController: UIViewController {
     
-    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel! // open date on storyboard
     @IBOutlet var weatherLabel: UILabel!
-    @IBOutlet var windSpeedLabel: UILabel!
+    @IBOutlet var windLabel: UILabel!
+    
+    @IBOutlet var pressureLabel: UILabel!
+    
     
     var presenter: WelcomePresenterProtocol?
     
@@ -35,18 +39,27 @@ extension ViewController: WelcomeViewProtocol {
     func showDate(date: String) {
         DispatchQueue.main.async {
             self.dateLabel.text = date
+            print("date breakpoint 1")
         }
     }
     
     func showWeather(weather: String) {
         DispatchQueue.main.async {
             self.weatherLabel.text = weather
+            print("weather breakpoint 1")
         }
     }
     
     func showWindSpeed(wind: String) {
         DispatchQueue.main.async {
-            self.windSpeedLabel.text = wind
+            self.windLabel.text = wind
+            print("breakpoint4")
+        }
+    }
+    
+    func showPressure(pressure: String) {
+        DispatchQueue.main.async {
+            self.pressureLabel.text = pressure
         }
     }
     

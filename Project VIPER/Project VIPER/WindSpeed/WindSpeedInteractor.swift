@@ -18,11 +18,13 @@ class WindSpeedInteractor: WindSpeedInteractorProtocol {
     
     func getImageCurrentWindSpeed() -> UIImage? {
         if wind > 0 {
-            return UIImage(systemName: "wind")
             print("breakpoint2")
+            return UIImage(systemName: "wind")
+            
         } else {
-            return UIImage(systemName: "wind.circle")
             print("breakpoint3")
+            return UIImage(systemName: "wind.circle")
+            
         }
     }
 }

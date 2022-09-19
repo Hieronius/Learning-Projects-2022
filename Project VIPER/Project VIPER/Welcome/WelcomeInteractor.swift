@@ -6,8 +6,10 @@ protocol WelcomeInteractorProtocol: AnyObject {
     func loadDate()
     func loadWeather()
     func loadWindSpeed()
+    func loadPressure()
     var temperature: Int { get }
     var wind: Int { get }
+    var pressure: Int { get }
 }
 
 class WelcomeInteractor: WelcomeInteractorProtocol {
@@ -15,9 +17,11 @@ class WelcomeInteractor: WelcomeInteractorProtocol {
     let dateService = DateService()
     let weatherService = WeatherService()
     let windSpeedService = WindSpeedService()
+    let pressureService = PressureService()
     
     var temperature: Int = 0
     var wind: Int = 0
+    var pressure: Int = 0
     
     func loadDate() {
         dateService.getDate { [weak self] date in
@@ -39,4 +43,12 @@ class WelcomeInteractor: WelcomeInteractorProtocol {
             self?.wind = wind
     }
   }
+    
+    func loadPressure() {
+        pressureService.getPressure { [weak self] pressure in
+            self?.presenter?.didLoad(pressure: pressure)
+            self?.pressure = pressure
+        }
+  }
+    
 }

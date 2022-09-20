@@ -24,16 +24,29 @@
                                     <action selector="showButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kCL-84-4yI"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mge-xY-3Fl">
+                                <rect key="frame" x="186" y="285" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="011-6G-nOm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="152" id="3ti-Hk-g5X"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="011-6G-nOm" secondAttribute="trailing" constant="152" id="AVg-3h-FW3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mge-xY-3Fl" secondAttribute="trailing" constant="186" id="FEc-Rg-CAN"/>
+                            <constraint firstItem="mge-xY-3Fl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="241" id="dAl-az-RqK"/>
+                            <constraint firstItem="mge-xY-3Fl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="186" id="hhQ-iy-nsd"/>
+                            <constraint firstItem="011-6G-nOm" firstAttribute="top" secondItem="mge-xY-3Fl" secondAttribute="bottom" constant="115" id="q36-Mv-l8C"/>
                             <constraint firstItem="011-6G-nOm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="377" id="xkS-AE-eKb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="011-6G-nOm" secondAttribute="bottom" constant="387" id="zwt-Bw-FGO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="hiLabel" destination="mge-xY-3Fl" id="xGJ-O4-HNc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

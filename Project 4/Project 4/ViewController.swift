@@ -9,8 +9,6 @@ class ViewController: UIViewController, WKNavigationDelegate {
     var progressView: UIProgressView!
     var websites = ["hackingwithswift.com", "radio.net", "google.com"]
     
-    var secured = true
-    
     override func loadView() {
         webView = WKWebView()
         webView.navigationDelegate = self
@@ -33,9 +31,13 @@ class ViewController: UIViewController, WKNavigationDelegate {
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
         
+        // let back = UIBarButtonItem(barButtonSystemItem: .g, target: webView, action: #selector(webView.goBack))
+        let back = UIBarButtonItem(title: "Back", style: UIBarButtonItem.Style.plain, target: webView, action: #selector(webView.goBack))
+        let forward = UIBarButtonItem(title: "Forward", style: .plain, target: webView, action: #selector(webView.goForward))
         
         
-        toolbarItems = [progressButton, spacer, refresh]
+        
+        toolbarItems = [back, spacer, progressButton, spacer, forward, spacer, refresh]
         navigationController?.isToolbarHidden = false
         
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
@@ -76,13 +78,11 @@ class ViewController: UIViewController, WKNavigationDelegate {
                 if host.contains(website) {
                     
                     decisionHandler(.allow)
-                    secured = true
                     return
                 }
             }
         }
         decisionHandler(.cancel)
-        secured = false
         
         self.presentedViewController?.dismiss(animated: true)
         

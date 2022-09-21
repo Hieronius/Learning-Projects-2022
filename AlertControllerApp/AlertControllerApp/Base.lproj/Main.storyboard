@@ -30,22 +30,45 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9D-J7-7VS">
+                                <rect key="frame" x="148" y="191" width="118" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNv-to-w6q">
+                                <rect key="frame" x="174" y="507" width="67" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="showButton2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5CR-xm-6rW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="011-6G-nOm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="152" id="3ti-Hk-g5X"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mNv-to-w6q" secondAttribute="trailing" constant="173" id="7Jd-VC-n26"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="011-6G-nOm" secondAttribute="trailing" constant="152" id="AVg-3h-FW3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mNv-to-w6q" secondAttribute="bottom" constant="324" id="D8D-j3-W0a"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mge-xY-3Fl" secondAttribute="trailing" constant="186" id="FEc-Rg-CAN"/>
+                            <constraint firstItem="mNv-to-w6q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="174" id="FKI-z5-9zQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c9D-J7-7VS" secondAttribute="trailing" constant="148" id="GWq-cf-Bjc"/>
+                            <constraint firstItem="c9D-J7-7VS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="147" id="YVT-eV-oOA"/>
                             <constraint firstItem="mge-xY-3Fl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="241" id="dAl-az-RqK"/>
+                            <constraint firstItem="mge-xY-3Fl" firstAttribute="top" secondItem="c9D-J7-7VS" secondAttribute="bottom" constant="62" id="dk5-uG-5sn"/>
                             <constraint firstItem="mge-xY-3Fl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="186" id="hhQ-iy-nsd"/>
+                            <constraint firstItem="mNv-to-w6q" firstAttribute="top" secondItem="011-6G-nOm" secondAttribute="bottom" constant="32" id="mFa-hc-Mb3"/>
                             <constraint firstItem="011-6G-nOm" firstAttribute="top" secondItem="mge-xY-3Fl" secondAttribute="bottom" constant="115" id="q36-Mv-l8C"/>
+                            <constraint firstItem="c9D-J7-7VS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="148" id="u1Y-3V-NSG"/>
                             <constraint firstItem="011-6G-nOm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="377" id="xkS-AE-eKb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="011-6G-nOm" secondAttribute="bottom" constant="387" id="zwt-Bw-FGO"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="hiLabel" destination="mge-xY-3Fl" id="xGJ-O4-HNc"/>
+                        <outlet property="yoLabel" destination="c9D-J7-7VS" id="9bj-4t-F6q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

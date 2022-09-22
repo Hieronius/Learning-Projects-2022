@@ -8,6 +8,8 @@
 import UIKit
 
 class WebsiteTableViewController: UITableViewController {
+    
+    var websitesArray = ["hackingwithswift.com", "radio.net", "google.com"]
 
     override func viewDidLoad() {
         super.viewDidLoad()

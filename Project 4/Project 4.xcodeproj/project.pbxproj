@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD438F0528DC49490012B6C9 /* WebsiteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD438F0428DC49490012B6C9 /* WebsiteTableViewController.swift */; };
 		DDDDFC2328D1BCF800D64DA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDDFC2228D1BCF800D64DA0 /* AppDelegate.swift */; };
 		DDDDFC2528D1BCF800D64DA0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDDFC2428D1BCF800D64DA0 /* SceneDelegate.swift */; };
 		DDDDFC2728D1BCF800D64DA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDDFC2628D1BCF800D64DA0 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD438F0428DC49490012B6C9 /* WebsiteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteTableViewController.swift; sourceTree = "<group>"; };
 		DDDDFC1F28D1BCF800D64DA0 /* Project 4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project 4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDDDFC2228D1BCF800D64DA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDDDFC2428D1BCF800D64DA0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				DDDDFC2228D1BCF800D64DA0 /* AppDelegate.swift */,
 				DDDDFC2428D1BCF800D64DA0 /* SceneDelegate.swift */,
 				DDDDFC2628D1BCF800D64DA0 /* ViewController.swift */,
+				DD438F0428DC49490012B6C9 /* WebsiteTableViewController.swift */,
 				DDDDFC2828D1BCF800D64DA0 /* Main.storyboard */,
 				DDDDFC2B28D1BCFB00D64DA0 /* Assets.xcassets */,
 				DDDDFC2D28D1BCFB00D64DA0 /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				DDDDFC2728D1BCF800D64DA0 /* ViewController.swift in Sources */,
 				DDDDFC2328D1BCF800D64DA0 /* AppDelegate.swift in Sources */,
+				DD438F0528DC49490012B6C9 /* WebsiteTableViewController.swift in Sources */,
 				DDDDFC2528D1BCF800D64DA0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

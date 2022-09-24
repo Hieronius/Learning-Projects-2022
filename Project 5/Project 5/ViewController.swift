@@ -115,7 +115,7 @@ class ViewController: UITableViewController {
     }
     
     func isOriginal(word: String) -> Bool {
-        return !usedWords.contains(word)
+        return !usedWords.contains(word.lowercased()) && !usedWords.contains(word.uppercased())
     }
     
     func isReal(word: String) -> Bool {

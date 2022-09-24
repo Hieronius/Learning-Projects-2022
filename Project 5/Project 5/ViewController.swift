@@ -17,6 +17,8 @@ class ViewController: UITableViewController {
         
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(promptForAnswer))
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "New game", style: .plain, target: self, action: #selector(startGame))
         // Do any additional setup after loading the view.
         
         if let startWordsURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
@@ -32,7 +34,7 @@ class ViewController: UITableViewController {
         startGame()
     }
 
-    func startGame() {
+    @objc func startGame() {
         title = allWords.randomElement()
         usedWords.removeAll(keepingCapacity: true)
         tableView.reloadData()
@@ -127,7 +129,7 @@ class ViewController: UITableViewController {
     
     func isThereIsThreeLetters(word: String) -> Bool {
         let range = NSRange(location: 0, length: word.utf16.count)
-        return range.length > 3
+        return range.length >= 3
     }
     
     func showErrorMessage(errorTitle: String, errorMessage: String) {

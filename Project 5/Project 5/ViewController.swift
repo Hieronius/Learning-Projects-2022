@@ -64,8 +64,8 @@ class ViewController: UITableViewController {
     func submit(_ answer: String) {
         let lowerAnswer = answer.lowercased()
         
-        let errorTitle: String
-        let errorMessage: String
+//        let errorTitle: String
+//        let errorMessage: String
         
         if isPossible(word: lowerAnswer) {
             if isOriginal(word: lowerAnswer) {
@@ -80,27 +80,22 @@ class ViewController: UITableViewController {
                     return
                         
                 } else { // if isReal failed
-                    errorTitle = "Word not recognized"
-                    errorMessage = "You can't just make them up, you know!"
+                    showErrorMessage(errorTitle: "Word not recognized", errorMessage: "You can't just make them up, you know!")
+
                 }
             } else { // if isThereIsThreeLetters failed
-                errorTitle = "Word is too short"
-                errorMessage = "You should write more then 3 letters"
+                showErrorMessage(errorTitle: "Word is too short", errorMessage: "You should write more then 3 letters")
+
             }
         } else { // if isOriginal failed
-            errorTitle = "Word already used"
-            errorMessage = "Be more original!"
+            showErrorMessage(errorTitle: "Word already used", errorMessage: "Be more original!")
+
         }
         
     } else { // if isPossible failed
-        errorTitle = "Word not possible"
-        errorMessage = "You can't spell this word from \(title!.lowercased())."
+        showErrorMessage(errorTitle: "Word not possible", errorMessage: "You can't spell this word from \(title!.lowercased()).")
+
     }
-        
-        let ac = UIAlertController(title: errorTitle, message: errorMessage, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default))
-        present(ac, animated: true)
-        
 }
     
     func isPossible(word: String) -> Bool {
@@ -124,10 +119,7 @@ class ViewController: UITableViewController {
     func isReal(word: String) -> Bool {
         let checker = UITextChecker()
         let range = NSRange(location: 0, length: word.utf16.count)
-//        if range.length < 3 {
-//            return false
-//
-//        }
+
         let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
         
         return misspelledRange.location == NSNotFound
@@ -136,6 +128,15 @@ class ViewController: UITableViewController {
     func isThereIsThreeLetters(word: String) -> Bool {
         let range = NSRange(location: 0, length: word.utf16.count)
         return range.length > 3
+    }
+    
+    func showErrorMessage(errorTitle: String, errorMessage: String) {
+        let errorTitle = errorTitle
+        let errorMessage = errorMessage
+        
+        let ac = UIAlertController(title: errorTitle, message: errorMessage, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
     }
 }
 

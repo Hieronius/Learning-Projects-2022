@@ -18,6 +18,9 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6C-Y9-HTm">
                                 <rect key="frame" x="95" y="100" width="224" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="x6C-Y9-HTm" secondAttribute="height" multiplier="112:57" id="t6C-vc-NCH"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="us"/>
                                 <connections>
@@ -26,6 +29,9 @@
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XSJ-VV-nof">
                                 <rect key="frame" x="95" y="244" width="224" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="XSJ-VV-nof" secondAttribute="height" multiplier="112:57" id="IdR-ip-z6f"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="us"/>
                                 <connections>
@@ -34,6 +40,9 @@
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M44-9o-wFs">
                                 <rect key="frame" x="95" y="388" width="224" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="M44-9o-wFs" secondAttribute="height" multiplier="112:57" id="Wa8-no-1gT"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="us"/>
                                 <connections>
@@ -44,7 +53,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="M44-9o-wFs" secondAttribute="bottom" constant="20" id="7Gc-ia-XOl"/>
+                            <constraint firstItem="M44-9o-wFs" firstAttribute="height" secondItem="XSJ-VV-nof" secondAttribute="height" id="8xl-nq-1e2"/>
                             <constraint firstItem="x6C-Y9-HTm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9Zd-ng-PxO"/>
+                            <constraint firstItem="XSJ-VV-nof" firstAttribute="height" secondItem="x6C-Y9-HTm" secondAttribute="height" id="EgS-Wv-hnK"/>
                             <constraint firstItem="M44-9o-wFs" firstAttribute="centerX" secondItem="XSJ-VV-nof" secondAttribute="centerX" id="Jct-zF-m3i"/>
                             <constraint firstItem="XSJ-VV-nof" firstAttribute="centerX" secondItem="x6C-Y9-HTm" secondAttribute="centerX" id="OyQ-83-Qdu"/>
                             <constraint firstItem="M44-9o-wFs" firstAttribute="top" secondItem="XSJ-VV-nof" secondAttribute="bottom" constant="30" id="rT2-aP-qiS"/>

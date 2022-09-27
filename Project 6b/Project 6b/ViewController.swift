@@ -9,16 +9,18 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var screenOrientation = UIInterfaceOrientationMask.landscapeRight
-    var screenOrientationOne = UIInterfaceOrientation.portrait
-    var deviceOrientation = UIDevice.current.orientation.isPortrait
+    var orientationPositionCounter = 0
     
-    if deviceOrientation == true {
-        deviceOrientation.isLandscape
-        print("landscape")
-    } else {
-        deviceOrientation.isPortrait
-        print("portrait")
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        orientationPositionCounter += 1
+        
+        if orientationPositionCounter == 3 {
+            orientationPositionCounter = 0
+        }
+        print(orientationPositionCounter)
+//        print(UIDevice.current.orientation)
     }
 
     override func viewDidLoad() {
@@ -61,50 +63,73 @@ class ViewController: UIViewController {
         view.addSubview(label4)
         view.addSubview(label5)
         
-//        let viewsDictionary = ["label1": label1, "label2": label2, "label3": label3, "label4": label4, "label5": label5]
-//
-//        for label in viewsDictionary.keys {
-//            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[\(label)]|", options: [], metrics: nil, views: viewsDictionary))
-//        }
-//
-//        let metrics = ["labelHeight": 88]
-//
-//        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[label1(labelHeight@999)]-[label2(label1)]-[label3(label1)]-[label4(label1)]-[label5(label1)]-(>=10)-|", options: [], metrics: metrics, views: viewsDictionary))
-        
-        var previous: UILabel?
-        
-        
-        let window = UIApplication.shared.windows.first
-        let topPadding = window?.safeAreaInsets.top
-        let bottomPadding = window?.safeAreaInsets.bottom
-        
-        
-        let viewHeight = self.view.frame.size.height
-        let totalViewHeight = viewHeight - (topPadding! + bottomPadding!)
-        
-        
-        
-        
-        for label in [label1, label2, label3, label4, label5] {
-            label.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10).isActive = true
-            label.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10).isActive = true
-             label.heightAnchor.constraint(equalToConstant: totalViewHeight/5 - 10).isActive = true
-             //label.heightAnchor.constraint(lessThanOrEqualToConstant: 150).isActive = true
-            // label.heightAnchor.constraint(greaterThanOrEqualToConstant: 68).isActive = true
+        while true {
+        if orientationPositionCounter == 0 {
             
-            if let previous = previous {
-                label.topAnchor.constraint(equalTo: previous.bottomAnchor, constant: 10).isActive = true
-            } else {
-                label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
-            }
-            
-            previous = label
+            var previous: UILabel?
             
             
+            let window = UIApplication.shared.windows.first
+            let topPadding = window?.safeAreaInsets.top
+            let bottomPadding = window?.safeAreaInsets.bottom
+            
+            
+            
+            let viewHeight = self.view.frame.size.height
+            let totalViewHeight = viewHeight - (topPadding! + bottomPadding!)
+            print(viewHeight)
+
+            
+            for label in [label1, label2, label3, label4, label5] {
+                label.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10).isActive = true
+                label.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10).isActive = true
+                 label.heightAnchor.constraint(equalToConstant: totalViewHeight/5 - 10).isActive = true
+                 //label.heightAnchor.constraint(lessThanOrEqualToConstant: 150).isActive = true
+                // label.heightAnchor.constraint(greaterThanOrEqualToConstant: 68).isActive = true
+                
+                if let previous = previous {
+                    label.topAnchor.constraint(equalTo: previous.bottomAnchor, constant: 10).isActive = true
+                } else {
+                    label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
+                }
+                
+                previous = label
+        }
+        } else {
+            
+            
+            var previous: UILabel?
+            
+            
+            let window = UIApplication.shared.windows.first
+            let topPadding = window?.safeAreaInsets.top
+            let bottomPadding = window?.safeAreaInsets.bottom
+            
+            
+            let viewHeight = self.view.frame.size.height
+            let totalViewHeight = viewHeight - (topPadding! + bottomPadding!)
+            print(viewHeight)
+
+            
+            for label in [label1, label2, label3, label4, label5] {
+                label.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10).isActive = true
+                label.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10).isActive = true
+                 label.heightAnchor.constraint(equalToConstant: totalViewHeight/5 - 10).isActive = true
+                 //label.heightAnchor.constraint(lessThanOrEqualToConstant: 150).isActive = true
+                // label.heightAnchor.constraint(greaterThanOrEqualToConstant: 68).isActive = true
+                
+                if let previous = previous {
+                    label.topAnchor.constraint(equalTo: previous.bottomAnchor, constant: 10).isActive = true
+                } else {
+                    label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
+                }
+                
+                previous = label
         }
     }
-
+        }
     
 
 }
 
+}

@@ -8,6 +8,18 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var screenOrientation = UIInterfaceOrientationMask.landscapeRight
+    var screenOrientationOne = UIInterfaceOrientation.portrait
+    var deviceOrientation = UIDevice.current.orientation.isPortrait
+    
+    if deviceOrientation == true {
+        deviceOrientation.isLandscape
+        print("landscape")
+    } else {
+        deviceOrientation.isPortrait
+        print("portrait")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,16 +72,25 @@ class ViewController: UIViewController {
 //        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[label1(labelHeight@999)]-[label2(label1)]-[label3(label1)]-[label4(label1)]-[label5(label1)]-(>=10)-|", options: [], metrics: metrics, views: viewsDictionary))
         
         var previous: UILabel?
-        var viewHeight = self.view.frame.size.height
-        print(viewHeight)
+        
+        
+        let window = UIApplication.shared.windows.first
+        let topPadding = window?.safeAreaInsets.top
+        let bottomPadding = window?.safeAreaInsets.bottom
+        
+        
+        let viewHeight = self.view.frame.size.height
+        let totalViewHeight = viewHeight - (topPadding! + bottomPadding!)
+        
+        
         
         
         for label in [label1, label2, label3, label4, label5] {
             label.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10).isActive = true
             label.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10).isActive = true
-            // label.heightAnchor.constraint(equalToConstant: viewHeight/5 - 10).isActive = true
+             label.heightAnchor.constraint(equalToConstant: totalViewHeight/5 - 10).isActive = true
              //label.heightAnchor.constraint(lessThanOrEqualToConstant: 150).isActive = true
-            label.heightAnchor.constraint(greaterThanOrEqualToConstant: 68).isActive = true
+            // label.heightAnchor.constraint(greaterThanOrEqualToConstant: 68).isActive = true
             
             if let previous = previous {
                 label.topAnchor.constraint(equalTo: previous.bottomAnchor, constant: 10).isActive = true
@@ -79,9 +100,11 @@ class ViewController: UIViewController {
             
             previous = label
             
+            
         }
     }
 
+    
 
 }
 

@@ -9,19 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var orientationPositionCounter = 0
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        
-        orientationPositionCounter += 1
-        
-        if orientationPositionCounter == 3 {
-            orientationPositionCounter = 0
-        }
-        print(orientationPositionCounter)
-//        print(UIDevice.current.orientation)
-    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,8 +52,10 @@ class ViewController: UIViewController {
         view.addSubview(label4)
         view.addSubview(label5)
         
-        while true {
-        if orientationPositionCounter == 0 {
+        
+        
+            
+            
             
             var previous: UILabel?
             
@@ -83,7 +74,8 @@ class ViewController: UIViewController {
             for label in [label1, label2, label3, label4, label5] {
                 label.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10).isActive = true
                 label.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10).isActive = true
-                 label.heightAnchor.constraint(equalToConstant: totalViewHeight/5 - 10).isActive = true
+                 //label.heightAnchor.constraint(equalToConstant: totalViewHeight/5 - 10).isActive = true
+                label.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.2, constant: -10).isActive = true
                  //label.heightAnchor.constraint(lessThanOrEqualToConstant: 150).isActive = true
                 // label.heightAnchor.constraint(greaterThanOrEqualToConstant: 68).isActive = true
                 
@@ -94,42 +86,8 @@ class ViewController: UIViewController {
                 }
                 
                 previous = label
-        }
-        } else {
-            
-            
-            var previous: UILabel?
-            
-            
-            let window = UIApplication.shared.windows.first
-            let topPadding = window?.safeAreaInsets.top
-            let bottomPadding = window?.safeAreaInsets.bottom
-            
-            
-            let viewHeight = self.view.frame.size.height
-            let totalViewHeight = viewHeight - (topPadding! + bottomPadding!)
-            print(viewHeight)
-
-            
-            for label in [label1, label2, label3, label4, label5] {
-                label.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10).isActive = true
-                label.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10).isActive = true
-                 label.heightAnchor.constraint(equalToConstant: totalViewHeight/5 - 10).isActive = true
-                 //label.heightAnchor.constraint(lessThanOrEqualToConstant: 150).isActive = true
-                // label.heightAnchor.constraint(greaterThanOrEqualToConstant: 68).isActive = true
                 
-                if let previous = previous {
-                    label.topAnchor.constraint(equalTo: previous.bottomAnchor, constant: 10).isActive = true
-                } else {
-                    label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
-                }
-                
-                previous = label
         }
+            
     }
-        }
-    
-
-}
-
 }

@@ -20,6 +20,8 @@ class ViewController: UITableViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filterPetitions))
         
         // let urlString = "https://api.whitehouse.gov/v1/petitions.json?limit=100"
+        
+        
         let urlString: String
         
         if navigationController?.tabBarItem.tag == 1 {
@@ -62,9 +64,12 @@ class ViewController: UITableViewController {
             for petition in self.petitions {
                 if petition.title.contains(text!) {
                     self.filteredPetitions.append(petition)
-                    print(self.filteredPetitions.first)
+                    
                 }
             }
+            print(self.filteredPetitions.first)
+            self.petitions = self.filteredPetitions
+            self.tableView.reloadData()
         })
                 
         
@@ -92,6 +97,8 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        
+        
         let petition = petitions[indexPath.row]
         cell.textLabel?.text = petition.title
         cell.detailTextLabel?.text = petition.body

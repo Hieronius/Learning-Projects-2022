@@ -27,8 +27,12 @@ let html = """
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style> body { font-size: 150%; } </style>
+<style> h1 { font-size: 100%; } </style>
 </head>
 <body>
+<h1>
+\(detailItem.title)
+</h1>
 \(detailItem.body)
 </body>
 </html>

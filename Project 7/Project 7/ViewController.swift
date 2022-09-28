@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UITableViewController {
     
     var petitions = [Petition]()
+    var petitionsOnHold = [Petition]()
     var filteredPetitions = [Petition]()
 
     override func viewDidLoad() {
@@ -59,6 +60,8 @@ class ViewController: UITableViewController {
             UITextField.placeholder = "Enter your parameters"
         }
         ac.addAction(UIAlertAction(title: "Ok", style: .default) { action in
+            self.petitionsOnHold = self.petitions
+            
             let text = ac.textFields?.first?.text!
             
             for petition in self.petitions {
@@ -70,7 +73,14 @@ class ViewController: UITableViewController {
             print(self.filteredPetitions.first)
             self.petitions = self.filteredPetitions
             self.tableView.reloadData()
+            
+            
+            
         })
+        ac.addAction((UIAlertAction(title: "Refresh", style: .default, handler: { ActionHandler in
+            self.petitions = self.petitionsOnHold
+            self.tableView.reloadData()
+        })))
                 
         
         present(ac, animated: true)

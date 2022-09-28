@@ -10,15 +10,19 @@ import UIKit
 class ViewController: UITableViewController {
     
     var petitions = [Petition]()
+    var filteredPetitions = [Petition]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+       
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Credits", style: .plain, target: self, action: #selector(getCredits))
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filterPetitions))
         
         // let urlString = "https://api.whitehouse.gov/v1/petitions.json?limit=100"
         let urlString: String
         
-        if navigationController?.tabBarItem.tag == 0 {
+        if navigationController?.tabBarItem.tag == 1 {
             urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
         } else {
             urlString = "https://www.hackingwithswift.com/samples/petitions-2.json"
@@ -45,6 +49,41 @@ class ViewController: UITableViewController {
             petitions = jsonPetitions.results
             tableView.reloadData()
         }
+    }
+    
+    @objc func filterPetitions() {
+        let ac = UIAlertController(title: "Search", message: "write parameters for search", preferredStyle: .alert)
+        ac.addTextField { (UITextField) in
+            UITextField.placeholder = "Enter your parameters"
+        }
+        ac.addAction(UIAlertAction(title: "Ok", style: .default) { action in
+            let text = ac.textFields?.first?.text!
+            
+            for petition in self.petitions {
+                if petition.title.contains(text!) {
+                    self.filteredPetitions.append(petition)
+                    print(self.filteredPetitions.first)
+                }
+            }
+        })
+                
+        
+        present(ac, animated: true)
+    }
+    
+    // core of my function to filter petitions
+//    for petition in self.petitions {
+//        if petition.title.contains(text) {
+//            self.filteredPetitions.append(petition)
+//        }
+//    }
+    
+    
+    
+    @objc func getCredits() {
+        let ac = UIAlertController(title: "Credits", message: "The data comes from We are people API of the Whitehouse", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Ok", style: .default))
+        present(ac, animated: true)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     var answersLabel: UILabel!
     var currentAnswer: UITextField!
     var scoreLabel: UILabel!
+    var attemptsLabel: UILabel!
     var letterButtons = [UIButton]()
     
     var activatedButtons = [UIButton]()
@@ -25,17 +26,28 @@ class ViewController: UIViewController {
         }
     }
     var level = 1
+    var attempts = 3 {
+        didSet {
+            print("Your attempts now is \(attempts)")
+            attemptsLabel.text = "Attempts: \(attempts)"
+        }
+    }// add observer here
     
     override func loadView() {
         view = UIView()
         view.backgroundColor = .white
         
         scoreLabel = UILabel()
-        
         scoreLabel.translatesAutoresizingMaskIntoConstraints = false
         scoreLabel.textAlignment = .right
         scoreLabel.text = "Score: 0"
         view.addSubview(scoreLabel)
+        
+        attemptsLabel = UILabel()
+        attemptsLabel.translatesAutoresizingMaskIntoConstraints = false
+        attemptsLabel.textAlignment = .right
+        attemptsLabel.text = "Attempts is 0"
+        view.addSubview(attemptsLabel)
         
         cluesLabel = UILabel()
         cluesLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -112,7 +124,10 @@ class ViewController: UIViewController {
             buttonsView.heightAnchor.constraint(equalToConstant: 320),
             buttonsView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             buttonsView.topAnchor.constraint(equalTo: submit.bottomAnchor, constant: 20),
-            buttonsView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: 20)
+            buttonsView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: 20),
+            
+            attemptsLabel.topAnchor.constraint(equalTo: scoreLabel.bottomAnchor),
+            attemptsLabel.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor)
             
             // more constraints here
             

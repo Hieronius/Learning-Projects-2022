@@ -46,7 +46,7 @@ class ViewController: UIViewController {
         attemptsLabel = UILabel()
         attemptsLabel.translatesAutoresizingMaskIntoConstraints = false
         attemptsLabel.textAlignment = .right
-        attemptsLabel.text = "Attempts is 0"
+        attemptsLabel.text = "Attempts: 3"
         view.addSubview(attemptsLabel)
         
         cluesLabel = UILabel()
@@ -186,11 +186,27 @@ class ViewController: UIViewController {
                 present(ac, animated: true)
             }
         } else {
+            attempts -= 1
             let ac = UIAlertController(title: "Wrong answer", message: "Plz, try again", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "Ok", style: .default))
             
+            if attempts == 0 {
+                ac.addAction(UIAlertAction(title: "New game", style: .default) { action in
+                    self.loadLevel()
+                })
+            }
+            
             present(ac, animated: true)
         }
+        
+//        if attempts == 0 {
+//            print("Game over")
+//            let ac = UIAlertController(title: "Game over", message: "Game will be reloaded", preferredStyle: .alert)
+//            ac.addAction(UIAlertAction(title: "OK", style: .default) { action in
+//                self.loadLevel()
+//            })
+//            present(ac, animated: true)
+//        }
     }
     
     func levelUp(action: UIAlertAction) {
@@ -212,12 +228,14 @@ class ViewController: UIViewController {
         }
         
         activatedButtons.removeAll()
+        attempts = 3
     }
     
-    func loadLevel() {
+    @objc func loadLevel() {
         var clueString = ""
         var solutionsString = ""
         var letterBits = [String]()
+        attempts = 3
         
         if let levelFileURL = Bundle.main.url(forResource: "level\(level)", withExtension: "txt") {
             if let levelContents = try? String(contentsOf: levelFileURL) {

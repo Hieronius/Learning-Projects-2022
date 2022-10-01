@@ -5,16 +5,17 @@ import Foundation
 struct Weather {
     
     var name: String = "Название"
-    var temperature: Int
-    var conditionCode: String // image "icon" in JSON
-    var url: String
-    var condition: String // "rainy, sunny"
-    var pressureMm: Int
-    var windSpeed: Int
-    var tempMin: Int
-    var tempMax: Int
+    var temperature: Int = 0
+    var conditionCode: String = ""// image "icon" in JSON
+    var url: String = ""
+    var condition: String = "" // "rainy, sunny"
+    var pressureMm: Int = 0
+    var windSpeed: Int = 0
+    var tempMin: Int = 0
+    var tempMax: Int = 0
     
     var conditionString: String {
+        
         switch condition {
         case "clear":                  return "Ясно"
         case "partly-cloudy":          return "Малооблачно"
@@ -53,7 +54,10 @@ struct Weather {
         tempMax = weatherData.forecasts.first!.parts.day.tempMax!
     }
     
-    
+    init() {
+        
+        
+    }
     
     
     

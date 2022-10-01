@@ -59,18 +59,29 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTE-FK-Ozh">
+                                <rect key="frame" x="148" y="655" width="120" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Show pressure"/>
+                                <connections>
+                                    <action selector="didTapedPressureButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rxz-vj-jFh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="tNp-L7-uUf" firstAttribute="top" secondItem="DTE-FK-Ozh" secondAttribute="bottom" constant="37" id="0Gk-3k-xV9"/>
                             <constraint firstItem="i7F-JH-uML" firstAttribute="top" secondItem="fV9-Lx-byq" secondAttribute="bottom" constant="105" id="5GW-IW-X9O"/>
                             <constraint firstItem="i7F-JH-uML" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="186" id="85J-yz-dHC"/>
                             <constraint firstItem="4VC-H2-um4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="219" id="Bfa-oJ-xSA"/>
                             <constraint firstItem="UPX-rb-guO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="EsN-K7-xmD"/>
+                            <constraint firstItem="DTE-FK-Ozh" firstAttribute="top" secondItem="i7F-JH-uML" secondAttribute="bottom" constant="115" id="GRx-Cr-39v"/>
                             <constraint firstItem="4VC-H2-um4" firstAttribute="top" secondItem="UPX-rb-guO" secondAttribute="bottom" constant="98" id="HBx-wt-ypc"/>
                             <constraint firstItem="fV9-Lx-byq" firstAttribute="top" secondItem="4VC-H2-um4" secondAttribute="bottom" constant="109" id="J5I-uB-9Na"/>
                             <constraint firstItem="PjS-WK-Y1A" firstAttribute="top" secondItem="tNp-L7-uUf" secondAttribute="bottom" constant="47" id="MH0-G4-6lh"/>
                             <constraint firstItem="fV9-Lx-byq" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="MXX-q3-iyJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DTE-FK-Ozh" secondAttribute="trailing" constant="146" id="STx-Zf-TMr"/>
                             <constraint firstItem="tNp-L7-uUf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="139" id="UHa-KD-eTk"/>
                             <constraint firstItem="PjS-WK-Y1A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="157" id="VW0-y2-9Lg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PjS-WK-Y1A" secondAttribute="bottom" constant="30" id="ZSs-9x-KJm"/>
@@ -81,6 +92,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PjS-WK-Y1A" secondAttribute="trailing" constant="154" id="hWA-xV-qJH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tNp-L7-uUf" secondAttribute="trailing" constant="137" id="htc-mP-ICf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="i7F-JH-uML" secondAttribute="trailing" constant="186" id="oDR-ye-u5O"/>
+                            <constraint firstItem="DTE-FK-Ozh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="148" id="tbv-4F-j4S"/>
                             <constraint firstItem="tNp-L7-uUf" firstAttribute="top" secondItem="fV9-Lx-byq" secondAttribute="bottom" constant="309" id="twa-lo-v7d"/>
                         </constraints>
                     </view>

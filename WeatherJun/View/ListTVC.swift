@@ -5,6 +5,8 @@ import UIKit
 
 class ListTVC: UITableViewController {
     
+    let emptyCity = Weather()
+    
     var citiesArray = [Weather]()
     
     let nameCitiesArray = ["Москва", "Петербург", "Пенза", "Уфа", "Новосибирск", "Челябинск", "Омск", "Екатеринбург", "Томск", "Сочи"]
@@ -14,8 +16,15 @@ class ListTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if citiesArray.isEmpty {
+            citiesArray = Array(repeating: emptyCity, count: nameCitiesArray.count)
+            print(citiesArray)
+        }
+        
+        
         addCities()
-        print(citiesArray)
+    
+    
         
     }
     
@@ -25,6 +34,8 @@ class ListTVC: UITableViewController {
             
             self.citiesArray[index] = weather
             self.citiesArray[index].name = self.nameCitiesArray[index]
+            print(self.citiesArray)
+            
         }
     }
     

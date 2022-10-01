@@ -29,9 +29,8 @@ extension ViewController: UISearchBarDelegate {
         var temperature: Double?
         
         let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
-        
         do {
-            let json = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves) as! [String: AnyObject]
+            let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [String: AnyObject]
             
             if let location = json["location"] as? String {
                 locationName = location["name"] as? String
@@ -39,7 +38,7 @@ extension ViewController: UISearchBarDelegate {
             if let current = json["current"] {
                 temperature = current["temp_c"] as? Double
             }
-        catch let jsonError {
+            catch var jsonError {
             print(jsonError)
         }
                 
@@ -47,3 +46,4 @@ extension ViewController: UISearchBarDelegate {
     }
 }
     }
+}

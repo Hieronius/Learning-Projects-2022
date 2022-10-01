@@ -40,6 +40,11 @@ extension WelcomePresenter: WelcomePresenterProtocol {
         router?.openWindSpeed(for: wind!)
     }
     
+    func didTapPressureButton() {
+        let pressure = interactor?.pressure
+        router.openPressure(for: pressure)
+    }
+    
     func didLoad(date: String?) {
         view?.showDate(date: date ?? "No date today")
         print("Date breakpoint2")

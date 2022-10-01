@@ -15,6 +15,7 @@ func getCityWeather(citiesArray: [String], completionHandler: @escaping (Int, We
             
             networkWeatherManager.fetchWeather(latitude: coordinate.latitude, longitude: coordinate.longitude) { (weather) in
                 completionHandler(index, weather)
+                
             }
         }
     }

@@ -33,6 +33,11 @@ class ViewController: UIViewController {
         presenter?.didTapWindSpeedButton()
     }
     
+    @IBAction func didTapedPressureButton(_ sender: Any) {
+        presenter?.didTapPressureButton()
+    }
+    
+    
 }
 
 extension ViewController: WelcomeViewProtocol {

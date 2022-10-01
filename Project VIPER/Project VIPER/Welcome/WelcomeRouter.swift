@@ -19,5 +19,10 @@ class WelcomeRouter: WelcomeRouterProtocol {
         let vc = WindSpeedModuleBuilder.build(wind: wind)
         viewController?.present(vc, animated: true, completion: nil)
     }
+    
+    func openPressure(for pressure: Int) {
+        let vc = PressureModuleBuilder.build(pressure: pressure)
+        viewController?.present(vc, animated: true, completion: nil)
+    }
 }
 

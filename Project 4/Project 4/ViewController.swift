@@ -9,7 +9,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
     var progressView: UIProgressView!
     var websiteTableViewController = WebsiteTableViewController()
     
-    var websites: [String] = []
+    var website = String()
     
     override func loadView() {
         webView = WKWebView()
@@ -20,10 +20,10 @@ class ViewController: UIViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        websites = websiteTableViewController.websitesArray
         
-        let url = URL(string: "https://" + websites[0])!
-        webView.load(URLRequest(url: url))
+        
+        let url = URL(string: "https://" + website)
+        webView.load(URLRequest(url: url!))
         webView.allowsBackForwardNavigationGestures = true
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Open", style: .plain, target: self, action: #selector(openTapped))
@@ -43,7 +43,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
         
         toolbarItems = [back, spacer, progressButton, spacer, forward, spacer, refresh]
         navigationController?.isToolbarHidden = false
-        
+         
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         
         
@@ -51,9 +51,9 @@ class ViewController: UIViewController, WKNavigationDelegate {
     }
         @objc func openTapped() {
             let ac = UIAlertController(title: "Open page...", message: nil, preferredStyle: .actionSheet)
-            for website in websites {
-                ac.addAction(UIAlertAction(title: website, style: .default, handler: openPage))
-            }
+//            for website in websites {
+//                ac.addAction(UIAlertAction(title: website, style: .default, handler: openPage))
+//            }
             
             
             ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
@@ -78,14 +78,14 @@ class ViewController: UIViewController, WKNavigationDelegate {
         
         
         if let host = url?.host {
-            for website in websites {
+            
                 if host.contains(website) {
                     
                     decisionHandler(.allow)
                     return
                 }
             }
-        }
+        
         decisionHandler(.cancel)
         
         self.presentedViewController?.dismiss(animated: true)

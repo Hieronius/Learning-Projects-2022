@@ -84,5 +84,12 @@ class WebsiteTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "WebBrowserViewController") as? ViewController {
+            vc.website = websitesArray[indexPath.row]
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 
 }

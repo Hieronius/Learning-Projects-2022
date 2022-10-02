@@ -126,4 +126,15 @@ extension ViewController {
             }
         }
     }
+    
+    func levelUp(action: UIAlertAction) {
+        level += 1
+        
+        solutions.removeAll(keepingCapacity: true)
+        loadLevel()
+        
+        for button in letterButtons {
+            button.isHidden = false
+        }
+    }
 }

@@ -65,8 +65,8 @@
 				DD0DEE6E28E4760200A84968 /* AppDelegate.swift */,
 				DD0DEE7028E4760200A84968 /* SceneDelegate.swift */,
 				DD0DEE7228E4760200A84968 /* ViewController.swift */,
-				DDA93E8728E82D7C00A5FA31 /* Resources */,
 				DD0DEE8928E6B88900A84968 /* Extensions.swift */,
+				DDA93E8728E82D7C00A5FA31 /* Resources */,
 				DD0DEE7428E4760200A84968 /* Main.storyboard */,
 				DD0DEE7928E4760800A84968 /* LaunchScreen.storyboard */,
 			);

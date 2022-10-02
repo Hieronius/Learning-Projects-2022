@@ -89,16 +89,7 @@ class ViewController: UIViewController {
     
     }
     
-    func levelUp(action: UIAlertAction) {
-        level += 1
-        
-        solutions.removeAll(keepingCapacity: true)
-        loadLevel()
-        
-        for button in letterButtons {
-            button.isHidden = false
-        }
-    }
+    
     
     @objc func clearTapped(_ sender: UIButton) {
         currentAnswer.text = ""

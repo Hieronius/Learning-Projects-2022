@@ -210,6 +210,7 @@ extension ViewController {
             
             currentAnswer.text = ""
             score += 1
+            print("Your answer is correct!")
             
             if score % 7 == 0 {
                 let ac = UIAlertController(title: "Well done!", message: "Are you ready for the next level?", preferredStyle: .alert)
@@ -218,6 +219,7 @@ extension ViewController {
             }
         } else {
             attempts -= 1
+            print("Your answer is wrong")
             let ac = UIAlertController(title: "Wrong answer", message: "Plz, try again", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "Ok", style: .default))
             

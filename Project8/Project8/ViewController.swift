@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     override func loadView() {
         view = UIView()
         view.backgroundColor = .white
-        
+        print("Buttons created")
         createButtons()
         
         
@@ -45,6 +45,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        print("The level is loaded")
         loadLevel()
     }
     

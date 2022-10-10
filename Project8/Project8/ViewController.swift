@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     
     var activatedButtons = [UIButton]()
     var solutions = [String]()
+    var currentLevel: Int?
     
     var score = 0 {
         didSet {

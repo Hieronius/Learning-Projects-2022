@@ -42,6 +42,7 @@ class ViewController: UIViewController {
         view = UIView()
         view.backgroundColor = .white
         createButtons()
+        print("button is created")
         
         
     }
@@ -50,6 +51,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         loadLevel()
+        print("level is loaded")
     }
     
 }

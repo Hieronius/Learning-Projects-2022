@@ -20,8 +20,10 @@ class ViewController: UITableViewController {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filterPetitions))
         
-        // let urlString = "https://api.whitehouse.gov/v1/petitions.json?limit=100"
-        
+        performSelector(inBackground: #selector(fetchJSON), with: nil)
+    }
+    
+    @objc func fetchJSON() {
         
         let urlString: String
         
@@ -31,25 +33,20 @@ class ViewController: UITableViewController {
             urlString = "https://www.hackingwithswift.com/samples/petitions-2.json"
         }
         
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+        
             if let url = URL(string: urlString) {
                 if let data = try? Data(contentsOf: url) {
-                    self?.parse(json: data)
+                    parse(json: data)
                     return
                 }
             }
             
-            self?.showError()
+            showError()
         }
-        
-        
-    }
     
     func showError() {
         DispatchQueue.main.async { [weak self] in
             
-            
-        
         let ac = UIAlertController(title: "Loading error", message: "There was a problem loading the feed; please check your connection and try again.", preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "Ok", style: .default))
             self?.present(ac, animated: true)

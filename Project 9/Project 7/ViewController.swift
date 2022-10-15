@@ -41,16 +41,15 @@ class ViewController: UITableViewController {
                 }
             }
             
-            showError()
+        performSelector(onMainThread: #selector(showError), with: nil, waitUntilDone: false)
         }
     
-    func showError() {
-        DispatchQueue.main.async { [weak self] in
+    @objc func showError() {
+        
             
         let ac = UIAlertController(title: "Loading error", message: "There was a problem loading the feed; please check your connection and try again.", preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "Ok", style: .default))
-            self?.present(ac, animated: true)
-    }
+            present(ac, animated: true)
     }
     
     func parse(json: Data) {

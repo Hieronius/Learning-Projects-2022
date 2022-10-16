@@ -21,6 +21,12 @@ class ViewController: UITableViewController {
         
         title = "Storm Viewer"
         
+        performSelector(inBackground: #selector(getImages), with: nil)
+        // print(pictures.sort())
+    }
+    
+    @objc func getImages() {
+        
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
         let items = try! fm.contentsOfDirectory(atPath: path)
@@ -32,7 +38,6 @@ class ViewController: UITableViewController {
             }
         }
         pictures.sort()
-        // print(pictures.sort())
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

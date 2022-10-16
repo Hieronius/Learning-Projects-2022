@@ -23,7 +23,11 @@ class ViewController: UITableViewController {
         
         performSelector(inBackground: #selector(getImages), with: nil)
         
-        tableView.performSelector(onMainThread: #selector(UITableView.reloadData), with: nil, waitUntilDone: false)
+        if !pictures.isEmpty {
+            tableView.performSelector(onMainThread: #selector(UITableView.reloadData), with: nil, waitUntilDone: false)
+        }
+        
+//        tableView.performSelector(onMainThread: #selector(UITableView.reloadData), with: nil, waitUntilDone: false)
         // print(pictures.sort())
     }
     
@@ -40,6 +44,7 @@ class ViewController: UITableViewController {
             }
         }
         pictures.sort()
+        
         
         
     }

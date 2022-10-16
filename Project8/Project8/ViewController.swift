@@ -50,8 +50,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        loadLevel()
+        // loadLevel()
+        performSelector(inBackground: #selector(loadLevel), with: nil)
+        
         print("level is loaded")
+        
     }
     
 }

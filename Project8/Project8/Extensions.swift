@@ -184,6 +184,7 @@ extension ViewController {
                     
                 }
             }
+            
         }
         
         cluesLabel.text = clueString.trimmingCharacters(in: .whitespacesAndNewlines)

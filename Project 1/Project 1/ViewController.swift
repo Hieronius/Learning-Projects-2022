@@ -22,6 +22,8 @@ class ViewController: UITableViewController {
         title = "Storm Viewer"
         
         performSelector(inBackground: #selector(getImages), with: nil)
+        
+        tableView.performSelector(onMainThread: #selector(UITableView.reloadData), with: nil, waitUntilDone: false)
         // print(pictures.sort())
     }
     
@@ -38,6 +40,8 @@ class ViewController: UITableViewController {
             }
         }
         pictures.sort()
+        
+        
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

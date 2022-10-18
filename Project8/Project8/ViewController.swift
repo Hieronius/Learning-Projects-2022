@@ -53,25 +53,51 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
          // loadLevel()
-        performSelector(inBackground: #selector(loadLevel), with: nil)
+//        performSelector(inBackground: #selector(loadLevel), with: nil)
+//
+//        print("level is loaded")
+//
+//        if levelIsLoaded {
+//            performSelector(onMainThread: #selector(createButtons), with: nil, waitUntilDone: false)
+//        } else {
+//            let ac = UIAlertController(title: "Error", message: "Data is not loaded", preferredStyle: .alert)
+//            ac.addAction(UIAlertAction(title: "Ok", style: .default))
+//
+//            present(ac, animated: true)
+//        }
         
-        print("level is loaded")
         
-        if levelIsLoaded {
-            performSelector(onMainThread: #selector(createButtons), with: nil, waitUntilDone: false)
-        } else {
-            let ac = UIAlertController(title: "Error", message: "Data is not loaded", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "Ok", style: .default))
-            
-            present(ac, animated: true)
+//        let queue = DispatchQueue.global()
+//        queue.async {
+//            self.loadLevel()
+//            if self.levelIsLoaded {
+//                print("level was loaded in background")
+//            }
+//        }
+        
+        
+        DispatchQueue.global(qos: .background).async {
+            self.loadLevel()
+            if self.levelIsLoaded {
+                print("level was loaded in background")
+            }
         }
+        
         
     }
     
-    @objc override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // loadLevel()
+        
+        DispatchQueue.global(qos: .background).async {
+            self.loadLevel()
+            if self.levelIsLoaded {
+                print("level was loaded in background")
+            }
+        }
     }
     
 }
+
 

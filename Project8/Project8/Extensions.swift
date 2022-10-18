@@ -182,7 +182,7 @@ extension ViewController {
                     let bits = answer.components(separatedBy: "|")
                     letterBits += bits
                     
-                    levelIsLoaded = true
+                    
                     
                 }
             }
@@ -199,6 +199,8 @@ extension ViewController {
                 letterButtons[i].setTitle(letterBits[i], for: .normal)
             }
         }
+        
+        levelIsLoaded = true
     }
     
     @objc func submitTapped(_ sender: UIButton) {

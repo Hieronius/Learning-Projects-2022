@@ -10,7 +10,7 @@ import UIKit
 
 extension ViewController {
     
-    func createButtons() {
+    @objc func createButtons() {
         
         scoreLabel = UILabel()
         scoreLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -181,6 +181,8 @@ extension ViewController {
                     
                     let bits = answer.components(separatedBy: "|")
                     letterBits += bits
+                    
+                    levelIsLoaded = true
                     
                 }
             }

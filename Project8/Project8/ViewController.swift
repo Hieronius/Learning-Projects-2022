@@ -36,7 +36,9 @@ class ViewController: UIViewController {
             print("Your attempts now is \(attempts)")
             attemptsLabel.text = "Attempts: \(attempts)"
         }
-    }// add observer here
+    }
+    
+    var levelIsLoaded = false
     
     override func loadView() {
         view = UIView()
@@ -55,12 +57,20 @@ class ViewController: UIViewController {
         
         print("level is loaded")
         
+        if levelIsLoaded {
+            performSelector(onMainThread: #selector(createButtons), with: nil, waitUntilDone: false)
+        } else {
+            let ac = UIAlertController(title: "Error", message: "Data is not loaded", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Ok", style: .default))
+            
+            present(ac, animated: true)
+        }
+        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    @objc override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // loadLevel()
-        performSelector(inBackground: #selector(loadLevel), with: nil)
     }
     
 }

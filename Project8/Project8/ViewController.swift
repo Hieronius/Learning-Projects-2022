@@ -80,23 +80,30 @@ class ViewController: UIViewController {
             self.loadLevel()
             if self.levelIsLoaded {
                 print("level was loaded in background")
+                DispatchQueue.main.sync {
+                    self.loadView()
+                }
+                
             }
         }
         
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        // loadLevel()
-        
-        DispatchQueue.global(qos: .background).async {
-            self.loadLevel()
-            if self.levelIsLoaded {
-                print("level was loaded in background")
-            }
-        }
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        // loadLevel()
+//        
+//        DispatchQueue.global(qos: .background).async {
+//            self.loadLevel()
+//            if self.levelIsLoaded {
+//                print("level was loaded in background")
+//                DispatchQueue.main.sync {
+//                    self.loadView()
+//                }
+//            }
+//        }
+//    }
     
 }
 

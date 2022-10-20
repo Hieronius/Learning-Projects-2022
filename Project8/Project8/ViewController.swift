@@ -76,16 +76,16 @@ class ViewController: UIViewController {
 //        }
         
         
-        DispatchQueue.global(qos: .background).async {
-            self.loadLevel()
-            if self.levelIsLoaded {
-                print("level was loaded in background")
-                DispatchQueue.main.sync {
-                    self.loadView()
-                }
-                
-            }
-        }
+//        DispatchQueue.global(qos: .background).async {
+//            self.loadLevel()
+//            if self.levelIsLoaded {
+//                print("level was loaded in background")
+//                DispatchQueue.main.async {
+//                    self.loadView()
+//                }
+//
+//            }
+//        }
         
         
     }
@@ -93,7 +93,7 @@ class ViewController: UIViewController {
 //    override func viewWillAppear(_ animated: Bool) {
 //        super.viewWillAppear(animated)
 //        // loadLevel()
-//        
+//
 //        DispatchQueue.global(qos: .background).async {
 //            self.loadLevel()
 //            if self.levelIsLoaded {
@@ -104,6 +104,13 @@ class ViewController: UIViewController {
 //            }
 //        }
 //    }
+    
+    func syncOnMainThread<T>(execute block: () throws -> T) rethrows -> T {
+        if Thread.isMainThread {
+            return try block()
+        }
+        return try DispatchQueue.main.sync(execute: block)
+    }
     
 }
 

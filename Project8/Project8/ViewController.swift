@@ -51,6 +51,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        syncOnMainThread(execute: loadLevel)
         // Do any additional setup after loading the view.
          // loadLevel()
 //        performSelector(inBackground: #selector(loadLevel), with: nil)

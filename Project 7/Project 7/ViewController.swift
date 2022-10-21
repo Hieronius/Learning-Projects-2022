@@ -57,6 +57,8 @@ class ViewController: UITableViewController {
     }
     
     @objc func filterPetitions() {
+        DispatchQueue.global(qos: .background).sync {
+            
         let ac = UIAlertController(title: "Search", message: "write parameters for search", preferredStyle: .alert)
         ac.addTextField { (UITextField) in
             UITextField.placeholder = "Enter your parameters"
@@ -85,8 +87,16 @@ class ViewController: UITableViewController {
         })))
                 
         
-        present(ac, animated: true)
+            self.present(ac, animated: true)
+            print("called filter option in background")
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                print("updated data in main thread")
+            }
+        
     }
+}
     
     // core of my function to filter petitions
 //    for petition in self.petitions {

@@ -20,6 +20,8 @@ class ViewController: UITableViewController {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filterPetitions))
         
+        
+        
         // let urlString = "https://api.whitehouse.gov/v1/petitions.json?limit=100"
         
         

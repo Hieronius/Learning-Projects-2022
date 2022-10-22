@@ -24,7 +24,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Person" id="r5e-Ik-UGF">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Person" id="r5e-Ik-UGF" customClass="PersonCell" customModule="Project_10" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="140" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="x63-7C-TDX">
@@ -45,6 +45,10 @@
                                     </subviews>
                                 </collectionViewCellContentView>
                                 <color key="backgroundColor" red="0.92157220839999998" green="0.92548459770000002" blue="0.93782955410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="imageView" destination="QVg-9o-c9O" id="Rxl-oN-QtZ"/>
+                                    <outlet property="name" destination="n6h-NB-7CU" id="Ugg-Nq-dJy"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>

@@ -13,7 +13,7 @@
 		DD51483229027F1D001DCE56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD51483029027F1D001DCE56 /* Main.storyboard */; };
 		DD51483429027F20001DCE56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD51483329027F20001DCE56 /* Assets.xcassets */; };
 		DD51483729027F20001DCE56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD51483529027F20001DCE56 /* LaunchScreen.storyboard */; };
-		DD51483F2903C665001DCE56 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD51483E2903C665001DCE56 /* PersonCell.swift */; };
+		DD51483F2903C665001DCE56 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD51483E2903C665001DCE56 /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		DD51483329027F20001DCE56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD51483629027F20001DCE56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD51483829027F20001DCE56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DD51483E2903C665001DCE56 /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
+		DD51483E2903C665001DCE56 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 				DD51482C29027F1D001DCE56 /* SceneDelegate.swift */,
 				DD51482E29027F1D001DCE56 /* ViewController.swift */,
 				DD51483029027F1D001DCE56 /* Main.storyboard */,
-				DD51483E2903C665001DCE56 /* PersonCell.swift */,
+				DD51483E2903C665001DCE56 /* Person.swift */,
 				DD51483329027F20001DCE56 /* Assets.xcassets */,
 				DD51483529027F20001DCE56 /* LaunchScreen.storyboard */,
 				DD51483829027F20001DCE56 /* Info.plist */,
@@ -143,7 +143,7 @@
 			files = (
 				DD51482F29027F1D001DCE56 /* ViewController.swift in Sources */,
 				DD51482B29027F1D001DCE56 /* AppDelegate.swift in Sources */,
-				DD51483F2903C665001DCE56 /* PersonCell.swift in Sources */,
+				DD51483F2903C665001DCE56 /* Person.swift in Sources */,
 				DD51482D29027F1D001DCE56 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

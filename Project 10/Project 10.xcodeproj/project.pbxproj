@@ -14,6 +14,7 @@
 		DD51483429027F20001DCE56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD51483329027F20001DCE56 /* Assets.xcassets */; };
 		DD51483729027F20001DCE56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD51483529027F20001DCE56 /* LaunchScreen.storyboard */; };
 		DD51483F2903C665001DCE56 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD51483E2903C665001DCE56 /* Person.swift */; };
+		DDCD600A290800A3005A8FC9 /* PersonNSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCD6009290800A3005A8FC9 /* PersonNSObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		DD51483629027F20001DCE56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD51483829027F20001DCE56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD51483E2903C665001DCE56 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		DDCD6009290800A3005A8FC9 /* PersonNSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonNSObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				DD51482E29027F1D001DCE56 /* ViewController.swift */,
 				DD51483029027F1D001DCE56 /* Main.storyboard */,
 				DD51483E2903C665001DCE56 /* Person.swift */,
+				DDCD6009290800A3005A8FC9 /* PersonNSObject.swift */,
 				DD51483329027F20001DCE56 /* Assets.xcassets */,
 				DD51483529027F20001DCE56 /* LaunchScreen.storyboard */,
 				DD51483829027F20001DCE56 /* Info.plist */,
@@ -143,6 +146,7 @@
 			files = (
 				DD51482F29027F1D001DCE56 /* ViewController.swift in Sources */,
 				DD51482B29027F1D001DCE56 /* AppDelegate.swift in Sources */,
+				DDCD600A290800A3005A8FC9 /* PersonNSObject.swift in Sources */,
 				DD51483F2903C665001DCE56 /* Person.swift in Sources */,
 				DD51482D29027F1D001DCE56 /* SceneDelegate.swift in Sources */,
 			);

@@ -8,6 +8,8 @@
 import UIKit
 
 class ViewController: UICollectionViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    var people = [PersonNSObject]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,12 +46,16 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
             try? jpegData.write(to: imagePath)
         }
         
-        dismiss(animated: true, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+        let person = PersonNSObject(name: "Unknown", image: imageName)
+        people.append(person)
+        collectionView.reloadData()
+        
+        dismiss(animated: true)
     }
     
     func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return parth[0]
+        return paths[0]
     }
 }
 

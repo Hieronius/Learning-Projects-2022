@@ -32,4 +32,9 @@ class CollectionViewController: UICollectionViewController {
         
         return cell
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        print("Selected country \(dataSource[indexPath.row])")
+    }
 }

@@ -44,6 +44,7 @@ class ViewController: UICollectionViewController {
             }
         }
         pictures.sort()
+        print(pictures.count)
         
         
         
@@ -55,6 +56,7 @@ class ViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Picture", for: indexPath)
+        
         // cell.textLabel?.text = pictures[indexPath.row]
         return cell
     }

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DDCD600C290BA63A005A8FC9 /* ImageNSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCD600B290BA63A005A8FC9 /* ImageNSObject.swift */; };
+		DDCD600C290BA63A005A8FC9 /* PictureNSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCD600B290BA63A005A8FC9 /* PictureNSObject.swift */; };
 		DDCD600E290BA67C005A8FC9 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCD600D290BA67C005A8FC9 /* Picture.swift */; };
 		DDDDFBCC28CF643400D64DA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDDFBCB28CF643400D64DA0 /* AppDelegate.swift */; };
 		DDDDFBCE28CF643400D64DA0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDDFBCD28CF643400D64DA0 /* SceneDelegate.swift */; };
@@ -29,7 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DDCD600B290BA63A005A8FC9 /* ImageNSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNSObject.swift; sourceTree = "<group>"; };
+		DDCD600B290BA63A005A8FC9 /* PictureNSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureNSObject.swift; sourceTree = "<group>"; };
 		DDCD600D290BA67C005A8FC9 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
 		DDDDFBC828CF643400D64DA0 /* Project 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDDDFBCB28CF643400D64DA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 				DDDDFBCD28CF643400D64DA0 /* SceneDelegate.swift */,
 				DDDDFBCF28CF643400D64DA0 /* ViewController.swift */,
 				DDDDFBF428CF783E00D64DA0 /* DetailViewController.swift */,
-				DDCD600B290BA63A005A8FC9 /* ImageNSObject.swift */,
+				DDCD600B290BA63A005A8FC9 /* PictureNSObject.swift */,
 				DDCD600D290BA67C005A8FC9 /* Picture.swift */,
 				DDDDFBD128CF643400D64DA0 /* Main.storyboard */,
 				DDDDFBD428CF643900D64DA0 /* Assets.xcassets */,
@@ -196,7 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDCD600E290BA67C005A8FC9 /* Picture.swift in Sources */,
-				DDCD600C290BA63A005A8FC9 /* ImageNSObject.swift in Sources */,
+				DDCD600C290BA63A005A8FC9 /* PictureNSObject.swift in Sources */,
 				DDDDFBD028CF643400D64DA0 /* ViewController.swift in Sources */,
 				DDDDFBCC28CF643400D64DA0 /* AppDelegate.swift in Sources */,
 				DDDDFBCE28CF643400D64DA0 /* SceneDelegate.swift in Sources */,

@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UICollectionViewController {
     
     var pictures = [String]()
+    var picturesNSObject = [PictureNSObject]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +56,15 @@ class ViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Picture", for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Picture", for: indexPath) as? Picture else {
+            fatalError("Unable to dequeue PictureCell")
+        }
+        
+        // test //
+        let paint = picturesNSObject[indexPath.item]
+        cell.name.text = paint.name
+        
+        let path = get
         
         // cell.textLabel?.text = pictures[indexPath.row]
         return cell

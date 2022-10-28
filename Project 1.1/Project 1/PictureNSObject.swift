@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ImageNSObject: NSObject {
+class PictureNSObject: NSObject {
 
     var name: String
     var image: String

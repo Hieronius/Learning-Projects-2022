@@ -64,10 +64,15 @@ class ViewController: UICollectionViewController {
         let paint = picturesNSObject[indexPath.item]
         cell.name.text = paint.name
         
-        let path = get
+        let path = getDocumen
         
         // cell.textLabel?.text = pictures[indexPath.row]
         return cell
+    }
+    
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
     }
         
     

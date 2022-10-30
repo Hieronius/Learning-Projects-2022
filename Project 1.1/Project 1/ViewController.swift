@@ -22,7 +22,9 @@ class ViewController: UICollectionViewController {
         
         title = "Storm Viewer"
         
-        performSelector(inBackground: #selector(getImages), with: nil)
+         performSelector(inBackground: #selector(getImages), with: nil)
+        
+        // getImages()
         
         if !pictures.isEmpty {
             collectionView.performSelector(onMainThread: #selector(UITableView.reloadData), with: nil, waitUntilDone: false)
@@ -46,13 +48,14 @@ class ViewController: UICollectionViewController {
         }
         pictures.sort()
         print(pictures.count)
+        print(picturesNSObject.count)
         
         
         
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pictures.count
+        return picturesNSObject.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -64,8 +67,9 @@ class ViewController: UICollectionViewController {
         let paint = picturesNSObject[indexPath.item]
         cell.name.text = paint.name
         
-        let path = getDocumentsDirectory().appendingPathComponent(paint.image)
-        cell.imageView.image = UIImage(contentsOfFile: path.path)
+        
+         let path = getDocumentsDirectory().appendingPathComponent(paint.image)
+         cell.imageView.image = UIImage(contentsOfFile: path.path)
         
         cell.imageView.layer.borderColor = UIColor(white: 0, alpha: 0.3).cgColor
         cell.imageView.layer.borderWidth = 2
@@ -77,30 +81,30 @@ class ViewController: UICollectionViewController {
         return cell
     }
     
+    func imagePickerController(_picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+
+        guard let image = info[.editedImage] as? UIImage else { return }
+
+        let imageName = UUID().uuidString
+        let imagePath = getDocumentsDirectory().appendingPathComponent(imageName)
+
+        if let jpegData = image.jpegData(compressionQuality: 0.8) {
+            try? jpegData.write(to: imagePath)
+        }
+
+        let picture = PictureNSObject(name: "Unknown", image: imageName)
+        picturesNSObject.append(picture)
+        collectionView.reloadData()
+        print(picturesNSObject.count)
+
+        dismiss(animated: true)
+    }
+    
     func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
     }
-    
-    func imagePickerController(_picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         
-        guard let image = info[.editedImage] as? UIImage else { return }
-        
-        let imageName = UUID().uuidString
-        let imagePath = getDocumentsDirectory().appendingPathComponent(imageName)
-        
-        if let jpegData = image.jpegData(compressionQuality: 0.8) {
-            try? jpegData.write(to: imagePath)
-        }
-        
-        let picture = PictureNSObject(name: "Unknown", image: imageName)
-        picturesNSObject.append(picture)
-        collectionView.reloadData()
-        
-        dismiss(animated: true)
-    }
-        
-    
     override func collectionView(_ collection: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {

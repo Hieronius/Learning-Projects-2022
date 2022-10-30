@@ -9,5 +9,7 @@ import UIKit
 
 class MovieCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet var movieImageView: UIImageView!
+    @IBOutlet var movieTitle: UILabel!
     
 }

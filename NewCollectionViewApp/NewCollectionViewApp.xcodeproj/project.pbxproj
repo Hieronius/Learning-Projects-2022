@@ -14,6 +14,7 @@
 		DDCD602F290E6AF3005A8FC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDCD602E290E6AF3005A8FC9 /* Assets.xcassets */; };
 		DDCD6032290E6AF3005A8FC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDCD6030290E6AF3005A8FC9 /* LaunchScreen.storyboard */; };
 		DDCD603A290E6D0F005A8FC9 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCD6039290E6D0F005A8FC9 /* MovieCollectionViewCell.swift */; };
+		DDCD603C290E7018005A8FC9 /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCD603B290E7018005A8FC9 /* Movies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		DDCD6031290E6AF3005A8FC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDCD6033290E6AF3005A8FC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDCD6039290E6D0F005A8FC9 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		DDCD603B290E7018005A8FC9 /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				DDCD602B290E6AF0005A8FC9 /* Main.storyboard */,
 				DDCD6039290E6D0F005A8FC9 /* MovieCollectionViewCell.swift */,
 				DDCD602E290E6AF3005A8FC9 /* Assets.xcassets */,
+				DDCD603B290E7018005A8FC9 /* Movies.swift */,
 				DDCD6030290E6AF3005A8FC9 /* LaunchScreen.storyboard */,
 				DDCD6033290E6AF3005A8FC9 /* Info.plist */,
 			);
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDCD603C290E7018005A8FC9 /* Movies.swift in Sources */,
 				DDCD602A290E6AF0005A8FC9 /* ViewController.swift in Sources */,
 				DDCD6026290E6AF0005A8FC9 /* AppDelegate.swift in Sources */,
 				DDCD6028290E6AF0005A8FC9 /* SceneDelegate.swift in Sources */,

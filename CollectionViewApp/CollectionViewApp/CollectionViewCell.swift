@@ -12,8 +12,8 @@ class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet private weak var countryNameLabel: UILabel!
     
-    func configure(with countryName: String) {
-        countryNameLabel.text = countryName
+    func configure(with image: UIImage) {
+        countryNameLabel.text = image.
     }
     
 }

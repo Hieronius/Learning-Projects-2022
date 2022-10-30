@@ -21,19 +21,46 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kJu-pj-cvt">
-                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="itemSize" width="187" height="266"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hUa-56-Oqb">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCollectionViewCell" id="hUa-56-Oqb" customClass="MovieCollectionViewCell" customModule="NewCollectionViewApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="266"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9n1-2M-AmN">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="187" height="266"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UCm-qU-HId">
+                                                    <rect key="frame" x="0.0" y="0.0" width="187" height="229.5"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="muT-h8-5Q2">
+                                                    <rect key="frame" x="8" y="237.5" width="171" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20.5" id="WKh-Zd-fwM"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="UCm-qU-HId" secondAttribute="trailing" id="192-fr-sSo"/>
+                                                <constraint firstItem="muT-h8-5Q2" firstAttribute="top" secondItem="UCm-qU-HId" secondAttribute="bottom" constant="8" id="6Vc-MR-cjT"/>
+                                                <constraint firstItem="muT-h8-5Q2" firstAttribute="leading" secondItem="9n1-2M-AmN" secondAttribute="leading" constant="8" id="7vu-2s-dY3"/>
+                                                <constraint firstAttribute="bottom" secondItem="muT-h8-5Q2" secondAttribute="bottom" constant="8" id="B8R-Bw-bry"/>
+                                                <constraint firstItem="muT-h8-5Q2" firstAttribute="leading" secondItem="9n1-2M-AmN" secondAttribute="leading" constant="8" id="NZu-I6-akO"/>
+                                                <constraint firstAttribute="trailing" secondItem="muT-h8-5Q2" secondAttribute="trailing" constant="8" id="ONU-Up-I0o"/>
+                                                <constraint firstItem="UCm-qU-HId" firstAttribute="top" secondItem="9n1-2M-AmN" secondAttribute="top" id="hya-e2-5mO"/>
+                                                <constraint firstAttribute="bottom" secondItem="muT-h8-5Q2" secondAttribute="bottom" constant="8" id="oYE-bp-OqR"/>
+                                                <constraint firstAttribute="trailing" secondItem="muT-h8-5Q2" secondAttribute="trailing" constant="8" id="sCB-Gl-GMF"/>
+                                                <constraint firstItem="UCm-qU-HId" firstAttribute="leading" secondItem="9n1-2M-AmN" secondAttribute="leading" id="uJp-Sc-3fZ"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="187" height="266"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -50,7 +77,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="94"/>
+            <point key="canvasLocation" x="18.840579710144929" y="93.75"/>
         </scene>
     </scenes>
     <resources>

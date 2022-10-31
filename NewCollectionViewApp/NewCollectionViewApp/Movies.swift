@@ -14,6 +14,7 @@ struct Movie {
 }
 
 let movies: [Movie] = [
-    Movie(title: "Agents of S.H.I.E.L.D", image: UIImage(contentsOfFile: "agentsOfShield")!)]
+    Movie(title: "Agents of S.H.I.E.L.D", image: #imageLiteral(resourceName: "agentsOfShield.png"))
+    ]
           
           

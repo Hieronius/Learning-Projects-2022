@@ -12,4 +12,8 @@ class MovieCollectionViewCell: UICollectionViewCell {
     @IBOutlet var movieImageView: UIImageView!
     @IBOutlet var movieTitle: UILabel!
     
+    func setup(with movie: Movie) {
+        movieImageView.image = movie.image
+        movieTitle.text = movie.title
+    }
 }

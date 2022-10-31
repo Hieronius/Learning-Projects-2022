@@ -15,6 +15,7 @@
 		DDCD6032290E6AF3005A8FC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDCD6030290E6AF3005A8FC9 /* LaunchScreen.storyboard */; };
 		DDCD603A290E6D0F005A8FC9 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCD6039290E6D0F005A8FC9 /* MovieCollectionViewCell.swift */; };
 		DDCD603C290E7018005A8FC9 /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCD603B290E7018005A8FC9 /* Movies.swift */; };
+		DDCD603E290F8012005A8FC9 /* agentsOfShield.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCD603D290F8012005A8FC9 /* agentsOfShield.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		DDCD6033290E6AF3005A8FC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDCD6039290E6D0F005A8FC9 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		DDCD603B290E7018005A8FC9 /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
+		DDCD603D290F8012005A8FC9 /* agentsOfShield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = agentsOfShield.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				DDCD603B290E7018005A8FC9 /* Movies.swift */,
 				DDCD6030290E6AF3005A8FC9 /* LaunchScreen.storyboard */,
 				DDCD6033290E6AF3005A8FC9 /* Info.plist */,
+				DDCD603D290F8012005A8FC9 /* agentsOfShield.png */,
 			);
 			path = NewCollectionViewApp;
 			sourceTree = "<group>";
@@ -132,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDCD6032290E6AF3005A8FC9 /* LaunchScreen.storyboard in Resources */,
+				DDCD603E290F8012005A8FC9 /* agentsOfShield.png in Resources */,
 				DDCD602F290E6AF3005A8FC9 /* Assets.xcassets in Resources */,
 				DDCD602D290E6AF0005A8FC9 /* Main.storyboard in Resources */,
 			);

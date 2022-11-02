@@ -38,7 +38,7 @@ extension ViewController: UICollectionViewDataSource {
         cell.setup(with: movies[indexPath.row])
         cell.layer.cornerRadius = 10
         cell.layer.borderWidth = 10
-        
+        cell.layer.borderWidth = 10
         return cell
     }
 }

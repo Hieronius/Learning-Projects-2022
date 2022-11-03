@@ -39,6 +39,7 @@ extension ViewController: UICollectionViewDataSource {
         cell.layer.cornerRadius = 10
         cell.layer.borderWidth = 10
         cell.layer.borderWidth = 10
+        cell.layer.backgroundColor = UIColor.white.cgColor
         return cell
     }
 }

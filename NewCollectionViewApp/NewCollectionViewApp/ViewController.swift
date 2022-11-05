@@ -30,6 +30,7 @@ class ViewController: UIViewController {
 extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("There is \(movies.count) of movies")
         return movies.count
     }
     

@@ -55,5 +55,6 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(movies[indexPath.row].title)
+        print("Movie \(movies[indexPath.row].title) been selected")
     }
 }

@@ -15,5 +15,6 @@ class MovieCollectionViewCell: UICollectionViewCell {
     func setup(with movie: Movie) {
         movieImageView.image = movie.image
         movieTitle.text = movie.title
+        print("cell has been created")
     }
 }

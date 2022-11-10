@@ -42,7 +42,8 @@ extension ViewController: UICollectionViewDataSource {
         cell.layer.borderWidth = 10
         cell.layer.backgroundColor = UIColor.white.cgColor
         cell.layer.borderColor = UIColor.blue.cgColor
-        print("Cell had been created")
+        print("Cell has been created")
+        print("Size of the cell has been set")
         return cell
     }
 }

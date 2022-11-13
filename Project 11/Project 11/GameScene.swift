@@ -81,4 +81,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let spinForever = SKAction.repeatForever(spin)
         sloteGlow.run(spinForever)
     }
+    
+    func collision(between ball: SKNode, object: SKNode) {
+        if object.name == "good" {
+            destroy(ball: ball)
+    } else if object.name == "bad" {
+        destroy(ball: ball)
+    }
+    }
+    
+    func destroy(ball: SKNode) {
+        ball.removeFromParent()
+    }
+    
+
 }

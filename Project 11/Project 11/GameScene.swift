@@ -43,7 +43,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreLabel.position = CGPoint(x: 980, y: 700)
         addChild(scoreLabel)
         
-        editLabel = SKLabelNode(fontNamed: "Chulkduster")
+        editLabel = SKLabelNode(fontNamed: "Chalkduster")
         editLabel.text = "Edit"
         editLabel.position = CGPoint(x: 80, y: 700)
         addChild(editLabel)
@@ -61,7 +61,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         makeBouncer(at: CGPoint(x: 512, y: 0))
         makeBouncer(at: CGPoint(x: 768, y: 0))
         makeBouncer(at: CGPoint(x: 1024, y: 0))
-        
         
     }
     
@@ -97,6 +96,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         
+    }
     }
     
     func makeBouncer(at position: CGPoint) {
@@ -147,6 +147,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func destroy(ball: SKNode) {
+        if let fireParticles = SKEmitterNode(fileNamed: "FireParticles") {
+            fireParticles.position = ball.position
+            addChild(fireParticles)
+        }
+        
         ball.removeFromParent()
     }
     
@@ -160,6 +165,4 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             collision(between: nodeB, object: nodeA)
         }
     }
-    
-
-}
+    }

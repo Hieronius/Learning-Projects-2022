@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DDBF16D8292374FC0098B66D /* FireParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = DDBF16D7292374FC0098B66D /* FireParticles.sks */; };
 		DDCD604C291E33F1005A8FC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCD604B291E33F1005A8FC9 /* AppDelegate.swift */; };
 		DDCD604E291E33F1005A8FC9 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DDCD604D291E33F1005A8FC9 /* GameScene.sks */; };
 		DDCD6052291E33F1005A8FC9 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCD6051291E33F1005A8FC9 /* GameScene.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DDBF16D7292374FC0098B66D /* FireParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireParticles.sks; sourceTree = "<group>"; };
 		DDCD6048291E33F1005A8FC9 /* Project 11.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project 11.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDCD604B291E33F1005A8FC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDCD604D291E33F1005A8FC9 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				DDCD6055291E33F1005A8FC9 /* Main.storyboard */,
 				DDCD6058291E33F6005A8FC9 /* Assets.xcassets */,
 				DDCD605A291E33F6005A8FC9 /* LaunchScreen.storyboard */,
+				DDBF16D7292374FC0098B66D /* FireParticles.sks */,
 			);
 			path = "Project 11";
 			sourceTree = "<group>";
@@ -128,6 +131,7 @@
 			files = (
 				DDCD6057291E33F1005A8FC9 /* Main.storyboard in Resources */,
 				DDCD604E291E33F1005A8FC9 /* GameScene.sks in Resources */,
+				DDBF16D8292374FC0098B66D /* FireParticles.sks in Resources */,
 				DDCD6059291E33F6005A8FC9 /* Assets.xcassets in Resources */,
 				DDCD605C291E33F6005A8FC9 /* LaunchScreen.storyboard in Resources */,
 			);

@@ -58,8 +58,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         numbersOfBallsLabel = SKLabelNode(fontNamed: "Chalkduster")
         numbersOfBallsLabel.horizontalAlignmentMode = .right
-        numbersOfBallsLabel.text = "Balls: 0"
-        numbersOfBallsLabel.position = CGPoint(x: 900, y: 600)
+        numbersOfBallsLabel.text = "Balls: 5"
+        numbersOfBallsLabel.position = CGPoint(x: 980, y: 650)
         addChild(numbersOfBallsLabel)
         
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
@@ -95,6 +95,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 let box = SKSpriteNode(color: UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: 1), size: size)
                 box.zRotation = CGFloat.random(in: 0...3)
                 box.position = location
+                box.name = "box"
                 
                 box.physicsBody = SKPhysicsBody(rectangleOf: box.size)
                 box.physicsBody?.isDynamic = false
@@ -117,6 +118,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 ball.position.y = CGFloat(frame.maxY - 100)
                 ball.name = "ball"
                 addChild(ball)
+                numberOfBalls -= 1
             
         }
         
@@ -163,21 +165,29 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func collision(between ball: SKNode, object: SKNode) {
         if object.name == "good" {
-            destroy(ball: ball)
+            destroyBalls(ball: ball)
             score += 1
+            numberOfBalls += 1
         } else if object.name == "bad" {
-        destroy(ball: ball)
+        destroyBalls(ball: ball)
             score -= 1
+            numberOfBalls -= 1
+        } else if object.name == "box" {
+            destroyObstacles(obstacle: object)
         }
     }
     
-    func destroy(ball: SKNode) {
+    func destroyBalls(ball: SKNode) {
         if let fireParticles = SKEmitterNode(fileNamed: "FireParticles") {
             fireParticles.position = ball.position
             addChild(fireParticles)
         }
         
         ball.removeFromParent()
+    }
+    
+    func destroyObstacles(obstacle: SKNode) {
+        obstacle.removeFromParent()
     }
     
     func didBegin(_ contact: SKPhysicsContact) {

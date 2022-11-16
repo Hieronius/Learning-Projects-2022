@@ -30,7 +30,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    var numbersOfBalls = SKLabelNode
+    var numbersOfBallsLabel: SKLabelNode!
+    
+    var numberOfBalls = 5 {
+        didSet {
+            numbersOfBallsLabel.text = "Balls: \(numberOfBalls)"
+        }
+    }
     
     override func didMove(to view: SKView) {
         let background = SKSpriteNode(imageNamed: "background")
@@ -49,6 +55,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         editLabel.text = "Edit"
         editLabel.position = CGPoint(x: 80, y: 700)
         addChild(editLabel)
+        
+        numbersOfBallsLabel = SKLabelNode(fontNamed: "Chalkduster")
+        numbersOfBallsLabel.horizontalAlignmentMode = .right
+        numbersOfBallsLabel.text = "Balls: 0"
+        numbersOfBallsLabel.position = CGPoint(x: 900, y: 600)
+        addChild(numbersOfBallsLabel)
         
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
         physicsWorld.contactDelegate = self

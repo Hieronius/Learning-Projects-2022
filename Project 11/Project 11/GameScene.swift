@@ -81,7 +81,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gameOver = SKLabelNode(fontNamed: "Chalkduster")
         gameOver.horizontalAlignmentMode = .right
         gameOver.text = "Game over"
-        gameOver.position = CGPoint(x: 960, y: 600)
+        gameOver.text
+        gameOver.position = CGPoint(x: 600, y: 300)
+        gameOver.isHidden = true
         addChild(gameOver)
         
         
@@ -95,7 +97,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         guard let touch = touches.first else { return }
         
          let location = touch.location(in: self)
-        print(location)
+        
         
         let objects = nodes(at: location)
         
@@ -135,6 +137,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
         }
         
+            if numberOfBalls == -1 {
+                print("game over")
+                gameOver.isHidden = false
+            }
         
     }
     }

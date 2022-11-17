@@ -42,6 +42,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var startAgain: SKLabelNode!
     
+    var newGameStarted: Bool = false {
+        didSet {
+            if newGameStarted {
+                self.removeAllChildren()
+                newGameStarted.toggle()
+            }
+        }
+    }
+    
+    
     override func didMove(to view: SKView) {
         let background = SKSpriteNode(imageNamed: "background")
         background.position = CGPoint(x: 512, y: 384)
@@ -149,6 +159,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 print("game over")
                 gameOver.isHidden = false
                 startAgain.isHidden = false
+            }
+            
+            if objects.contains(startAgain) {
+                newGameStarted.toggle()
             }
         
     }

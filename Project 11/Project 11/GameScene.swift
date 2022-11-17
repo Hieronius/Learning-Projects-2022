@@ -38,6 +38,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    var gameOver: SKLabelNode!
+    
     override func didMove(to view: SKView) {
         let background = SKSpriteNode(imageNamed: "background")
         background.position = CGPoint(x: 512, y: 384)
@@ -75,6 +77,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         makeBouncer(at: CGPoint(x: 512, y: 0))
         makeBouncer(at: CGPoint(x: 768, y: 0))
         makeBouncer(at: CGPoint(x: 1024, y: 0))
+        
+        gameOver = SKLabelNode(fontNamed: "Chalkduster")
+        gameOver.horizontalAlignmentMode = .right
+        gameOver.text = "Game over"
+        gameOver.position = CGPoint(x: 960, y: 600)
+        addChild(gameOver)
+        
+        
+//        if numberOfBalls == -1 {
+//            print("game over")
+//        }
         
     }
     
@@ -171,7 +184,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         } else if object.name == "bad" {
         destroyBalls(ball: ball)
             score -= 1
-            numberOfBalls -= 1
         } else if object.name == "box" {
             destroyObstacles(obstacle: object)
         }

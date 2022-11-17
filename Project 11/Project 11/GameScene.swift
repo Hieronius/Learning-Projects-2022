@@ -45,7 +45,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var newGameStarted: Bool = false {
         didSet {
             if newGameStarted {
-                self.removeAllChildren()
                 newGameStarted.toggle()
             }
         }
@@ -163,6 +162,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             if objects.contains(startAgain) {
                 newGameStarted.toggle()
+                
             }
         
     }

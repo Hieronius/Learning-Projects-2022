@@ -40,6 +40,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var gameOver: SKLabelNode!
     
+    var startAgain: SKLabelNode!
+    
     override func didMove(to view: SKView) {
         let background = SKSpriteNode(imageNamed: "background")
         background.position = CGPoint(x: 512, y: 384)
@@ -86,10 +88,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gameOver.isHidden = true
         addChild(gameOver)
         
+        startAgain = SKLabelNode(fontNamed: "Chalkduster")
+        startAgain.horizontalAlignmentMode = .right
+        startAgain.text = "Start again"
+        startAgain.fontSize = 50
+        startAgain.position = CGPoint(x: 820, y: 250)
+        startAgain.isHidden = true
+        addChild(startAgain)
         
-//        if numberOfBalls == -1 {
-//            print("game over")
-//        }
+        
+
         
     }
     
@@ -137,9 +145,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
         }
         
-            if numberOfBalls == -1 {
+            if numberOfBalls == -2 {
                 print("game over")
                 gameOver.isHidden = false
+                startAgain.isHidden = false
             }
         
     }

@@ -81,8 +81,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gameOver = SKLabelNode(fontNamed: "Chalkduster")
         gameOver.horizontalAlignmentMode = .right
         gameOver.text = "Game over"
-        gameOver.text
-        gameOver.position = CGPoint(x: 600, y: 300)
+        gameOver.fontSize = 100
+        gameOver.position = CGPoint(x: 820, y: 350)
         gameOver.isHidden = true
         addChild(gameOver)
         

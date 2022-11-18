@@ -161,12 +161,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
             
             if objects.contains(startAgain) {
+                endGame()
                 newGameStarted.toggle()
                 
             }
         
     }
     }
+    
+    func endGame() {
+        let transition = SKTransition.fade(with: .green, duration: 5)
+        let endScene = GameScene()
+        endScene.size = CGSize(width: 1024, height: 768)
+        endScene.scaleMode = .fill
+        self.view?.presentScene(endScene, transition: transition)
+    }
+    
+    
     
     func makeBouncer(at position: CGPoint) {
         let bouncer = SKSpriteNode(imageNamed: "bouncer")

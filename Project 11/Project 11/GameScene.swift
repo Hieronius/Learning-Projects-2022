@@ -115,6 +115,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
          let location = touch.location(in: self)
         
+        let delay = SKAction.wait(forDuration: 2)
+        run(delay)
+        
+        
+        
         
         let objects = nodes(at: location)
         
@@ -150,6 +155,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 ball.position.y = CGFloat(frame.maxY - 100)
                 ball.name = "ball"
                 addChild(ball)
+                run(delay)
                 numberOfBalls -= 1
             
         }

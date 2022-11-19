@@ -26,4 +26,5 @@ class PersonNSObject: NSObject, NSCoding {
         aCoder.encode(image, forKey: "image")
     }
 
+    print(PersonNSObject)
 }

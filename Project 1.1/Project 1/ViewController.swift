@@ -11,9 +11,22 @@ class ViewController: UICollectionViewController {
     
     var pictures = [String]()
     var picturesNSObject = [PictureNSObject]()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let defaults = UserDefaults.standard
+        
+        if let savedImages = defaults.object(forKey: "pictures") as? Data {
+            let jsonDecoder = JSONDecoder()
+            
+            do {
+                picturesData = try jsonDecoder.decode([picturesNSObject].self, from: savedImages)
+            } catch {
+                print("Failed to load people")
+            }
+        }
         // Do any additional setup after loading the view.
         
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -122,6 +135,16 @@ class ViewController: UICollectionViewController {
         let vc = UIActivityViewController(activityItems: [sharedLink, image], applicationActivities: [])
         vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
         present(vc, animated: true)
+    }
+    
+    func save() {
+        let jsonDecoder = JSONDecoder()
+        if let savedData = try? jsonDecoder.encode(picturesNSObject) {
+            let defaults = UserDefaults.standard
+            defaults.set(savedData, forKey: "pictures")
+        } else {
+            print("Failed to save people")
+        }
     }
 }
 

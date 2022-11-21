@@ -15,5 +15,7 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func switchToggled(_ sender: UISwitch) {
+    }
 }
 

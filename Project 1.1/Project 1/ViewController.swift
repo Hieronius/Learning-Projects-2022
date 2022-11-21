@@ -98,6 +98,7 @@ class ViewController: UICollectionViewController {
         picturesNSObject.append(picture)
         collectionView.reloadData()
         print(picturesNSObject.count)
+        
 
         dismiss(animated: true)
     }

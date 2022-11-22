@@ -11,12 +11,12 @@ class ViewController: UIViewController {
     
     var userData = UserDefaults.standard
     
-    var switchToggledOption = false
+    @IBOutlet var switchView: UISwitch!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        switchToggledOption = userData.bool(forKey: "switchStatement")
         let isOn = userData.bool(forKey: "switchIsOn")
         updateBackground(isOn: isOn)
     }
@@ -26,12 +26,11 @@ class ViewController: UIViewController {
         updateBackground(isOn: sender.isOn)
         
         userData.setValue(sender.isOn, forKey: "switchIsOn")
-        userData.setValue(switchToggledOption, forKey: "switchStatement")
     }
     
     private func updateBackground(isOn: Bool) {
         view.backgroundColor = isOn ? .orange : .darkGray
-        switchToggledOption = isOn ? true : false
+        switchView.isOn = isOn
     }
 }
 

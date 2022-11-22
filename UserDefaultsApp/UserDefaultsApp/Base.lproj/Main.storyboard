@@ -29,6 +29,9 @@
                             <constraint firstItem="LBO-Fy-YLv" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="kNW-Bl-fK3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="switchView" destination="LBO-Fy-YLv" id="PoR-QU-MzU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

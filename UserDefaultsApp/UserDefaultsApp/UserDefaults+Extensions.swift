@@ -29,10 +29,16 @@ extension UserDefaults {
                 let user = try? JSONDecoder().decode(User.self, from: data)
                 return user
             }
+            return nil
         }
         
         set {
-            
+            if newValue == nil {
+                removeObject(forKey: UserDefaultKeys.signedInUser.rawValue)
+            } else {
+                let data = try? JSONEncoder().encode(newValue)
+                setValue(data, forKey: UserDefaultKeys.signedInUser.rawValue)
+            }
         }
     }
 }

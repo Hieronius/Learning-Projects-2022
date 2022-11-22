@@ -10,15 +10,29 @@ import Foundation
 extension UserDefaults {
         private enum UserDefaultKeys: String {
             case switchIsOn
+            case signedInUser
         }
     
     var switchIsOn: Bool {
         get {
-            UserDefaults.standard.bool(forKey: UserDefaultKeys.switchIsOn.rawValue)
+            bool(forKey: UserDefaultKeys.switchIsOn.rawValue)
         }
         
         set {
-            UserDefaults.standard.setValue(newValue, forKey: UserDefaultKeys.switchIsOn.rawValue)
+            setValue(newValue, forKey: UserDefaultKeys.switchIsOn.rawValue)
+        }
+    }
+    
+    var signedInUser: User? {
+        get {
+            if let data = object(forKey: UserDefaultKeys.signedInUser.rawValue) as? Data {
+                let user = try? JSONDecoder().decode(User.self, from: data)
+                return user
+            }
+        }
+        
+        set {
+            
         }
     }
 }

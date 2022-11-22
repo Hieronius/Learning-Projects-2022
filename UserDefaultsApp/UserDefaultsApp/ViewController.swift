@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let isOn = UserDefaults.standard.switchIsOn
+        let isOn = UserDefaults().switchIsOn
         updateBackground(isOn: isOn)
     }
 

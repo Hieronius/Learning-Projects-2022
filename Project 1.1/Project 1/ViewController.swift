@@ -24,13 +24,17 @@ class ViewController: UICollectionViewController {
         
         title = "Storm Viewer"
         
-         performSelector(inBackground: #selector(getImages), with: nil)
+        let fm = FileManager.default
+        let path = Bundle.main.resourcePath!
+        let items = try! fm.contentsOfDirectory(atPath: path)
         
-        // getImages()
-        
-        if !pictures.isEmpty {
-            collectionView.performSelector(onMainThread: #selector(UITableView.reloadData), with: nil, waitUntilDone: false)
+        for item in items {
+            if item.hasPrefix("nssl") {
+                pictures.append(item)
+            }
         }
+        
+        
         
 //        tableView.performSelector(onMainThread: #selector(UITableView.reloadData), with: nil, waitUntilDone: false)
         // print(pictures.sort())

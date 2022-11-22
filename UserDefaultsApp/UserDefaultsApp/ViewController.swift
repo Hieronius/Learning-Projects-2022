@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let isOn = userData.bool(forKey: "switchIsOn")
+        let isOn = UserDefaults.standard.switchIsOn
         updateBackground(isOn: isOn)
     }
 
@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     @IBAction func switchToggled(_ sender: UISwitch) {
         updateBackground(isOn: sender.isOn)
         
-        userData.setValue(sender.isOn, forKey: "switchIsOn")
+        UserDefaults.standard.switchIsOn = sender.isOn
     }
     
     private func updateBackground(isOn: Bool) {

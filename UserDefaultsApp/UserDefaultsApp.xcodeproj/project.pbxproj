@@ -13,6 +13,7 @@
 		DDB0046D292B372600FE8F36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB0046B292B372600FE8F36 /* Main.storyboard */; };
 		DDB0046F292B372900FE8F36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDB0046E292B372900FE8F36 /* Assets.xcassets */; };
 		DDB00472292B372900FE8F36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB00470292B372900FE8F36 /* LaunchScreen.storyboard */; };
+		DDB0047A292C9D1200FE8F36 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB00479292C9D1200FE8F36 /* UserDefaults+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		DDB0046E292B372900FE8F36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDB00471292B372900FE8F36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDB00473292B372900FE8F36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDB00479292C9D1200FE8F36 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				DDB00465292B372600FE8F36 /* AppDelegate.swift */,
 				DDB00467292B372600FE8F36 /* SceneDelegate.swift */,
 				DDB00469292B372600FE8F36 /* ViewController.swift */,
+				DDB00479292C9D1200FE8F36 /* UserDefaults+Extensions.swift */,
 				DDB0046B292B372600FE8F36 /* Main.storyboard */,
 				DDB0046E292B372900FE8F36 /* Assets.xcassets */,
 				DDB00470292B372900FE8F36 /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				DDB0046A292B372600FE8F36 /* ViewController.swift in Sources */,
 				DDB00466292B372600FE8F36 /* AppDelegate.swift in Sources */,
+				DDB0047A292C9D1200FE8F36 /* UserDefaults+Extensions.swift in Sources */,
 				DDB00468292B372600FE8F36 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -34,34 +34,11 @@ class ViewController: UICollectionViewController {
             }
         }
         
-        
-        
-//        tableView.performSelector(onMainThread: #selector(UITableView.reloadData), with: nil, waitUntilDone: false)
-        // print(pictures.sort())
     }
     
-    @objc func getImages() {
-        
-        let fm = FileManager.default
-        let path = Bundle.main.resourcePath!
-        let items = try! fm.contentsOfDirectory(atPath: path)
-        
-        for item in items {
-            if item.hasPrefix("nssl") {
-                // this is a picture to load!
-                pictures.append(item)
-            }
-        }
-        pictures.sort()
-        print(pictures.count)
-        print(picturesNSObject.count)
-        
-        
-        
-    }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return picturesNSObject.count
+        return pictures.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

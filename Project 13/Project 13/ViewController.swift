@@ -13,6 +13,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBOutlet var intensity: UISlider!
     
+    @IBOutlet var changeFilterLabel: UIButton!
+    
+    
     var currentImage: UIImage!
     
     var context: CIContext!
@@ -70,7 +73,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             popoverController.sourceRect = sender.bounds
         }
         
+        
+        
         present(ac, animated: true)
+        
+        
     }
     
     func setFilter(action: UIAlertAction) {
@@ -81,6 +88,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         let beginImage = CIImage(image: currentImage)
         currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+        
+        changeFilterLabel.titleLabel?.text = actionTitle
         
         applyProcessing()
     }

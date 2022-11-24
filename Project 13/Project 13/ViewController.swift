@@ -93,6 +93,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         } else {
             
             let ac = UIAlertController(title: "Error", message: "There is no image", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Ok", style: .default))
             present(ac, animated: true)
     }
     }

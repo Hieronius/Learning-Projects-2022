@@ -116,12 +116,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func radiusChanged(_ sender: Any) {
+        applyProcessing()
     }
     
     @IBAction func scaleChanged(_ sender: Any) {
+        applyProcessing()
     }
     
     @IBAction func centerChanged(_ sender: Any) {
+        applyProcessing()
     }
     
     
@@ -136,11 +139,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         
         if inputKeys.contains(kCIInputRadiusKey) {
-            currentFilter.setValue(intensity.value * 200, forKey: kCIInputRadiusKey)
+            currentFilter.setValue(radius.value * 200, forKey: kCIInputRadiusKey)
         }
         
         if inputKeys.contains(kCIInputScaleKey) {
-            currentFilter.setValue(intensity.value * 10, forKey: kCIInputScaleKey)
+            currentFilter.setValue(scale.value * 10, forKey: kCIInputScaleKey)
         }
         
         if inputKeys.contains(kCIInputCenterKey) {
@@ -149,7 +152,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         
         guard let outputImage = currentFilter.outputImage else { return }
-        currentFilter.setValue((intensity.value), forKey: kCIInputIntensityKey)
+        
+        // currentFilter.setValue((intensity.value), forKey: kCIInputIntensityKey)
         
         if let cgImage = context.createCGImage(outputImage, from: outputImage.extent) {
             let processedImage = UIImage(cgImage: cgImage)

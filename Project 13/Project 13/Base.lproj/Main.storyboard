@@ -83,9 +83,15 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="7SO-SO-Qcw">
                                 <rect key="frame" x="93" y="681" width="300" height="30"/>
+                                <connections>
+                                    <action selector="radiusChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="spf-Qx-msj"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="767-k0-edS">
                                 <rect key="frame" x="93" y="722" width="300" height="30"/>
+                                <connections>
+                                    <action selector="scaleCenter:" destination="BYZ-38-t0r" eventType="valueChanged" id="Hbj-jh-9R4"/>
+                                </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjb-45-lnH">
                                 <rect key="frame" x="338" y="811" width="55.5" height="31"/>
@@ -97,6 +103,9 @@
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="joR-Pm-6Md">
                                 <rect key="frame" x="93" y="760" width="300" height="30"/>
+                                <connections>
+                                    <action selector="centerChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="w7u-hn-feN"/>
+                                </connections>
                             </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -141,9 +150,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="HLY-Eg-GsW"/>
                     <connections>
+                        <outlet property="center" destination="joR-Pm-6Md" id="it4-8L-BLS"/>
                         <outlet property="changeFilterLabel" destination="qgr-nM-6hf" id="Ugb-ne-cxu"/>
                         <outlet property="imageView" destination="m3g-bH-LgG" id="Keu-5r-yNg"/>
                         <outlet property="intensity" destination="BcW-ts-laa" id="iRx-vp-ifb"/>
+                        <outlet property="radius" destination="7SO-SO-Qcw" id="sY9-7c-GM9"/>
+                        <outlet property="scale" destination="767-k0-edS" id="gZi-28-8af"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -12,6 +12,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet var imageView: UIImageView!
     
     @IBOutlet var intensity: UISlider!
+    @IBOutlet var radius: UISlider!
+    @IBOutlet var scale: UISlider!
+    @IBOutlet var center: UISlider!
     
     @IBOutlet var changeFilterLabel: UIButton!
     
@@ -111,6 +114,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func intensityChanged(_ sender: Any) {
         applyProcessing()
     }
+    
+    @IBAction func radiusChanged(_ sender: Any) {
+    }
+    
+    @IBAction func scaleChanged(_ sender: Any) {
+    }
+    
+    @IBAction func centerChanged(_ sender: Any) {
+    }
+    
     
     func applyProcessing() {
         

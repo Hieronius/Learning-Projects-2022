@@ -114,6 +114,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func applyProcessing() {
         
+        // probably here i should just use a couple of new variables for my new sliders and set value for this sliders instead of only "intensity.values"
+        
         let inputKeys = currentFilter.inputKeys
         
         if inputKeys.contains(kCIInputIntensityKey) {

@@ -23,6 +23,15 @@
                                     <constraint firstAttribute="height" constant="300" id="i3i-gt-dRB"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PvM-20-qPe">
+                                <rect key="frame" x="170" y="640" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Filter it"/>
+                                <connections>
+                                    <action selector="filterIt:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xUh-gv-u9O"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -31,6 +40,9 @@
                             <constraint firstItem="94L-8q-eNY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="eFn-Al-sFV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="94L-8q-eNY" id="w1F-21-kZq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

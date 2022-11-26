@@ -8,12 +8,24 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let arrayOfFilters = ["CISepiaTone", "CIPixellate", "CIGaussianBlur"]
+    var image: UIImage!
+    var tempArray: [String]!
+    
 
+    @IBOutlet var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        tempArray = arrayOfFilters
+        let startImage = UIImage(named: "agentsOfShield")
+        imageView.image = startImage
     }
 
-
+    @IBAction func filterIt(_ sender: Any) {
+    }
+    
 }
 

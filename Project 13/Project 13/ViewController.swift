@@ -94,7 +94,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         changeFilterLabel.titleLabel?.text = actionTitle
         
-        applyProcessing()
+//        applyProcessing()
     }
     
     @IBAction func save(_ sender: Any) {
@@ -112,19 +112,80 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     
     @IBAction func intensityChanged(_ sender: Any) {
-        applyProcessing()
+        // applyProcessing()
+        
+        let inputKeys = currentFilter.inputKeys
+        
+        if inputKeys.contains(kCIInputIntensityKey) {
+            // currentFilter.setValue(intensity.value, forKey: kCIInputIntensityKey)
+            
+            guard let outputImage = currentFilter.outputImage else { return }
+            
+            currentFilter.setValue((intensity.value * 10), forKey: kCIInputIntensityKey)
+            
+            if let cgImage = context.createCGImage(outputImage, from: outputImage.extent) {
+                let processedImage = UIImage(cgImage: cgImage)
+                imageView.image = processedImage
+            }
+            
+        }
     }
     
     @IBAction func radiusChanged(_ sender: Any) {
-        applyProcessing()
+        // applyProcessing()
+        
+        let inputKeys = currentFilter.inputKeys
+        
+        if inputKeys.contains(kCIInputRadiusKey) {
+            // currentFilter.setValue(radius.value * 200, forKey: kCIInputRadiusKey)
+            
+            guard let outputImage = currentFilter.outputImage else { return }
+            
+            currentFilter.setValue((radius.value * 200), forKey: kCIInputRadiusKey)
+            
+            if let cgImage = context.createCGImage(outputImage, from: outputImage.extent) {
+                let processedImage = UIImage(cgImage: cgImage)
+                imageView.image = processedImage
+            }
+        }
     }
     
     @IBAction func scaleChanged(_ sender: Any) {
-        applyProcessing()
+        // applyProcessing()
+        
+        let inputKeys = currentFilter.inputKeys
+        
+        if inputKeys.contains(kCIInputScaleKey) {
+            // currentFilter.setValue(scale.value * 10, forKey: kCIInputScaleKey)
+            
+            guard let outputImage = currentFilter.outputImage else { return }
+            
+            currentFilter.setValue((scale.value * 10), forKey: kCIInputScaleKey)
+            
+            if let cgImage = context.createCGImage(outputImage, from: outputImage.extent) {
+                let processedImage = UIImage(cgImage: cgImage)
+                imageView.image = processedImage
+            }
+        }
     }
     
     @IBAction func centerChanged(_ sender: Any) {
-        applyProcessing()
+        // applyProcessing()
+        
+        let inputKeys = currentFilter.inputKeys
+        
+        if inputKeys.contains(kCIInputCenterKey) {
+            // currentFilter.setValue(CIVector(x: currentImage.size.width / 2, y: currentImage.size.height / 2), forKey: kCIInputCenterKey)
+            
+            guard let outputImage = currentFilter.outputImage else { return }
+            
+            currentFilter.setValue(CIVector(x: currentImage.size.width / 2, y: currentImage.size.height / 2), forKey: kCIInputCenterKey)
+            
+            if let cgImage = context.createCGImage(outputImage, from: outputImage.extent) {
+                let processedImage = UIImage(cgImage: cgImage)
+                imageView.image = processedImage
+            }
+        }
     }
     
     
@@ -132,33 +193,62 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         // probably here i should just use a couple of new variables for my new sliders and set value for this sliders instead of only "intensity.values"
         
-        let inputKeys = currentFilter.inputKeys
+//        let inputKeys = currentFilter.inputKeys
+//
+//        if inputKeys.contains(kCIInputIntensityKey) {
+//            // currentFilter.setValue(intensity.value, forKey: kCIInputIntensityKey)
+//
+//            guard let outputImage = currentFilter.outputImage else { return }
+//
+//            currentFilter.setValue((intensity.value * 10), forKey: kCIInputIntensityKey)
+//
+//            if let cgImage = context.createCGImage(outputImage, from: outputImage.extent) {
+//                let processedImage = UIImage(cgImage: cgImage)
+//                imageView.image = processedImage
+//            }
+//
+//        }
         
-        if inputKeys.contains(kCIInputIntensityKey) {
-            currentFilter.setValue(intensity.value, forKey: kCIInputIntensityKey)
-        }
+//        if inputKeys.contains(kCIInputRadiusKey) {
+//            // currentFilter.setValue(radius.value * 200, forKey: kCIInputRadiusKey)
+//
+//            guard let outputImage = currentFilter.outputImage else { return }
+//
+//            currentFilter.setValue((radius.value * 200), forKey: kCIInputRadiusKey)
+//
+//            if let cgImage = context.createCGImage(outputImage, from: outputImage.extent) {
+//                let processedImage = UIImage(cgImage: cgImage)
+//                imageView.image = processedImage
+//            }
+//        }
         
-        if inputKeys.contains(kCIInputRadiusKey) {
-            currentFilter.setValue(radius.value * 200, forKey: kCIInputRadiusKey)
-        }
+//        if inputKeys.contains(kCIInputScaleKey) {
+//            // currentFilter.setValue(scale.value * 10, forKey: kCIInputScaleKey)
+//
+//            guard let outputImage = currentFilter.outputImage else { return }
+//
+//            currentFilter.setValue((scale.value * 10), forKey: kCIInputScaleKey)
+//
+//            if let cgImage = context.createCGImage(outputImage, from: outputImage.extent) {
+//                let processedImage = UIImage(cgImage: cgImage)
+//                imageView.image = processedImage
+//            }
+//        }
         
-        if inputKeys.contains(kCIInputScaleKey) {
-            currentFilter.setValue(scale.value * 10, forKey: kCIInputScaleKey)
-        }
+//        if inputKeys.contains(kCIInputCenterKey) {
+//            // currentFilter.setValue(CIVector(x: currentImage.size.width / 2, y: currentImage.size.height / 2), forKey: kCIInputCenterKey)
+//
+//            guard let outputImage = currentFilter.outputImage else { return }
+//
+//            currentFilter.setValue(CIVector(x: currentImage.size.width / 2, y: currentImage.size.height / 2), forKey: kCIInputCenterKey)
+//
+//            if let cgImage = context.createCGImage(outputImage, from: outputImage.extent) {
+//                let processedImage = UIImage(cgImage: cgImage)
+//                imageView.image = processedImage
+//            }
+//        }
         
-        if inputKeys.contains(kCIInputCenterKey) {
-            currentFilter.setValue(CIVector(x: currentImage.size.width / 2, y: currentImage.size.height / 2), forKey: kCIInputCenterKey)
-            
-        }
         
-        guard let outputImage = currentFilter.outputImage else { return }
-        
-        // currentFilter.setValue((intensity.value), forKey: kCIInputIntensityKey)
-        
-        if let cgImage = context.createCGImage(outputImage, from: outputImage.extent) {
-            let processedImage = UIImage(cgImage: cgImage)
-            imageView.image = processedImage
-        }
     }
     
     @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {

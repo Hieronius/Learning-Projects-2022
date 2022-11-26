@@ -13,7 +13,7 @@
 		DDB004B12931E8A700FE8F36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB004AF2931E8A700FE8F36 /* Main.storyboard */; };
 		DDB004B32931E8AA00FE8F36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDB004B22931E8AA00FE8F36 /* Assets.xcassets */; };
 		DDB004B62931E8AA00FE8F36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB004B42931E8AA00FE8F36 /* LaunchScreen.storyboard */; };
-		DDB004BE2931EA7100FE8F36 /* agentsOfShield.png in Resources */ = {isa = PBXBuildFile; fileRef = DDB004BD2931EA7100FE8F36 /* agentsOfShield.png */; };
+		DDB004BE2931EA7100FE8F36 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = DDB004BD2931EA7100FE8F36 /* 1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		DDB004B22931E8AA00FE8F36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDB004B52931E8AA00FE8F36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDB004B72931E8AA00FE8F36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DDB004BD2931EA7100FE8F36 /* agentsOfShield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = agentsOfShield.png; sourceTree = "<group>"; };
+		DDB004BD2931EA7100FE8F36 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +65,7 @@
 				DDB004B22931E8AA00FE8F36 /* Assets.xcassets */,
 				DDB004B42931E8AA00FE8F36 /* LaunchScreen.storyboard */,
 				DDB004B72931E8AA00FE8F36 /* Info.plist */,
-				DDB004BD2931EA7100FE8F36 /* agentsOfShield.png */,
+				DDB004BD2931EA7100FE8F36 /* 1.png */,
 			);
 			path = CoreImageTutorial;
 			sourceTree = "<group>";
@@ -129,7 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDB004B62931E8AA00FE8F36 /* LaunchScreen.storyboard in Resources */,
-				DDB004BE2931EA7100FE8F36 /* agentsOfShield.png in Resources */,
+				DDB004BE2931EA7100FE8F36 /* 1.png in Resources */,
 				DDB004B32931E8AA00FE8F36 /* Assets.xcassets in Resources */,
 				DDB004B12931E8A700FE8F36 /* Main.storyboard in Resources */,
 			);

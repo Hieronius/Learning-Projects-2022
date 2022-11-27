@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let arrayOfFilters = ["CISepiaTone", "CIPixellate", "CIGaussianBlur"]
+    let arrayOfFilters = ["CIPixellate", "CISepiaTone", "CIGaussianBlur"]
     var image: UIImage!
     var tempArray: [String]!
     

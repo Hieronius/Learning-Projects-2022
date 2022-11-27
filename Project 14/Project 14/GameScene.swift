@@ -11,4 +11,8 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         <#code#>
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        <#code#>
+    }
 }

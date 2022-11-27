@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let arrayOfFilters = ["CIPixellate", "CISepiaTone", "CIGaussianBlur"]
+    let arrayOfFilters = ["CISepiaTone", "CIPixellate", "CIGaussianBlur"]
     var image: UIImage!
     var tempArray: [String]!
     
@@ -26,14 +26,16 @@ class ViewController: UIViewController {
 
     @IBAction func filterIt(_ sender: Any) {
         
+        let fileURL = Bundle.main.url(forResource: "1", withExtension: "png")
+        let startImage = CIImage(contentsOf: fileURL!)
+        
         if tempArray.count == 0 {
             let startImage = UIImage(named: "1")
             imageView.image = startImage
             tempArray = arrayOfFilters
-            tempArray.removeFirst()
+            
     } else {
-        let fileURL = Bundle.main.url(forResource: "1", withExtension: "png")
-        let startImage = CIImage(contentsOf: fileURL!)
+        
         
         let filter = CIFilter(name: tempArray.removeFirst())
         filter?.setValue(startImage, forKey: kCIInputImageKey)

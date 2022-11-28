@@ -32,7 +32,7 @@ class GameScene: SKScene {
         addChild(gameScore)
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        <#code#>
-    }
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        <#code#>
+//    }
 }

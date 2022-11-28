@@ -14,6 +14,7 @@
 		DDABC8192934041A00F86822 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDABC8172934041A00F86822 /* Main.storyboard */; };
 		DDABC81E2934041C00F86822 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDABC81C2934041C00F86822 /* LaunchScreen.storyboard */; };
 		DDABC858293406B700F86822 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDABC857293406B700F86822 /* Assets.xcassets */; };
+		DDABC85C293485DC00F86822 /* WhackSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDABC85B293485DC00F86822 /* WhackSlot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		DDABC857293406B700F86822 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDABC8592934070700F86822 /* Classic_project14_Project14_Content_whackBad.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Classic_project14_Project14_Content_whackBad.caf; sourceTree = "<group>"; };
 		DDABC85A2934070700F86822 /* Classic_project14_Project14_Content_whack.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Classic_project14_Project14_Content_whack.caf; sourceTree = "<group>"; };
+		DDABC85B293485DC00F86822 /* WhackSlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhackSlot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				DDABC80F2934041A00F86822 /* GameScene.sks */,
 				DDABC8132934041A00F86822 /* GameScene.swift */,
 				DDABC8152934041A00F86822 /* GameViewController.swift */,
+				DDABC85B293485DC00F86822 /* WhackSlot.swift */,
 				DDABC8172934041A00F86822 /* Main.storyboard */,
 				DDABC81C2934041C00F86822 /* LaunchScreen.storyboard */,
 				DDABC857293406B700F86822 /* Assets.xcassets */,
@@ -146,6 +149,7 @@
 			files = (
 				DDABC8142934041A00F86822 /* GameScene.swift in Sources */,
 				DDABC8162934041A00F86822 /* GameViewController.swift in Sources */,
+				DDABC85C293485DC00F86822 /* WhackSlot.swift in Sources */,
 				DDABC80E2934041A00F86822 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

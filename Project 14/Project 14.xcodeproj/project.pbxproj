@@ -26,8 +26,8 @@
 		DDABC8182934041A00F86822 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DDABC81D2934041C00F86822 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDABC857293406B700F86822 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DDABC8592934070700F86822 /* Classic_project14_Project14_Content_whackBad.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Classic_project14_Project14_Content_whackBad.caf; sourceTree = "<group>"; };
-		DDABC85A2934070700F86822 /* Classic_project14_Project14_Content_whack.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Classic_project14_Project14_Content_whack.caf; sourceTree = "<group>"; };
+		DDABC8592934070700F86822 /* whackBad.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whackBad.caf; sourceTree = "<group>"; };
+		DDABC85A2934070700F86822 /* whack.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whack.caf; sourceTree = "<group>"; };
 		DDABC85B293485DC00F86822 /* WhackSlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhackSlot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,8 +69,8 @@
 				DDABC8172934041A00F86822 /* Main.storyboard */,
 				DDABC81C2934041C00F86822 /* LaunchScreen.storyboard */,
 				DDABC857293406B700F86822 /* Assets.xcassets */,
-				DDABC85A2934070700F86822 /* Classic_project14_Project14_Content_whack.caf */,
-				DDABC8592934070700F86822 /* Classic_project14_Project14_Content_whackBad.caf */,
+				DDABC85A2934070700F86822 /* whack.caf */,
+				DDABC8592934070700F86822 /* whackBad.caf */,
 			);
 			path = "Project 14";
 			sourceTree = "<group>";

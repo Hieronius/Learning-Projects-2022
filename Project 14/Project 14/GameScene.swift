@@ -48,22 +48,23 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first else { return }
+        if let touch = touches.first {
+            
+        
         let location = touch.location(in: self)
         let tappedNodes = nodes(at: location)
         
         for node in tappedNodes {
-            guard let whackSlot = node.parent?.parent as? WhackSlot else {
-                continue
-            }
             
-            if !whackSlot.isVisible { continue }
-            if whackSlot.isHit { continue }
-            whackSlot.hit()
+            
             
             if node.name == "charFriend" {
                 // they shouldn't have whacked this penguin
+                let whackSlot = node.parent!.parent as! WhackSlot
+                if !whackSlot.isVisible { continue }
+                if whackSlot.isHit { continue }
                 
+                whackSlot.hit()
                 score -= 5
                 
                 run(SKAction.playSoundFileNamed("whackBad.caf", waitForCompletion: false))
@@ -71,14 +72,19 @@ class GameScene: SKScene {
             } else if node.name == "charEnemy" {
                 // they should have whacked this one
                 
+                let whackSlot = node.parent!.parent as! WhackSlot
+                if !whackSlot.isVisible { continue }
+                if whackSlot.isHit { continue }
                 
                 whackSlot.charNode.xScale = 0.85
                 whackSlot.charNode.yScale = 0.85
                 
+                whackSlot.hit()
                 score += 1
                 
                 run(SKAction.playSoundFileNamed("whack.caf", waitForCompletion: false))
             }
+    }
     }
     }
     

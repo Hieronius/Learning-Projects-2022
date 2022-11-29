@@ -13,6 +13,8 @@ class GameScene: SKScene {
     var gameScore: SKLabelNode!
     
     var popupTime = 0.85
+    var numRounds = 0
+    
     
     
     var score = 0 {
@@ -54,25 +56,25 @@ class GameScene: SKScene {
             guard let whackSlot = node.parent?.parent as? WhackSlot else {
                 continue
             }
+            
+            if !whackSlot.isVisible { continue }
+            if whackSlot.isHit { continue }
+            whackSlot.hit()
+            
             if node.name == "charFriend" {
                 // they shouldn't have whacked this penguin
-                if !whackSlot.isVisible { continue }
-                if whackSlot.isHit { continue }
                 
-                whackSlot.hit()
                 score -= 5
                 
                 run(SKAction.playSoundFileNamed("whackBad.caf", waitForCompletion: false))
                 
             } else if node.name == "charEnemy" {
                 // they should have whacked this one
-                if !whackSlot.isVisible { continue }
-                if whackSlot.isHit { continue }
+                
                 
                 whackSlot.charNode.xScale = 0.85
                 whackSlot.charNode.yScale = 0.85
                 
-                whackSlot.hit()
                 score += 1
                 
                 run(SKAction.playSoundFileNamed("whack.caf", waitForCompletion: false))
@@ -88,6 +90,20 @@ class GameScene: SKScene {
     }
     
     func createEnemy() {
+        
+        numRounds += 1
+        
+        if numRounds >= 30 {
+            for slot in slots {
+                slot.hide()
+            }
+            
+            let gameOver = SKSpriteNode(imageNamed: "gameOver")
+            gameOver.position = CGPoint(x: 512, y: 384)
+            gameOver.zPosition = 1
+            addChild(gameOver)
+            return
+        }
         popupTime *= 0.991
         
         slots.shuffle()

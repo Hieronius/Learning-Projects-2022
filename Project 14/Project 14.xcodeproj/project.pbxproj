@@ -17,6 +17,7 @@
 		DDABC85C293485DC00F86822 /* WhackSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDABC85B293485DC00F86822 /* WhackSlot.swift */; };
 		DDABC85D2937107000F86822 /* whack.caf in Resources */ = {isa = PBXBuildFile; fileRef = DDABC85A2934070700F86822 /* whack.caf */; };
 		DDABC85E2937107300F86822 /* whackBad.caf in Resources */ = {isa = PBXBuildFile; fileRef = DDABC8592934070700F86822 /* whackBad.caf */; };
+		DDABC86029387FB700F86822 /* gameOver.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DDABC85F29387FB700F86822 /* gameOver.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		DDABC8592934070700F86822 /* whackBad.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whackBad.caf; sourceTree = "<group>"; };
 		DDABC85A2934070700F86822 /* whack.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whack.caf; sourceTree = "<group>"; };
 		DDABC85B293485DC00F86822 /* WhackSlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhackSlot.swift; sourceTree = "<group>"; };
+		DDABC85F29387FB700F86822 /* gameOver.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = gameOver.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				DDABC857293406B700F86822 /* Assets.xcassets */,
 				DDABC85A2934070700F86822 /* whack.caf */,
 				DDABC8592934070700F86822 /* whackBad.caf */,
+				DDABC85F29387FB700F86822 /* gameOver.m4a */,
 			);
 			path = "Project 14";
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 				DDABC8102934041A00F86822 /* GameScene.sks in Resources */,
 				DDABC858293406B700F86822 /* Assets.xcassets in Resources */,
 				DDABC81E2934041C00F86822 /* LaunchScreen.storyboard in Resources */,
+				DDABC86029387FB700F86822 /* gameOver.m4a in Resources */,
 				DDABC85E2937107300F86822 /* whackBad.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

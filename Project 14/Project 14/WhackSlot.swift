@@ -65,6 +65,12 @@ class WhackSlot: SKNode {
     }
     
     func hit() {
+        
+        if let smokeParticles = SKEmitterNode(fileNamed: "smokeAfterTheHit") {
+            smokeParticles.position = position
+            addChild(smokeParticles)
+        }
+        
         isHit = true
         
         let delay = SKAction.wait(forDuration: 0.25)

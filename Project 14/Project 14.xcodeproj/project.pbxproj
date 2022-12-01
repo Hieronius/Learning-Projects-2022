@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD4960FD293885EB005C8A1C /* smokeAfterTheHit.sks in Resources */ = {isa = PBXBuildFile; fileRef = DD4960FC293885EB005C8A1C /* smokeAfterTheHit.sks */; };
 		DDABC80E2934041A00F86822 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDABC80D2934041A00F86822 /* AppDelegate.swift */; };
 		DDABC8102934041A00F86822 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DDABC80F2934041A00F86822 /* GameScene.sks */; };
 		DDABC8142934041A00F86822 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDABC8132934041A00F86822 /* GameScene.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD4960FC293885EB005C8A1C /* smokeAfterTheHit.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = smokeAfterTheHit.sks; sourceTree = "<group>"; };
 		DDABC80A2934041A00F86822 /* Project 14.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project 14.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDABC80D2934041A00F86822 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDABC80F2934041A00F86822 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				DDABC80D2934041A00F86822 /* AppDelegate.swift */,
 				DDABC80F2934041A00F86822 /* GameScene.sks */,
 				DDABC8132934041A00F86822 /* GameScene.swift */,
+				DD4960FC293885EB005C8A1C /* smokeAfterTheHit.sks */,
 				DDABC8152934041A00F86822 /* GameViewController.swift */,
 				DDABC85B293485DC00F86822 /* WhackSlot.swift */,
 				DDABC8172934041A00F86822 /* Main.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				DDABC8192934041A00F86822 /* Main.storyboard in Resources */,
 				DDABC85D2937107000F86822 /* whack.caf in Resources */,
+				DD4960FD293885EB005C8A1C /* smokeAfterTheHit.sks in Resources */,
 				DDABC8102934041A00F86822 /* GameScene.sks in Resources */,
 				DDABC858293406B700F86822 /* Assets.xcassets in Resources */,
 				DDABC81E2934041C00F86822 /* LaunchScreen.storyboard in Resources */,

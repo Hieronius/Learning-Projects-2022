@@ -67,7 +67,9 @@ class WhackSlot: SKNode {
     func hit() {
         
         if let smokeParticles = SKEmitterNode(fileNamed: "smokeAfterTheHit") {
-            smokeParticles.position = position
+            smokeParticles.particleLifetime = 0.5
+            smokeParticles.particleLifetimeRange = 0.5
+            smokeParticles.position = charNode.position
             addChild(smokeParticles)
         }
         

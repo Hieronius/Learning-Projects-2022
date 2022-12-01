@@ -99,7 +99,7 @@ class GameScene: SKScene {
         
         numRounds += 1
         
-        if numRounds >= 30 {
+        if numRounds >= 5 {
             for slot in slots {
                 slot.hide()
             }
@@ -108,6 +108,20 @@ class GameScene: SKScene {
             gameOver.position = CGPoint(x: 512, y: 384)
             gameOver.zPosition = 1
             addChild(gameOver)
+            
+            let finalScore = SKLabelNode(fontNamed: "Chalkduster")
+            finalScore.text = "Final \(gameScore.text!)"
+            finalScore.position = CGPoint(x: 300, y: 8)
+            finalScore.horizontalAlignmentMode = .left
+            finalScore.fontSize = 48
+            addChild(finalScore)
+//            gameScore = SKLabelNode(fontNamed: "Chalkduster")
+//            gameScore.text = "Score: 0"
+//            gameScore.position = CGPoint(x: 8, y: 8)
+//            gameScore.horizontalAlignmentMode = .left
+//            gameScore.fontSize = 48
+//            addChild(gameScore)
+            
             run(SKAction.playSoundFileNamed("gameOver.m4a", waitForCompletion: false))
             return
         }

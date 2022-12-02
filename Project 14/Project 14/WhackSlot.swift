@@ -71,6 +71,7 @@ class WhackSlot: SKNode {
             smokeParticles.particleLifetimeRange = 0.5
             smokeParticles.position = charNode.position
             addChild(smokeParticles)
+            print("being hit")
         }
         
         isHit = true

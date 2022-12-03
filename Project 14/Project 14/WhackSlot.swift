@@ -32,6 +32,7 @@ class WhackSlot: SKNode {
         cropNode.addChild(charNode)
         
         addChild(cropNode)
+        print("penguin has spawned")
     }
     
     func show(hideTime: Double) {

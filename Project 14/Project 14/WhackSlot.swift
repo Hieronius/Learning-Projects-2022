@@ -42,6 +42,7 @@ class WhackSlot: SKNode {
         charNode.yScale = 1
         
         charNode.run(SKAction.moveBy(x: 0, y: 80, duration: 0.05))
+        print("action is complete")
         isVisible = true
         isHit = false
         

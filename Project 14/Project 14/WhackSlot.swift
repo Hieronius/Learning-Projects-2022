@@ -20,6 +20,7 @@ class WhackSlot: SKNode {
         
         let sprite = SKSpriteNode(imageNamed: "whackHole")
         addChild(sprite)
+        print("whack hole added")
         
         let cropNode = SKCropNode()
         cropNode.position = CGPoint(x: 0, y: 15)

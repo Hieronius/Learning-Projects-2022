@@ -123,6 +123,7 @@ class GameScene: SKScene {
 //            addChild(gameScore)
             
             run(SKAction.playSoundFileNamed("gameOver.m4a", waitForCompletion: false))
+            print("Game over")
             return
         }
         popupTime *= 0.991

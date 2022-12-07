@@ -142,6 +142,7 @@ class GameScene: SKScene {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) { [weak self] in
                 self?.createEnemy()
+            print("Enemy has been created")
             }
         }
     }

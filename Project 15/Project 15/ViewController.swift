@@ -8,27 +8,24 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var imageView: UIImageView!
+    var currentAnimation = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        imageView = UIImageView(image: UIImage(named: "penguin"))
+        imageView.center = CGPoint(x: 512, y: 384)
+        view.addSubview(imageView)
         
-        print("test commit")
-        print("another test commit")
-        print("test commit 10.12.22")
-        print("test commit 11.12.22")
         
-        factorial(a: 200)
+        
     }
 
-    func factorial(a: Int) -> Int {
-        let n = a
-        if n == 1 {
-            return 1
-        } else {
-            return n * factorial(a: n - 1)
-        }
+    @IBAction func tapped(_ sender: Any) {
     }
+    
 
 }
 

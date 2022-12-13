@@ -151,7 +151,7 @@ extension ViewController {
         currentAnswer.text = ""
         
         for button in activatedButtons {
-            button.isHidden = false
+            button.alpha = 1
         }
         
         activatedButtons.removeAll()

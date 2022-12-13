@@ -142,7 +142,8 @@ extension ViewController {
         guard let buttonTitle = sender.titleLabel?.text else { return }
         currentAnswer.text = currentAnswer.text?.appending(buttonTitle)
         activatedButtons.append(sender)
-        sender.isHidden = true
+        // sender.isHidden = true
+        sender.imageView?.tintColor.cgColor.alpha = 0.1
     }
     
     @objc func clearTapped(_ sender: UIButton) {

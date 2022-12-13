@@ -143,8 +143,9 @@ extension ViewController {
         currentAnswer.text = currentAnswer.text?.appending(buttonTitle)
         activatedButtons.append(sender)
         // sender.isHidden = true
-        sender.imageView?.alpha = 0.1
-        sender.isHidden = true
+        sender.imageView?.alpha = 0
+        print("word faded out")
+        
     }
     
     @objc func clearTapped(_ sender: UIButton) {

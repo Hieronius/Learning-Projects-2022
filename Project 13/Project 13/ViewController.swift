@@ -102,6 +102,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if let image = imageView.image {
             
             UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+            
+        
         } else {
             
             let ac = UIAlertController(title: "Error", message: "There is no image", preferredStyle: .alert)

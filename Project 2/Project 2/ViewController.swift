@@ -59,11 +59,12 @@ class ViewController: UIViewController {
         if sender.tag == correctAnswer {
             title = "Correct"
             score += 1
-            sender.alpha = 0
+            sender.transform = CGAffineTransform(scaleX: 2, y: 2)
+            
         } else {
             title = "Wrong. It's \(countries[sender.tag]) flag"
             score -= 1
-            sender.alpha = 0.5
+            sender.transform = CGAffineTransform(scaleX: 2, y: 2)
         }
         
         
@@ -71,6 +72,7 @@ class ViewController: UIViewController {
         
         
         let ac = UIAlertController(title: title, message: "Your score is \(score)", preferredStyle: .alert)
+        sender.transform = .identity
         
         
         if counterOfQuestions == 10 {

@@ -49,6 +49,9 @@ class ViewController: UIViewController {
         
         title = "\(countries[correctAnswer].uppercased()) PLAYER SCORE: \(score) QUESTIONS: \(counterOfQuestions)"
         counterOfQuestions += 1
+        button1.transform = .identity
+        button2.transform = .identity
+        button3.transform = .identity
         
         // And after new game it will make new random countries and correct answer
     }
@@ -59,12 +62,12 @@ class ViewController: UIViewController {
         if sender.tag == correctAnswer {
             title = "Correct"
             score += 1
-            sender.transform = CGAffineTransform(scaleX: 2, y: 2)
+            sender.transform = CGAffineTransform(scaleX: 1.25, y: 1.25)
             
         } else {
             title = "Wrong. It's \(countries[sender.tag]) flag"
             score -= 1
-            sender.transform = CGAffineTransform(scaleX: 2, y: 2)
+            sender.transform = CGAffineTransform(scaleX: 1.25, y: 1.25)
         }
         
         
@@ -72,7 +75,7 @@ class ViewController: UIViewController {
         
         
         let ac = UIAlertController(title: title, message: "Your score is \(score)", preferredStyle: .alert)
-        sender.transform = .identity
+        // sender.transform = .identity
         
         
         if counterOfQuestions == 10 {

@@ -34,9 +34,14 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
         
+//        guard annotationView is MKPinAnnotationView else { return nil }
+//        annotationView.pinColor = .green
+        // there is my work.
+        
         if annotationView == nil {
             annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             annotationView?.canShowCallout = true
+            
             
             let btn = UIButton(type: .detailDisclosure)
             annotationView?.rightCalloutAccessoryView = btn

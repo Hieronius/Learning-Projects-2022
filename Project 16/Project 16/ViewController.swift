@@ -34,7 +34,9 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
         
-       
+//        var annotationViewPin = annotationView as! MKPinAnnotationView
+//
+//        annotationViewPin.pinTintColor
         
 //        guard annotationView is MKPinAnnotationView else { return nil }
 //        annotationView.pinColor = .green
@@ -51,7 +53,10 @@ class ViewController: UIViewController, MKMapViewDelegate {
             annotationView?.annotation = annotation
         }
         
-        return annotationView
+        var annotationViewTest = annotationView as! MKPinAnnotationView
+        annotationViewTest.pinTintColor = .green
+        
+        return annotationViewTest
         
     }
 

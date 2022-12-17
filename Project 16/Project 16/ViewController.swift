@@ -34,14 +34,6 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
         
-//        var annotationViewPin = annotationView as! MKPinAnnotationView
-//
-//        annotationViewPin.pinTintColor
-        
-//        guard annotationView is MKPinAnnotationView else { return nil }
-//        annotationView.pinColor = .green
-        // there is my work.
-        
         if annotationView == nil {
             annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             annotationView?.canShowCallout = true
@@ -53,7 +45,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
             annotationView?.annotation = annotation
         }
         
-        var annotationViewTest = annotationView as! MKPinAnnotationView
+        let annotationViewTest = annotationView as! MKPinAnnotationView
         annotationViewTest.pinTintColor = .green
         
         return annotationViewTest
@@ -68,6 +60,22 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
         let ac = UIAlertController(title: placeName, message: placeInfo, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
+    }
+    
+    
+    @IBAction func mapType(_ sender: Any) {
+        getTypeOfTheMap()
+    }
+    
+    func getTypeOfTheMap() {
+        
+        let ac = UIAlertController(title: "Map", message: "Type", preferredStyle: .alert)
+        
+        ac.addAction(UIAlertAction(title: "Satelite", style: .default, handler: { action in
+            MKMapType.satellite
+        }))
+        
         present(ac, animated: true)
     }
 }

@@ -32,7 +32,13 @@
                             <constraint firstItem="VEI-px-uzm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="K15-Vc-Kt3"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="bc9-p7-Aph"/>
+                    <navigationItem key="navigationItem" id="bc9-p7-Aph">
+                        <barButtonItem key="rightBarButtonItem" title="Map type" id="f5X-yL-f6v">
+                            <connections>
+                                <action selector="mapType:" destination="BYZ-38-t0r" id="UBj-yt-txE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="VEI-px-uzm" id="tEf-Em-wSL"/>
                     </connections>

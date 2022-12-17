@@ -70,10 +70,23 @@ class ViewController: UIViewController, MKMapViewDelegate {
     
     func getTypeOfTheMap() {
         
-        let ac = UIAlertController(title: "Map", message: "Type", preferredStyle: .alert)
+//        let ac = UIAlertController(title: "Map", message: "Type", preferredStyle: .alert)
+//
+//        ac.addAction(UIAlertAction(title: "Satelite", style: .default, handler: { action in
+//            self.mapView.mapType = .satellite
+//        }))
         
-        ac.addAction(UIAlertAction(title: "Satelite", style: .default, handler: { action in
-            MKMapType.satellite
+        let ac = UIAlertController(title: "Map", message: "Choose you format", preferredStyle: .actionSheet)
+        
+        ac.addAction(UIAlertAction(title: "Satelite", style: .default, handler: { ActionHandler in
+            self.mapView.mapType = .satellite
+        }))
+        
+        ac.addAction(UIAlertAction(title: "Hybrid", style: .default, handler: { ActionHandler in
+            self.mapView.mapType = .hybrid
+        }))
+        ac.addAction(UIAlertAction(title: "Standart", style: .default, handler: { ActionHandler in
+            self.mapView.mapType = .standard
         }))
         
         present(ac, animated: true)

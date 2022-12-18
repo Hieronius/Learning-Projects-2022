@@ -7,6 +7,7 @@
 
 import UIKit
 import MapKit
+import WebKit
 
 class ViewController: UIViewController, MKMapViewDelegate {
     
@@ -54,18 +55,19 @@ class ViewController: UIViewController, MKMapViewDelegate {
 
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
-        let webViewController = WebViewController()
-        present(webViewController, animated: true)
-//        guard let capital = view.annotation as? Capital else { return }
         
-//        let placeName = capital.title
-//        let placeInfo = capital.info
-//
-//        let ac = UIAlertController(title: placeName, message: placeInfo, preferredStyle: .alert)
-//        ac.addAction(UIAlertAction(title: "OK", style: .default))
-//        present(ac, animated: true)
+        guard let capital = view.annotation as? Capital else { return }
         
-        // My new code there about WebView with capital page
+        
+        let placeName = capital.title
+        let placeInfo = capital.info
+
+        let ac = UIAlertController(title: placeName, message: placeInfo, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
+        
+//        let webViewController = WebViewController()
+//        present(webViewController, animated: true)
     }
     
     
@@ -96,5 +98,15 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
         present(ac, animated: true)
     }
+    
+    @IBAction func webPage(_ sender: Any) {
+        let webView = WKWebView()
+        
+        if let url = URL(string: "https://www.wikipedia.org") {
+            let request = URLRequest(url: url)
+            webView.load(request)
+    }
+    }
+    
 }
 

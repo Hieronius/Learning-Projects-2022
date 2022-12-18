@@ -33,6 +33,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bc9-p7-Aph">
+                        <barButtonItem key="leftBarButtonItem" title="Web page" id="wTz-cr-5KJ">
+                            <connections>
+                                <action selector="webPage:" destination="BYZ-38-t0r" id="akh-vi-KgZ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Map type" id="f5X-yL-f6v">
                             <connections>
                                 <action selector="mapType:" destination="BYZ-38-t0r" id="UBj-yt-txE"/>

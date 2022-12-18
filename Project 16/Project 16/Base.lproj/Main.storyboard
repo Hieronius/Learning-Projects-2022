@@ -35,7 +35,7 @@
                     <navigationItem key="navigationItem" id="bc9-p7-Aph">
                         <barButtonItem key="leftBarButtonItem" title="Web page" id="wTz-cr-5KJ">
                             <connections>
-                                <action selector="webPage:" destination="BYZ-38-t0r" id="akh-vi-KgZ"/>
+                                <segue destination="0jj-oX-Q93" kind="show" id="Stq-LE-kbA"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Map type" id="f5X-yL-f6v">
@@ -51,6 +51,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="944.92753623188412" y="79.6875"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="F9C-5o-2J5">
+            <objects>
+                <viewController id="0jj-oX-Q93" customClass="WebViewController" customModule="Project_16" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hXJ-Xd-bcG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="952-h8-aan">
+                                <rect key="frame" x="20" y="88" width="374" height="774"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BEg-tZ-vYX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="L1o-p4-CAg"/>
+                    <connections>
+                        <outlet property="wkwebView" destination="952-h8-aan" id="RWh-qq-Mo2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="scn-aE-zpb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1750.7246376811595" y="79.6875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QOV-nb-HUU">

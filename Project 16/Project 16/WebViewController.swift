@@ -5,7 +5,21 @@ import UIKit
 import WebKit
 
 class WebViewController: ViewController, UIWebViewDelegate {
-    var webView = WKWebView()
-    var isOpen: Bool?
+    // var webView = WKWebView()
     
+    @IBOutlet var wkwebView: WKWebView!
+    
+//    override func loadView() {
+//        self.view = webView
+//    }
+    
+    override func viewDidLoad() {
+//        let webView = WKWebView()
+        
+        if let url = URL(string: "https://www.wikipedia.org") {
+            let request = URLRequest(url: url)
+            wkwebView.load(request)
+    }
+    
+}
 }

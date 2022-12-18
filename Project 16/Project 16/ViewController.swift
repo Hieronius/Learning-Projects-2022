@@ -99,14 +99,6 @@ class ViewController: UIViewController, MKMapViewDelegate {
         present(ac, animated: true)
     }
     
-    @IBAction func webPage(_ sender: Any) {
-        let webView = WKWebView()
-        
-        if let url = URL(string: "https://www.wikipedia.org") {
-            let request = URLRequest(url: url)
-            webView.load(request)
-    }
-    }
     
 }
 

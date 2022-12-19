@@ -13,6 +13,10 @@ class WebViewController: UIViewController, UIWebViewDelegate {
 //        self.view = webView
 //    }
     
+    let firstVC = ViewController()
+    var currentCapitalTitle: String?
+    
+    
     override func viewDidLoad() {
 //        let webView = WKWebView()
         getCapitalWebPage()
@@ -22,25 +26,26 @@ class WebViewController: UIViewController, UIWebViewDelegate {
 }
     func getCapitalWebPage() {
         
-        let firstVC = ViewController()
-        print(firstVC.currentCapital)
-        let currentCapitalTitle = firstVC.currentCapital ?? ""
-        print(currentCapitalTitle)
+        // let firstVC = ViewController()
+        // print("3 - \(firstVC.currentCapital)")
+        // let currentCapitalTitle = firstVC.currentCapital
+        currentCapitalTitle = firstVC.currentCapital
+        print("4 - \(currentCapitalTitle)")
         var urlString = ""
-        print("current capital title - \(currentCapitalTitle)")
+        print("2 - \(currentCapitalTitle)")
         // defined special currentCapital variable to set address for Wiki. Let's continue here.
-        switch currentCapitalTitle {
-        case "London":
-            urlString = "https://en.wikipedia.org/wiki/London"
-        case "Oslo":
-            urlString = "https://en.wikipedia.org/wiki/Oslo"
-        case "Paris":
-            urlString = "https://en.wikipedia.org/wiki/Paris"
-        case "Rome":
-            urlString = "https://en.wikipedia.org/wiki/Rome"
-        default:
-            urlString = "https://www.wikipedia.org/wiki/Berlin"
-        }
+//        switch currentCapitalTitle {
+//        case "London":
+//            urlString = "https://en.wikipedia.org/wiki/London"
+//        case "Oslo":
+//            urlString = "https://en.wikipedia.org/wiki/Oslo"
+//        case "Paris":
+//            urlString = "https://en.wikipedia.org/wiki/Paris"
+//        case "Rome":
+//            urlString = "https://en.wikipedia.org/wiki/Rome"
+//        default:
+//            urlString = "https://www.wikipedia.org/wiki/Berlin"
+//        }
         
         
         if let url = URL(string: urlString) {

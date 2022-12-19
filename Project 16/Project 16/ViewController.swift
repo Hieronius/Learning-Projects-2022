@@ -67,7 +67,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         ac.addAction(UIAlertAction(title: "OK", style: .default))
         ac.addAction(UIAlertAction(title: "Read in Wiki?", style: .default, handler: { action in
             // I wan't custom segue here
-            self.getTypeOfTheMap()
+            self.moveToWebView()
         }))
         present(ac, animated: true)
         
@@ -105,9 +105,14 @@ class ViewController: UIViewController, MKMapViewDelegate {
     }
     
     func moveToWebView() {
-        let startVC = ViewController()
-        let newVC = WebViewController()
-        startVC.navigationController?.pushViewController(newVC, animated: true)
+//        let startVC = ViewController()
+//        let newVC = WebViewController()
+        // startVC.navigationController?.pushViewController(newVC, animated: true)
+        
+        let secondVC = UIStoryboard(name: "Main", bundle: nil)
+        let newWebVC = storyboard?.instantiateViewController(withIdentifier: "SecondWebController")
+        self.present(newWebVC!, animated: true)
+        
     }
     
     

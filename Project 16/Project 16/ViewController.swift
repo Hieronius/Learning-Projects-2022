@@ -65,7 +65,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         let placeName = capital.title
         let placeInfo = capital.info
         
-        currentCapital = capital.title
+        currentCapital = capital.title ?? ""
         print(currentCapital)
 
         let ac = UIAlertController(title: placeName, message: placeInfo, preferredStyle: .alert)

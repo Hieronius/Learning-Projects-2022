@@ -15,10 +15,19 @@ class WebViewController: UIViewController, UIWebViewDelegate {
     
     override func viewDidLoad() {
 //        let webView = WKWebView()
+        getCapitalWebPage()
+        
+        
+    
+}
+    func getCapitalWebPage() {
         
         let firstVC = ViewController()
-        let currentCapitalTitle = firstVC.currentCapital! ?? ""
+        print(firstVC.currentCapital)
+        let currentCapitalTitle = firstVC.currentCapital ?? ""
+        print(currentCapitalTitle)
         var urlString = ""
+        print("current capital title - \(currentCapitalTitle)")
         // defined special currentCapital variable to set address for Wiki. Let's continue here.
         switch currentCapitalTitle {
         case "London":
@@ -38,6 +47,5 @@ class WebViewController: UIViewController, UIWebViewDelegate {
             let request = URLRequest(url: url)
             wkwebView.load(request)
     }
-    
-}
+    }
 }

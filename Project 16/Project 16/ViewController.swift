@@ -66,6 +66,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         let placeInfo = capital.info
         
         currentCapital = capital.title
+        print(currentCapital)
 
         let ac = UIAlertController(title: placeName, message: placeInfo, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))

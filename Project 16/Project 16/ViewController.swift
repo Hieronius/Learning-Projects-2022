@@ -14,6 +14,8 @@ class ViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet var mapView: MKMapView!
     
+    var currentCapital: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -62,6 +64,8 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
         let placeName = capital.title
         let placeInfo = capital.info
+        
+        currentCapital = capital.title
 
         let ac = UIAlertController(title: placeName, message: placeInfo, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))
@@ -109,7 +113,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
 //        let newVC = WebViewController()
         // startVC.navigationController?.pushViewController(newVC, animated: true)
         
-        let secondVC = UIStoryboard(name: "Main", bundle: nil)
+        // let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let newWebVC = storyboard?.instantiateViewController(withIdentifier: "SecondWebController")
         self.present(newWebVC!, animated: true)
         

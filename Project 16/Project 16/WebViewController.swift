@@ -4,7 +4,7 @@
 import UIKit
 import WebKit
 
-class WebViewController: ViewController, UIWebViewDelegate {
+class WebViewController: UIViewController, UIWebViewDelegate {
     // var webView = WKWebView()
     
     @IBOutlet var wkwebView: WKWebView!

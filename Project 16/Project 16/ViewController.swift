@@ -65,6 +65,10 @@ class ViewController: UIViewController, MKMapViewDelegate {
 
         let ac = UIAlertController(title: placeName, message: placeInfo, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))
+        ac.addAction(UIAlertAction(title: "Read in Wiki?", style: .default, handler: { action in
+            // I wan't custom segue here
+            in
+        }))
         present(ac, animated: true)
         
 //        let webViewController = WebViewController()
@@ -98,6 +102,12 @@ class ViewController: UIViewController, MKMapViewDelegate {
         }))
         
         present(ac, animated: true)
+    }
+    
+    func moveToWebView() {
+        let startVC = ViewController() as UIViewController
+        let newVC = WebViewController() as UIViewController
+        startVC.navigationController?.pushViewController(WebViewController, animated: true)
     }
     
     

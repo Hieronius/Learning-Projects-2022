@@ -21,19 +21,19 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         // defined special currentCapital variable to set address for Wiki. Let's continue here.
         switch firstVC.currentCapital {
         case "London":
-            urlString = "https://www.wikipedia.org"
+            urlString = "https://en.wikipedia.org/wiki/London"
         case "Oslo":
-            urlString = "https://www.wikipedia.org"
+            urlString = "https://en.wikipedia.org/wiki/Oslo"
         case "Paris":
-            urlString = "https://www.wikipedia.org"
+            urlString = "https://en.wikipedia.org/wiki/Paris"
         case "Rome":
-            urlString = "https://www.wikipedia.org"
+            urlString = "https://en.wikipedia.org/wiki/Rome"
         default:
             urlString = "https://www.wikipedia.org"
         }
         
         
-        if let url = URL(string: "https://www.wikipedia.org") {
+        if let url = URL(string: urlString) {
             let request = URLRequest(url: url)
             wkwebView.load(request)
     }

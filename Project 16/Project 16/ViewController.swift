@@ -25,6 +25,7 @@ class ViewController: UIViewController, MKMapViewDelegate, UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        webViewMain.isHidden = true
         
         let london = Capital(title: "London", coordinate: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), info: "Home to the 2012 Summer Olympics")
         let oslo = Capital(title: "Oslo", coordinate: CLLocationCoordinate2D(latitude: 59.95, longitude: 10.75), info: "Founded over a thousand years ago")
@@ -100,15 +101,15 @@ class ViewController: UIViewController, MKMapViewDelegate, UIWebViewDelegate {
             // I wan't custom segue here
             // self.secondVC?.urlStringS = self.urlString
             
-            
+            self.webViewMain.isHidden = false
             // self.moveToWebView()
             
-            var secondVC = WebViewController()
-            var webView = secondVC.wkwebView
+//            var secondVC = WebViewController()
+//            var webView = secondVC.wkwebView
             
-            if let url = URL(string: "https://en.wikipedia.org/wiki") {
+            if let url = URL(string: self.urlString) {
                 let request = URLRequest(url: url)
-                webView?.load(request)
+                self.webViewMain?.load(request)
                 print("\(self.urlString) is loaded")
             }
             

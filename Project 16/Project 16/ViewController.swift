@@ -14,6 +14,9 @@ class ViewController: UIViewController, MKMapViewDelegate, UIWebViewDelegate {
     
     @IBOutlet var mapView: MKMapView!
     
+    @IBOutlet var webViewMain: WKWebView!
+    
+    
     var currentCapital = ""
     var urlString = ""
     
@@ -98,7 +101,7 @@ class ViewController: UIViewController, MKMapViewDelegate, UIWebViewDelegate {
             // self.secondVC?.urlStringS = self.urlString
             
             
-            self.moveToWebView()
+            // self.moveToWebView()
             
             var secondVC = WebViewController()
             var webView = secondVC.wkwebView

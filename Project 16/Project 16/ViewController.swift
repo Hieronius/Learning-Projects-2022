@@ -38,6 +38,12 @@ class ViewController: UIViewController, MKMapViewDelegate, UIWebViewDelegate {
         
     }
     
+    @IBAction func cleanInfo(_ sender: Any) {
+        webViewMain.isHidden = true
+        urlString = ""
+    }
+    
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard annotation is Capital else { return nil }
         

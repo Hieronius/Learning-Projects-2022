@@ -33,11 +33,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bc9-p7-Aph">
-                        <barButtonItem key="leftBarButtonItem" title="Web page" id="wTz-cr-5KJ">
-                            <connections>
-                                <segue destination="0jj-oX-Q93" kind="show" id="Stq-LE-kbA"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Map type" id="f5X-yL-f6v">
                             <connections>
                                 <action selector="mapType:" destination="BYZ-38-t0r" id="UBj-yt-txE"/>

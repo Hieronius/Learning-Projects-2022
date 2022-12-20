@@ -9,12 +9,15 @@ import UIKit
 import MapKit
 import WebKit
 
-class ViewController: UIViewController, MKMapViewDelegate {
+class ViewController: UIViewController, MKMapViewDelegate, UIWebViewDelegate {
     
     
     @IBOutlet var mapView: MKMapView!
     
     var currentCapital = ""
+    var urlString = ""
+    
+    // var secondVC = WebViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,16 +69,56 @@ class ViewController: UIViewController, MKMapViewDelegate {
         let placeInfo = capital.info
         
         currentCapital = capital.title ?? ""
-        print("1 - \(currentCapital)")
+//        print("1 - \(currentCapital)")
+        
+        switch currentCapital {
+        case "London":
+            urlString = "https://en.wikipedia.org/wiki/London"
+        case "Oslo":
+            urlString = "https://en.wikipedia.org/wiki/Oslo"
+        case "Paris":
+            urlString = "https://en.wikipedia.org/wiki/Paris"
+        case "Rome":
+            urlString = "https://en.wikipedia.org/wiki/Rome"
+        default:
+            urlString = "https://www.wikipedia.org/wiki/Berlin"
+        }
+        
+        
+        
+//        currentCapital = capital.title ?? ""
+//        print("1 - \(currentCapital)")
+        
+        print("1 - \(urlString)")
 
         let ac = UIAlertController(title: placeName, message: placeInfo, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))
         ac.addAction(UIAlertAction(title: "Read in Wiki?", style: .default, handler: { action in
             // I wan't custom segue here
+            // self.secondVC?.urlStringS = self.urlString
+            
+            
             self.moveToWebView()
+            
+            var secondVC = WebViewController()
+            var webView = secondVC.wkwebView
+            
+            if let url = URL(string: "https://en.wikipedia.org/wiki") {
+                let request = URLRequest(url: url)
+                webView?.load(request)
+                print("\(self.urlString) is loaded")
+            }
+            
+                
         }))
+        
+        
+        
+        
         present(ac, animated: true)
         
+        
+        print("2 - \(urlString)")
 //        let webViewController = WebViewController()
 //        present(webViewController, animated: true)
     }

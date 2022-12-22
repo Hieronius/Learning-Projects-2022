@@ -101,4 +101,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.removeFromParent()
         isGameOver = true
     }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else { return }
+        let location = touch.location(in: self)
+        if player.position != location {
+            player.position = CGPoint(x: 100, y: 500)
+        }
+        
+        
+    }
 }

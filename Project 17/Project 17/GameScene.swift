@@ -13,6 +13,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var starfield: SKEmitterNode!
     var player: SKSpriteNode!
     var scoreLabel: SKLabelNode!
+    var numberOfEnemies = 0
     
     var possibleEnemies = ["ball", "hammer", "tv"]
     var gameTimer: Timer?
@@ -50,8 +51,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.gravity = .zero
         physicsWorld.contactDelegate = self
         
-        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
-        // gameTimer?.invalidate()
+        if numberOfEnemies < 20 {
+            gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
+            print(gameTimer?.timeInterval.self)
+        } else if numberOfEnemies > 20 && numberOfEnemies < 40 {
+            gameTimer?.invalidate()
+            gameTimer = Timer.scheduledTimer(timeInterval: 0.9, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
+            print(gameTimer?.timeInterval)
+        } else if numberOfEnemies > 40 && numberOfEnemies < 60 {
+            gameTimer?.invalidate()
+            gameTimer = Timer.scheduledTimer(timeInterval: 0.8, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
+            print(gameTimer?.timeInterval)
+        }
+        
         
         
         
@@ -72,6 +84,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             sprite.physicsBody?.angularVelocity = 5
             sprite.physicsBody?.linearDamping = 0
             sprite.physicsBody?.angularDamping = 0
+            
+            numberOfEnemies += 1
         }
         
     }

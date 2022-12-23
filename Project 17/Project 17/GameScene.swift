@@ -50,23 +50,30 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.gravity = .zero
         physicsWorld.contactDelegate = self
         
-        gameTimer = Timer.scheduledTimer(timeInterval: 0.35, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
+        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
+        // gameTimer?.invalidate()
+        
+        
         
     }
     
     @objc func createEnemy() {
-        guard let enemy = possibleEnemies.randomElement() else { return }
         
-        let sprite = SKSpriteNode(imageNamed: enemy)
-        sprite.position = CGPoint(x: 1200, y: Int.random(in: 50...736))
-        addChild(sprite)
+        if !isGameOver {
+            guard let enemy = possibleEnemies.randomElement() else { return }
+            
+            let sprite = SKSpriteNode(imageNamed: enemy)
+            sprite.position = CGPoint(x: 1200, y: Int.random(in: 50...736))
+            addChild(sprite)
+            
+            sprite.physicsBody = SKPhysicsBody(texture: sprite.texture!, size: sprite.size)
+            sprite.physicsBody?.contactTestBitMask = 1
+            sprite.physicsBody?.velocity = CGVector(dx: -500, dy: 0)
+            sprite.physicsBody?.angularVelocity = 5
+            sprite.physicsBody?.linearDamping = 0
+            sprite.physicsBody?.angularDamping = 0
+        }
         
-        sprite.physicsBody = SKPhysicsBody(texture: sprite.texture!, size: sprite.size)
-        sprite.physicsBody?.contactTestBitMask = 1
-        sprite.physicsBody?.velocity = CGVector(dx: -500, dy: 0)
-        sprite.physicsBody?.angularVelocity = 5
-        sprite.physicsBody?.linearDamping = 0
-        sprite.physicsBody?.angularDamping = 0
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -99,6 +106,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(explosion)
         
         player.removeFromParent()
+        print(parent?.children.count)
         isGameOver = true
     }
     

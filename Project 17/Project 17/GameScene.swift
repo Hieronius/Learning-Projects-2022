@@ -51,17 +51,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.gravity = .zero
         physicsWorld.contactDelegate = self
         
-        if numberOfEnemies < 20 {
+        
             gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
-            print(gameTimer?.timeInterval.self)
-        } else if numberOfEnemies > 20 && numberOfEnemies < 40 {
-            gameTimer?.invalidate()
-            gameTimer = Timer.scheduledTimer(timeInterval: 0.9, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
-            print(gameTimer?.timeInterval)
-        } else if numberOfEnemies > 40 && numberOfEnemies < 60 {
-            gameTimer?.invalidate()
-            gameTimer = Timer.scheduledTimer(timeInterval: 0.8, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
-            print(gameTimer?.timeInterval)
+            print("normal speed")
+    
+        if numberOfEnemies == 5 {
+            print(numberOfEnemies)
+            gameTimer.
         }
         
         
@@ -70,6 +66,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     @objc func createEnemy() {
+        
         
         if !isGameOver {
             guard let enemy = possibleEnemies.randomElement() else { return }
@@ -86,6 +83,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             sprite.physicsBody?.angularDamping = 0
             
             numberOfEnemies += 1
+            print(numberOfEnemies)
         }
         
     }
@@ -120,7 +118,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(explosion)
         
         player.removeFromParent()
-        print(parent?.children.count)
         isGameOver = true
     }
     

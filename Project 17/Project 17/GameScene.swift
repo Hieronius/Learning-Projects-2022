@@ -59,18 +59,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             if self.numberOfEnemies >= 5 && self.numberOfEnemies < 10 {
                 self.gameTimer!.invalidate()
-                self.gameTimer = Timer.scheduledTimer(withTimeInterval: 0.7, repeats: true) { timer in
+                self.gameTimer = Timer.scheduledTimer(withTimeInterval: 0.9, repeats: true) { timer in
                     self.createEnemy()
                     print("fast speed")
-                    if self.numberOfEnemies == 9 {
+                    
+                    if self.numberOfEnemies >= 9 && self.numberOfEnemies < 20 {
                         self.gameTimer!.invalidate()
-                        self.gameTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
+                        self.gameTimer = Timer.scheduledTimer(withTimeInterval: 0.8, repeats: true) { timer in
                             self.createEnemy()
                             print("turboSpeed")
+                            
+                            if self.numberOfEnemies >= 19 && self.numberOfEnemies < 40 {
+                                self.gameTimer!.invalidate()
+                                self.gameTimer = Timer.scheduledTimer(withTimeInterval: 0.7, repeats: true) { timer in
+                                    self.createEnemy()
+                                    print("Ultra speed")
+                            }
                         }
                     }
                     
                 }
+            }
             }
             
 //            self.gameTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in

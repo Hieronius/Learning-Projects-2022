@@ -57,23 +57,29 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.createEnemy()
             print("normal speed")
             
-            if self.numberOfEnemies == 5 {
-                timer.invalidate()
+            if self.numberOfEnemies >= 5 && self.numberOfEnemies < 10 {
+                self.gameTimer!.invalidate()
                 self.gameTimer = Timer.scheduledTimer(withTimeInterval: 0.7, repeats: true) { timer in
                     self.createEnemy()
                     print("fast speed")
+                    if self.numberOfEnemies == 9 {
+                        self.gameTimer!.invalidate()
+                    }
+                    
                 }
-            } else if self.numberOfEnemies == 10 {
-                timer.invalidate()
+            }
+            
+            if self.numberOfEnemies >= 10 {
+                print("time to change")
+                self.gameTimer!.invalidate()
                 self.gameTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
                     self.createEnemy()
                     print("Turbo speed")
                 }
-            }
 
         }
         
-        
+        }
         
         
         
@@ -144,13 +150,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         isGameOver = true
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first else { return }
-        let location = touch.location(in: self)
-        if player.position != location {
-            player.position = CGPoint(x: 100, y: 500)
-        }
-        
-        
-    }
+//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        guard let touch = touches.first else { return }
+//        let location = touch.location(in: self)
+//        if player.position != location {
+//            player.position = CGPoint(x: 100, y: 500)
+//        }
+//
+//
+//    }
 }

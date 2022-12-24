@@ -52,13 +52,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.contactDelegate = self
         
         
-            gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
+        // code below is really working for my task. Let's use it.
+        gameTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            self.createEnemy()
             print("normal speed")
-    
-        if numberOfEnemies == 5 {
-            print(numberOfEnemies)
-            gameTimer.
+            
+            if self.numberOfEnemies == 5 {
+                timer.invalidate()
+            }
         }
+        
+        
+        
+        
+        
+        
+//            gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
+//            print("normal speed")
+    
+        
         
         
         

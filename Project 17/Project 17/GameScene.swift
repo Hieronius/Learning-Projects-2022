@@ -59,7 +59,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             if self.numberOfEnemies == 5 {
                 timer.invalidate()
+                self.gameTimer = Timer.scheduledTimer(withTimeInterval: 0.7, repeats: true) { timer in
+                    self.createEnemy()
+                    print("fast speed")
+                }
+            } else if self.numberOfEnemies == 10 {
+                timer.invalidate()
+                self.gameTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
+                    self.createEnemy()
+                    print("Turbo speed")
+                }
             }
+
         }
         
         

@@ -53,65 +53,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         getTimer()
         
-        
-        // code below is really working for my task. Let's use it.
-//        gameTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-//            self.createEnemy()
-//            print("normal speed")
-//
-//            if self.numberOfEnemies >= 5 && self.numberOfEnemies < 10 {
-//                self.gameTimer!.invalidate()
-//                self.gameTimer = Timer.scheduledTimer(withTimeInterval: 0.9, repeats: true) { timer in
-//                    self.createEnemy()
-//                    print("fast speed")
-//
-//                    if self.numberOfEnemies >= 9 && self.numberOfEnemies < 20 {
-//                        self.gameTimer!.invalidate()
-//                        self.gameTimer = Timer.scheduledTimer(withTimeInterval: 0.8, repeats: true) { timer in
-//                            self.createEnemy()
-//                            print("turboSpeed")
-//
-//                            if self.numberOfEnemies >= 19 && self.numberOfEnemies < 40 {
-//                                self.gameTimer!.invalidate()
-//                                self.gameTimer = Timer.scheduledTimer(withTimeInterval: 0.7, repeats: true) { timer in
-//                                    self.createEnemy()
-//                                    print("Ultra speed")
-//                            }
-//                        }
-//                    }
-//
-//                }
-//            }
-//            }
-//        }
-            
-//            self.gameTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
-//                self.createEnemy()
-//                print("Turbo speed")
-//            }
-            
-//            if self.numberOfEnemies == 9 {
-//                print("time to change")
-//                // self.gameTimer!.invalidate()
-//                self.gameTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
-//                    self.createEnemy()
-//                    print("Turbo speed")
-//                }
-//
-//        }
-        
-        
-        
-        
-        
-//            gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
-//            print("normal speed")
-    
-        
-        
-        
-        
-        
     }
     
     @objc func createEnemy() {

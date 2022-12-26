@@ -13,7 +13,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        assert(myReallySlowMethod() == true, "The slow method returned false, which is s a bad thing")
+        for i in 1...100 {
+            print("Got number \(i)")
+        }
         
     }
 

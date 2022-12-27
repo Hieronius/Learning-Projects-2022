@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 
 class ViewController: UITableViewController {
     
@@ -74,7 +75,7 @@ class ViewController: UITableViewController {
                 if isThereIsThreeLetters(word: lowerAnswer) {
 
                     if isReal(word: lowerAnswer) {
-                    usedWords.insert(answer, at: 0)
+                     usedWords.insert(answer, at: 0)
                     
                     let indexPath = IndexPath(row: 0, section: 0)
                     tableView.insertRows(at: [indexPath], with: .automatic)

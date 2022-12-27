@@ -23,6 +23,8 @@ class DetailViewController: UIViewController {
             
         }
         
+        assert(selectedImage != nil)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

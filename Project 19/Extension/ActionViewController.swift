@@ -52,5 +52,23 @@ class ActionViewController: UIViewController {
         item.attachments = [customJavaScript]
         extensionContext?.completeRequest(returningItems: [item])
     }
+    
+    @objc func adjustForKeyboard(notification: Notification) {
+        guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+        
+        let keyboardScreenEndFrame = keyboardValue.cgRectValue
+        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
+        
+        if notification.name == UIResponder.keyboardWillHideNotification {
+            script.contentInset = .zero
+        } else {
+            script.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height, right: 0)
+        }
+        
+        script.scrollIndicatorInsets = script.contentInset
+        
+        let selectedRange = script.selectedRange
+        script.scrollRangeToVisible(selectedRange)
+    }
 
 }

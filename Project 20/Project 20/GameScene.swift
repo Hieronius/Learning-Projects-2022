@@ -134,4 +134,13 @@ class GameScene: SKScene {
         super.touchesMoved(touches, with: event)
         checkTouches(touches)
     }
+    
+    override func update(_ currentTime: TimeInterval) {
+        for (index, firework) in fireworks.enumerated().reversed() {
+            if firework.position.y > 900 {
+                fireworks.remove(at: index)
+                firework.removeFromParent()
+            }
+        }
+    }
 }

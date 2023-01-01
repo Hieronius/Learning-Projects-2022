@@ -20,6 +20,8 @@ class GameScene: SKScene {
     
     var scoreLabel: SKLabelNode!
     
+    var numberOfLaunches = 0
+    
     var score = 0 {
         didSet {
             scoreLabel?.text = "\(score)"
@@ -81,6 +83,8 @@ class GameScene: SKScene {
     }
     
     @objc func launchFireworks() {
+        
+        if numberOfLaunches < 5 {
         let movementAmount: CGFloat = 1800
         
         switch Int.random(in: 0...3) {
@@ -90,27 +94,36 @@ class GameScene: SKScene {
             createFirework(xMovement: 0, x: 512 - 100, y: bottomEdge)
             createFirework(xMovement: 0, x: 512 + 100, y: bottomEdge)
             createFirework(xMovement: 0, x: 512 + 200, y: bottomEdge)
+            numberOfLaunches += 1
         case 1:
             createFirework(xMovement: 0, x: 512, y: bottomEdge)
             createFirework(xMovement: -200, x: 512 - 200, y: bottomEdge)
             createFirework(xMovement: -100, x: 512 - 100, y: bottomEdge)
             createFirework(xMovement: 100, x: 512 + 100, y: bottomEdge)
             createFirework(xMovement: 200, x: 512 + 200, y: bottomEdge)
+            numberOfLaunches += 1
         case 2:
             createFirework(xMovement: movementAmount, x: leftEdge, y: bottomEdge + 400)
             createFirework(xMovement: movementAmount, x: leftEdge, y: bottomEdge + 300)
             createFirework(xMovement: movementAmount, x: leftEdge, y: bottomEdge + 200)
             createFirework(xMovement: movementAmount, x: leftEdge, y: bottomEdge + 100)
             createFirework(xMovement: movementAmount, x: leftEdge, y: bottomEdge)
+            numberOfLaunches += 1
         case 3:
             createFirework(xMovement: -movementAmount, x: rightEdge, y: bottomEdge + 400)
             createFirework(xMovement: -movementAmount, x: rightEdge, y: bottomEdge + 300)
             createFirework(xMovement: -movementAmount, x: rightEdge, y: bottomEdge + 200)
             createFirework(xMovement: -movementAmount, x: rightEdge, y: bottomEdge + 100)
             createFirework(xMovement: -movementAmount, x: rightEdge, y: bottomEdge)
+            numberOfLaunches += 1
             
         default:
             break
+        }
+            
+        } else {
+            print("The game is over")
+            gameTimer?.invalidate()
         }
     }
     

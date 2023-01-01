@@ -19,6 +19,7 @@ class GameScene: SKScene {
     let rightEdge = 1024 + 22
     
     var scoreLabel: SKLabelNode!
+    var gameOverLabel: SKLabelNode!
     
     var numberOfLaunches = 0
     
@@ -42,6 +43,13 @@ class GameScene: SKScene {
         scoreLabel.fontSize = 50
         scoreLabel.position = CGPoint(x: 100, y: 20)
         addChild(scoreLabel)
+        
+        gameOverLabel = SKLabelNode(fontNamed: "Chalkduster")
+        gameOverLabel.text = "Game over"
+        gameOverLabel.isHidden = true
+        gameOverLabel.fontSize = 100
+        gameOverLabel.position = CGPoint(x: 512, y: 384)
+        addChild(gameOverLabel)
         
         
         gameTimer = Timer.scheduledTimer(timeInterval: 6, target: self, selector: #selector(launchFireworks), userInfo: nil, repeats: true)
@@ -124,6 +132,7 @@ class GameScene: SKScene {
         } else {
             print("The game is over")
             gameTimer?.invalidate()
+            gameOverLabel.isHidden = false
         }
     }
     

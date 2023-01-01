@@ -13,6 +13,7 @@ class GameScene: SKScene {
     var gameTimer: Timer?
     var fireworks = [SKNode]()
     
+    
     let leftEdge = -22
     let bottomEdge = -22
     let rightEdge = 1024 + 22
@@ -29,6 +30,15 @@ class GameScene: SKScene {
         background.blendMode = .replace
         background.zPosition = -1
         addChild(background)
+        
+        let scoreLabel = SKLabelNode()
+        scoreLabel.text = "\(score)"
+        scoreLabel.color = .white
+        scoreLabel.fontName = "chalkduster"
+        scoreLabel.fontSize = 20
+        scoreLabel.position = CGPoint(x: 200, y: 200)
+        addChild(scoreLabel)
+        
         
         gameTimer = Timer.scheduledTimer(timeInterval: 6, target: self, selector: #selector(launchFireworks), userInfo: nil, repeats: true)
     }

@@ -162,7 +162,7 @@ class GameScene: SKScene {
             if firework.name == "selected" {
                 explode(firework: fireworkContainer)
                 fireworks.remove(at: index)
-                numExplored += 1
+                numExploded += 1
         }
     }
         switch numExploded {

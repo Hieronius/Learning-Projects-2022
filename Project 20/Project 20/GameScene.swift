@@ -18,9 +18,11 @@ class GameScene: SKScene {
     let bottomEdge = -22
     let rightEdge = 1024 + 22
     
+    var scoreLabel: SKLabelNode!
+    
     var score = 0 {
         didSet {
-            
+            scoreLabel?.text = "\(score)"
         }
     }
     
@@ -31,12 +33,12 @@ class GameScene: SKScene {
         background.zPosition = -1
         addChild(background)
         
-        let scoreLabel = SKLabelNode()
-        scoreLabel.text = "\(score)"
+        
+        scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
+        scoreLabel.text = ""
         scoreLabel.color = .white
-        scoreLabel.fontName = "chalkduster"
-        scoreLabel.fontSize = 20
-        scoreLabel.position = CGPoint(x: 200, y: 200)
+        scoreLabel.fontSize = 50
+        scoreLabel.position = CGPoint(x: 100, y: 20)
         addChild(scoreLabel)
         
         

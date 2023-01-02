@@ -182,10 +182,12 @@ class GameScene: SKScene {
         if let emitter = SKEmitterNode(fileNamed: "explode") {
             emitter.position = firework.position
             addChild(emitter)
+            SKAction *moveNodeUp = [SKAction moveByX:0.0 y:100.0 duration:1.0];
         }
         
+        
         firework.removeFromParent()
-        removeFromParent(emitter)
+        
         
         
     }

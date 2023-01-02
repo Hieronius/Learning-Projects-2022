@@ -38,7 +38,7 @@ class GameScene: SKScene {
         
         
         scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
-        scoreLabel.text = ""
+        scoreLabel.text = "0"
         scoreLabel.color = .white
         scoreLabel.fontSize = 50
         scoreLabel.position = CGPoint(x: 100, y: 20)
@@ -185,6 +185,9 @@ class GameScene: SKScene {
         }
         
         firework.removeFromParent()
+        removeFromParent(emitter)
+        
+        
     }
     
     func explodeFireworks() {

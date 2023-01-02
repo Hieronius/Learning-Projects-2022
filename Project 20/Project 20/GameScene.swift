@@ -182,7 +182,19 @@ class GameScene: SKScene {
         if let emitter = SKEmitterNode(fileNamed: "explode") {
             emitter.position = firework.position
             addChild(emitter)
-            SKAction *moveNodeUp = [SKAction moveByX:0.0 y:100.0 duration:1.0];
+            print("emitter was added to array")
+            
+            
+            
+            
+            let waitAction = SKAction.wait(forDuration: 3)
+            let deleteAction = SKAction.removeFromParent()
+            let actionSequence = [waitAction, deleteAction]
+            
+            // let's continue here
+            // run(SKAction.sequence(actionSequence))
+            emitter.run(SKAction.sequence(actionSequence))
+            print("emitter was deleted from array")
         }
         
         
@@ -221,3 +233,5 @@ class GameScene: SKScene {
     }
     
 }
+
+

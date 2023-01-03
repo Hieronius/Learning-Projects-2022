@@ -194,6 +194,7 @@ class GameScene: SKScene {
             // let's continue here
             // run(SKAction.sequence(actionSequence))
             emitter.run(SKAction.sequence(actionSequence))
+            print("action was started")
             print("emitter was deleted from array")
         }
         

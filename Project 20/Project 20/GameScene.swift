@@ -200,6 +200,7 @@ class GameScene: SKScene {
         
         
         firework.removeFromParent()
+        print("firework has been removed")
         
         
         

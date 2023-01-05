@@ -216,6 +216,7 @@ class GameScene: SKScene {
                 explode(firework: fireworkContainer)
                 fireworks.remove(at: index)
                 numExploded += 1
+                print("exploded")
         }
     }
         switch numExploded {

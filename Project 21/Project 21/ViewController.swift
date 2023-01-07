@@ -29,6 +29,9 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
     }
     
     @objc func scheduleLocal() {
+        
+        registerCategories()
+        
         let center = UNUserNotificationCenter.current()
         
         let content = UNMutableNotificationContent()
@@ -48,15 +51,16 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         center.add(request)
         
         
-        func registerCategories() {
-            let center = UNUserNotificationCenter.current()
-            center.delegate = self
-            
-            let show = UNNotificationAction(identifier: "show", title: "Tell me more", options: .foreground)
-            let category = UNNotificationCategory(identifier: "alarm", actions: [show], intentIdentifiers: [], options: [])
-            
-            center.setNotificationCategories([category])
-        }
+    }
+    func registerCategories() {
+        
+        let center = UNUserNotificationCenter.current()
+        center.delegate = self
+        
+        let show = UNNotificationAction(identifier: "show", title: "Tell me more", options: .foreground)
+        let category = UNNotificationCategory(identifier: "alarm", actions: [show], intentIdentifiers: [], options: [])
+        
+        center.setNotificationCategories([category])
     }
 }
 

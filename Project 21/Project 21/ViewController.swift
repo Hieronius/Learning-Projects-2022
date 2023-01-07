@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         content.body = "The early bird catches the worm, but the second mouse gets the cheese."
         content.categoryIdentifier = "alarm"
         content.userInfo = ["customData": "fizzbuzz"]
-        content.sound = .default
+        content.sound = UNNotificationSound.default
         
         var dateComponents = DateComponents()
         dateComponents.hour = 10

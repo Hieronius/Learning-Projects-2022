@@ -87,6 +87,7 @@ class GameScene: SKScene {
         
         fireworks.append(node)
         addChild(node)
+        print("firework has been created")
         
     }
     

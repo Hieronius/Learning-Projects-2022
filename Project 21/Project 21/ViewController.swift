@@ -74,9 +74,13 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
             switch response.actionIdentifier {
             case UNNotificationDefaultActionIdentifier:
                 // the user swiped to unlock
+                let ac = UIAlertController(title: "First window", message: "There is a default", preferredStyle: .alert)
+                addChild(ac)
                 print("default identifier")
                 
             case "show":
+                let ac = UIAlertController(title: "Second window", message: "Show controller", preferredStyle: .alert)
+                addChild(ac)
                 print("Show more information...")
                 
             default:

@@ -54,6 +54,8 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
     }
     func registerCategories() {
         
+        print("has been registered")
+        
         let center = UNUserNotificationCenter.current()
         center.delegate = self
         

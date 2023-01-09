@@ -68,18 +68,21 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         let userInfo = response.notification.request.content.userInfo
         
+        var ac = UIAlertController()
+        
         if let customData = userInfo["customData"] as? String {
             print("custom data received: \(customData)")
             
             switch response.actionIdentifier {
             case UNNotificationDefaultActionIdentifier:
                 // the user swiped to unlock
-                let ac = UIAlertController(title: "First window", message: "There is a default", preferredStyle: .alert)
+                ac = UIAlertController(title: "First window", message: "There is a default", preferredStyle: .alert)
+                
                 addChild(ac)
                 print("default identifier")
                 
             case "show":
-                let ac = UIAlertController(title: "Second window", message: "Show controller", preferredStyle: .alert)
+                ac = UIAlertController(title: "Second window", message: "Show controller", preferredStyle: .alert)
                 addChild(ac)
                 print("Show more information...")
                 

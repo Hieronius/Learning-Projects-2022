@@ -62,7 +62,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         let show = UNNotificationAction(identifier: "show", title: "Tell me more", options: .foreground)
         // another action
         let showSecond = UNNotificationAction(identifier: "later", title: "Remind me later", options: .foreground)
-        let category = UNNotificationCategory(identifier: "alarm", actions: [show], intentIdentifiers: [], options: [])
+        let category = UNNotificationCategory(identifier: "alarm", actions: [show, showSecond], intentIdentifiers: [], options: [])
         
         center.setNotificationCategories([category])
     }
@@ -92,6 +92,14 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
                     self.present(ac, animated: true)
                 print("Show more information...")
                 }
+                
+            case "later":
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                let ac = UIAlertController(title: "Thirth window", message: "Thirth controller", preferredStyle: .alert)
+                    self.present(ac, animated: true)
+                print("Notification was extended")
+                }
+                
             default:
                 break
             }

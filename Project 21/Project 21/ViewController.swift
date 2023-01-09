@@ -88,13 +88,16 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
                 
             case "show":
                 DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                    
                 let ac = UIAlertController(title: "Second window", message: "Show controller", preferredStyle: .alert)
                     self.present(ac, animated: true)
                 print("Show more information...")
                 }
                 
             case "later":
+                
                 DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                    self.scheduleLocal()
                 let ac = UIAlertController(title: "Thirth window", message: "Thirth controller", preferredStyle: .alert)
                     self.present(ac, animated: true)
                 print("Notification was extended")

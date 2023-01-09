@@ -40,13 +40,27 @@
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0dp-rE-sUm"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khA-kQ-6gM">
+                                <rect key="frame" x="0.0" y="703" width="94" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="get access"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dya-DW-48D">
+                                <rect key="frame" x="294" y="703" width="120" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="set notification"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="khA-kQ-6gM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="615" id="8tx-zR-6pj"/>
                             <constraint firstItem="x6C-Y9-HTm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9Zd-ng-PxO"/>
+                            <constraint firstItem="Dya-DW-48D" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ghe-qr-5aF"/>
                             <constraint firstItem="M44-9o-wFs" firstAttribute="centerX" secondItem="XSJ-VV-nof" secondAttribute="centerX" id="Jct-zF-m3i"/>
                             <constraint firstItem="XSJ-VV-nof" firstAttribute="centerX" secondItem="x6C-Y9-HTm" secondAttribute="centerX" id="OyQ-83-Qdu"/>
+                            <constraint firstItem="khA-kQ-6gM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dq6-Z7-rse"/>
+                            <constraint firstItem="Dya-DW-48D" firstAttribute="baseline" secondItem="khA-kQ-6gM" secondAttribute="baseline" id="l3C-XD-guA"/>
                             <constraint firstItem="M44-9o-wFs" firstAttribute="top" secondItem="XSJ-VV-nof" secondAttribute="bottom" constant="30" id="rT2-aP-qiS"/>
                             <constraint firstItem="XSJ-VV-nof" firstAttribute="top" secondItem="x6C-Y9-HTm" secondAttribute="bottom" constant="30" id="wcI-Od-Lir"/>
                             <constraint firstItem="x6C-Y9-HTm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="z8E-ME-Gyk"/>

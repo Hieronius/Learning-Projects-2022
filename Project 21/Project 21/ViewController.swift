@@ -45,7 +45,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         dateComponents.hour = 10
         dateComponents.minute = 30
 //        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 8, repeats: false)
         
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         center.add(request)
@@ -76,16 +76,20 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
             switch response.actionIdentifier {
             case UNNotificationDefaultActionIdentifier:
                 // the user swiped to unlock
-                ac = UIAlertController(title: "First window", message: "There is a default", preferredStyle: .alert)
+                DispatchQueue.global().asyncAfter(deadline: .now() + 5) {
+                    ac = UIAlertController(title: "First window", message: "There is a default", preferredStyle: .alert)
+                    
+                    self.addChild(ac)
+                    print("default identifier")
+                }
                 
-                addChild(ac)
-                print("default identifier")
                 
             case "show":
+                DispatchQueue.global().asyncAfter(deadline: .now() + 5) {
                 ac = UIAlertController(title: "Second window", message: "Show controller", preferredStyle: .alert)
-                addChild(ac)
+                    self.addChild(ac)
                 print("Show more information...")
-                
+                }
             default:
                 break
             }

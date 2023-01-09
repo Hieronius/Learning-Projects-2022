@@ -44,11 +44,17 @@
                                 <rect key="frame" x="0.0" y="703" width="94" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="get access"/>
+                                <connections>
+                                    <action selector="getAccess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FT5-hD-Hol"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dya-DW-48D">
                                 <rect key="frame" x="294" y="703" width="120" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="set notification"/>
+                                <connections>
+                                    <action selector="setNotifications:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XH0-GP-kKT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

@@ -95,6 +95,32 @@ class ViewController: UIViewController {
                      
         }
     
+    @IBAction func getAccess(_ sender: Any) {
+        registerLocal()
+    }
+    
+    @IBAction func setNotifications(_ sender: Any) {
+        
+        let center = UNUserNotificationCenter.current()
+        
+        let content = UNMutableNotificationContent()
+            content.title = "Come back summoner"
+            content.body = "It's been a while. Let's start a new game"
+            content.categoryIdentifier = "alarm"
+            content.userInfo = ["customData": "fizzbuzz"]
+            content.sound = UNNotificationSound.default
+        
+            var dateComponents = DateComponents()
+            dateComponents.hour = 10
+            dateComponents.minute = 30
+        //        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 8, repeats: false)
+        
+            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+            center.add(request)
+        
+    }
+    
     @objc func openScore() {
         let score = "The current score is \(score)"
         

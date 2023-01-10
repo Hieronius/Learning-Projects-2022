@@ -101,6 +101,8 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     @IBAction func setNotifications(_ sender: Any) {
         
+        registerCategories()
+        
         let center = UNUserNotificationCenter.current()
         
         let content = UNMutableNotificationContent()
@@ -144,6 +146,9 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
 }
     
     func registerCategories() {
+        
+        print("Check here")
+        
         let center = UNUserNotificationCenter.current()
         center.delegate = self
         
@@ -178,52 +183,13 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
                     
                     self.present(ac, animated: true)
                 }
+            default:
+                break
                 }
             }
+        completionHandler()
         }
     }
 
-//func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-//    let userInfo = response.notification.request.content.userInfo
-//
-//
-//
-//    if let customData = userInfo["customData"] as? String {
-//        print("custom data received: \(customData)")
-//
-//        switch response.actionIdentifier {
-//        case UNNotificationDefaultActionIdentifier:
-//            // the user swiped to unlock
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-//                let ac = UIAlertController(title: "First window", message: "There is a default", preferredStyle: .alert)
-//
-//                self.present(ac, animated: true)
-//                print("default identifier")
-//            }
-//
-//
-//        case "show":
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-//
-//            let ac = UIAlertController(title: "Second window", message: "Show controller", preferredStyle: .alert)
-//                self.present(ac, animated: true)
-//            print("Show more information...")
-//            }
-//
-//        case "later":
-//
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-//                self.scheduleLocal()
-//            let ac = UIAlertController(title: "Thirth window", message: "Thirth controller", preferredStyle: .alert)
-//                self.present(ac, animated: true)
-//            print("Notification was extended")
-//            }
-//
-//        default:
-//            break
-//        }
-//    }
-//
-//    completionHandler()
-//}
-}
+
+

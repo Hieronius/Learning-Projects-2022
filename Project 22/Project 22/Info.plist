@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string></string>
+	<string>We wan&apos;t to help you find your nearest store</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We wan&apos;t to help you find your nearest store</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

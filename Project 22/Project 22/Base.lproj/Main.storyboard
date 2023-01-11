@@ -16,9 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UNKNOWN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBw-aO-hV3">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UNKNOWN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBw-aO-hV3">
                                 <rect key="frame" x="111" y="424" width="192" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -33,8 +32,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="FBw-aO-hV3" firstAttribute="leading" secondItem="uy8-Sj-kNY" secondAttribute="leading" id="4F1-9l-Vcl"/>
                             <constraint firstItem="uy8-Sj-kNY" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="9Rt-JQ-2Fh"/>
                             <constraint firstItem="uy8-Sj-kNY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Prn-nm-EWD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FBw-aO-hV3" secondAttribute="trailing" symbolic="YES" id="RB6-Er-EMd"/>
+                            <constraint firstItem="FBw-aO-hV3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Zbc-bj-dP6"/>
                         </constraints>
                     </view>
                     <connections>

@@ -48,15 +48,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         UIView.animate(withDuration: 1) {
             switch distance {
             
-        case .unknown:
+        case .far:
             self.view.backgroundColor = .blue
             self.distanceReading.text = "FAR"
             
-        case .unknown:
+        case .near:
             self.view.backgroundColor = .orange
             self.distanceReading.text = "NEAR"
             
-        case .unknown:
+        case .immediate:
             self.view.backgroundColor = .red
             self.distanceReading.text = "RIGHT HERE"
                 
@@ -66,6 +66,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
 }
+    
+    func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
+        if let beacon = beacons.first {
+            updage(distance: beacon.proximity)
+        } else {
+            updage(distance: .unknown)
+        }
+    }
     
 }
 

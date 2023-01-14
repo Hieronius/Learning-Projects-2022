@@ -235,13 +235,15 @@ class GameScene: SKScene {
         var bombCount = 0
         
         for node in activeEnemies {
-            if node.name = "bombContainer"
+            if node.name == "bombContainer" {
                 bombCount += 1
                 break
         }
     }
     
     if bombCount == 0 {
-        
+        // no bombs - stop the fuse sound
+        bombSoundEffect?.stop()
+        bombSoundEffect = nil
     }
 }

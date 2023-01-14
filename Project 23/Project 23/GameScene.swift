@@ -8,6 +8,10 @@
 import SpriteKit
 import GameplayKit
 
+enum ForceBomb {
+    case never, always, random
+}
+
 class GameScene: SKScene {
     
     var gameScore: SKLabelNode!
@@ -26,6 +30,7 @@ class GameScene: SKScene {
     
     var activeSlicePoints = [CGPoint]()
     var isSwooshSoundActive = false
+    var activeEnemies = [SKSpriteNode]()
     
     
     

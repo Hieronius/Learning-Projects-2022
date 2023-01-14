@@ -35,7 +35,9 @@ class GameScene: SKScene {
     
     var activeSlicePoints = [CGPoint]()
     var isSwooshSoundActive = false
+    
     var activeEnemies = [SKSpriteNode]()
+
     var bombSoundEffect: AVAudioPlayer?
     
     var popupTime = 0.9
@@ -43,6 +45,8 @@ class GameScene: SKScene {
     var sequencePosition = 0
     var chainDelay = 3.0
     var nextSequenceQueued = true
+    
+    var isGameEnded = false
     
     
     
@@ -64,14 +68,16 @@ class GameScene: SKScene {
         createLives()
         createSlices()
         
-        sequence = [.oneNoBomb, .oneNoBomb, .twoWithOneBomb, .twoWithOneBomb, .three, .one, .chain]
+//         sequence = [.oneNoBomb, .oneNoBomb, .twoWithOneBomb, .twoWithOneBomb, .three, .one, .chain]
         
+        sequence = [.one, .two, .oneNoBomb, .twoWithOneBomb, .three, .four, .chain, .fastChain]
+
         for _ in 0...1000 {
             if let nextSequence = SequenceType.allCases.randomElement() {
                 sequence.append(nextSequence)
             }
         }
-        
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
             self?.tossEnemies()
         }
@@ -80,6 +86,7 @@ class GameScene: SKScene {
     
     func createScore() {
         gameScore = SKLabelNode(fontNamed: "Chalkduster")
+        
         gameScore.horizontalAlignmentMode = .left
         gameScore.fontSize = 48
         addChild(gameScore)
@@ -115,6 +122,9 @@ class GameScene: SKScene {
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        guard isGameEnded == false else { return }
+        
         guard let touch = touches.first else { return }
         let location = touch.location(in: self)
         activeSlicePoints.append(location)
@@ -141,12 +151,12 @@ class GameScene: SKScene {
                 let fadeOut = SKAction.fadeOut(withDuration: 0.2)
                 let group = SKAction.group([scaleOut, fadeOut])
                 
-                let seq = SKAction.sequence([group, .removeFromParent()])
+                let seq = SKAction.sequence([group, SKAction.removeFromParent()])
                 node.run(seq)
                 
                 score += 1
                 
-                if let index = activeEnemies.firstIndex(of: node as! SKSpriteNode) {
+                if let index = activeEnemies.firstIndex(of: node ) {
                     activeEnemies.remove(at: index)
                 }
                 
@@ -169,22 +179,38 @@ class GameScene: SKScene {
                 let fadeOut = SKAction.fadeOut(withDuration: 0.2)
                 let group = SKAction.group([scaleOut, fadeOut])
                 
-                let seq = SKAction.sequence([group, .removeFromParent()])
+                let seq = SKAction.sequence([group, SKAction.removeFromParent()])
                 bombContainer.run(seq)
+                
+                score += 1
                 
                 if let index = activeEnemies.firstIndex(of: bombContainer) {
                     activeEnemies.remove(at: index)
                 }
                 
                 run(SKAction.playSoundFileNamed("explosion.caf", waitForCompletion: false))
-                endGame()
+                endGame(triggeredByBomb: true)
             }
                 
         }
     }
     
-    func endGame() {
+    func endGame(triggeredByBomb: Bool) {
+        guard isGameEnded == false else { return }
         
+        isGameEnded = true
+        physicsWorld.speed = 0
+        isUserInteractionEnabled = false
+        
+        bombSoundEffect?.stop()
+        bombSoundEffect = nil
+        
+        if triggeredByBomb {
+            livesImages[0].texture = SKTexture(imageNamed: "sliceLifeGone")
+            livesImages[1].texture = SKTexture(imageNamed: "sliceLifeGone")
+            livesImages[2].texture = SKTexture(imageNamed: "sliceLifeGone")
+            
+        }
     }
     
     func playSwooshSound() {
@@ -206,6 +232,8 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        
         guard let touch = touches.first else { return }
         activeSlicePoints.removeAll(keepingCapacity: true)
         
@@ -244,7 +272,7 @@ class GameScene: SKScene {
     }
     
     func createEnemy(forceBomb: ForceBomb = .random) {
-       var enemy: SKSpriteNode
+        var enemy: SKSpriteNode
         
         var enemyType = Int.random(in: 0...6)
         
@@ -275,44 +303,75 @@ class GameScene: SKScene {
                 }
             }
             
+            //            let path = Bundle.main.path(forResource: "sliceBombFuse.caf", ofType: nil)!
+            //            let url = URL(fileURLWithPath: path)
+            //            let sound = try! AVAudioPlayer(contentsOf: url)
+            //            bombSoundEffect = sound
+            //            sound.play()
+            
             if let emitter = SKEmitterNode(fileNamed: "sliceFuse") {
                 emitter.position = CGPoint(x: 76, y: 64)
                 enemy.addChild(emitter)
                 
-            } else {
-                enemy = SKSpriteNode(imageNamed: "penguin")
-                run(SKAction.playSoundFileNamed("launch.caf", waitForCompletion: false))
-                enemy.name = "enemy"
             }
+            //            addChild(enemy)
+            //            activeEnemies.append(enemy)
             
-            let randomPosition = CGPoint(x: Int.random(in: 64...960), y: -128)
-            enemy.position = randomPosition
-            
-            let randomAngularVelocity = CGFloat.random(in: -3...3)
-            let randomXVelocity: Int
-            
-            if randomPosition.x < 256 {
-                randomXVelocity = Int.random(in: 8...15)
-            } else if randomPosition.x < 512 {
-                randomXVelocity = Int.random(in: 3...5)
-            } else if randomPosition.x < 768 {
-                randomXVelocity = -Int.random(in: 3...5)
-            } else {
-                randomXVelocity = -Int.random(in: 8...15)
-            }
-            
-            let randomYVelocity = Int.random(in: 24...32)
-            
-            enemy.physicsBody = SKPhysicsBody(circleOfRadius: 64)
-            enemy.physicsBody?.velocity = CGVector(dx: randomXVelocity * 40, dy: randomYVelocity * 40)
-            enemy.physicsBody?.angularVelocity = randomAngularVelocity
-            enemy.physicsBody?.collisionBitMask = 0
-            
-            
-            addChild(enemy)
-            activeEnemies.append(enemy)
+        } else {
+            enemy = SKSpriteNode(imageNamed: "penguin")
+            run(SKAction.playSoundFileNamed("launch.caf", waitForCompletion: false))
+            enemy.name = "enemy"
             
         }
+        let randomPosition = CGPoint(x: Int.random(in: 64...960), y: -128)
+        enemy.position = randomPosition
+        
+        let randomAngularVelocity = CGFloat.random(in: -3...3)
+        let randomXVelocity: Int
+        
+        if randomPosition.x < 256 {
+            randomXVelocity = Int.random(in: 8...15)
+        } else if randomPosition.x < 512 {
+            randomXVelocity = Int.random(in: 3...5)
+        } else if randomPosition.x < 768 {
+            randomXVelocity = -Int.random(in: 3...5)
+        } else {
+            randomXVelocity = -Int.random(in: 8...15)
+        }
+        
+        let randomYVelocity = Int.random(in: 24...32)
+        
+        enemy.physicsBody = SKPhysicsBody(circleOfRadius: 64)
+        enemy.physicsBody?.velocity = CGVector(dx: randomXVelocity * 40, dy: randomYVelocity * 40)
+        enemy.physicsBody?.angularVelocity = randomAngularVelocity
+        enemy.physicsBody?.collisionBitMask = 0
+        
+        
+        addChild(enemy)
+        activeEnemies.append(enemy)
+    
+    }
+    
+    func subtractLife() {
+        lives -= 1
+        
+        run(SKAction.playSoundFileNamed("wrong.caf", waitForCompletion: false))
+        
+        var life: SKSpriteNode
+        
+        if lives == 2 {
+            life = livesImages[0]
+        } else if lives == 1 {
+            life = livesImages[1]
+        } else {
+            life = livesImages[2]
+            endGame(triggeredByBomb: false)
+        }
+        
+        life.texture = SKTexture(imageNamed: "sliceLifeGone")
+        life.xScale = 1.3
+        life.yScale = 1.3
+        life.run(SKAction.scale(by: 1, duration: 0.1))
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -320,8 +379,19 @@ class GameScene: SKScene {
         if activeEnemies.count > 0 {
             for (index, node) in activeEnemies.enumerated().reversed() {
                 if node.position.y < -140 {
-                    node.removeFromParent()
-                    activeEnemies.remove(at: index)
+                    node.removeAllActions()
+                    
+                    if node.name == "enemy" {
+                        node.name = ""
+                        subtractLife()
+                        
+                        node.removeFromParent()
+                        activeEnemies.remove(at: index)
+                    } else if node.name == "bombContainer" {
+                        node.name = ""
+                        node.removeFromParent()
+                        activeEnemies.remove(at: index)
+                    }
                 }
             }
         } else {
@@ -351,6 +421,8 @@ class GameScene: SKScene {
     }
     
     func tossEnemies() {
+        guard isGameEnded == false else { return }
+        
         popupTime *= 0.991
         chainDelay *= 0.99
         physicsWorld.speed *= 1.02
@@ -362,10 +434,10 @@ class GameScene: SKScene {
             createEnemy(forceBomb: .never)
             
         case .one:
-            createEnemy()
+            createEnemy(forceBomb: .always)
             
         case .twoWithOneBomb:
-            createEnemy(forceBomb: .never)
+            createEnemy(forceBomb: .always)
             createEnemy(forceBomb: .always)
             
         case .two:

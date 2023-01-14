@@ -48,6 +48,15 @@ class GameScene: SKScene {
     
     var isGameEnded = false
     
+    // positions
+    var positionMinX = 256.0
+    var positionMidX = 512.0
+    var positionMaxX = 768.0
+    
+    var circleOfRadius = 64.0
+    var screenBorder = -140.0
+    
+    var positionY = -128
     
     
     
@@ -303,19 +312,14 @@ class GameScene: SKScene {
                 }
             }
             
-            //            let path = Bundle.main.path(forResource: "sliceBombFuse.caf", ofType: nil)!
-            //            let url = URL(fileURLWithPath: path)
-            //            let sound = try! AVAudioPlayer(contentsOf: url)
-            //            bombSoundEffect = sound
-            //            sound.play()
+            
             
             if let emitter = SKEmitterNode(fileNamed: "sliceFuse") {
                 emitter.position = CGPoint(x: 76, y: 64)
                 enemy.addChild(emitter)
                 
             }
-            //            addChild(enemy)
-            //            activeEnemies.append(enemy)
+            
             
         } else {
             enemy = SKSpriteNode(imageNamed: "penguin")
@@ -323,17 +327,17 @@ class GameScene: SKScene {
             enemy.name = "enemy"
             
         }
-        let randomPosition = CGPoint(x: Int.random(in: 64...960), y: -128)
+        let randomPosition = CGPoint(x: Int.random(in: 64...960), y: positionY)
         enemy.position = randomPosition
         
         let randomAngularVelocity = CGFloat.random(in: -3...3)
         let randomXVelocity: Int
         
-        if randomPosition.x < 256 {
+        if randomPosition.x < positionMinX {
             randomXVelocity = Int.random(in: 8...15)
-        } else if randomPosition.x < 512 {
+        } else if randomPosition.x < positionMidX {
             randomXVelocity = Int.random(in: 3...5)
-        } else if randomPosition.x < 768 {
+        } else if randomPosition.x < positionMaxX {
             randomXVelocity = -Int.random(in: 3...5)
         } else {
             randomXVelocity = -Int.random(in: 8...15)
@@ -341,7 +345,7 @@ class GameScene: SKScene {
         
         let randomYVelocity = Int.random(in: 24...32)
         
-        enemy.physicsBody = SKPhysicsBody(circleOfRadius: 64)
+        enemy.physicsBody = SKPhysicsBody(circleOfRadius: circleOfRadius)
         enemy.physicsBody?.velocity = CGVector(dx: randomXVelocity * 40, dy: randomYVelocity * 40)
         enemy.physicsBody?.angularVelocity = randomAngularVelocity
         enemy.physicsBody?.collisionBitMask = 0
@@ -378,7 +382,7 @@ class GameScene: SKScene {
         
         if activeEnemies.count > 0 {
             for (index, node) in activeEnemies.enumerated().reversed() {
-                if node.position.y < -140 {
+                if node.position.y < screenBorder {
                     node.removeAllActions()
                     
                     if node.name == "enemy" {

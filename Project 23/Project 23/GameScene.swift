@@ -13,6 +13,10 @@ enum ForceBomb {
     case never, always, random
 }
 
+enum SequenceType: CaseIterable {
+    case oneNoBomb, one, twoWithOneBomb, two, three, four, chain, fastChain
+}
+
 class GameScene: SKScene {
     
     var gameScore: SKLabelNode!
@@ -53,7 +57,7 @@ class GameScene: SKScene {
         createLives()
         createSlices()
         
-}
+    }
     
     func createScore() {
         gameScore = SKLabelNode(fontNamed: "Chalkduster")
@@ -161,7 +165,7 @@ class GameScene: SKScene {
     }
     
     func createEnemy(forceBomb: ForceBomb = .random) {
-        let enemy: SKSpriteNode
+       var enemy: SKSpriteNode
         
         var enemyType = Int.random(in: 0...6)
         
@@ -192,43 +196,44 @@ class GameScene: SKScene {
                 }
             }
             
-            if let emitter = SKEmitterNode(fileNamed: "sliceFuse")
+            if let emitter = SKEmitterNode(fileNamed: "sliceFuse") {
                 emitter.position = CGPoint(x: 76, y: 64)
                 enemy.addChild(emitter)
+                
+            } else {
+                enemy = SKSpriteNode(imageNamed: "penguin")
+                run(SKAction.playSoundFileNamed("launch.caf", waitForCompletion: false))
+                enemy.name = "enemy"
+            }
             
-        } else {
-            enemy = SKSpriteNode(imageNamed: "penguin")
-            run(SKAction.playSoundFileNamed("launch.caf", waitForCompletion: false))
-            enemy.name = "enemy"
+            let randomPosition = CGPoint(x: Int.random(in: 64...960), y: -128)
+            enemy.position = randomPosition
+            
+            let randomAngularVelocity = CGFloat.random(in: -3...3)
+            let randomXVelocity: Int
+            
+            if randomPosition.x < 256 {
+                randomXVelocity = Int.random(in: 8...15)
+            } else if randomPosition.x < 512 {
+                randomXVelocity = Int.random(in: 3...5)
+            } else if randomPosition.x < 768 {
+                randomXVelocity = -Int.random(in: 3...5)
+            } else {
+                randomXVelocity = -Int.random(in: 8...15)
+            }
+            
+            let randomYVelocity = Int.random(in: 24...32)
+            
+            enemy.physicsBody = SKPhysicsBody(circleOfRadius: 64)
+            enemy.physicsBody?.velocity = CGVector(dx: randomXVelocity * 40, dy: randomYVelocity * 40)
+            enemy.physicsBody?.angularVelocity = randomAngularVelocity
+            enemy.physicsBody?.collisionBitMask = 0
+            
+            
+            addChild(enemy)
+            activeEnemies.append(enemy)
+            
         }
-        
-        let randomPosition = CGPoint(x: Int.random(in: 64...960), y: -128)
-        enemy.position = randomPosition
-        
-        let randomAngularVelocity = CGFloat.random(in: -3...3)
-        let randomXVelocity: Int
-        
-        if randomPosition.x < 256 {
-            randomXVelocity = Int.random(in: 8...15)
-        } else if randomPosition.x < 512 {
-            randomXVelocity = Int.random(in: 3...5)
-        } else if randomPosition.x < 768 {
-            randomXVelocity = -Int.random(in: 3...5)
-        } else {
-            randomXVelocity = -Int.random(in: 8...15)
-        }
-        
-        let randomYVelocity = Int.random(in: 24...32)
-        
-        enemy.physicsBody = SKPhysicsBody(circleOfRadius: 64)
-        enemy.physicsBody?.velocity = CGVector(dx: randomXVelocity * 40, dy: randomYVelocity * 40)
-        enemy.physicsBody?.angularVelocity = randomAngularVelocity
-        enemy.physicsBody?.collisionBitMask = 0
-        
-        
-        addChild(enemy)
-        activeEnemies.append(enemy)
-        
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -238,12 +243,13 @@ class GameScene: SKScene {
             if node.name == "bombContainer" {
                 bombCount += 1
                 break
+            }
         }
-    }
-    
-    if bombCount == 0 {
-        // no bombs - stop the fuse sound
-        bombSoundEffect?.stop()
-        bombSoundEffect = nil
+        
+        if bombCount == 0 {
+            // no bombs - stop the fuse sound
+            bombSoundEffect?.stop()
+            bombSoundEffect = nil
+        }
     }
 }

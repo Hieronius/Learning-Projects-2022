@@ -283,14 +283,18 @@ class GameScene: SKScene {
     func createEnemy(forceBomb: ForceBomb = .random) {
         var enemy: SKSpriteNode
         
+        // if we won't set a specific forceBomb value we should define a random number
         var enemyType = Int.random(in: 0...6)
         
+        // here we got a specific random number
+        // check for bomb
         if forceBomb == .never {
             enemyType = 1
         } else if forceBomb == .always {
             enemyType = 0
         }
         
+        // if after the random generation we have our number equal to 0 or if our function createEnemy has a forceBomb: .always we should create a bomb
         if enemyType == 0 {
             enemy = SKSpriteNode()
             enemy.zPosition = 1
@@ -320,13 +324,22 @@ class GameScene: SKScene {
                 
             }
             
+            // If we had a different number from 0 in random number generation here or function createEnemy has a forceBomb: .never we should create a penguin
+        } else if enemyType == 1 {
+            enemy = SKSpriteNode(imageNamed: "penguin")
+            run(SKAction.playSoundFileNamed("launch.caf", waitForCompletion: false))
+            enemy.name = "enemy"
             
         } else {
             enemy = SKSpriteNode(imageNamed: "penguin")
             run(SKAction.playSoundFileNamed("launch.caf", waitForCompletion: false))
             enemy.name = "enemy"
-            
         }
+        // here i should define one more condition for my new fast model with bonus score
+        
+        
+        // There is a common block of the code for each of my possible cases.
+        // So, doesn't mater what it will be - a bomb, a penguin or a new character all this settings will be used for the new object
         let randomPosition = CGPoint(x: Int.random(in: 64...960), y: positionY)
         enemy.position = randomPosition
         

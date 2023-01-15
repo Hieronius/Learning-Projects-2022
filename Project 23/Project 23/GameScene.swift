@@ -171,6 +171,35 @@ class GameScene: SKScene {
                 
                 run(SKAction.playSoundFileNamed("whack.caf", waitForCompletion: false))
                 
+                // here we wan't define our new bird object
+            } else if node.name == "angryBird" {
+                
+                // deleting our node name and it's ability to communicate with others objects
+                node.name = ""
+                node.physicsBody?.isDynamic = false
+                
+                
+                // special effects for fading away of our bird
+                let scaleOut = SKAction.scale(by: 0.001, duration: 0.2)
+                let fadeOut = SKAction.fadeOut(withDuration: 0.2)
+                let group = SKAction.group([scaleOut, fadeOut])
+                
+                // defined a two different actions and made a group of them, plus added "removeFromParent"
+                let seq = SKAction.sequence([group, SKAction.removeFromParent()])
+                node.run(seq)
+                
+                // adding more scores because of it's special
+                score += 5
+                
+                // cleaning the array of enemy objects
+                if let index = activeEnemies.firstIndex(of: node) {
+                    activeEnemies.remove(at: index)
+                }
+                
+                // play a special effect when our bird will be hit
+                run(SKAction.playSoundFileNamed("whack.caf", waitForCompletion: false))
+                
+                
             } else if node.name == "bomb" {
                 // destroy the bomb
                 guard let bombContainer = node.parent as? SKSpriteNode else {
@@ -326,9 +355,9 @@ class GameScene: SKScene {
             
             // If we had a different number from 0 in random number generation here or function createEnemy has a forceBomb: .never we should create a penguin
         } else if enemyType == 1 {
-            enemy = SKSpriteNode(imageNamed: "penguin")
+            enemy = SKSpriteNode(imageNamed: "bird")
             run(SKAction.playSoundFileNamed("launch.caf", waitForCompletion: false))
-            enemy.name = "enemy"
+            enemy.name = "angryBird"
             
         } else {
             enemy = SKSpriteNode(imageNamed: "penguin")

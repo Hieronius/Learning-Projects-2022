@@ -20,6 +20,7 @@ enum SequenceType: CaseIterable {
 class GameScene: SKScene {
     
     var gameScore: SKLabelNode!
+    var gameOver: SKLabelNode!
     
     var score = 0 {
         didSet {
@@ -75,6 +76,7 @@ class GameScene: SKScene {
         physicsWorld.gravity = CGVector(dx: 0, dy: -6)
         physicsWorld.speed = 0.85
         
+        createGameOverTitle()
         createScore()
         createLives()
         createSlices()
@@ -93,6 +95,17 @@ class GameScene: SKScene {
             self?.tossEnemies()
         }
         
+    }
+    
+    // method to define a label of GAME OVER
+    func createGameOverTitle() {
+        gameOver = SKLabelNode(fontNamed: "Chalkduster")
+        gameOver.horizontalAlignmentMode = .center
+        gameOver.fontSize = 50
+        gameOver.text = "GAME OVER"
+        gameOver.isHidden = true
+        gameOver.position = CGPoint(x: 512, y: 384)
+        addChild(gameOver)
     }
     
     func createScore() {
@@ -257,6 +270,8 @@ class GameScene: SKScene {
             livesImages[2].texture = SKTexture(imageNamed: "sliceLifeGone")
             
         }
+        
+        gameOver.isHidden = false
     }
     
     func playSwooshSound() {

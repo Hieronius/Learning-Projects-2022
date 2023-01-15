@@ -58,6 +58,8 @@ class GameScene: SKScene {
     
     var positionY = -128
     
+    var isGameModeTitleIsHidden = true
+    
     
     
     
@@ -173,6 +175,12 @@ class GameScene: SKScene {
                 
                 // here we wan't define our new bird object
             } else if node.name == "angryBird" {
+                
+                // there we should probably add particles for death of our bird
+                if let emitter = SKEmitterNode(fileNamed: "sliceHitEnemy") {
+                    emitter.position = node.position
+                    addChild(emitter)
+                }
                 
                 // deleting our node name and it's ability to communicate with others objects
                 node.name = ""
@@ -392,6 +400,10 @@ class GameScene: SKScene {
         enemy.physicsBody?.angularVelocity = randomAngularVelocity
         enemy.physicsBody?.collisionBitMask = 0
         
+        // let's check a name of the node and if it's a new bird node let's add some speed
+        if enemy.name == "angryBird" {
+            enemy.physicsBody?.velocity = CGVector(dx: randomXVelocity * 60, dy: randomYVelocity * 60)
+        }
         
         addChild(enemy)
         activeEnemies.append(enemy)
